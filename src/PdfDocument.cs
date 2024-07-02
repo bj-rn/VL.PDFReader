@@ -24,7 +24,10 @@ namespace VL.PDFReader
     public class PdfDocument : IDisposable
     {
         private bool _disposed;
-        private PdfFile? _file;
+        private PdfFile _file;
+
+        private Int2 _maxTileSize = new Int2(4000, 4000);
+
 
 
         /// <summary>
@@ -47,13 +50,15 @@ namespace VL.PDFReader
         /// </summary>
         /// <param name="path">path the PDF document.</param>
         /// <param name="password">Password for the PDF document.</param>
+        /// <param name="maxTileSize"></param>
         /// <param name="disposeStream">Decides if the stream  <paramref name="path"/> will closed on dispose as well.</param>
-        public static PdfDocument Load(Path path, string? password, bool disposeStream = true)
+        public static PdfDocument Load(Path path, string? password, Int2? maxTileSize, bool disposeStream = true)
         {
             if (path == null)
                 throw new ArgumentNullException(nameof(path));
 
-            return Load(File.OpenRead(path), password, disposeStream);
+
+            return Load(File.OpenRead(path), password, maxTileSize, disposeStream);
         }
 
 
@@ -62,74 +67,117 @@ namespace VL.PDFReader
         /// </summary>
         /// <param name="stream">Stream for the PDF document.</param>
         /// <param name="password">Password for the PDF document.</param>
+        /// <param name="maxTileSize"></param>
         /// <param name="disposeStream">Decides if <paramref name="stream"/> will closed on dispose as well.</param>
-        public static PdfDocument Load(Stream stream, string? password, bool disposeStream = true)
+        public static PdfDocument Load(Stream stream, string? password, Int2? maxTileSize, bool disposeStream = true)
         {
             if (stream == null)
                 throw new ArgumentNullException(nameof(stream));
 
-            return new PdfDocument(stream, password, disposeStream);
+            return new PdfDocument(stream, password, maxTileSize, disposeStream);
         }
 
-        private PdfDocument(Stream stream, string? password, bool disposeStream)
+        private PdfDocument(Stream stream, string? password, Int2? maxTileSize, bool disposeStream)
         {
             _file = new PdfFile(stream, password, disposeStream);
+
+            if (maxTileSize.HasValue)
+                _maxTileSize = maxTileSize.Value;
 
             PageSizes = new ReadOnlyCollection<Vector2>(_file.GetPDFDocInfo() ?? throw new Win32Exception());
         }
 
-        private const int MaxTileWidth = 4000;
-        private const int MaxTileHeight = 4000;
-
         /// <summary>
         /// Renders a page of the PDF document to an image.
         /// </summary>
-        /// <param name="page">Number of the page to render.</param>
-        /// <param name="width">Width of the rendered image.</param>
-        /// <param name="height">Height of the rendered image.</param>
-        /// <param name="dpiX">Horizontal DPI.</param>
-        /// <param name="dpiY">Vertical DPI.</param>
-        /// <param name="rotate">Rotation.</param>
-        /// <param name="flags">Flags used to influence the rendering.</param>
-        /// <param name="renderFormFill">Render form fills.</param>
-        /// <param name="correctFromDpi">Change <paramref name="width"/> and <paramref name="height"/> depending on the given <paramref name="dpiX"/> and <paramref name="dpiY"/>.</param>
-        /// <param name="backgroundColor">The background color used for the output.</param>
-        /// <param name="bounds">Specifies the bounds for the page relative to <see cref="Conversion.GetPageSizes(string,string)"/>. This can be used for clipping (bounds inside of page) or additional margins (bounds outside of page).</param>
-        /// <param name="useTiling"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns>The rendered image.</returns>
-        private SKImage Render(int page, float width, float height, float dpiX, float dpiY, PdfRotation rotate, NativeMethods.FPDF flags, bool renderFormFill, bool correctFromDpi, Color4 backgroundColor, RectangleF? bounds, bool useTiling, CancellationToken cancellationToken = default)
+        private SKImage Render(int page, float? requestedWidth, float? requestedHeight, float dpi, PdfRotation rotate, NativeMethods.FPDF flags, bool renderFormFill, Color4 backgroundColor, RectangleF? bounds, bool useTiling, bool withAspectRatio, bool dpiRelativeToBounds, CancellationToken cancellationToken = default)
         {
             if (_disposed)
                 throw new ObjectDisposedException(GetType().Name);
 
-            var originalWidth = PageSizes[page].X;
-            var originalHeight = PageSizes[page].Y;
+            // correct the width and height for the given dpi
+            // but only if both width and height are not specified (so the original sizes are corrected)
+            var correctFromDpi = requestedWidth == null && requestedHeight == null;
+
+            var pagesize = PageSizes[page];
+
+            var originalWidth = pagesize.X;
+            var originalHeight = pagesize.Y;
+
+            if (withAspectRatio && !(dpiRelativeToBounds && bounds.HasValue))
+            {
+                AdjustForAspectRatio(ref requestedWidth, ref requestedHeight, pagesize);
+            }
+
+            float width = requestedWidth ?? originalWidth;
+            float height = requestedHeight ?? originalHeight;
 
             if (rotate == PdfRotation.Rotate90 || rotate == PdfRotation.Rotate270)
             {
                 (width, height) = (height, width);
                 (originalWidth, originalHeight) = (originalHeight, originalWidth);
-                (dpiX, dpiY) = (dpiY, dpiX);
             }
 
             if (correctFromDpi)
             {
-                width *= dpiX / 72f;
-                height *= dpiY / 72f;
+                width *= dpi / 72f;
+                height *= dpi / 72f;
 
-                originalWidth *= dpiX / 72f;
-                originalHeight *= dpiY / 72f;
+                originalWidth *= dpi / 72f;
+                originalHeight *= dpi / 72f;
 
                 if (bounds != null)
                 {
                     bounds = new RectangleF(
-                        bounds.Value.X * (dpiX / 72f),
-                        bounds.Value.Y * (dpiY / 72f),
-                        bounds.Value.Width * (dpiX / 72f),
-                        bounds.Value.Height * (dpiY / 72f)
+                        bounds.Value.X * (dpi / 72f),
+                        bounds.Value.Y * (dpi / 72f),
+                        bounds.Value.Width * (dpi / 72f),
+                        bounds.Value.Height * (dpi / 72f)
                     );
                 }
+            }
+
+            if (dpiRelativeToBounds && bounds.HasValue)
+            {
+                float? boundsWidth = requestedWidth != null ? requestedWidth : null;
+                float? boundsHeight = requestedHeight != null ? requestedHeight : null;
+
+                if (withAspectRatio)
+                {
+                    AdjustForAspectRatio(ref boundsWidth, ref boundsHeight, new Vector2(bounds.Value.Width, bounds.Value.Height));
+                }
+
+                var remainderX = 0f;
+                var remainderY = 0f;
+
+                if (requestedWidth == null)
+                {
+                    var newWidth = boundsWidth ?? bounds.Value.Width;
+                    remainderX = 1 - (newWidth % 1);
+                    width = (float)Math.Ceiling(newWidth);
+                }
+
+                if (requestedHeight == null)
+                {
+                    var newHeight = boundsHeight ?? bounds.Value.Height;
+                    remainderY = 1 - (newHeight % 1);
+                    height = (float)Math.Ceiling(newHeight);
+                }
+
+                bounds = new RectangleF(
+                    bounds.Value.X * (width / originalWidth),
+                    bounds.Value.Y * (height / originalHeight),
+                    bounds.Value.Width + remainderX,
+                    bounds.Value.Height + remainderY);
+
+                remainderX = bounds.Value.X % 1;
+                remainderY = bounds.Value.Y % 1;
+
+                bounds = new RectangleF(
+                    bounds.Value.X,
+                    bounds.Value.Y,
+                    bounds.Value.Width + remainderX,
+                    bounds.Value.Height + remainderY);
             }
 
             if (bounds != null)
@@ -171,8 +219,8 @@ namespace VL.PDFReader
 
             SKColor bgcolor = Conversions.ToSKColor(ref backgroundColor);
 
-            int horizontalTileCount = (int)Math.Ceiling(width / MaxTileWidth);
-            int verticalTileCount = (int)Math.Ceiling(height / MaxTileHeight);
+            int horizontalTileCount = (int)Math.Ceiling(width / _maxTileSize.X);
+            int verticalTileCount = (int)Math.Ceiling(height / _maxTileSize.Y);
 
             if (!useTiling || (horizontalTileCount == 1 && verticalTileCount == 1))
             {
@@ -180,7 +228,6 @@ namespace VL.PDFReader
             }
             else
             {
-
                 var info = new SKImageInfo((int)width, (int)height, SKColorType.Bgra8888, SKAlphaType.Premul);
 
                 using (var surface = SKSurface.Create(info))
@@ -232,9 +279,7 @@ namespace VL.PDFReader
                                 (float)Math.Floor(x * currentTileWidth + currentTileWidth),
                                 (float)Math.Floor(y * currentTileHeight + currentTileHeight)));
                             canvas.Flush();
-                        }
-
-                        
+                        }    
                     }
 
                     image = surface.Snapshot();
@@ -245,7 +290,7 @@ namespace VL.PDFReader
         }
 
 
-        private Texture Render (int page, float width, float height, float dpiX, float dpiY, PdfRotation rotate, NativeMethods.FPDF flags, bool renderFormFill, bool correctFromDpi, Color4 backgroundColor, RectangleF? bounds, bool useTiling, GraphicsDevice device, TextureFlags textureFlags = TextureFlags.ShaderResource, GraphicsResourceUsage usage = GraphicsResourceUsage.Immutable, CancellationToken cancellationToken = default)
+        private Texture Render (int page, float? requestedWidth, float? requestedHeight, float dpi, PdfRotation rotate, NativeMethods.FPDF flags, bool renderFormFill, Color4 backgroundColor, RectangleF? bounds, bool useTiling, bool withAspectRatio, bool dpiRelativeToBounds, GraphicsDevice device, TextureFlags textureFlags = TextureFlags.ShaderResource, GraphicsResourceUsage usage = GraphicsResourceUsage.Immutable, CancellationToken cancellationToken = default)
         {
             if (_disposed)
                 throw new ObjectDisposedException(GetType().Name);
@@ -253,7 +298,7 @@ namespace VL.PDFReader
 
             SKColor bgcolor = Conversions.ToSKColor(ref backgroundColor);
            
-            using var pixmap = Render(page, width, height, dpiX, dpiY, rotate, flags, renderFormFill, correctFromDpi, backgroundColor, bounds, useTiling, cancellationToken).PeekPixels();
+            using var pixmap = Render(page, requestedWidth, requestedHeight, dpi, rotate, flags, renderFormFill,backgroundColor, bounds, useTiling, withAspectRatio, dpiRelativeToBounds, cancellationToken).PeekPixels();
 
             var description = TextureDescription.New2D(
                 width: pixmap.Width,
@@ -291,7 +336,7 @@ namespace VL.PDFReader
                 NativeMethods.FPDFBitmap_FillRect(handle, 0, 0, (int)width, (int)height, (uint)backgroundColor);
 
                 cancellationToken.ThrowIfCancellationRequested();
-                bool success = _file!.RenderPDFPageToBitmap(
+                bool success = _file.RenderPDFPageToBitmap(
                     page,
                     handle,
                     bounds != null ? -(int)Math.Floor(bounds.Value.X * (originalWidth / bounds.Value.Width)) : 0,
@@ -331,9 +376,6 @@ namespace VL.PDFReader
             if (options == default)
                 options = new();
 
-            // correct the width and height for the given dpi
-            // but only if both width and height are not specified (so the original sizes are corrected)
-            var correctFromDpi = options.Width == null && options.Height == null;
 
             NativeMethods.FPDF renderFlags = default;
 
@@ -351,15 +393,7 @@ namespace VL.PDFReader
             if (page >= PageCount)
                 throw new ArgumentOutOfRangeException(nameof(page), $"The page number {page} does not exist. Highest page number available is {PageCount - 1}.");
 
-            var currentWidth = (float?)options.Width;
-            var currentHeight = (float?)options.Height;
-            var pageSize = this.PageSizes[page];
-
-            // correct aspect ratio if requested
-            if (options.WithAspectRatio)
-                AdjustForAspectRatio(ref currentWidth, ref currentHeight, pageSize);
-
-            return Render(page, currentWidth ?? pageSize.X, currentHeight ?? pageSize.Y, options.Dpi, options.Dpi, options.Rotation, renderFlags, options.WithFormFill, correctFromDpi, options.BackgroundColor ?? Color4.White, options.Bounds, options.UseTiling);
+            return Render(page, options.Width, options.Height, options.Dpi, options.Rotation, renderFlags, options.WithFormFill, options.BackgroundColor ?? Color4.White, options.Bounds, options.UseTiling, options.WithAspectRatio, options.DpiRelativeToBounds);
         }
 
 
@@ -372,9 +406,6 @@ namespace VL.PDFReader
             if (options == default)
                 options = new();
 
-            // correct the width and height for the given dpi
-            // but only if both width and height are not specified (so the original sizes are corrected)
-            var correctFromDpi = options.Width == null && options.Height == null;
 
             NativeMethods.FPDF renderFlags = default;
 
@@ -392,16 +423,9 @@ namespace VL.PDFReader
             if (page >= PageCount)
                 throw new ArgumentOutOfRangeException(nameof(page), $"The page number {page} does not exist. Highest page number available is {PageCount - 1}.");
 
-            var currentWidth = (float?)options.Width;
-            var currentHeight = (float?)options.Height;
-            var pageSize = this.PageSizes[page];
-
-            // correct aspect ratio if requested
-            if (options.WithAspectRatio)
-                AdjustForAspectRatio(ref currentWidth, ref currentHeight, pageSize);
-
+            
             // Internals.PdfDocument -> Image
-            return Render(page, currentWidth ?? pageSize.X, currentHeight ?? pageSize.Y, options.Dpi, options.Dpi, options.Rotation, renderFlags, options.WithFormFill, correctFromDpi, options.BackgroundColor ?? Color4.White, options.Bounds, options.UseTiling, device, textureFlags, usage);
+            return Render(page, options.Width, options.Height, options.Dpi, options.Rotation, renderFlags, options.WithFormFill, options.BackgroundColor ?? Color4.White, options.Bounds, options.UseTiling, options.WithAspectRatio, options.DpiRelativeToBounds, device, textureFlags, usage);
         }
 
 
@@ -411,9 +435,6 @@ namespace VL.PDFReader
             if (options == default)
                 options = new();
 
-            // correct the width and height for the given dpi
-            // but only if both width and height are not specified (so the original sizes are corrected)
-            var correctFromDpi = options.Width == null && options.Height == null;
 
             NativeMethods.FPDF renderFlags = default;
 
@@ -430,15 +451,7 @@ namespace VL.PDFReader
 
             for (int i = 0; i < PageCount; i++)
             {
-                var currentWidth = (float?)options.Width;
-                var currentHeight = (float?)options.Height;
-                var pageSize = PageSizes[i];
-
-                // correct aspect ratio if requested
-                if (options.WithAspectRatio)
-                    AdjustForAspectRatio(ref currentWidth, ref currentHeight, pageSize);
-
-                yield return Render(i, currentWidth ?? pageSize.X, currentHeight ?? pageSize.Y, options.Dpi, options.Dpi, options.Rotation, renderFlags, options.WithFormFill, correctFromDpi, options.BackgroundColor ?? Color4.White, options.Bounds, options.UseTiling);
+                yield return Render(i, options.Width, options.Height, options.Dpi, options.Rotation, renderFlags, options.WithFormFill, options.BackgroundColor ?? Color4.White, options.Bounds, options.UseTiling, options.WithAspectRatio, options.DpiRelativeToBounds);
             }
         }
 
@@ -473,8 +486,7 @@ namespace VL.PDFReader
         {
             if (!_disposed && disposing)
             {
-                _file?.Dispose();
-                _file = null;
+                _file.Dispose();
 
                 _disposed = true;
             }

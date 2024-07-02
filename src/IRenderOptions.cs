@@ -49,12 +49,12 @@ namespace VL.PDFReader
         PdfAntiAliasing AntiAliasing { get; init; }
 
         /// <summary>
-        /// Specifies the background color. Defaults to <see cref="SKColors.White"/>.
+        /// Specifies the background color. Defaults to <see cref="Color4.White"/>.
         /// </summary>
         Color4? BackgroundColor { get; init; }
 
         /// <summary>
-        /// Specifies the bounds for the page relative to <see cref="Conversion.GetPageSizes(string,string)"/>. This can be used for clipping (bounds inside of page) or additional margins (bounds outside of page).
+        /// Specifies the bounds for the page relative toPageSizes. This can be used for clipping (bounds inside of page) or additional margins (bounds outside of page). The bound units are relative to the PDF size (at 72 DPI).
         /// </summary>
         RectangleF? Bounds { get; init; }
 
@@ -62,5 +62,10 @@ namespace VL.PDFReader
         /// Specifies that the PDF should be rendered as several segments and merged into the final image. This can help in cases where the output image is too large, causing corrupted images (e.g. missing text) or crashes.
         /// </summary>
         bool UseTiling { get; init; }
+
+        /// <summary>
+        /// Specifies that <see cref="Dpi"/> and <see cref="WithAspectRatio"/> will be calculated relative to <see cref="Bounds"/> instead of the original PDF.
+        /// </summary>
+        bool DpiRelativeToBounds { get; init; }
     }
 }
