@@ -1,0 +1,77 @@
+﻿<Project Sdk="MSBuild.Sdk.Extras/3.0.44">
+  <!-- Assembly -->
+  <PropertyGroup>
+    <TargetFrameworks>net8.0</TargetFrameworks>
+    <OutputType>Library</OutputType>
+    <AssemblyName>VL.PDFReader</AssemblyName>
+    <RootNamespace>VL.PDFReader</RootNamespace>
+    <AssemblyTitle>VL.PDFReader</AssemblyTitle>
+    <Description>Simple PDF-Reader for VL</Description>
+    <Company></Company>
+    <Product>$(AssemblyName)</Product>
+    <Copyright>Copyright ©  2024</Copyright>
+    <AssemblyVersion>0.1.0</AssemblyVersion>
+    <FileVersion>0.1.0</FileVersion>
+    <EmbedAllSources>true</EmbedAllSources>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <Configurations>Debug;Release</Configurations>
+    <ProjectGuid>{A6F86FA0-87FE-406E-BA86-5A128D59DA12}</ProjectGuid>
+    <OutputPath>..\lib\</OutputPath>
+  </PropertyGroup>
+
+  <!-- NuGet -->
+  <PropertyGroup>
+    <VersionPrefix>$(AssemblyVersion)</VersionPrefix>
+    <VersionSuffix></VersionSuffix>
+    <Authors>bj-rn</Authors>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/bj-rn/VL.PDFReader/PackageProjectUrl</PackageProjectUrl>
+    <Description>A simple PDF-Reader for VL based on PDFium.</Description>
+    <PackageTags>VL, vvvv, PDF, PDFium, Reader, Skia, Image, Stride, Texture</PackageTags>
+    <RepositoryUrl>https://github.com/bj-rn/VL.PDFReader</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <IncludeSymbols>true</IncludeSymbols>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageOutputPath>..\..\packages</PackageOutputPath>
+  </PropertyGroup>
+
+  <!-- C# compiler -->
+  <PropertyGroup>
+    <LangVersion>latest</LangVersion>
+    <Nullable>enable</Nullable>
+    <Features>strict</Features>
+    <WarningsAsErrors>nullable</WarningsAsErrors>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+
+  <!-- Debug builds -->
+  <PropertyGroup Condition="'$(Configuration)'=='Debug'">
+    <VersionSuffix>debug</VersionSuffix>
+  </PropertyGroup>
+
+  <!-- Release builds -->
+  <PropertyGroup Condition="'$(Configuration)'=='Release'">
+    <Optimize>true</Optimize>
+    <Deterministic>true</Deterministic>
+    <ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
+  </PropertyGroup>
+
+  <!-- NuGet Icon -->
+
+  <!--  NuGet packages -->
+  <ItemGroup>
+    <PackageReference Include="SkiaSharp" Version="2.88.8" PrivateAssets="analyzers" />
+	<PackageReference Include="bblanchon.PDFium.Linux" Version="126.0.6476" PrivateAssets="analyzers" />
+	<PackageReference Include="bblanchon.PDFium.macOS" Version="126.0.6476" PrivateAssets="analyzers" />
+	<PackageReference Include="bblanchon.PDFium.Win32" Version="126.0.6476" PrivateAssets="analyzers" />
+	<PackageReference Include="SkiaSharp.NativeAssets.Linux.NoDependencies" Version="2.88.8" PrivateAssets="analyzers" />
+	<PackageReference Include="SkiaSharp.NativeAssets.macOS" Version="2.88.8" PrivateAssets="analyzers" />
+	<PackageReference Include="SkiaSharp.NativeAssets.Win32" Version="2.88.8" PrivateAssets="analyzers" />
+	<PackageReference Include="Stride.Core.Mathematics" Version="4.2.0.2149" />
+	<PackageReference Include="Stride.Graphics" Version="4.2.0.2149" />
+	<PackageReference Include="Stride.Rendering" Version="4.2.0.2149" />
+	<PackageReference Include="VL.Core.Skia" Version="2024.6.5" />
+  </ItemGroup>
+	
+</Project>
