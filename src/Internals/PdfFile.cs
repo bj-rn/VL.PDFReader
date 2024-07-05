@@ -50,7 +50,7 @@ namespace VL.PDFReader.Internals
                 throw PdfException.CreateException(NativeMethods.FPDF_GetLastError())!;
 
             LoadDocument(document);
-            _disposeStream=disposeStream;
+            _disposeStream = disposeStream;
         }
 
         public bool RenderPDFPageToBitmap(int pageNumber, IntPtr bitmapHandle, int boundsOriginX, int boundsOriginY, int boundsWidth, int boundsHeight, int rotate, NativeMethods.FPDF flags, bool renderFormFill)
