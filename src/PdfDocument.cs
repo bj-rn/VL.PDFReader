@@ -33,7 +33,7 @@ namespace VL.PDFReader
         /// <summary>
         /// Size of each page in the PDF document.
         /// </summary>
-        public IList<Vector2> PageSizes { get; private set; }
+        public IReadOnlyList<Vector2> PageSizes { get; private set; }
 
 
         /// <summary>
