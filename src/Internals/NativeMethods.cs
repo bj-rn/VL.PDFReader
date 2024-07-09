@@ -194,6 +194,65 @@ namespace VL.PDFReader.Internals
             }
         }
 
+
+        public static IntPtr FPDFText_FindStart(IntPtr page, byte[] findWhat, FPDF_SEARCH_FLAGS flags, int start_index)
+        {
+            lock (LockString)
+            {
+                return Imports.FPDFText_FindStart(page, findWhat, flags, start_index);
+            }
+        }
+
+
+        public static int FPDFText_CountChars(IntPtr page)
+        {
+            lock (LockString)
+            {
+                return Imports.FPDFText_CountChars(page);
+            }
+        }
+
+        public static bool FPDFText_FindNext(IntPtr handle)
+        {
+            lock (LockString)
+            {
+                return Imports.FPDFText_FindNext(handle);
+            }
+        }
+
+        public static void FPDFText_FindClose(IntPtr handle)
+        {
+            lock (LockString)
+            {
+                Imports.FPDFText_FindClose(handle);
+            }
+        }
+
+        public static int FPDFText_GetSchResultIndex(IntPtr handle)
+        {
+            lock (LockString)
+            {
+                return Imports.FPDFText_GetSchResultIndex(handle);
+            }
+        }
+
+        public static int FPDFText_GetSchCount(IntPtr handle)
+        {
+            lock (LockString)
+            {
+                return Imports.FPDFText_GetSchCount(handle);
+            }
+        }
+
+        public static int FPDFText_GetText(IntPtr page, int start_index, int count, byte[] result)
+        {
+            lock (LockString)
+            {
+                return Imports.FPDFText_GetText(page, start_index, count, result);
+            }
+        }
+
+
         /// <summary>
         /// Opens a document using a .NET Stream. Allows opening huge
         /// PDFs without loading them into memory first.
@@ -362,11 +421,43 @@ namespace VL.PDFReader.Internals
             public static partial void FPDF_RemoveFormFieldHighlight(IntPtr form);
 
 
+
+            [LibraryImport("pdfium")]
+            [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+            public static partial IntPtr FPDFText_FindStart(IntPtr page, byte[] findWhat, FPDF_SEARCH_FLAGS flags, int start_index);
+
+            [LibraryImport("pdfium")]
+            [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+            public static partial int FPDFText_CountChars(IntPtr page);
+
+            [LibraryImport("pdfium")]
+            [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+            public static partial void FPDFText_FindClose(IntPtr handle);
+
+
+            [LibraryImport("pdfium")]
+            [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+            public static partial int FPDFText_GetSchResultIndex(IntPtr handle);
+
+            [LibraryImport("pdfium")]
+            [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+            public static partial int FPDFText_GetSchCount(IntPtr handle);
+
+            [LibraryImport("pdfium")]
+            [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+            public static partial int FPDFText_GetText(IntPtr page, int start_index, int count, byte[] result);
+
+
+
+            [DllImport("pdfium", CallingConvention = CallingConvention.Cdecl)]
+            public static extern bool FPDFText_FindNext(IntPtr handle);
+
+
             // FPDF_FILEACCESS is not supported by source-generated P/Invokes. The generated source will not handle marshalling of parameter access
             // [LibraryImport("pdfium", StringMarshalling = StringMarshalling.Utf8)]
             // [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
             // public static partial IntPtr FPDF_LoadCustomDocument(FPDF_FILEACCESS access, string? password);
-             
+
             [DllImport("pdfium", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
             public static extern IntPtr FPDF_LoadCustomDocument(FPDF_FILEACCESS access, string? password);
 
@@ -587,6 +678,14 @@ namespace VL.PDFReader.Internals
             /// </summary>
             PAGE = 6
         }
+
+
+        public enum FPDF_SEARCH_FLAGS
+        {
+            FPDF_MATCHCASE = 1,
+            FPDF_MATCHWHOLEWORD = 2
+        }
+
 
         [StructLayout(LayoutKind.Sequential)]
         public unsafe class FPDF_FILEACCESS

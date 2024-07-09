@@ -429,31 +429,67 @@ namespace VL.PDFReader
         }
 
 
-        public  IEnumerable<SKImage> LoadAllImages(string? password = null, RenderOptions options = default)
+
+        /// <summary>
+        /// Finds all occurences of text.
+        /// </summary>
+        /// <param name="text">The text to search for.</param>
+        /// <param name="matchCase">Whether to match case.</param>
+        /// <param name="wholeWord">Whether to match whole words only.</param>
+        /// <returns>All matches.</returns>
+        public PdfMatches Search(string text, bool matchCase, bool wholeWord)
         {
-
-            if (options == default)
-                options = new();
-
-
-            NativeMethods.FPDF renderFlags = default;
-
-            if (options.WithAnnotations)
-                renderFlags |= NativeMethods.FPDF.ANNOT;
-
-            if (!options.AntiAliasing.HasFlag(PdfAntiAliasing.Text))
-                renderFlags |= NativeMethods.FPDF.RENDER_NO_SMOOTHTEXT;
-            if (!options.AntiAliasing.HasFlag(PdfAntiAliasing.Images))
-                renderFlags |= NativeMethods.FPDF.RENDER_NO_SMOOTHIMAGE;
-            if (!options.AntiAliasing.HasFlag(PdfAntiAliasing.Paths))
-                renderFlags |= NativeMethods.FPDF.RENDER_NO_SMOOTHPATH;
-
-
-            for (int i = 0; i < PageCount; i++)
-            {
-                yield return Render(i, options.Width, options.Height, options.Dpi, options.Rotation, renderFlags, options.WithFormFill, options.BackgroundColor ?? Color4.White, options.Bounds, options.UseTiling, options.WithAspectRatio, options.DpiRelativeToBounds);
-            }
+            return Search(text, matchCase, wholeWord, 0, PageCount - 1);
         }
+
+        /// <summary>
+        /// Finds all occurences of text.
+        /// </summary>
+        /// <param name="text">The text to search for.</param>
+        /// <param name="matchCase">Whether to match case.</param>
+        /// <param name="wholeWord">Whether to match whole words only.</param>
+        /// <param name="page">The page to search on.</param>
+        /// <returns>All matches.</returns>
+        public PdfMatches Search(string text, bool matchCase, bool wholeWord, int page)
+        {
+            return Search(text, matchCase, wholeWord, page, page);
+        }
+
+        /// <summary>
+        /// Finds all occurences of text.
+        /// </summary>
+        /// <param name="text">The text to search for.</param>
+        /// <param name="matchCase">Whether to match case.</param>
+        /// <param name="wholeWord">Whether to match whole words only.</param>
+        /// <param name="startPage">The page to start searching.</param>
+        /// <param name="endPage">The page to end searching.</param>
+        /// <returns>All matches.</returns>
+        public PdfMatches Search(string text, bool matchCase, bool wholeWord, int startPage, int endPage)
+        {
+            return _file.Search(text, matchCase, wholeWord, startPage, endPage);
+        }
+
+        /// <summary>
+        /// Get all text on the page.
+        /// </summary>
+        /// <param name="page">The page to get the text for.</param>
+        /// <returns>The text on the page.</returns>
+        public string GetPdfText(int page)
+        {
+            return _file.GetPdfText(page);
+        }
+
+        /// <summary>
+        /// Get all text matching the text span.
+        /// </summary>
+        /// <param name="textSpan">The span to get the text for.</param>
+        /// <returns>The text matching the span.</returns>
+        public string GetPdfText(PdfTextSpan textSpan)
+        {
+            return _file.GetPdfText(textSpan);
+        }
+
+
 
 
         private void AdjustForAspectRatio(ref float? width, ref float? height, Vector2 pageSize)
