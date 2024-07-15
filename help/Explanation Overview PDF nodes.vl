@@ -1,0 +1,632 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Document xmlns:p="property" xmlns:r="reflection" Id="HgYH6WUxEA8MhqNOFos0b5" LanguageVersion="2024.6.6" Version="0.128">
+  <NugetDependency Id="Ev4Of42Mm9pNLt6TQQT3SY" Location="VL.CoreLib" Version="2024.6.6" />
+  <Patch Id="BOHoPt0m0V1NZ786uszHot">
+    <Canvas Id="CpjmEhsbo5PP95WKFYha9K" DefaultCategory="Main" BordersChecked="false" CanvasType="FullCategory" />
+    <!--
+
+    ************************ Application ************************
+
+-->
+    <Node Name="Application" Bounds="100,100" Id="CylqejhkLtfPiB8buUNjDc">
+      <p:NodeReference>
+        <Choice Kind="ContainerDefinition" Name="Process" />
+        <CategoryReference Kind="Category" Name="Primitive" />
+      </p:NodeReference>
+      <Patch Id="Ai8957ROxztOVRJhRGMJue">
+        <Canvas Id="IPjyZ1jyLLsOToIPHtDC4Y" CanvasType="Group">
+          <Node Bounds="555,436,225,26" Id="VHfSDgFZ8QqLw2FkhTxwFy">
+            <p:NodeReference LastCategoryFullName="PDFReader.RenderOptions" LastDependency="VL.PDFReader.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <CategoryReference Kind="ClassType" Name="RenderOptions" />
+              <Choice Kind="OperationCallFlag" Name="Create" />
+            </p:NodeReference>
+            <Pin Id="Q3floVQPH47O0kcP1bBxcK" Name="Node Context" Kind="InputPin" IsHidden="true" />
+            <Pin Id="QLpGlaC5CMGOWPVTVVUbDy" Name="DPI" Kind="InputPin" DefaultValue="150" />
+            <Pin Id="SvmhO3hgrzMOavhHADFvuh" Name="Width" Kind="InputPin" />
+            <Pin Id="MT8K5lspIxzPXc0KdRYxUE" Name="Height" Kind="InputPin" />
+            <Pin Id="QHF2j4Db37QLPeTVSdHIkm" Name="With Annotations" Kind="InputPin" />
+            <Pin Id="UzeMknzpA2xNnz8C4is6yC" Name="With Form Fill" Kind="InputPin" />
+            <Pin Id="BQN7q7myR8OMDf2EvXdgZJ" Name="With Aspect Ratio" Kind="InputPin" />
+            <Pin Id="G66RxEhHagDPMBVj0iR2NM" Name="Rotation" Kind="InputPin" />
+            <Pin Id="SjIPKvuV16XOf8Sq8Ihlw6" Name="Anti Aliasing" Kind="InputPin" />
+            <Pin Id="KQrTHPALXHwLjuwreqpJLY" Name="Background Color" Kind="InputPin" />
+            <Pin Id="H8PzsND5pFpLbZzXi2uleJ" Name="Bounds" Kind="InputPin" />
+            <Pin Id="N3iqBOPb09VMqAOP5Pwvxy" Name="Use Tiling" Kind="InputPin" />
+            <Pin Id="RfwKLfBfyWyLPaSX4SCwHw" Name="DPI Relative To Bounds" Kind="InputPin" />
+            <Pin Id="CCzp41fI4w9OhG8UDU6Zvl" Name="Output" Kind="StateOutputPin" />
+          </Node>
+          <Pad Id="DLR8K8NHkM9QOCgcOOqMQn" Comment="Path" Bounds="414,310,74,15" ShowValueBox="true" isIOBox="true" Value="..\resources\Reference.pdf">
+            <p:TypeAnnotation LastCategoryFullName="IO" LastDependency="VL.CoreLib.vl">
+              <Choice Kind="TypeFlag" Name="Path" />
+            </p:TypeAnnotation>
+          </Pad>
+          <Node Bounds="416,354,45,19" Id="Ky7MhPD3hDsQM9VOd6ndGl">
+            <p:NodeReference LastCategoryFullName="Animation" LastDependency="VL.CoreLib.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <Choice Kind="ProcessAppFlag" Name="LFO" />
+            </p:NodeReference>
+            <Pin Id="PHqRteOaOUmNfHz7v2Kh0i" Name="Node Context" Kind="InputPin" IsHidden="true" />
+            <Pin Id="JHzS796kcA4MYbVLzGICVB" Name="Clock" Kind="InputPin" IsHidden="true" />
+            <Pin Id="NTWLwm2WezJNGN8mkX2A9D" Name="New Clock" Kind="InputPin" IsHidden="true" />
+            <Pin Id="CMfDTcyyWPCOym72m5ZpOl" Name="Period" Kind="InputPin" DefaultValue="0.25" />
+            <Pin Id="BYe8Tbfyx44PAfYODvfiKx" Name="Pause" Kind="InputPin" />
+            <Pin Id="FJNBkhKZ2qSOhgZUvSO08F" Name="Reset" Kind="ApplyPin" />
+            <Pin Id="Vd1lZADRN4iLvqLevU0mEq" Name="Phase" Kind="OutputPin" />
+            <Pin Id="J4m3PZaVQ5nNOHB5KuAkGT" Name="On New Cycle" Kind="OutputPin" />
+            <Pin Id="FTkmrwdr9t0Nveqew9zpeY" Name="Cycles" Kind="OutputPin" />
+          </Node>
+          <Pad Id="IY5ordgqkL7PLkqnaSiQlB" Comment="Current Page" Bounds="460,398,35,15" ShowValueBox="true" isIOBox="true" Value="0">
+            <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
+              <Choice Kind="TypeFlag" Name="Integer32" />
+            </p:TypeAnnotation>
+          </Pad>
+          <Pad Id="ASKL1dfJDKKQdg93sA5MTZ" Comment="Preload Pages" Bounds="485,413,29,15" ShowValueBox="true" isIOBox="true" Value="8">
+            <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
+              <Choice Kind="TypeFlag" Name="Integer32" />
+            </p:TypeAnnotation>
+          </Pad>
+          <Pad Id="OaJaTi1oNKfPM7pyUALo5I" Comment="Period" Bounds="418,335,35,15" ShowValueBox="true" isIOBox="true" Value="1">
+            <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
+              <Choice Kind="TypeFlag" Name="Float32" />
+            </p:TypeAnnotation>
+          </Pad>
+          <Pad Id="CRrHNQmP6f6Pb8dcK0ISh6" Comment="Reload PDF" Bounds="286,488,35,35" ShowValueBox="true" isIOBox="true" Value="false">
+            <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
+              <Choice Kind="ImmutableTypeFlag" Name="Boolean" />
+            </p:TypeAnnotation>
+            <p:ValueBoxSettings>
+              <p:buttonmode p:Assembly="VL.UI.Forms" p:Type="VL.HDE.PatchEditor.Editors.ButtonModeEnum">Bang</p:buttonmode>
+            </p:ValueBoxSettings>
+          </Pad>
+          <Pad Id="Hx8NMIdTbVVLMTkaEnFG48" Comment="Pause" Bounds="584,341,35,35" ShowValueBox="true" isIOBox="true" Value="True">
+            <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
+              <Choice Kind="ImmutableTypeFlag" Name="Boolean" />
+            </p:TypeAnnotation>
+            <p:ValueBoxSettings>
+              <p:buttonmode p:Assembly="VL.UI.Forms" p:Type="VL.HDE.PatchEditor.Editors.ButtonModeEnum">Toggle</p:buttonmode>
+            </p:ValueBoxSettings>
+          </Pad>
+          <Node Bounds="1133,580,125,19" Id="RmPA5kyNamuMQbGj8pv8Ek">
+            <p:NodeReference LastCategoryFullName="PDFReader.Skia" LastDependency="VL.PDFReader.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <CategoryReference Kind="Category" Name="Skia" NeedsToBeDirectParent="true">
+                <p:OuterCategoryReference Kind="Category" Name="PDFReader" NeedsToBeDirectParent="true" />
+              </CategoryReference>
+              <Choice Kind="ProcessAppFlag" Name="PDFReader" />
+            </p:NodeReference>
+            <Pin Id="L3zTRkbJqQfMpEpb2q53ex" Name="Node Context" Kind="InputPin" IsHidden="true" />
+            <Pin Id="JwcQtRatZGTMGPf471cKUn" Name="Path" Kind="InputPin" />
+            <Pin Id="PIltRkBsqG4LuBoJ32jaE5" Name="Reload PDF" Kind="InputPin" />
+            <Pin Id="R3twCv97jNEMSVNeiHCUm7" Name="Page" Kind="InputPin" />
+            <Pin Id="RYIWttBABfMM0QuRRlFs5l" Name="Preload Pages" Kind="InputPin" />
+            <Pin Id="RSBipiNrqhqPIP2kjmMy5N" Name="Password" Kind="InputPin" />
+            <Pin Id="O0R2y7DvUVJQY1th42Mxyx" Name="Max Tile Size" Kind="InputPin" />
+            <Pin Id="HvE7M03C9QQPoCmMso7d3V" Name="Options" Kind="InputPin" />
+            <Pin Id="G2BCqWMA9ogMZ21sz71xI9" Name="Output" Kind="OutputPin" />
+            <Pin Id="TY0XshcmFRqMHQ0o5krMnS" Name="Active Index" Kind="OutputPin" />
+            <Pin Id="EoVZvX05qwnOIGyNtAtZgi" Name="Active Page" Kind="OutputPin" />
+            <Pin Id="QNgQ9IsXNHfLK6e3LJbAP4" Name="Loaded Pages" Kind="OutputPin" />
+            <Pin Id="TRtvYrKzgO2Mg8YNobwuRu" Name="Page Sizes" Kind="OutputPin" IsHidden="true" />
+            <Pin Id="DRzyK75fWNOOnXMJPDN5Jh" Name="Page Count" Kind="OutputPin" />
+            <Pin Id="IuLVy7Ew1IlPmVkU0GRDno" Name="PDF" Kind="OutputPin" />
+            <Pin Id="BIGYKMf8T9tNHENuB3TUCm" Name="On PDF Loaded" Kind="OutputPin" IsHidden="true" />
+          </Node>
+          <Pad Id="PY0T6KesAMhMhLzZxSAje9" Comment="Page" Bounds="1176,511,35,15" ShowValueBox="true" isIOBox="true" Value="24">
+            <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
+              <Choice Kind="TypeFlag" Name="Integer32" />
+            </p:TypeAnnotation>
+          </Pad>
+          <Node Bounds="400,503,596,696" Id="DN9USAEcZAKMDXWLd2bcy6">
+            <p:NodeReference LastCategoryFullName="Primitive" LastDependency="Builtin">
+              <Choice Kind="StatefulRegion" Name="Region (Stateful)" Fixed="true" />
+              <CategoryReference Kind="Category" Name="Primitive" />
+              <Choice Kind="ApplicationStatefulRegion" Name="If" />
+            </p:NodeReference>
+            <Pin Id="JeDnrYJcetAONNHExRJHeh" Name="Condition" Kind="InputPin" DefaultValue="True" />
+            <Patch Id="AF9vO4Y71HZPrkzwdw3sZJ" ManuallySortedPins="true">
+              <Patch Id="PQWFllPBKdTQcjmTx4gJMZ" Name="Create" ManuallySortedPins="true" />
+              <Patch Id="UoFmiCC03fvOgjDEBIBJcs" Name="Then" ManuallySortedPins="true" />
+              <Node Bounds="414,526,145,19" Id="OwSYvdPgXs3Oo00MrfwMgJ">
+                <p:NodeReference LastCategoryFullName="PDFReader.Stride" LastDependency="VL.PDFReader.vl">
+                  <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                  <Choice Kind="ProcessAppFlag" Name="PDFReader" />
+                </p:NodeReference>
+                <Pin Id="DfxHPrOEqcwOPglVYo34pB" Name="Node Context" Kind="InputPin" IsHidden="true" />
+                <Pin Id="FhbiMzGYrWALMb4j7rUJgM" Name="Path" Kind="InputPin" />
+                <Pin Id="FwSZS7RrsA5N7UVAe8E4Qe" Name="Reload PDF" Kind="InputPin" />
+                <Pin Id="GOCrzConlvQQSM7JaylkRp" Name="Page" Kind="InputPin" />
+                <Pin Id="LiKV3X90NGQMjX33HrgJ8T" Name="Preload Pages" Kind="InputPin" DefaultValue="2" />
+                <Pin Id="UuMSghehayOQIVrwVYkuTO" Name="Password" Kind="InputPin" />
+                <Pin Id="Q4SGj2ElHhWQEjcxr1ksXp" Name="Max Tile Size" Kind="InputPin" />
+                <Pin Id="JQpA0NbPsMRLdWWYztKSfe" Name="Options" Kind="InputPin" />
+                <Pin Id="Cl7B473lBoyMpSMjrjcFP4" Name="Output" Kind="OutputPin" />
+                <Pin Id="N7O7rrZ7jM6PEsz2G0g5uQ" Name="Active Index" Kind="OutputPin" />
+                <Pin Id="MBRthkyzFrAMMrifISlyf0" Name="Active Page" Kind="OutputPin" />
+                <Pin Id="Mo0FHQzeNbRNKaa1NwL2km" Name="Loaded Pages" Kind="OutputPin" />
+                <Pin Id="TkxJzzeAPFUOJDBPuP2EkR" Name="Page Sizes" Kind="OutputPin" />
+                <Pin Id="G4puY2EC5MSL3aIkclyx4d" Name="Page Count" Kind="OutputPin" />
+                <Pin Id="IeDZL6ss3xmPxm81SN71zn" Name="PDF" Kind="OutputPin" />
+                <Pin Id="Lx7w5PGnqVCOXky6EiyQJi" Name="On PDF Loaded" Kind="OutputPin" />
+              </Node>
+              <Pad Id="PqHuOuIuTuKP9z2Lfh3nV4" Comment="" Bounds="416,638,169,548" ShowValueBox="true" isIOBox="true" />
+              <Pad Id="U1R15DKiRU4NOzX9ENBJMS" Comment="Page Count" Bounds="518,597,35,15" ShowValueBox="true" isIOBox="true" />
+              <Node Bounds="713,719,52,19" Id="Tnr5jHrFAaPLNX5sMEtfDX">
+                <p:NodeReference LastCategoryFullName="Collections.Interfaces.IReadOnlyList" LastDependency="VL.CoreLib.vl">
+                  <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                  <CategoryReference Kind="MutableInterfaceType" Name="IReadOnlyList" NeedsToBeDirectParent="true" />
+                  <Choice Kind="OperationCallFlag" Name="GetSlice" />
+                </p:NodeReference>
+                <Pin Id="QJrJ1wMmGgkQXsY6G7rvVT" Name="Input" Kind="StateInputPin" />
+                <Pin Id="NB0L1VpyFMrO8IKrrIqgth" Name="Default Value" Kind="InputPin" />
+                <Pin Id="FSeP0k54AWlLProyJ3upYX" Name="Index" Kind="InputPin" />
+                <Pin Id="OFEkQsJzJsILl7411SgSYT" Name="Result" Kind="OutputPin" />
+              </Node>
+              <Pad Id="Ngx9kvUnwkiL6iHmsLEgu9" Comment="" Bounds="711,949,254,166" ShowValueBox="true" isIOBox="true" />
+            </Patch>
+          </Node>
+          <Pad Id="HPBiVRhr1O3NLyiDrnHMSu" Comment="Preload Pages" Bounds="1275,526,35,15" ShowValueBox="true" isIOBox="true" Value="8">
+            <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
+              <Choice Kind="TypeFlag" Name="Integer32" />
+            </p:TypeAnnotation>
+          </Pad>
+          <Pad Id="NZ7joUQxfJeOVsMcldRGzx" Comment="" Bounds="1136,659,114,493" ShowValueBox="true" isIOBox="true" />
+          <Node Bounds="1582,787,167,176" Id="Dvgchje29ygPpf0IMyNDzi">
+            <p:NodeReference LastCategoryFullName="Primitive" LastDependency="Builtin">
+              <Choice Kind="StatefulRegion" Name="Region (Stateful)" Fixed="true" />
+              <CategoryReference Kind="Category" Name="Primitive" />
+              <Choice Kind="ApplicationStatefulRegion" Name="If" />
+            </p:NodeReference>
+            <Pin Id="EmiVMnoAD6OLmSgUgUgIz3" Name="Condition" Kind="InputPin" />
+            <Patch Id="Nd2gPQhGATSNvMT0bnetkm" ManuallySortedPins="true">
+              <Patch Id="AcYtEJ25hkYO523aR5UMR2" Name="Create" ManuallySortedPins="true" />
+              <Patch Id="EDMcbBRRAllOyuiXM40Y51" Name="Then" ManuallySortedPins="true" />
+              <Node Bounds="1668,897,67,26" Id="G4pBpzaf2F3PUY5aanUTh7">
+                <p:NodeReference LastCategoryFullName="VL.PDFReader.PdfDocument" LastDependency="VL.PDFReader.dll" OverloadStrategy="AllPinsThatAreNotCommon">
+                  <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                  <Choice Kind="OperationCallFlag" Name="GetPdfText" />
+                  <PinReference Kind="InputPin" Name="Page" />
+                </p:NodeReference>
+                <Pin Id="PVaKsBToXZSOVrxGGMWFUh" Name="Input" Kind="StateInputPin" />
+                <Pin Id="KINW8bcjMHYPYwq6kqQgf4" Name="Page" Kind="InputPin" />
+                <Pin Id="LWQfq96KQN4NtA4VDkUX3E" Name="Output" Kind="StateOutputPin" />
+                <Pin Id="ElmvGNE0jThMPlEwJzYZ7U" Name="Result" Kind="OutputPin" />
+              </Node>
+              <Node Bounds="1594,810,78,26" Id="LK8MfLMXoRjLgb0Z1jKgGW">
+                <p:NodeReference LastCategoryFullName="PDFReader.PDF" LastDependency="VL.PDFReader.vl">
+                  <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                  <Choice Kind="OperationCallFlag" Name="GetDocument" />
+                </p:NodeReference>
+                <Pin Id="G2ydcJ67cXcQdvSlQf5cBq" Name="Input" Kind="StateInputPin" />
+                <Pin Id="VtCDbAwUEKvLkAM0pV94YU" Name="Output" Kind="StateOutputPin" />
+                <Pin Id="MEk2yGYDWLlO9cmG8p2ndY" Name="Document" Kind="OutputPin" />
+              </Node>
+            </Patch>
+            <ControlPoint Id="QuStK5FKBFoNLErIeZF7Tz" Bounds="1732,957" Alignment="Bottom" />
+            <ControlPoint Id="LW57EjYCkyIPJchhFR0EvD" Bounds="1706,793" Alignment="Top" />
+          </Node>
+          <Pad Id="IPaHu0hpTLJPBG58nfMVDm" SlotId="BN2eGiktzJ6PEQFqH4KZ1i" Bounds="1706,745" Value="" />
+          <Pad Id="OCIu5bK4TJKO3rrrnXenkA" SlotId="BN2eGiktzJ6PEQFqH4KZ1i" Bounds="1731,1036" Value="" />
+          <Pad Id="DE508MCd0wkQSdSjfKDlTV" Comment="Condition" Bounds="1581,620,35,35" ShowValueBox="true" isIOBox="true" Value="false">
+            <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
+              <Choice Kind="ImmutableTypeFlag" Name="Boolean" />
+            </p:TypeAnnotation>
+            <p:ValueBoxSettings>
+              <p:buttonmode p:Assembly="VL.UI.Forms" p:Type="VL.HDE.PatchEditor.Editors.ButtonModeEnum">Bang</p:buttonmode>
+            </p:ValueBoxSettings>
+          </Pad>
+          <Pad Id="S1MBx3jPCfsLt1bwVh5kF3" Comment="txt" Bounds="1445,1183,265,299" ShowValueBox="true" isIOBox="true" />
+          <Node Bounds="1651,476,45,19" Id="V21GHlvjbxHQJxurSPYKh8">
+            <p:NodeReference LastCategoryFullName="Animation" LastDependency="VL.CoreLib.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <Choice Kind="ProcessAppFlag" Name="LFO" />
+            </p:NodeReference>
+            <Pin Id="ApbvzKP0B9tPYCCOd4Mnqg" Name="Node Context" Kind="InputPin" IsHidden="true" />
+            <Pin Id="Cpu2I9tNQZ1PdI0mDXo6VA" Name="Clock" Kind="InputPin" IsHidden="true" />
+            <Pin Id="KromZMgACSrP5Tjs4zkKwz" Name="New Clock" Kind="InputPin" IsHidden="true" />
+            <Pin Id="LQMN2T9NFZZPBzwPsSR21g" Name="Period" Kind="InputPin" />
+            <Pin Id="N6rE40gpyRnOux5bBREj74" Name="Pause" Kind="InputPin" />
+            <Pin Id="D1dTCHiMe5aM3G7dYFVyNJ" Name="Reset" Kind="ApplyPin" />
+            <Pin Id="KPzxkxYRYGeLHRwroqrYe9" Name="Phase" Kind="OutputPin" />
+            <Pin Id="PCYpiKOooqWNFXFr11LF1D" Name="On New Cycle" Kind="OutputPin" />
+            <Pin Id="Pt5IcHIELKtMekIk5E2DNm" Name="Cycles" Kind="OutputPin" />
+          </Node>
+          <Node Bounds="1730,639,39,19" Id="CduPZft7yCoNvFrZjg4gzU">
+            <p:NodeReference LastCategoryFullName="Math" LastDependency="VL.CoreLib.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <Choice Kind="OperationCallFlag" Name="MOD" />
+            </p:NodeReference>
+            <Pin Id="FUl3uiGTJXLNX5Rek4ylAn" Name="Input" Kind="InputPin" />
+            <Pin Id="E1cMDhdw33wNKpjTjZcD2q" Name="Input 2" Kind="InputPin" DefaultValue="98" />
+            <Pin Id="LPSv04J702sPOp4GEmwKZi" Name="Output" Kind="OutputPin" />
+          </Node>
+          <Pad Id="FCh3Pqh86NCMYrDvK0pN9Q" Comment="Pause" Bounds="1677,405,35,35" ShowValueBox="true" isIOBox="true" Value="True">
+            <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
+              <Choice Kind="ImmutableTypeFlag" Name="Boolean" />
+            </p:TypeAnnotation>
+            <p:ValueBoxSettings>
+              <p:buttonmode p:Assembly="VL.UI.Forms" p:Type="VL.HDE.PatchEditor.Editors.ButtonModeEnum">Toggle</p:buttonmode>
+            </p:ValueBoxSettings>
+          </Pad>
+          <Node Bounds="1873,817,196,185" Id="Vf5Uke1M2ykNUI8QzhvE9M">
+            <p:NodeReference LastCategoryFullName="Primitive" LastDependency="Builtin">
+              <Choice Kind="StatefulRegion" Name="Region (Stateful)" Fixed="true" />
+              <CategoryReference Kind="Category" Name="Primitive" />
+              <Choice Kind="ApplicationStatefulRegion" Name="If" />
+            </p:NodeReference>
+            <Pin Id="QpHws5P26FDPFtAxKpqCps" Name="Condition" Kind="InputPin" />
+            <Patch Id="DWuYehEBqAFODv9nwz2RpY" ManuallySortedPins="true">
+              <Patch Id="FdnDC79qYkLPMtdT7NosLW" Name="Create" ManuallySortedPins="true" />
+              <Patch Id="Gdrlj8V191QMI3azaqXA33" Name="Then" ManuallySortedPins="true" />
+              <Node Bounds="1956,936,67,26" Id="Iv3MeTlSRZPOwDcZ24kkG4">
+                <p:NodeReference LastCategoryFullName="VL.PDFReader.PdfDocument" LastDependency="VL.PDFReader.dll">
+                  <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                  <CategoryReference Kind="AssemblyCategory" Name="PdfDocument" />
+                  <Choice Kind="OperationCallFlag" Name="Search" />
+                </p:NodeReference>
+                <Pin Id="Jq66EgtKyMSPvBUDDvzObj" Name="Input" Kind="StateInputPin" />
+                <Pin Id="IQPujDC5KN6MR3ldIeXNbd" Name="Text" Kind="InputPin" />
+                <Pin Id="TdizW5Vr7WxOvdPy8wXCrE" Name="Match Case" Kind="InputPin" DefaultValue="False" />
+                <Pin Id="Rs7KufO5tUJMnITp7IVxMA" Name="Whole Word" Kind="InputPin" DefaultValue="False" />
+                <Pin Id="LuAnXorxxAZMJcsD0eddHF" Name="Output" Kind="StateOutputPin" />
+                <Pin Id="BgCPWVGKO4QQV0MVOuTKsc" Name="Result" Kind="OutputPin" />
+              </Node>
+              <Node Bounds="1885,857,78,26" Id="GQx36GftoHqPN0ELW2IO4G">
+                <p:NodeReference LastCategoryFullName="PDFReader.PDF" LastDependency="VL.PDFReader.vl">
+                  <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                  <Choice Kind="OperationCallFlag" Name="GetDocument" />
+                </p:NodeReference>
+                <Pin Id="B3nbU6vPdyBPpAv9eOH8pL" Name="Input" Kind="StateInputPin" />
+                <Pin Id="FNOSBSotrjQMrzBqsjJow3" Name="Output" Kind="StateOutputPin" />
+                <Pin Id="RSVTIzVML6BOeWWzNHpcEd" Name="Document" Kind="OutputPin" />
+              </Node>
+              <Pad Id="IY72PRSXKEfLRHA2k2bIff" Comment="Text" Bounds="1979,885,35,15" ShowValueBox="true" isIOBox="true" Value="ASUS">
+                <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
+                  <Choice Kind="TypeFlag" Name="String" />
+                </p:TypeAnnotation>
+              </Pad>
+            </Patch>
+            <ControlPoint Id="B2qjpdeFtoRPEpH3BuN69x" Bounds="2015,996" Alignment="Bottom" />
+            <ControlPoint Id="U4wxrQEwr0LPVKIv0iXjGF" Bounds="2052,823" Alignment="Top" />
+          </Node>
+          <Pad Id="HtyPhyo5qWXMNXxLjcFLC1" SlotId="GAFriWY4mC7LToaYAg3wdV" Bounds="2016,1043" />
+          <Pad Id="GTHgLH60e5aN5B3FDPC3Ph" SlotId="GAFriWY4mC7LToaYAg3wdV" Bounds="2053,741" />
+          <Pad Id="DCbPgkBMywyOKYdkLl0WOt" Comment="Condition" Bounds="1877,718,35,35" ShowValueBox="true" isIOBox="true" Value="false">
+            <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
+              <Choice Kind="ImmutableTypeFlag" Name="Boolean" />
+            </p:TypeAnnotation>
+            <p:ValueBoxSettings>
+              <p:buttonmode p:Assembly="VL.UI.Forms" p:Type="VL.HDE.PatchEditor.Editors.ButtonModeEnum">Bang</p:buttonmode>
+            </p:ValueBoxSettings>
+          </Pad>
+          <Node Bounds="1440,465,45,19" Id="V6C7tbF0ZYBNUJ4a1EIfig">
+            <p:NodeReference LastCategoryFullName="Animation" LastDependency="VL.CoreLib.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <Choice Kind="ProcessAppFlag" Name="LFO" />
+            </p:NodeReference>
+            <Pin Id="F5hJvWIvWvBOQAmzrJvliw" Name="Node Context" Kind="InputPin" IsHidden="true" />
+            <Pin Id="Nc9mYJW1OOUM0JP7fW0FiZ" Name="Clock" Kind="InputPin" IsHidden="true" />
+            <Pin Id="Q1jqAIycmi0OYmOp7mpCJc" Name="New Clock" Kind="InputPin" IsHidden="true" />
+            <Pin Id="PMrQofjeXztLLUACL1dXst" Name="Period" Kind="InputPin" />
+            <Pin Id="SdOMXiNIrnTOQgEoqjv5JQ" Name="Pause" Kind="InputPin" />
+            <Pin Id="APUodnmpfmiQJLBkQ0NBD6" Name="Reset" Kind="ApplyPin" />
+            <Pin Id="TFeCeTJuhrcMfAK4Ov6hDH" Name="Phase" Kind="OutputPin" />
+            <Pin Id="JXv4AWV9edgMmxYVb0eZA8" Name="On New Cycle" Kind="OutputPin" />
+            <Pin Id="AvENK9nlCnjN9epTaZHf2C" Name="Cycles" Kind="OutputPin" />
+          </Node>
+          <Pad Id="BUWIIacZwwsNZ1FgkBLD3y" Comment="Pause" Bounds="1473,391,35,35" ShowValueBox="true" isIOBox="true" Value="True">
+            <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
+              <Choice Kind="ImmutableTypeFlag" Name="Boolean" />
+            </p:TypeAnnotation>
+            <p:ValueBoxSettings>
+              <p:buttonmode p:Assembly="VL.UI.Forms" p:Type="VL.HDE.PatchEditor.Editors.ButtonModeEnum">Toggle</p:buttonmode>
+            </p:ValueBoxSettings>
+          </Pad>
+          <Node Bounds="1878,1122,65,19" Id="TJynXkFFQt8NKz3tUc5pkx">
+            <p:NodeReference LastCategoryFullName="Primitive.Object" LastDependency="VL.CoreLib.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <Choice Kind="OperationCallFlag" Name="IsAssigned" />
+            </p:NodeReference>
+            <Pin Id="Q3cDAw1eTVMNT7NetLOSoh" Name="X" Kind="InputPin" />
+            <Pin Id="TyMnKXyWslOMINemz7fGZE" Name="Result" Kind="OutputPin" />
+            <Pin Id="GcmonmMLshqOtlpcVl7y3R" Name="Not Assigned" Kind="OutputPin" />
+          </Node>
+          <Node Bounds="1995,1227,237,455" Id="QOXehLC4kvSQXJOlepbcRF">
+            <p:NodeReference LastCategoryFullName="Primitive" LastDependency="Builtin">
+              <Choice Kind="StatefulRegion" Name="Region (Stateful)" Fixed="true" />
+              <CategoryReference Kind="Category" Name="Primitive" />
+              <Choice Kind="ApplicationStatefulRegion" Name="If" />
+            </p:NodeReference>
+            <Pin Id="Ez2d50gyPSHOyxysAgh5Rj" Name="Condition" Kind="InputPin" />
+            <Patch Id="AsjdXhE2c6iM2GJigKkLHB" ManuallySortedPins="true">
+              <Patch Id="JiNqUVOILZQP1r8flVIOP3" Name="Create" ManuallySortedPins="true" />
+              <Patch Id="SRwaXwKxgQXPb4HOFfcQtz" Name="Then" ManuallySortedPins="true" />
+              <Node Bounds="2007,1250,59,26" Id="H8oZthD6XxVLYedh3PCktX">
+                <p:NodeReference LastCategoryFullName="VL.PDFReader.PdfMatches" LastDependency="VL.PDFReader.dll">
+                  <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                  <CategoryReference Kind="AssemblyCategory" Name="PdfMatches" />
+                  <Choice Kind="OperationCallFlag" Name="Items" />
+                </p:NodeReference>
+                <Pin Id="I9stmn6SK1WLcOJDfNJsta" Name="Input" Kind="StateInputPin" />
+                <Pin Id="ClKHeJGcIoUOdyaTlRNYjG" Name="Output" Kind="StateOutputPin" />
+                <Pin Id="TR5mUMuNOIrPThdbDSqKpG" Name="Items" Kind="OutputPin" />
+              </Node>
+              <Node Bounds="2058,1322,60,26" Id="G3emVLO8JBDQPoSokIX4qv">
+                <p:NodeReference LastCategoryFullName="Collections.Interfaces.IMutableList" LastDependency="VL.CoreLib.vl">
+                  <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                  <CategoryReference Kind="MutableInterfaceType" Name="IMutableList" />
+                  <Choice Kind="OperationCallFlag" Name="GetItem" />
+                </p:NodeReference>
+                <Pin Id="A7xVm33cu9ePG7pm6jbK7W" Name="Input" Kind="StateInputPin" />
+                <Pin Id="KqOO1sKx8fDNOvGm7h7jj9" Name="Index" Kind="InputPin" />
+                <Pin Id="Q7ZPJCylZF8PMkf9qcno8G" Name="Output" Kind="StateOutputPin" />
+                <Pin Id="CB8tyvvkOZSOfykpw0u9o4" Name="Item" Kind="OutputPin" />
+              </Node>
+              <Node Bounds="2113,1399,51,26" Id="QMrdNDC7kdHPlrgQtrSBOE">
+                <p:NodeReference LastCategoryFullName="VL.PDFReader.PdfMatch" LastDependency="VL.PDFReader.dll">
+                  <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                  <CategoryReference Kind="AssemblyCategory" Name="PdfMatch" />
+                  <Choice Kind="OperationCallFlag" Name="Page" />
+                </p:NodeReference>
+                <Pin Id="LKDL5NBNl1aMHazQCX0gLe" Name="Input" Kind="StateInputPin" />
+                <Pin Id="MOIS2cemj1vNaHE6s0cIjn" Name="Output" Kind="StateOutputPin" />
+                <Pin Id="LyvNKbumvJHL8hakEhgMII" Name="Page" Kind="OutputPin" />
+              </Node>
+              <Node Bounds="2113,1454,51,26" Id="R57ScQFqo8nOOGjc2j47bq">
+                <p:NodeReference LastCategoryFullName="VL.PDFReader.PdfMatch" LastDependency="VL.PDFReader.dll">
+                  <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                  <CategoryReference Kind="AssemblyCategory" Name="PdfMatch" />
+                  <Choice Kind="OperationCallFlag" Name="Text" />
+                </p:NodeReference>
+                <Pin Id="JEuk1pI5KZ4MutzeBMxX0H" Name="Input" Kind="StateInputPin" />
+                <Pin Id="JrN4kONQpEiQCzOqUHvvSJ" Name="Output" Kind="StateOutputPin" />
+                <Pin Id="GpPCYXGucb3LVgvWtxb55F" Name="Text" Kind="OutputPin" />
+              </Node>
+              <Node Bounds="2106,1595,59,26" Id="Grbkh3aoWdxMwqmnUbZOPS">
+                <p:NodeReference LastCategoryFullName="VL.PDFReader.PdfMatch" LastDependency="VL.PDFReader.dll">
+                  <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                  <CategoryReference Kind="AssemblyCategory" Name="PdfMatch" />
+                  <Choice Kind="OperationCallFlag" Name="TextSpan" />
+                </p:NodeReference>
+                <Pin Id="FvcNhr4AFuoOicT7qMGAvT" Name="Input" Kind="StateInputPin" />
+                <Pin Id="N9FlSPvlbtHOAelZLLpzil" Name="Output" Kind="StateOutputPin" />
+                <Pin Id="RSxP3sio15JM6YGg6VLBxM" Name="Text Span" Kind="OutputPin" />
+              </Node>
+              <Node Bounds="2157,1636,63,26" Id="NlZNXnMdLYUQIsWskK6wsq">
+                <p:NodeReference LastCategoryFullName="VL.PDFReader.PdfTextSpan" LastDependency="VL.PDFReader.dll">
+                  <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                  <CategoryReference Kind="AssemblyCategory" Name="PdfTextSpan" />
+                  <Choice Kind="OperationCallFlag" Name="Length" />
+                </p:NodeReference>
+                <Pin Id="F5NrMIxYaIcLmQeS3xr77T" Name="Input" Kind="StateInputPin" />
+                <Pin Id="TmFkCAWifYsQFtiyfHYwOs" Name="Output" Kind="StateOutputPin" />
+                <Pin Id="Smcs1EkrjMyLdINYPTMcSh" Name="Length" Kind="OutputPin" />
+              </Node>
+            </Patch>
+          </Node>
+          <Node Bounds="1429,538,105,19" Id="TT10asjVeJhNqUXhd3ex3a">
+            <p:NodeReference LastCategoryFullName="PDFReader.Text" LastDependency="VL.PDFReader.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <CategoryReference Kind="Category" Name="Text" NeedsToBeDirectParent="true">
+                <p:OuterCategoryReference Kind="Category" Name="PDFReader" NeedsToBeDirectParent="true" />
+              </CategoryReference>
+              <Choice Kind="ProcessAppFlag" Name="PDFReader" />
+            </p:NodeReference>
+            <Pin Id="JcnmNvTKjKLLYL5VUGB61O" Name="Node Context" Kind="InputPin" IsHidden="true" />
+            <Pin Id="H03PHPLaBUzPY4L90IHmVI" Name="Path" Kind="InputPin" />
+            <Pin Id="HK11Ph4ttBeMY8gn3dkdv7" Name="Reload PDF" Kind="InputPin" />
+            <Pin Id="CX6avPBdJliPHK1XlbAEp6" Name="Page" Kind="InputPin" />
+            <Pin Id="LLJyGqJXzmtPto2kzrWWEP" Name="Preload Pages" Kind="InputPin" DefaultValue="8" />
+            <Pin Id="UwP0UBGi0mOP8msZcANzkv" Name="Password" Kind="InputPin" />
+            <Pin Id="EDs9FXELFm8NKydRWrm9L3" Name="Output" Kind="OutputPin" />
+            <Pin Id="DUsUn6LbQj3LnDewI6tl9j" Name="Active Index" Kind="OutputPin" />
+            <Pin Id="IqCISPsG2VqPS3LXE7JPDI" Name="Active Page" Kind="OutputPin" />
+            <Pin Id="SJXT9VBikv3Pr8CCtij8gf" Name="Loaded Pages" Kind="OutputPin" />
+            <Pin Id="J0e0vgzycShL3X1ahnVqQB" Name="Page Sizes" Kind="OutputPin" IsHidden="true" />
+            <Pin Id="KZnRIna5kd2PrNMdZyb3j5" Name="Page Count" Kind="OutputPin" />
+            <Pin Id="SQ94FCEgvqbP7GK8DOcLmz" Name="PDF" Kind="OutputPin" />
+            <Pin Id="CwsFedw0cljNT1fP4lm0ig" Name="On PDF Loaded" Kind="OutputPin" IsHidden="true" />
+          </Node>
+          <Pad Id="LMKO6Hf5WdgNfJSmA39z26" Comment="Period" Bounds="1436,337,35,15" ShowValueBox="true" isIOBox="true" Value="0.02">
+            <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
+              <Choice Kind="TypeFlag" Name="Float32" />
+            </p:TypeAnnotation>
+          </Pad>
+          <Node Bounds="2278,772,65,19" Id="E4vyIuwdHcENOqb2O2TV9h">
+            <p:NodeReference LastCategoryFullName="PDFReader" LastDependency="VL.PDFReader.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <Choice Kind="ProcessAppFlag" Name="Loader (Async)" />
+            </p:NodeReference>
+            <Pin Id="DGb7q3mHqNtLn3vM3HnZ03" Name="Node Context" Kind="InputPin" IsHidden="true" />
+            <Pin Id="SJLGZ3tf1iAMKyOPxW2yiU" Name="Reload PDF" Kind="InputPin" />
+            <Pin Id="VwfeciCt7o5OzkmJQZ2ERX" Name="Path" Kind="InputPin" />
+            <Pin Id="U6m0Jv63Vr7Lrc0pIjpdEo" Name="Password" Kind="InputPin" />
+            <Pin Id="Et8tNFgjAVqOHZ78F7vMN0" Name="Max Tile Size" Kind="InputPin" />
+            <Pin Id="M43tTFmXKsuNWP5NKA8Pmn" Name="Output" Kind="OutputPin" />
+            <Pin Id="BNrGXv0la9dNvT8sHamJT2" Name="On Loaded" Kind="OutputPin" />
+          </Node>
+          <Pad Id="ADLuSoSjHClO6C009A3s35" Comment="Reload PDF" Bounds="2280,688,37,34" ShowValueBox="true" isIOBox="true" Value="false">
+            <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
+              <Choice Kind="ImmutableTypeFlag" Name="Boolean" />
+            </p:TypeAnnotation>
+            <p:ValueBoxSettings>
+              <p:buttonmode p:Assembly="VL.UI.Forms" p:Type="VL.HDE.PatchEditor.Editors.ButtonModeEnum">Bang</p:buttonmode>
+            </p:ValueBoxSettings>
+          </Pad>
+          <Pad Id="CYztdRmZScEPPJ5NDNC7Au" Comment="On Loaded" Bounds="2340,859,35,35" ShowValueBox="true" isIOBox="true" />
+          <Node Bounds="2277,956,105,19" Id="L2TBjfqQrVMLRyZMnNz1X4">
+            <p:NodeReference LastCategoryFullName="PDFReader.Text" LastDependency="VL.PDFReader.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <CategoryReference Kind="Category" Name="Text" NeedsToBeDirectParent="true">
+                <p:OuterCategoryReference Kind="Category" Name="PDFReader" NeedsToBeDirectParent="true" />
+              </CategoryReference>
+              <Choice Kind="ProcessAppFlag" Name="Search (Async)" />
+            </p:NodeReference>
+            <Pin Id="TFAgE5v1EAQPv8zTKI87j2" Name="Node Context" Kind="InputPin" IsHidden="true" />
+            <Pin Id="ExihQqvPUmELa7QgVCixjw" Name="Input" Kind="InputPin" />
+            <Pin Id="EGiOUu8QhFUOAo4Ys2blQB" Name="Text" Kind="InputPin" />
+            <Pin Id="ODqtfu7jorqNg0jumUmBSh" Name="Match Case" Kind="InputPin" DefaultValue="False" />
+            <Pin Id="GsGHt3AKyH6L7CysfKJb9o" Name="Whole Word" Kind="InputPin" DefaultValue="False" />
+            <Pin Id="Hnsk9oHwyR1OUCBYaLe8E0" Name="Text" Kind="OutputPin" />
+            <Pin Id="DsQVyCjxOG0QAZg8Kk1BZe" Name="Page" Kind="OutputPin" />
+            <Pin Id="V1QhwXH8hKlNPQqpzRG2EF" Name="On Search Finished" Kind="OutputPin" />
+            <Pin Id="RQZO4Fg8rVAM3XFMcp912C" Name="Start Page" Kind="InputPin" />
+            <Pin Id="T5rzwfvnRfoOiBTS76pybu" Name="End Page" Kind="InputPin" />
+          </Node>
+          <Pad Id="MtA3h63FzsKMlVWXKCzS6e" Comment="Text" Bounds="2299,927,44,15" ShowValueBox="true" isIOBox="true" Value="vvvv">
+            <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
+              <Choice Kind="TypeFlag" Name="String" />
+            </p:TypeAnnotation>
+          </Pad>
+          <Pad Id="K1paQrPwHMwNbBPUIEXBem" Comment="Page" Bounds="2327,1103,35,178" ShowValueBox="true" isIOBox="true">
+            <p:ValueBoxSettings>
+              <p:maxvisibleentries p:Type="Int32">10</p:maxvisibleentries>
+            </p:ValueBoxSettings>
+          </Pad>
+          <Node Bounds="2546,948,65,19" Id="Q8FvtZtPUxaOzy9snOianm">
+            <p:NodeReference LastCategoryFullName="PDFReader" LastDependency="VL.PDFReader.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <Choice Kind="ProcessAppFlag" Name="Info" />
+            </p:NodeReference>
+            <Pin Id="A6WZlzUAV3AOsYguk6QCXK" Name="Node Context" Kind="InputPin" IsHidden="true" />
+            <Pin Id="PMJ7KythfFILVygjjsJsBH" Name="Input" Kind="InputPin" />
+            <Pin Id="EiCrDgL4ZPNOD3fv73djVj" Name="Page Count" Kind="OutputPin" />
+            <Pin Id="DSZJkbjDhfHNOneHZlzHKv" Name="Page Sizes" Kind="OutputPin" />
+            <Pin Id="PCQCRUATOs4LijTLimJmBp" Name="Page Rotations" Kind="OutputPin" />
+            <Pin Id="SjhEX93RxvZMDuNMBSPrkv" Name="Meta Data" Kind="OutputPin" />
+          </Node>
+          <Node Bounds="2606,995,105,19" Id="POlHkqmxMMcOBLAmILr6ls">
+            <p:NodeReference LastCategoryFullName="PDFReader.PDFMetaData" LastDependency="VL.PDFReader.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <CategoryReference Kind="4026531840" Name="MetaData" />
+              <Choice Kind="OperationCallFlag" Name="Split" />
+            </p:NodeReference>
+            <Pin Id="Cb1RNOOEehNNU3amF5q3eM" Name="Input" Kind="StateInputPin" />
+            <Pin Id="EqcNvcqhQ8qPMkXjnnjvAA" Name="Author" Kind="OutputPin" />
+            <Pin Id="OyKFicuJfjyMMF1iNyqHOR" Name="Creator" Kind="OutputPin" />
+            <Pin Id="TLsgqCvcRsRQVOBg8I1DdB" Name="Keywords" Kind="OutputPin" />
+            <Pin Id="QOGX5K7Q2oKN22RxszIDIR" Name="Producer" Kind="OutputPin" />
+            <Pin Id="J4lIYbA0OpgMdURiD8PCyb" Name="Creation Date" Kind="OutputPin" />
+            <Pin Id="BCkcO3xuPcFQaPIcYIGK7t" Name="Modification Date" Kind="OutputPin" />
+          </Node>
+          <Pad Id="H1O1lq133mYP4zFrilq1MS" Comment="Path" Bounds="2300,736,228,25" ShowValueBox="true" isIOBox="true" Value="..\resources\Language.pdf">
+            <p:TypeAnnotation LastCategoryFullName="IO" LastDependency="VL.CoreLib.vl">
+              <Choice Kind="TypeFlag" Name="Path" />
+            </p:TypeAnnotation>
+          </Pad>
+          <Node Bounds="2448,1028,63,19" Id="ShnrQDRenq6LkAPe08VVKJ">
+            <p:NodeReference LastCategoryFullName="Animation" LastDependency="VL.CoreLib.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <Choice Kind="ProcessAppFlag" Name="Stopwatch" />
+            </p:NodeReference>
+            <Pin Id="ANZHLQbxzpqNJ9LBvfRGWv" Name="Node Context" Kind="InputPin" IsHidden="true" />
+            <Pin Id="RbpDkccJkJPLgo7TiBKELX" Name="Clock" Kind="InputPin" IsHidden="true" />
+            <Pin Id="Dae3MysznNWNVkItKXGEGd" Name="Time" Kind="InputPin" IsHidden="true" />
+            <Pin Id="Ix0Th5iId3JQQ88W5EP5tg" Name="New Clock" Kind="InputPin" IsHidden="true" />
+            <Pin Id="Gg7LzOgaX6xMCM4fG28qEs" Name="New Time" Kind="InputPin" IsHidden="true" />
+            <Pin Id="KaERkhMO0b7NZ9vJOHIQdX" Name="Enabled" Kind="InputPin" />
+            <Pin Id="QoVfzMNNeTUQSL8UO3JY0c" Name="Reset" Kind="InputPin" />
+            <Pin Id="QwCCAJ6HAhEOgGwxYVVxUV" Name="Time" Kind="OutputPin" />
+          </Node>
+          <Node Bounds="2448,989,52,19" Id="JKyF9imz96ENTCoxvARy7I">
+            <p:NodeReference LastCategoryFullName="Control" LastDependency="VL.CoreLib.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <Choice Kind="ProcessAppFlag" Name="FlipFlop" />
+            </p:NodeReference>
+            <Pin Id="IofzKvVLkTGOrGursh8kC8" Name="Node Context" Kind="InputPin" IsHidden="true" />
+            <Pin Id="McQa8lk47vfOp4dS45uOMS" Name="Set" Kind="ApplyPin" />
+            <Pin Id="SYh8T6yhCbdOokceKlImTn" Name="Reset" Kind="ApplyPin" />
+            <Pin Id="Ca5Uztk5IroL1iKCEbB4t7" Name="State" Kind="OutputPin" />
+          </Node>
+          <Node Bounds="2499,889,56,19" Id="Ho0XeVmnWOJLsSuP2tUthB">
+            <p:NodeReference LastCategoryFullName="Control" LastDependency="VL.CoreLib.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <Choice Kind="ProcessAppFlag" Name="TogEdge" />
+            </p:NodeReference>
+            <Pin Id="CsTbMPlt9sgLOJBytktY4t" Name="Node Context" Kind="InputPin" IsHidden="true" />
+            <Pin Id="JD0AHkrqt1hMt9ryHXIGwX" Name="Value" Kind="InputPin" />
+            <Pin Id="P3c7Qdf58uyLwBp0O6Lre5" Name="Up Edge" Kind="OutputPin" />
+            <Pin Id="LFBIdo7XVLSLt4Y0ysUaDz" Name="Down Edge" Kind="OutputPin" />
+          </Node>
+          <Pad Id="JEQOzXKL6mENVzSlJh51oQ" Comment="Time" Bounds="2450,1145,35,15" ShowValueBox="true" isIOBox="true" />
+          <Pad Id="LJhcA4LQR5IP6fBOY1fYSh" Comment="" Bounds="1431,641,506,1858" ShowValueBox="true" isIOBox="true" />
+        </Canvas>
+        <Patch Id="QPtZ1Uh26gCP5RcWwNHv92" Name="Create" />
+        <Patch Id="IwAHcP2uKrfMiZJDzpgYra" Name="Update" />
+        <ProcessDefinition Id="I3KCRWa6ULDQZ6Zrxndr4H">
+          <Fragment Id="UaabG7FhjTyMSuQRtOPy3X" Patch="QPtZ1Uh26gCP5RcWwNHv92" Enabled="true" />
+          <Fragment Id="TnvC1etkZPZQAFpZI1Lh30" Patch="IwAHcP2uKrfMiZJDzpgYra" Enabled="true" />
+        </ProcessDefinition>
+        <Slot Id="BN2eGiktzJ6PEQFqH4KZ1i" Name="txt" />
+        <Slot Id="GAFriWY4mC7LToaYAg3wdV" Name="match" />
+        <Link Id="KTF5U8kvK3CLgK21OaunXF" Ids="CCzp41fI4w9OhG8UDU6Zvl,JQpA0NbPsMRLdWWYztKSfe" />
+        <Link Id="DLvkeLBAfv5MBR3c8FGZD7" Ids="DLR8K8NHkM9QOCgcOOqMQn,FhbiMzGYrWALMb4j7rUJgM" />
+        <Link Id="U0BbSiMPdT5LfBiXQbegt5" Ids="FTkmrwdr9t0Nveqew9zpeY,IY5ordgqkL7PLkqnaSiQlB" />
+        <Link Id="Fo5otOMbZi6Nf2UeJRxe76" Ids="ASKL1dfJDKKQdg93sA5MTZ,LiKV3X90NGQMjX33HrgJ8T" />
+        <Link Id="H4bDfHFHICtPVwoxI7C2zs" Ids="OaJaTi1oNKfPM7pyUALo5I,CMfDTcyyWPCOym72m5ZpOl" />
+        <Link Id="PPkDVo77GO3OqLAZZxUX54" Ids="CRrHNQmP6f6Pb8dcK0ISh6,FwSZS7RrsA5N7UVAe8E4Qe" />
+        <Link Id="FcZfF2E9D1KQVZyUgtTGJS" Ids="Hx8NMIdTbVVLMTkaEnFG48,BYe8Tbfyx44PAfYODvfiKx" />
+        <Link Id="ArPi6chHI28OfNN2ve757b" Ids="CCzp41fI4w9OhG8UDU6Zvl,HvE7M03C9QQPoCmMso7d3V" />
+        <Link Id="Nr4nPGeiGL5MGSw6y1L8lc" Ids="DLR8K8NHkM9QOCgcOOqMQn,JwcQtRatZGTMGPf471cKUn" />
+        <Link Id="RWgE8wpIODBP87hpXAjEW5" Ids="PY0T6KesAMhMhLzZxSAje9,R3twCv97jNEMSVNeiHCUm7" />
+        <Link Id="VVztMRAEoWbODgfrOotguY" Ids="Cl7B473lBoyMpSMjrjcFP4,PqHuOuIuTuKP9z2Lfh3nV4" />
+        <Link Id="UE3fcJ8JzKyL7VdlFURXDD" Ids="G4puY2EC5MSL3aIkclyx4d,U1R15DKiRU4NOzX9ENBJMS" />
+        <Link Id="IBVbs8ZkPfhLmLf5jlXtl7" Ids="N7O7rrZ7jM6PEsz2G0g5uQ,FSeP0k54AWlLProyJ3upYX" />
+        <Link Id="CAZptan0V8ZOzcLv8hsovz" Ids="Cl7B473lBoyMpSMjrjcFP4,QJrJ1wMmGgkQXsY6G7rvVT" />
+        <Link Id="GlQDbxswlaHL5M20KjzsrD" Ids="OFEkQsJzJsILl7411SgSYT,Ngx9kvUnwkiL6iHmsLEgu9" />
+        <Link Id="V4w5qaDCeQROrmlCfcz653" Ids="HPBiVRhr1O3NLyiDrnHMSu,RYIWttBABfMM0QuRRlFs5l" />
+        <Link Id="MUOPGIbmcmeMGNnMYI0XVj" Ids="G2BCqWMA9ogMZ21sz71xI9,NZ7joUQxfJeOVsMcldRGzx" />
+        <Link Id="C0tCRq25rtYPDfvKz2VBAD" Ids="IY5ordgqkL7PLkqnaSiQlB,GOCrzConlvQQSM7JaylkRp" />
+        <Link Id="JNeT66XE0SMPWiny3Gi5S1" Ids="IuLVy7Ew1IlPmVkU0GRDno,G2ydcJ67cXcQdvSlQf5cBq" />
+        <Link Id="ESxkJ99McT1OD7PoIvoNrN" Ids="MEk2yGYDWLlO9cmG8p2ndY,PVaKsBToXZSOVrxGGMWFUh" />
+        <Link Id="JJaTkEqLC5xOnf2NiApbgO" Ids="LW57EjYCkyIPJchhFR0EvD,QuStK5FKBFoNLErIeZF7Tz" IsFeedback="true" />
+        <Link Id="NVTMmXEiQqFMpuSHrtmXcZ" Ids="ElmvGNE0jThMPlEwJzYZ7U,QuStK5FKBFoNLErIeZF7Tz" />
+        <Link Id="ScVlWMjAiEfPEsiX4JvGc5" Ids="IPaHu0hpTLJPBG58nfMVDm,LW57EjYCkyIPJchhFR0EvD" />
+        <Link Id="SGCwsdSeh6oOVbNOUrBrSp" Ids="QuStK5FKBFoNLErIeZF7Tz,OCIu5bK4TJKO3rrrnXenkA" />
+        <Link Id="MLRTFODp4zjQOBp2GP4Jqz" Ids="DE508MCd0wkQSdSjfKDlTV,EmiVMnoAD6OLmSgUgUgIz3" />
+        <Link Id="Rjnm10jEexjNUUkGw9e0MG" Ids="OCIu5bK4TJKO3rrrnXenkA,S1MBx3jPCfsLt1bwVh5kF3" />
+        <Link Id="TM4JsMVns3oOmrdEJrF6HM" Ids="PCYpiKOooqWNFXFr11LF1D,DE508MCd0wkQSdSjfKDlTV" />
+        <Link Id="CRthsz564ztK9gqdQgo426" Ids="Pt5IcHIELKtMekIk5E2DNm,FUl3uiGTJXLNX5Rek4ylAn" />
+        <Link Id="Er5vHYQiNklMK8oi22aGzO" Ids="LPSv04J702sPOp4GEmwKZi,KINW8bcjMHYPYwq6kqQgf4" />
+        <Link Id="U6dsfKOV4XaNjUVIbVqoFs" Ids="FCh3Pqh86NCMYrDvK0pN9Q,N6rE40gpyRnOux5bBREj74" />
+        <Link Id="FHtcB4HcVyKLsuD0CV7CD4" Ids="RSVTIzVML6BOeWWzNHpcEd,Jq66EgtKyMSPvBUDDvzObj" />
+        <Link Id="IdqePRDNOwOQFSumVWceuT" Ids="IY72PRSXKEfLRHA2k2bIff,IQPujDC5KN6MR3ldIeXNbd" />
+        <Link Id="EUXBlcLSQr3LeFLB1mP5eI" Ids="IuLVy7Ew1IlPmVkU0GRDno,B3nbU6vPdyBPpAv9eOH8pL" />
+        <Link Id="FRlXIuD9kwSQXbJJND1q83" Ids="U4wxrQEwr0LPVKIv0iXjGF,B2qjpdeFtoRPEpH3BuN69x" IsFeedback="true" />
+        <Link Id="N6P7JuJdTR4PD19nKutazF" Ids="BgCPWVGKO4QQV0MVOuTKsc,B2qjpdeFtoRPEpH3BuN69x" />
+        <Link Id="G2igTlC9n7CLnPOI4aYniO" Ids="B2qjpdeFtoRPEpH3BuN69x,HtyPhyo5qWXMNXxLjcFLC1" />
+        <Link Id="FoZEdSbgA4OOSDmcRk8tsT" Ids="GTHgLH60e5aN5B3FDPC3Ph,U4wxrQEwr0LPVKIv0iXjGF" />
+        <Link Id="Jh2FioMxVTjP8yaek9XNhs" Ids="DCbPgkBMywyOKYdkLl0WOt,QpHws5P26FDPFtAxKpqCps" />
+        <Link Id="PQZnAruXQ0pNF4XN8aTOYO" Ids="BUWIIacZwwsNZ1FgkBLD3y,SdOMXiNIrnTOQgEoqjv5JQ" />
+        <Link Id="KxJZkWHYv6VLA9gnWaD9yf" Ids="HtyPhyo5qWXMNXxLjcFLC1,I9stmn6SK1WLcOJDfNJsta" />
+        <Link Id="KVDbG2ufvFoMMUKRKdKxBI" Ids="HtyPhyo5qWXMNXxLjcFLC1,Q3cDAw1eTVMNT7NetLOSoh" />
+        <Link Id="Hc5H9QWWnVtP9Zs6Hr7Lsv" Ids="TR5mUMuNOIrPThdbDSqKpG,A7xVm33cu9ePG7pm6jbK7W" />
+        <Link Id="P4ROmtlXEPiPQPslxhizEB" Ids="CB8tyvvkOZSOfykpw0u9o4,LKDL5NBNl1aMHazQCX0gLe" />
+        <Link Id="HhYPBZkI4b2PH9wiZP9Mvf" Ids="TyMnKXyWslOMINemz7fGZE,Ez2d50gyPSHOyxysAgh5Rj" />
+        <Link Id="CKKKYZkJvoANGSuJ9Y7PuZ" Ids="MOIS2cemj1vNaHE6s0cIjn,JEuk1pI5KZ4MutzeBMxX0H" />
+        <Link Id="CluOZCUoWH6P1sqzkGo8aQ" Ids="JrN4kONQpEiQCzOqUHvvSJ,FvcNhr4AFuoOicT7qMGAvT" />
+        <Link Id="Exyswvqo9DUL38mKBrGnC2" Ids="RSxP3sio15JM6YGg6VLBxM,F5NrMIxYaIcLmQeS3xr77T" />
+        <Link Id="HfCZbJObVPuNtDOzMyUpOe" Ids="DLR8K8NHkM9QOCgcOOqMQn,H03PHPLaBUzPY4L90IHmVI" />
+        <Link Id="OpViHmXch2dLM1WvgMJWgf" Ids="AvENK9nlCnjN9epTaZHf2C,CX6avPBdJliPHK1XlbAEp6" />
+        <Link Id="RKx4xOcNhcnMlno9FcdpRv" Ids="LMKO6Hf5WdgNfJSmA39z26,PMrQofjeXztLLUACL1dXst" />
+        <Link Id="KjCeyFDof9zQZ7yxHEZqVW" Ids="ADLuSoSjHClO6C009A3s35,SJLGZ3tf1iAMKyOPxW2yiU" />
+        <Link Id="Ph5bcxBgtyFMDB3Ps6t15S" Ids="BNrGXv0la9dNvT8sHamJT2,CYztdRmZScEPPJ5NDNC7Au" />
+        <Link Id="LIVLWCEEVhaMxgiwkHWxft" Ids="MtA3h63FzsKMlVWXKCzS6e,EGiOUu8QhFUOAo4Ys2blQB" />
+        <Link Id="Rfp8JJkgwyHLyIa8cBgD68" Ids="M43tTFmXKsuNWP5NKA8Pmn,ExihQqvPUmELa7QgVCixjw" />
+        <Link Id="TqprE4gZGzjNDqtbqT54oc" Ids="DsQVyCjxOG0QAZg8Kk1BZe,K1paQrPwHMwNbBPUIEXBem" />
+        <Link Id="Il46o0Tj8oINecu6Ara8hU" Ids="SjhEX93RxvZMDuNMBSPrkv,Cb1RNOOEehNNU3amF5q3eM" />
+        <Link Id="I1ITObR7PydOyOwBNSUpAy" Ids="H1O1lq133mYP4zFrilq1MS,VwfeciCt7o5OzkmJQZ2ERX" />
+        <Link Id="VexkQsvWX2cQIKlC0HrQxp" Ids="M43tTFmXKsuNWP5NKA8Pmn,PMJ7KythfFILVygjjsJsBH" />
+        <Link Id="GXZTwCBjlrXOyNdzs6xG2y" Ids="Ca5Uztk5IroL1iKCEbB4t7,KaERkhMO0b7NZ9vJOHIQdX" />
+        <Link Id="OM9BW5IOpLPMlFYZtWnpNE" Ids="ADLuSoSjHClO6C009A3s35,QoVfzMNNeTUQSL8UO3JY0c" />
+        <Link Id="TAtMxw75qKRPLRMyXfZ7Lz" Ids="ADLuSoSjHClO6C009A3s35,McQa8lk47vfOp4dS45uOMS" />
+        <Link Id="CeK9bB3cfdRNLlCPYU7DUv" Ids="BNrGXv0la9dNvT8sHamJT2,JD0AHkrqt1hMt9ryHXIGwX" />
+        <Link Id="VvAL59NkaU9MSt5y19gqoU" Ids="P3c7Qdf58uyLwBp0O6Lre5,SYh8T6yhCbdOokceKlImTn" />
+        <Link Id="Jt92RL3TVmFPKPsAeOUoxN" Ids="QwCCAJ6HAhEOgGwxYVVxUV,JEQOzXKL6mENVzSlJh51oQ" />
+        <Link Id="VZT3eMnjx4cMKmYt1wVHTR" Ids="EDs9FXELFm8NKydRWrm9L3,LJhcA4LQR5IP6fBOY1fYSh" />
+      </Patch>
+    </Node>
+  </Patch>
+  <DocumentDependency Id="P2zhxqc8PTLNKpkV5P7CLl" Location="../VL.PDFReader.vl" />
+  <PlatformDependency Id="F534rHdtQTfM1gyHIqVkpc" Location="../lib/net8.0/VL.PDFReader.dll" />
+</Document>
