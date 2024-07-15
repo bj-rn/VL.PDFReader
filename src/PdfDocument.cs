@@ -285,10 +285,7 @@ namespace VL.PDFReader
                 textureFlags: textureFlags,
                 usage: usage);
 
-            return Texture.New(
-                   device,
-                   description,
-                   new DataBox(pixmap.GetPixels(), pixmap.RowBytes, pixmap.BytesSize));
+            return Texture.New(device, description, new DataBox(pixmap.GetPixels(), pixmap.RowBytes, pixmap.BytesSize));
 
         }
 
