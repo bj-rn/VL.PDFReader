@@ -253,6 +253,15 @@ namespace VL.PDFReader.Internals
         }
 
 
+        public static uint FPDF_GetMetaText(IntPtr document, string tag, byte[]? buffer, uint buflen)
+        {
+            lock (LockString)
+            {
+                return Imports.FPDF_GetMetaText(document, tag, buffer, buflen);
+            }
+        }
+
+
         /// <summary>
         /// Opens a document using a .NET Stream. Allows opening huge
         /// PDFs without loading them into memory first.
@@ -449,30 +458,23 @@ namespace VL.PDFReader.Internals
 
 
 
+
             [DllImport("pdfium", CallingConvention = CallingConvention.Cdecl)]
             public static extern bool FPDFText_FindNext(IntPtr handle);
 
 
-            // FPDF_FILEACCESS is not supported by source-generated P/Invokes. The generated source will not handle marshalling of parameter access
-            // [LibraryImport("pdfium", StringMarshalling = StringMarshalling.Utf8)]
-            // [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
-            // public static partial IntPtr FPDF_LoadCustomDocument(FPDF_FILEACCESS access, string? password);
-
             [DllImport("pdfium", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
             public static extern IntPtr FPDF_LoadCustomDocument(FPDF_FILEACCESS access, string? password);
-
-            // FPDF_FORMFILLINFO is not supported by source-generated P/Invokes. The generated source will not handle marshalling of parameter access
-            // [LibraryImport("pdfium")]
-            // [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
-            // public static partial IntPtr FPDFDOC_InitFormFillEnvironment(IntPtr document, FPDF_FORMFILLINFO formInfo);
 
 
             [DllImport("pdfium", CallingConvention = CallingConvention.Cdecl)]
             public static extern IntPtr FPDFDOC_InitFormFillEnvironment(IntPtr document, FPDF_FORMFILLINFO formInfo);
+
+
+            [DllImport("pdfium.dll", CallingConvention = CallingConvention.Cdecl)]
+            public static extern uint FPDF_GetMetaText(IntPtr document, string tag, byte[]? buffer, uint buflen);
+
         }
-
-
-
 
 
 

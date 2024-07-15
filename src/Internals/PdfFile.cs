@@ -5,6 +5,7 @@ using System.IO;
 using System.Runtime.InteropServices;
 using System.Text;
 using Stride.Core.Mathematics;
+using System.Text.RegularExpressions;
 
 namespace VL.PDFReader.Internals
 {
@@ -103,6 +104,93 @@ namespace VL.PDFReader.Internals
 
             return new Vector2((float)width, (float)height);
         }
+
+
+        public PdfMetaData GetMetaData()
+        {
+            var pdfInfo = new PdfMetaData();
+
+            pdfInfo.Creator = GetMetaText("Creator");
+            pdfInfo.Title = GetMetaText("Title");
+            pdfInfo.Author = GetMetaText("Author");
+            pdfInfo.Subject = GetMetaText("Subject");
+            pdfInfo.Keywords = GetMetaText("Keywords");
+            pdfInfo.Producer = GetMetaText("Producer");
+            pdfInfo.CreationDate = GetMetaTextAsDate("CreationDate");
+            pdfInfo.ModificationDate = GetMetaTextAsDate("ModDate");
+
+            return pdfInfo;
+        }
+
+        private string GetMetaText(string tag)
+        {
+            // Length includes a trailing \0.
+
+            uint length = NativeMethods.FPDF_GetMetaText(_document, tag, null, 0);
+            if (length <= 2)
+                return string.Empty;
+
+            byte[] buffer = new byte[length];
+            NativeMethods.FPDF_GetMetaText(_document, tag, buffer, length);
+
+            return Encoding.Unicode.GetString(buffer, 0, (int)(length - 2));
+        }
+
+        public DateTime? GetMetaTextAsDate(string tag)
+        {
+            string dt = GetMetaText(tag);
+
+            if (string.IsNullOrEmpty(dt))
+                return null;
+
+            Regex dtRegex =
+                new Regex(
+                    @"(?:D:)(?<year>\d\d\d\d)(?<month>\d\d)(?<day>\d\d)(?<hour>\d\d)(?<minute>\d\d)(?<second>\d\d)(?<tz_offset>[+-zZ])?(?<tz_hour>\d\d)?'?(?<tz_minute>\d\d)?'?");
+
+            Match match = dtRegex.Match(dt);
+
+            if (match.Success)
+            {
+                var year = match.Groups["year"].Value;
+                var month = match.Groups["month"].Value;
+                var day = match.Groups["day"].Value;
+                var hour = match.Groups["hour"].Value;
+                var minute = match.Groups["minute"].Value;
+                var second = match.Groups["second"].Value;
+                var tzOffset = match.Groups["tz_offset"]?.Value;
+                var tzHour = match.Groups["tz_hour"]?.Value;
+                var tzMinute = match.Groups["tz_minute"]?.Value;
+
+                string formattedDate = $"{year}-{month}-{day}T{hour}:{minute}:{second}.0000000";
+
+                if (!string.IsNullOrEmpty(tzOffset))
+                {
+                    switch (tzOffset)
+                    {
+                        case "Z":
+                        case "z":
+                            formattedDate += "+0";
+                            break;
+                        case "+":
+                        case "-":
+                            formattedDate += $"{tzOffset}{tzHour}:{tzMinute}";
+                            break;
+                    }
+                }
+
+                try
+                {
+                    return DateTime.Parse(formattedDate);
+                }
+                catch (FormatException)
+                {
+                    return null;
+                }
+            }
+
+            return null;
+        }
+
 
 
         public string GetPdfText(int page)
@@ -207,7 +295,6 @@ namespace VL.PDFReader.Internals
         {
             return new PageData(_document, _form, pageNumber);
         }
-
 
 
         public void Dispose()

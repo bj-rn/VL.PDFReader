@@ -88,6 +88,16 @@ namespace VL.PDFReader
 
 
         /// <summary>
+        /// Get metadata information from the PDF document.
+        /// </summary>
+        /// <returns>The PDF metadata.</returns>
+        public PdfMetaData GetMetaData()
+        {
+            return _file.GetMetaData();
+        }
+
+
+        /// <summary>
         /// Finds all occurences of text.
         /// </summary>
         /// <param name="text">The text to search for.</param>
@@ -151,6 +161,14 @@ namespace VL.PDFReader
         }
 
 
+
+
+        /// <summary>
+        /// Renders a single page of a given PDF into a SKImage.
+        /// </summary>
+        /// <param name="page">The specific page to be converted.</param>
+        /// <param name="options">Additional options for PDF rendering.</param>
+        /// <returns>The rendered PDF page as a SKImage.</returns>
         public SKImage LoadImage(int page = 0, RenderOptions options = default)
         {
 
@@ -192,6 +210,15 @@ namespace VL.PDFReader
         }
 
 
+        /// <summary>
+        /// Renders a single page of a given PDF into a Stride Texture.
+        /// </summary>
+        /// <param name="device">A Stride.Graphics.Graphics.Device</param>
+        /// <param name="page">The specific page to be converted.</param>
+        /// <param name="options">Additional options for PDF rendering.</param>
+        /// <param name="textureFlags">Stride.Graphics.TextureFlags</param>
+        /// <param name="usage">Stride.Graphics.GraphicsResourceUsage</param>
+        /// <returns>The rendered PDF page as a Stride Texture.</returns>
         public Texture LoadTexture(GraphicsDevice device,
                                    int page = 0,
                                    RenderOptions options = default,
@@ -240,7 +267,9 @@ namespace VL.PDFReader
                           usage);
         }
 
-
+        /// <summary>
+        /// Renders a page of the PDF document to a texture.
+        /// </summary>
         private Texture Render(int page,
                                float? requestedWidth,
                                float? requestedHeight,
