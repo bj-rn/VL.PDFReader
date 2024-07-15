@@ -262,6 +262,15 @@ namespace VL.PDFReader.Internals
         }
 
 
+        public static PdfRotation FPDFPage_GetRotation(IntPtr page)
+        {
+            lock (LockString)
+            {
+                return (PdfRotation)Imports.FPDFPage_GetRotation(page);
+            }
+        }
+
+
         /// <summary>
         /// Opens a document using a .NET Stream. Allows opening huge
         /// PDFs without loading them into memory first.
@@ -455,6 +464,11 @@ namespace VL.PDFReader.Internals
             [LibraryImport("pdfium")]
             [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
             public static partial int FPDFText_GetText(IntPtr page, int start_index, int count, byte[] result);
+
+
+            [LibraryImport("pdfium")]
+            [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+            public static partial int FPDFPage_GetRotation(IntPtr page);
 
 
 

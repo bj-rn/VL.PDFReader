@@ -272,6 +272,12 @@ namespace VL.PDFReader.Internals
         }
 
 
+        public PdfRotation GetPageRotation(int page)
+        {
+            return NativeMethods.FPDFPage_GetRotation(GetPageData(page).Page);
+        }
+
+
         public bool RenderPDFPageToBitmap(int pageNumber, IntPtr bitmapHandle, int boundsOriginX, int boundsOriginY, int boundsWidth, int boundsHeight, int rotate, NativeMethods.FPDF flags, bool renderFormFill)
         {
             if (_disposed)

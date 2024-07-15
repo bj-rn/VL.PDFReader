@@ -162,6 +162,16 @@ namespace VL.PDFReader
 
 
 
+        /// <summary>
+        /// Get the current rotation of the page.
+        /// </summary>
+        /// <param name="page"></param>
+        /// <returns></returns>
+        public PdfRotation GetPageRotation(int page)
+        {
+            return _file.GetPageRotation(page);
+        }
+
 
         /// <summary>
         /// Renders a single page of a given PDF into a SKImage.
