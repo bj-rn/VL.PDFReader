@@ -29,7 +29,6 @@ namespace VL.PDFReader
         private Int2 _maxTileSize = new Int2(4000, 4000);
 
 
-
         /// <summary>
         /// Size of each page in the PDF document.
         /// </summary>
@@ -88,8 +87,6 @@ namespace VL.PDFReader
         }
 
 
-
-
         /// <summary>
         /// Finds all occurences of text.
         /// </summary>
@@ -101,6 +98,7 @@ namespace VL.PDFReader
         {
             return Search(text, matchCase, wholeWord, 0, PageCount - 1);
         }
+
 
         /// <summary>
         /// Finds all occurences of text.
@@ -114,6 +112,7 @@ namespace VL.PDFReader
         {
             return Search(text, matchCase, wholeWord, page, page);
         }
+
 
         /// <summary>
         /// Finds all occurences of text.
@@ -129,6 +128,7 @@ namespace VL.PDFReader
             return _file.Search(text, matchCase, wholeWord, startPage, endPage);
         }
 
+
         /// <summary>
         /// Get all text on the page.
         /// </summary>
@@ -139,6 +139,7 @@ namespace VL.PDFReader
             return _file.GetPdfText(page);
         }
 
+
         /// <summary>
         /// Get all text matching the text span.
         /// </summary>
@@ -148,7 +149,6 @@ namespace VL.PDFReader
         {
             return _file.GetPdfText(textSpan);
         }
-
 
 
         public SKImage LoadImage(int page = 0, RenderOptions options = default)
@@ -190,7 +190,6 @@ namespace VL.PDFReader
                           options.WithAspectRatio,
                           options.DpiRelativeToBounds);
         }
-
 
 
         public Texture LoadTexture(GraphicsDevice device,
@@ -498,7 +497,7 @@ namespace VL.PDFReader
                                 (float)Math.Floor(x * currentTileWidth + currentTileWidth),
                                 (float)Math.Floor(y * currentTileHeight + currentTileHeight)));
                             canvas.Flush();
-                        }    
+                        }
                     }
 
                     image = surface.Snapshot();
@@ -528,7 +527,7 @@ namespace VL.PDFReader
             var iinfo = new SKImageInfo((int)width, (int)height, SKColorType.Bgra8888, SKAlphaType.Premul, colorspace);
 
             var image = SKImage.Create(iinfo);
-            
+
             IntPtr handle = IntPtr.Zero;
 
             try
