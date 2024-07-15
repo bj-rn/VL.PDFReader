@@ -55,23 +55,31 @@ namespace VL.PDFReader.Internals
             _disposeStream = disposeStream;
         }
 
-        public bool RenderPDFPageToBitmap(int pageNumber, IntPtr bitmapHandle, int boundsOriginX, int boundsOriginY, int boundsWidth, int boundsHeight, int rotate, NativeMethods.FPDF flags, bool renderFormFill)
+        private void LoadDocument(IntPtr document)
         {
-            if (_disposed)
-                throw new ObjectDisposedException(GetType().Name);
+            _document = document;
 
-            using var pageData = new PageData(_document, _form, pageNumber);
+            NativeMethods.FPDF_GetDocPermissions(_document);
 
-            NativeMethods.FPDF_RenderPageBitmap(bitmapHandle, pageData.Page, boundsOriginX, boundsOriginY, boundsWidth, boundsHeight, rotate, flags);
+            var formCallbacks = new NativeMethods.FPDF_FORMFILLINFO();
+            _formCallbacksHandle = GCHandle.Alloc(formCallbacks, GCHandleType.Pinned);
 
-            if (renderFormFill)
+            // Depending on whether XFA support is built into the PDFium library, the version
+            // needs to be 1 or 2. We don't really care, so we just try one or the other.
+
+            for (int i = 1; i <= 2; i++)
             {
-                NativeMethods.FPDF_RemoveFormFieldHighlight(_form);
-                NativeMethods.FPDF_FFLDraw(_form, bitmapHandle, pageData.Page, boundsOriginX, boundsOriginY, boundsWidth, boundsHeight, rotate, flags);
+                formCallbacks.version = i;
+
+                _form = NativeMethods.FPDFDOC_InitFormFillEnvironment(_document, formCallbacks);
+                if (_form != IntPtr.Zero)
+                    break;
             }
 
-            return true;
+            NativeMethods.FPDF_SetFormFieldHighlightColor(_form, 0, 0xFFE4DD);
+            NativeMethods.FPDF_SetFormFieldHighlightAlpha(_form, 100);
         }
+
 
         public List<Vector2> GetPDFDocInfo()
         {
@@ -96,29 +104,35 @@ namespace VL.PDFReader.Internals
             return new Vector2((float)width, (float)height);
         }
 
-        private void LoadDocument(IntPtr document)
+
+        public string GetPdfText(int page)
         {
-            _document = document;
 
-            NativeMethods.FPDF_GetDocPermissions(_document);
-
-            var formCallbacks = new NativeMethods.FPDF_FORMFILLINFO();
-            _formCallbacksHandle = GCHandle.Alloc(formCallbacks, GCHandleType.Pinned);
-
-            // Depending on whether XFA support is built into the PDFium library, the version
-            // needs to be 1 or 2. We don't really care, so we just try one or the other.
-
-            for (int i = 1; i <= 2; i++)
+            using (PageData pageData = GetPageData(page))
             {
-                formCallbacks.version = i;
-
-                _form = NativeMethods.FPDFDOC_InitFormFillEnvironment(_document, formCallbacks);
-                if (_form != IntPtr.Zero)
-                    break;
+                int length = NativeMethods.FPDFText_CountChars(pageData.TextPage);
+                return GetPdfText(pageData, new PdfTextSpan(page, 0, length));
             }
+        }
 
-            NativeMethods.FPDF_SetFormFieldHighlightColor(_form, 0, 0xFFE4DD);
-            NativeMethods.FPDF_SetFormFieldHighlightAlpha(_form, 100);
+        public string GetPdfText(PdfTextSpan textSpan)
+        {
+            using (PageData pageData = GetPageData(textSpan.Page))
+            {
+                return GetPdfText(pageData, textSpan);
+            }
+        }
+
+        private string GetPdfText(PageData pageData, PdfTextSpan textSpan)
+        {
+            // NOTE: The count parameter in FPDFText_GetText seems to include the null terminator, even though the documentation does not specify this.
+            // So to read 40 characters, we need to allocate 82 bytes (2 for the terminator), and request 41 characters from GetText.
+            // The return value also includes the terminator (which is documented)
+            var result = new byte[(textSpan.Length + 1) * 2];
+            int count = NativeMethods.FPDFText_GetText(pageData.TextPage, textSpan.Offset, textSpan.Length + 1, result);
+            if (count <= 0)
+                return string.Empty;
+            return FPDFEncoding.GetString(result, 0, (count - 1) * 2);
         }
 
 
@@ -170,35 +184,22 @@ namespace VL.PDFReader.Internals
         }
 
 
-        public string GetPdfText(int page)
+        public bool RenderPDFPageToBitmap(int pageNumber, IntPtr bitmapHandle, int boundsOriginX, int boundsOriginY, int boundsWidth, int boundsHeight, int rotate, NativeMethods.FPDF flags, bool renderFormFill)
         {
+            if (_disposed)
+                throw new ObjectDisposedException(GetType().Name);
 
-            using (PageData pageData = GetPageData(page)) 
-            { 
-                int length = NativeMethods.FPDFText_CountChars(pageData.TextPage);
-                return GetPdfText(pageData, new PdfTextSpan(page, 0, length));
-            }
-        }
+            using var pageData = GetPageData(pageNumber);
 
-        public string GetPdfText(PdfTextSpan textSpan)
-        {
-            using (PageData pageData = GetPageData(textSpan.Page))
+            NativeMethods.FPDF_RenderPageBitmap(bitmapHandle, pageData.Page, boundsOriginX, boundsOriginY, boundsWidth, boundsHeight, rotate, flags);
+
+            if (renderFormFill)
             {
-                return GetPdfText(pageData, textSpan);
+                NativeMethods.FPDF_RemoveFormFieldHighlight(_form);
+                NativeMethods.FPDF_FFLDraw(_form, bitmapHandle, pageData.Page, boundsOriginX, boundsOriginY, boundsWidth, boundsHeight, rotate, flags);
             }
-        }
 
-
-        private string GetPdfText(PageData pageData, PdfTextSpan textSpan)
-        {
-            // NOTE: The count parameter in FPDFText_GetText seems to include the null terminator, even though the documentation does not specify this.
-            // So to read 40 characters, we need to allocate 82 bytes (2 for the terminator), and request 41 characters from GetText.
-            // The return value also includes the terminator (which is documented)
-            var result = new byte[(textSpan.Length + 1) * 2];
-            int count = NativeMethods.FPDFText_GetText(pageData.TextPage, textSpan.Offset, textSpan.Length + 1, result);
-            if (count <= 0)
-                return string.Empty;
-            return FPDFEncoding.GetString(result, 0, (count - 1) * 2);
+            return true;
         }
 
 
@@ -206,6 +207,7 @@ namespace VL.PDFReader.Internals
         {
             return new PageData(_document, _form, pageNumber);
         }
+
 
 
         public void Dispose()

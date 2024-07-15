@@ -471,6 +471,22 @@ namespace VL.PDFReader.Internals
             public static extern IntPtr FPDFDOC_InitFormFillEnvironment(IntPtr document, FPDF_FORMFILLINFO formInfo);
         }
 
+
+
+
+
+
+        [StructLayout(LayoutKind.Sequential)]
+        public unsafe class FPDF_FILEACCESS
+        {
+            public uint m_FileLen;
+
+            public delegate* unmanaged[Cdecl]<IntPtr, uint, IntPtr, uint, int> m_GetBlock;
+
+            public IntPtr m_Param;
+        }
+
+
         [StructLayout(LayoutKind.Sequential)]
         public class FPDF_FORMFILLINFO
         {
@@ -538,6 +554,8 @@ namespace VL.PDFReader.Internals
 
             private readonly IntPtr FFI_PutRequestURL;
         }
+
+
 
         /// <summary>
         /// A number indicating for bitmap format.
@@ -686,15 +704,5 @@ namespace VL.PDFReader.Internals
             FPDF_MATCHWHOLEWORD = 2
         }
 
-
-        [StructLayout(LayoutKind.Sequential)]
-        public unsafe class FPDF_FILEACCESS
-        {
-            public uint m_FileLen;
-
-            public delegate* unmanaged[Cdecl]<IntPtr, uint, IntPtr, uint, int> m_GetBlock;
-
-            public IntPtr m_Param;
-        }
     }
 }

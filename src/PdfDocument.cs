@@ -87,10 +87,229 @@ namespace VL.PDFReader
             PageSizes = new ReadOnlyCollection<Vector2>(_file.GetPDFDocInfo() ?? throw new Win32Exception());
         }
 
+
+
+
+        /// <summary>
+        /// Finds all occurences of text.
+        /// </summary>
+        /// <param name="text">The text to search for.</param>
+        /// <param name="matchCase">Whether to match case.</param>
+        /// <param name="wholeWord">Whether to match whole words only.</param>
+        /// <returns>All matches.</returns>
+        public PdfMatches Search(string text, bool matchCase, bool wholeWord)
+        {
+            return Search(text, matchCase, wholeWord, 0, PageCount - 1);
+        }
+
+        /// <summary>
+        /// Finds all occurences of text.
+        /// </summary>
+        /// <param name="text">The text to search for.</param>
+        /// <param name="matchCase">Whether to match case.</param>
+        /// <param name="wholeWord">Whether to match whole words only.</param>
+        /// <param name="page">The page to search on.</param>
+        /// <returns>All matches.</returns>
+        public PdfMatches Search(string text, bool matchCase, bool wholeWord, int page)
+        {
+            return Search(text, matchCase, wholeWord, page, page);
+        }
+
+        /// <summary>
+        /// Finds all occurences of text.
+        /// </summary>
+        /// <param name="text">The text to search for.</param>
+        /// <param name="matchCase">Whether to match case.</param>
+        /// <param name="wholeWord">Whether to match whole words only.</param>
+        /// <param name="startPage">The page to start searching.</param>
+        /// <param name="endPage">The page to end searching.</param>
+        /// <returns>All matches.</returns>
+        public PdfMatches Search(string text, bool matchCase, bool wholeWord, int startPage, int endPage)
+        {
+            return _file.Search(text, matchCase, wholeWord, startPage, endPage);
+        }
+
+        /// <summary>
+        /// Get all text on the page.
+        /// </summary>
+        /// <param name="page">The page to get the text for.</param>
+        /// <returns>The text on the page.</returns>
+        public string GetPdfText(int page)
+        {
+            return _file.GetPdfText(page);
+        }
+
+        /// <summary>
+        /// Get all text matching the text span.
+        /// </summary>
+        /// <param name="textSpan">The span to get the text for.</param>
+        /// <returns>The text matching the span.</returns>
+        public string GetPdfText(PdfTextSpan textSpan)
+        {
+            return _file.GetPdfText(textSpan);
+        }
+
+
+
+        public SKImage LoadImage(int page = 0, RenderOptions options = default)
+        {
+
+            if (page < 0)
+                throw new ArgumentOutOfRangeException(nameof(page), "The page number must be 0 or greater.");
+
+            if (options == default)
+                options = new();
+
+
+            NativeMethods.FPDF renderFlags = default;
+
+            if (options.WithAnnotations)
+                renderFlags |= NativeMethods.FPDF.ANNOT;
+
+            if (!options.AntiAliasing.HasFlag(PdfAntiAliasing.Text))
+                renderFlags |= NativeMethods.FPDF.RENDER_NO_SMOOTHTEXT;
+            if (!options.AntiAliasing.HasFlag(PdfAntiAliasing.Images))
+                renderFlags |= NativeMethods.FPDF.RENDER_NO_SMOOTHIMAGE;
+            if (!options.AntiAliasing.HasFlag(PdfAntiAliasing.Paths))
+                renderFlags |= NativeMethods.FPDF.RENDER_NO_SMOOTHPATH;
+
+
+            if (page >= PageCount)
+                throw new ArgumentOutOfRangeException(nameof(page), $"The page number {page} does not exist. Highest page number available is {PageCount - 1}.");
+
+            return Render(page,
+                          options.Width,
+                          options.Height,
+                          options.Dpi,
+                          options.Rotation,
+                          renderFlags,
+                          options.WithFormFill,
+                          options.BackgroundColor ?? Color4.White,
+                          options.Bounds,
+                          options.UseTiling,
+                          options.WithAspectRatio,
+                          options.DpiRelativeToBounds);
+        }
+
+
+
+        public Texture LoadTexture(GraphicsDevice device,
+                                   int page = 0,
+                                   RenderOptions options = default,
+                                   TextureFlags textureFlags = TextureFlags.ShaderResource,
+                                   GraphicsResourceUsage usage = GraphicsResourceUsage.Immutable)
+        {
+
+            if (page < 0)
+                throw new ArgumentOutOfRangeException(nameof(page), "The page number must be 0 or greater.");
+
+            if (options == default)
+                options = new();
+
+
+            NativeMethods.FPDF renderFlags = default;
+
+            if (options.WithAnnotations)
+                renderFlags |= NativeMethods.FPDF.ANNOT;
+
+            if (!options.AntiAliasing.HasFlag(PdfAntiAliasing.Text))
+                renderFlags |= NativeMethods.FPDF.RENDER_NO_SMOOTHTEXT;
+            if (!options.AntiAliasing.HasFlag(PdfAntiAliasing.Images))
+                renderFlags |= NativeMethods.FPDF.RENDER_NO_SMOOTHIMAGE;
+            if (!options.AntiAliasing.HasFlag(PdfAntiAliasing.Paths))
+                renderFlags |= NativeMethods.FPDF.RENDER_NO_SMOOTHPATH;
+
+
+            if (page >= PageCount)
+                throw new ArgumentOutOfRangeException(nameof(page), $"The page number {page} does not exist. Highest page number available is {PageCount - 1}.");
+
+
+            return Render(page,
+                          options.Width,
+                          options.Height,
+                          options.Dpi,
+                          options.Rotation,
+                          renderFlags,
+                          options.WithFormFill,
+                          options.BackgroundColor ?? Color4.White,
+                          options.Bounds,
+                          options.UseTiling,
+                          options.WithAspectRatio,
+                          options.DpiRelativeToBounds,
+                          device,
+                          textureFlags,
+                          usage);
+        }
+
+
+        private Texture Render(int page,
+                               float? requestedWidth,
+                               float? requestedHeight,
+                               float dpi,
+                               PdfRotation rotate,
+                               NativeMethods.FPDF flags,
+                               bool renderFormFill,
+                               Color4 backgroundColor,
+                               RectangleF? bounds,
+                               bool useTiling,
+                               bool withAspectRatio,
+                               bool dpiRelativeToBounds,
+                               GraphicsDevice device,
+                               TextureFlags textureFlags = TextureFlags.ShaderResource,
+                               GraphicsResourceUsage usage = GraphicsResourceUsage.Immutable,
+                               CancellationToken cancellationToken = default)
+        {
+            if (_disposed)
+                throw new ObjectDisposedException(GetType().Name);
+
+
+            SKColor bgcolor = Conversions.ToSKColor(ref backgroundColor);
+
+            using var pixmap = Render(page,
+                                      requestedWidth,
+                                      requestedHeight,
+                                      dpi,
+                                      rotate,
+                                      flags,
+                                      renderFormFill,
+                                      backgroundColor,
+                                      bounds,
+                                      useTiling,
+                                      withAspectRatio,
+                                      dpiRelativeToBounds,
+                                      cancellationToken).PeekPixels();
+
+            var description = TextureDescription.New2D(
+                width: pixmap.Width,
+                height: pixmap.Height,
+                format: PixelFormat.B8G8R8A8_UNorm_SRgb,
+                textureFlags: textureFlags,
+                usage: usage);
+
+            return Texture.New(
+                   device,
+                   description,
+                   new DataBox(pixmap.GetPixels(), pixmap.RowBytes, pixmap.BytesSize));
+
+        }
+
+
         /// <summary>
         /// Renders a page of the PDF document to an image.
         /// </summary>
-        private SKImage Render(int page, float? requestedWidth, float? requestedHeight, float dpi, PdfRotation rotate, NativeMethods.FPDF flags, bool renderFormFill, Color4 backgroundColor, RectangleF? bounds, bool useTiling, bool withAspectRatio, bool dpiRelativeToBounds, CancellationToken cancellationToken = default)
+        private SKImage Render(int page,
+                               float? requestedWidth,
+                               float? requestedHeight,
+                               float dpi,
+                               PdfRotation rotate,
+                               NativeMethods.FPDF flags,
+                               bool renderFormFill,
+                               Color4 backgroundColor,
+                               RectangleF? bounds,
+                               bool useTiling,
+                               bool withAspectRatio,
+                               bool dpiRelativeToBounds,
+                               CancellationToken cancellationToken = default)
         {
             if (_disposed)
                 throw new ObjectDisposedException(GetType().Name);
@@ -290,32 +509,17 @@ namespace VL.PDFReader
         }
 
 
-        private Texture Render (int page, float? requestedWidth, float? requestedHeight, float dpi, PdfRotation rotate, NativeMethods.FPDF flags, bool renderFormFill, Color4 backgroundColor, RectangleF? bounds, bool useTiling, bool withAspectRatio, bool dpiRelativeToBounds, GraphicsDevice device, TextureFlags textureFlags = TextureFlags.ShaderResource, GraphicsResourceUsage usage = GraphicsResourceUsage.Immutable, CancellationToken cancellationToken = default)
-        {
-            if (_disposed)
-                throw new ObjectDisposedException(GetType().Name);
-
-
-            SKColor bgcolor = Conversions.ToSKColor(ref backgroundColor);
-           
-            using var pixmap = Render(page, requestedWidth, requestedHeight, dpi, rotate, flags, renderFormFill,backgroundColor, bounds, useTiling, withAspectRatio, dpiRelativeToBounds, cancellationToken).PeekPixels();
-
-            var description = TextureDescription.New2D(
-                width: pixmap.Width,
-                height: pixmap.Height,
-                format: PixelFormat.B8G8R8A8_UNorm_SRgb,
-                textureFlags: textureFlags,
-                usage: usage);
-
-            return Texture.New(
-                   device,
-                   description,
-                   new DataBox(pixmap.GetPixels(), pixmap.RowBytes, pixmap.BytesSize)); 
-
-        }   
-
-
-        private SKImage RenderSubset(int page, float width, float height, PdfRotation rotate, NativeMethods.FPDF flags, bool renderFormFill, SKColor backgroundColor, RectangleF? bounds, float originalWidth, float originalHeight, CancellationToken cancellationToken = default)
+        private SKImage RenderSubset(int page,
+                                     float width,
+                                     float height,
+                                     PdfRotation rotate,
+                                     NativeMethods.FPDF flags,
+                                     bool renderFormFill,
+                                     SKColor backgroundColor,
+                                     RectangleF? bounds,
+                                     float originalWidth,
+                                     float originalHeight,
+                                     CancellationToken cancellationToken = default)
         {
             cancellationToken.ThrowIfCancellationRequested();
 
@@ -364,132 +568,6 @@ namespace VL.PDFReader
 
             return image;
         }
-
-
-
-        public SKImage LoadImage(int page = 0, RenderOptions options = default)
-        {
-
-            if (page < 0)
-                throw new ArgumentOutOfRangeException(nameof(page), "The page number must be 0 or greater.");
-
-            if (options == default)
-                options = new();
-
-
-            NativeMethods.FPDF renderFlags = default;
-
-            if (options.WithAnnotations)
-                renderFlags |= NativeMethods.FPDF.ANNOT;
-
-            if (!options.AntiAliasing.HasFlag(PdfAntiAliasing.Text))
-                renderFlags |= NativeMethods.FPDF.RENDER_NO_SMOOTHTEXT;
-            if (!options.AntiAliasing.HasFlag(PdfAntiAliasing.Images))
-                renderFlags |= NativeMethods.FPDF.RENDER_NO_SMOOTHIMAGE;
-            if (!options.AntiAliasing.HasFlag(PdfAntiAliasing.Paths))
-                renderFlags |= NativeMethods.FPDF.RENDER_NO_SMOOTHPATH;
-
-
-            if (page >= PageCount)
-                throw new ArgumentOutOfRangeException(nameof(page), $"The page number {page} does not exist. Highest page number available is {PageCount - 1}.");
-
-            return Render(page, options.Width, options.Height, options.Dpi, options.Rotation, renderFlags, options.WithFormFill, options.BackgroundColor ?? Color4.White, options.Bounds, options.UseTiling, options.WithAspectRatio, options.DpiRelativeToBounds);
-        }
-
-
-        public Texture LoadTexture(GraphicsDevice device, int page = 0, RenderOptions options = default, TextureFlags textureFlags = TextureFlags.ShaderResource, GraphicsResourceUsage usage = GraphicsResourceUsage.Immutable)
-        {
-
-            if (page < 0)
-                throw new ArgumentOutOfRangeException(nameof(page), "The page number must be 0 or greater.");
-
-            if (options == default)
-                options = new();
-
-
-            NativeMethods.FPDF renderFlags = default;
-
-            if (options.WithAnnotations)
-                renderFlags |= NativeMethods.FPDF.ANNOT;
-
-            if (!options.AntiAliasing.HasFlag(PdfAntiAliasing.Text))
-                renderFlags |= NativeMethods.FPDF.RENDER_NO_SMOOTHTEXT;
-            if (!options.AntiAliasing.HasFlag(PdfAntiAliasing.Images))
-                renderFlags |= NativeMethods.FPDF.RENDER_NO_SMOOTHIMAGE;
-            if (!options.AntiAliasing.HasFlag(PdfAntiAliasing.Paths))
-                renderFlags |= NativeMethods.FPDF.RENDER_NO_SMOOTHPATH;
-
-
-            if (page >= PageCount)
-                throw new ArgumentOutOfRangeException(nameof(page), $"The page number {page} does not exist. Highest page number available is {PageCount - 1}.");
-
-            
-            // Internals.PdfDocument -> Image
-            return Render(page, options.Width, options.Height, options.Dpi, options.Rotation, renderFlags, options.WithFormFill, options.BackgroundColor ?? Color4.White, options.Bounds, options.UseTiling, options.WithAspectRatio, options.DpiRelativeToBounds, device, textureFlags, usage);
-        }
-
-
-
-        /// <summary>
-        /// Finds all occurences of text.
-        /// </summary>
-        /// <param name="text">The text to search for.</param>
-        /// <param name="matchCase">Whether to match case.</param>
-        /// <param name="wholeWord">Whether to match whole words only.</param>
-        /// <returns>All matches.</returns>
-        public PdfMatches Search(string text, bool matchCase, bool wholeWord)
-        {
-            return Search(text, matchCase, wholeWord, 0, PageCount - 1);
-        }
-
-        /// <summary>
-        /// Finds all occurences of text.
-        /// </summary>
-        /// <param name="text">The text to search for.</param>
-        /// <param name="matchCase">Whether to match case.</param>
-        /// <param name="wholeWord">Whether to match whole words only.</param>
-        /// <param name="page">The page to search on.</param>
-        /// <returns>All matches.</returns>
-        public PdfMatches Search(string text, bool matchCase, bool wholeWord, int page)
-        {
-            return Search(text, matchCase, wholeWord, page, page);
-        }
-
-        /// <summary>
-        /// Finds all occurences of text.
-        /// </summary>
-        /// <param name="text">The text to search for.</param>
-        /// <param name="matchCase">Whether to match case.</param>
-        /// <param name="wholeWord">Whether to match whole words only.</param>
-        /// <param name="startPage">The page to start searching.</param>
-        /// <param name="endPage">The page to end searching.</param>
-        /// <returns>All matches.</returns>
-        public PdfMatches Search(string text, bool matchCase, bool wholeWord, int startPage, int endPage)
-        {
-            return _file.Search(text, matchCase, wholeWord, startPage, endPage);
-        }
-
-        /// <summary>
-        /// Get all text on the page.
-        /// </summary>
-        /// <param name="page">The page to get the text for.</param>
-        /// <returns>The text on the page.</returns>
-        public string GetPdfText(int page)
-        {
-            return _file.GetPdfText(page);
-        }
-
-        /// <summary>
-        /// Get all text matching the text span.
-        /// </summary>
-        /// <param name="textSpan">The span to get the text for.</param>
-        /// <returns>The text matching the span.</returns>
-        public string GetPdfText(PdfTextSpan textSpan)
-        {
-            return _file.GetPdfText(textSpan);
-        }
-
-
 
 
         private void AdjustForAspectRatio(ref float? width, ref float? height, Vector2 pageSize)
