@@ -10,8 +10,6 @@ using Stride.Core.Mathematics;
 using Stride.Graphics;
 using VL.Skia;
 using Path = VL.Lib.IO.Path;
-using Microsoft.Extensions.Options;
-using System.Runtime.Intrinsics.Arm;
 
 
 namespace VL.PDFReader
@@ -222,7 +220,8 @@ namespace VL.PDFReader
                           options.DpiRelativeToBounds);
         }
 
-
+        /*
+         
         public SKImage LoadImageFaster(int? requestedWidth,
                                        int? requestedHeight,
                                        Color4? backgroundColor,
@@ -254,6 +253,7 @@ namespace VL.PDFReader
 
         }
 
+        */
 
         /// <summary>
         /// Renders a single page of a given PDF into a Stride Texture.
@@ -323,6 +323,101 @@ namespace VL.PDFReader
                                          bool renderFormFill = true,
                                          bool withAnnotations = true,
                                          TextureFlags textureFlags = TextureFlags.ShaderResource,
+                                         GraphicsResourceUsage usage = GraphicsResourceUsage.Immutable,
+                                         CancellationToken cancellationToken = default)
+        {
+            if (_disposed)
+                throw new ObjectDisposedException(GetType().Name);
+
+
+            ThrowPageOutOfRange(page);
+
+
+            var pagesize = PageSizes[page];
+
+            var originalWidth = (int)pagesize.X;
+            var originalHeight = (int)pagesize.Y;
+
+            int width = Math.Max(requestedWidth ?? originalWidth, 2);
+            int height = Math.Max(requestedHeight ?? originalHeight, 2);
+
+            NativeMethods.FPDF renderFlags = default;
+
+            if (withAnnotations)
+                renderFlags |= NativeMethods.FPDF.ANNOT;
+
+
+
+            var description = new ImageDescription() with
+            {
+                Dimension = TextureDimension.Texture2D,
+                Width = width,
+                Height = height,
+                Depth = 1,
+                ArraySize = 1,
+                MipLevels = 1,
+                Format = PixelFormat.B8G8R8A8_UNorm_SRgb
+            };
+
+
+            using var image = Image.New(description);
+
+
+            var bg = backgroundColor ?? Color4.White;
+            SKColor bgcolor = Conversions.ToSKColor(ref bg);
+
+
+            IntPtr handle = IntPtr.Zero;
+
+            try
+            {
+                cancellationToken.ThrowIfCancellationRequested();
+                handle = NativeMethods.FPDFBitmap_CreateEx(width, height, NativeMethods.FPDFBitmap.BGRA, image.GetPixelBuffer(0,0).DataPointer, width * 4);
+
+                cancellationToken.ThrowIfCancellationRequested();
+                NativeMethods.FPDFBitmap_FillRect(handle, 0, 0, width, height, (uint)bgcolor);
+
+                cancellationToken.ThrowIfCancellationRequested();
+                bool success = _file.RenderPDFPageToBitmap(
+                    page,
+                    handle,
+                    0,
+                    0,
+                    width,
+                    height,
+                    0,
+                    renderFlags,
+                    renderFormFill
+                );
+
+                if (!success)
+                    throw new Win32Exception();
+            }
+            catch
+            {
+                image?.Dispose();
+                throw;
+            }
+            finally
+            {
+                if (handle != IntPtr.Zero)
+                    NativeMethods.FPDFBitmap_Destroy(handle);
+            }
+
+
+            return Texture.New(device, image, textureFlags, usage);
+        }
+
+        /*
+         
+        public Texture LoadTextureFaster(GraphicsDevice device,
+                                         int? requestedWidth,
+                                         int? requestedHeight,
+                                         Color4? backgroundColor,
+                                         int page = 0,
+                                         bool renderFormFill = true,
+                                         bool withAnnotations = true,
+                                         TextureFlags textureFlags = TextureFlags.ShaderResource,
                                          GraphicsResourceUsage usage = GraphicsResourceUsage.Immutable)
         {
 
@@ -345,6 +440,9 @@ namespace VL.PDFReader
                 renderFlags |= NativeMethods.FPDF.ANNOT;
 
 
+
+
+
             using var pixmap = RenderFaster(page, width, height, bg, renderFlags, renderFormFill).PeekPixels();
 
 
@@ -358,6 +456,7 @@ namespace VL.PDFReader
             return Texture.New(device, description, new DataBox(pixmap.GetPixels(), pixmap.RowBytes, pixmap.BytesSize));
         }
 
+        */
 
 
         /// <summary>
@@ -635,7 +734,8 @@ namespace VL.PDFReader
         }
 
 
-
+        /*
+         
         private SKImage RenderFaster(int page,
                                     int requestedWidth,
                                     int requestedHeight,
@@ -697,6 +797,7 @@ namespace VL.PDFReader
             return image;
         }
 
+        */
 
         private void AdjustForAspectRatio(ref float? width, ref float? height, Vector2 pageSize)
         {
