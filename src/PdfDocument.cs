@@ -10,6 +10,8 @@ using Stride.Core.Mathematics;
 using Stride.Graphics;
 using VL.Skia;
 using Path = VL.Lib.IO.Path;
+using Microsoft.Extensions.Options;
+using System.Runtime.Intrinsics.Arm;
 
 
 namespace VL.PDFReader
@@ -27,6 +29,8 @@ namespace VL.PDFReader
         private PdfFile _file;
 
         private Int2 _maxTileSize = new Int2(4000, 4000);
+
+        private SKColorSpace _colorspace;
 
 
         /// <summary>
@@ -79,6 +83,8 @@ namespace VL.PDFReader
         private PdfDocument(Stream stream, string? password, Int2? maxTileSize, bool disposeStream)
         {
             _file = new PdfFile(stream, password, disposeStream);
+
+            _colorspace = SKColorSpace.CreateSrgb().ToLinearGamma();
 
             if (maxTileSize.HasValue)
                 _maxTileSize = maxTileSize.Value;
@@ -182,8 +188,8 @@ namespace VL.PDFReader
         public SKImage LoadImage(int page = 0, RenderOptions options = default)
         {
 
-            if (page < 0)
-                throw new ArgumentOutOfRangeException(nameof(page), "The page number must be 0 or greater.");
+            ThrowPageOutOfRange(page);
+
 
             if (options == default)
                 options = new();
@@ -202,9 +208,6 @@ namespace VL.PDFReader
                 renderFlags |= NativeMethods.FPDF.RENDER_NO_SMOOTHPATH;
 
 
-            if (page >= PageCount)
-                throw new ArgumentOutOfRangeException(nameof(page), $"The page number {page} does not exist. Highest page number available is {PageCount - 1}.");
-
             return Render(page,
                           options.Width,
                           options.Height,
@@ -217,6 +220,38 @@ namespace VL.PDFReader
                           options.UseTiling,
                           options.WithAspectRatio,
                           options.DpiRelativeToBounds);
+        }
+
+
+        public SKImage LoadImageFaster(int? requestedWidth,
+                                       int? requestedHeight,
+                                       Color4? backgroundColor,
+                                       int page = 0,
+                                       bool renderFormFill = true,
+                                       bool withAnnotations = true)
+        {
+
+            ThrowPageOutOfRange(page);
+
+
+            var pagesize = PageSizes[page];
+
+            var originalWidth = (int)pagesize.X;
+            var originalHeight = (int)pagesize.Y;
+
+            int width = requestedWidth ?? originalWidth;
+            int height = requestedHeight ?? originalHeight;
+
+            var bg = backgroundColor ?? Color4.White;
+
+            NativeMethods.FPDF renderFlags = default;
+
+            if (withAnnotations)
+                renderFlags |= NativeMethods.FPDF.ANNOT;
+
+
+            return RenderFaster(page, width, height, bg, renderFlags, renderFormFill);
+
         }
 
 
@@ -236,8 +271,7 @@ namespace VL.PDFReader
                                    GraphicsResourceUsage usage = GraphicsResourceUsage.Immutable)
         {
 
-            if (page < 0)
-                throw new ArgumentOutOfRangeException(nameof(page), "The page number must be 0 or greater.");
+            ThrowPageOutOfRange(page);
 
             if (options == default)
                 options = new();
@@ -256,66 +290,19 @@ namespace VL.PDFReader
                 renderFlags |= NativeMethods.FPDF.RENDER_NO_SMOOTHPATH;
 
 
-            if (page >= PageCount)
-                throw new ArgumentOutOfRangeException(nameof(page), $"The page number {page} does not exist. Highest page number available is {PageCount - 1}.");
-
-
-            return Render(page,
-                          options.Width,
-                          options.Height,
-                          options.Dpi,
-                          options.Rotation,
-                          renderFlags,
-                          options.WithFormFill,
-                          options.BackgroundColor ?? Color4.White,
-                          options.Bounds,
-                          options.UseTiling,
-                          options.WithAspectRatio,
-                          options.DpiRelativeToBounds,
-                          device,
-                          textureFlags,
-                          usage);
-        }
-
-        /// <summary>
-        /// Renders a page of the PDF document to a texture.
-        /// </summary>
-        private Texture Render(int page,
-                               float? requestedWidth,
-                               float? requestedHeight,
-                               float dpi,
-                               PdfRotation rotate,
-                               NativeMethods.FPDF flags,
-                               bool renderFormFill,
-                               Color4 backgroundColor,
-                               RectangleF? bounds,
-                               bool useTiling,
-                               bool withAspectRatio,
-                               bool dpiRelativeToBounds,
-                               GraphicsDevice device,
-                               TextureFlags textureFlags = TextureFlags.ShaderResource,
-                               GraphicsResourceUsage usage = GraphicsResourceUsage.Immutable,
-                               CancellationToken cancellationToken = default)
-        {
-            if (_disposed)
-                throw new ObjectDisposedException(GetType().Name);
-
-
-            SKColor bgcolor = Conversions.ToSKColor(ref backgroundColor);
-
             using var pixmap = Render(page,
-                                      requestedWidth,
-                                      requestedHeight,
-                                      dpi,
-                                      rotate,
-                                      flags,
-                                      renderFormFill,
-                                      backgroundColor,
-                                      bounds,
-                                      useTiling,
-                                      withAspectRatio,
-                                      dpiRelativeToBounds,
-                                      cancellationToken).PeekPixels();
+                                      options.Width,
+                                      options.Height,
+                                      options.Dpi,
+                                      options.Rotation,
+                                      renderFlags,
+                                      options.WithFormFill,
+                                      options.BackgroundColor ?? Color4.White,
+                                      options.Bounds,
+                                      options.UseTiling,
+                                      options.WithAspectRatio,
+                                      options.DpiRelativeToBounds).PeekPixels();
+
 
             var description = TextureDescription.New2D(
                 width: pixmap.Width,
@@ -325,8 +312,52 @@ namespace VL.PDFReader
                 usage: usage);
 
             return Texture.New(device, description, new DataBox(pixmap.GetPixels(), pixmap.RowBytes, pixmap.BytesSize));
-
         }
+
+
+        public Texture LoadTextureFaster(GraphicsDevice device,
+                                         int? requestedWidth,
+                                         int? requestedHeight,
+                                         Color4? backgroundColor,
+                                         int page = 0,
+                                         bool renderFormFill = true,
+                                         bool withAnnotations = true,
+                                         TextureFlags textureFlags = TextureFlags.ShaderResource,
+                                         GraphicsResourceUsage usage = GraphicsResourceUsage.Immutable)
+        {
+
+            ThrowPageOutOfRange(page);
+
+
+            var pagesize = PageSizes[page];
+
+            var originalWidth = (int)pagesize.X;
+            var originalHeight = (int)pagesize.Y;
+
+            int width = requestedWidth ?? originalWidth;
+            int height = requestedHeight ?? originalHeight;
+
+            var bg = backgroundColor ?? Color4.White;
+
+            NativeMethods.FPDF renderFlags = default;
+
+            if (withAnnotations)
+                renderFlags |= NativeMethods.FPDF.ANNOT;
+
+
+            using var pixmap = RenderFaster(page, width, height, bg, renderFlags, renderFormFill).PeekPixels();
+
+
+            var description = TextureDescription.New2D(
+                width: pixmap.Width,
+                height: pixmap.Height,
+                format: PixelFormat.B8G8R8A8_UNorm_SRgb,
+                textureFlags: textureFlags,
+                usage: usage);
+
+            return Texture.New(device, description, new DataBox(pixmap.GetPixels(), pixmap.RowBytes, pixmap.BytesSize));
+        }
+
 
 
         /// <summary>
@@ -558,9 +589,8 @@ namespace VL.PDFReader
         {
             cancellationToken.ThrowIfCancellationRequested();
 
-            using SKColorSpace colorspace = SKColorSpace.CreateSrgb().ToLinearGamma();
 
-            var iinfo = new SKImageInfo((int)width, (int)height, SKColorType.Bgra8888, SKAlphaType.Premul, colorspace);
+            var iinfo = new SKImageInfo((int)width, (int)height, SKColorType.Bgra8888, SKAlphaType.Premul, _colorspace);
 
             var image = SKImage.Create(iinfo);
 
@@ -605,6 +635,69 @@ namespace VL.PDFReader
         }
 
 
+
+        private SKImage RenderFaster(int page,
+                                    int requestedWidth,
+                                    int requestedHeight,
+                                    Color4 backgroundColor,
+                                    NativeMethods.FPDF flags,
+                                    bool renderFormFill = true,
+                                    CancellationToken cancellationToken = default)
+        {
+            if (_disposed)
+                throw new ObjectDisposedException(GetType().Name);
+
+
+            cancellationToken.ThrowIfCancellationRequested();
+
+            var iinfo = new SKImageInfo(requestedWidth, requestedHeight, SKColorType.Bgra8888, SKAlphaType.Premul, _colorspace);
+
+            var image = SKImage.Create(iinfo);
+
+            SKColor bgcolor = Conversions.ToSKColor(ref backgroundColor);
+
+
+            IntPtr handle = IntPtr.Zero;
+
+            try
+            {
+                cancellationToken.ThrowIfCancellationRequested();
+                handle = NativeMethods.FPDFBitmap_CreateEx(requestedWidth, requestedHeight, NativeMethods.FPDFBitmap.BGRA, image.PeekPixels().GetPixels(), requestedWidth * 4);
+
+                cancellationToken.ThrowIfCancellationRequested();
+                NativeMethods.FPDFBitmap_FillRect(handle, 0, 0, requestedWidth, requestedHeight, (uint)bgcolor);
+
+                cancellationToken.ThrowIfCancellationRequested();
+                bool success = _file.RenderPDFPageToBitmap(
+                    page,
+                    handle,
+                    0,
+                    0,
+                    requestedWidth,
+                    requestedHeight,
+                    0,
+                    flags,
+                    renderFormFill
+                );
+
+                if (!success)
+                    throw new Win32Exception();
+            }
+            catch
+            {
+                image?.Dispose();
+                throw;
+            }
+            finally
+            {
+                if (handle != IntPtr.Zero)
+                    NativeMethods.FPDFBitmap_Destroy(handle);
+            }
+
+            return image;
+        }
+
+
         private void AdjustForAspectRatio(ref float? width, ref float? height, Vector2 pageSize)
         {
             if (width == null && height != null)
@@ -617,6 +710,17 @@ namespace VL.PDFReader
             }
         }
 
+
+
+        private void ThrowPageOutOfRange(int page)
+        {
+            if (page < 0)
+                throw new ArgumentOutOfRangeException(nameof(page), "The page number must be 0 or greater.");
+
+            if (page >= PageCount)
+                throw new ArgumentOutOfRangeException(nameof(page), $"The page number {page} does not exist. Highest page number available is {PageCount - 1}.");
+
+        }
 
         /// <summary>
         /// Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
@@ -635,6 +739,8 @@ namespace VL.PDFReader
         {
             if (!_disposed && disposing)
             {
+                _colorspace.Dispose();
+
                 _file.Dispose();
 
                 _disposed = true;
