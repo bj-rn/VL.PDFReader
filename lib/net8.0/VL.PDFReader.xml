@@ -320,8 +320,8 @@
             </summary>
             <param name="path">path the PDF document.</param>
             <param name="password">Password for the PDF document.</param>
-            <param name="maxTileSize"></param>
-            <param name="disposeStream">Decides if the stream  <paramref name="path"/> will closed on dispose as well.</param>
+            <param name="maxTileSize">Size used for tiling when <see cref="P:VL.PDFReader.RenderOptions.UseTiling"/> is true</param>
+            <param name="disposeStream">Decides if the stream opened from <paramref name="path"/> will be closed on dispose.</param>
         </member>
         <member name="M:VL.PDFReader.PdfDocument.Load(System.IO.Stream,System.String,System.Nullable{Stride.Core.Mathematics.Int2},System.Boolean)">
             <summary>
@@ -329,8 +329,8 @@
             </summary>
             <param name="stream">Stream for the PDF document.</param>
             <param name="password">Password for the PDF document.</param>
-            <param name="maxTileSize"></param>
-            <param name="disposeStream">Decides if <paramref name="stream"/> will closed on dispose as well.</param>
+            <param name="maxTileSize">Size used for tiling when <see cref="P:VL.PDFReader.RenderOptions.UseTiling"/> is true</param>
+            <param name="disposeStream">Decides if <paramref name="stream"/> will be closed on dispose.</param>
         </member>
         <member name="M:VL.PDFReader.PdfDocument.GetMetaData">
             <summary>
@@ -394,19 +394,34 @@
             Renders a single page of a given PDF into a SKImage.
             </summary>
             <param name="page">The specific page to be converted.</param>
-            <param name="options">Additional options for PDF rendering.</param>
-            <returns>The rendered PDF page as a SKImage.</returns>
+            <param name="options">Additional <see cref="T:VL.PDFReader.RenderOptions" /> for PDF rendering.</param>
+            <returns>The rendered PDF page as <see cref="T:SkiaSharp.SKImage" />.</returns>
         </member>
         <member name="M:VL.PDFReader.PdfDocument.LoadTexture(Stride.Graphics.GraphicsDevice,System.Int32,VL.PDFReader.RenderOptions,Stride.Graphics.TextureFlags,Stride.Graphics.GraphicsResourceUsage)">
             <summary>
             Renders a single page of a given PDF into a Stride Texture.
             </summary>
-            <param name="device">A Stride.Graphics.Graphics.Device</param>
+            <param name="device">A <see cref="T:Stride.Graphics.GraphicsDevice" /></param>
             <param name="page">The specific page to be converted.</param>
-            <param name="options">Additional options for PDF rendering.</param>
-            <param name="textureFlags">Stride.Graphics.TextureFlags</param>
-            <param name="usage">Stride.Graphics.GraphicsResourceUsage</param>
-            <returns>The rendered PDF page as a Stride Texture.</returns>
+            <param name="options">Additional <see cref="T:VL.PDFReader.RenderOptions" /> for PDF rendering.</param>
+            <param name="textureFlags"><see cref="T:Stride.Graphics.TextureFlags"/></param>
+            <param name="usage"><see cref="T:Stride.Graphics.GraphicsResourceUsage" /></param>
+            <returns>The rendered PDF page as a <see cref="T:Stride.Graphics.Texture"/>.</returns>
+        </member>
+        <member name="M:VL.PDFReader.PdfDocument.LoadTextureFaster(Stride.Graphics.GraphicsDevice,System.Nullable{System.Int32},System.Nullable{System.Int32},System.Nullable{Stride.Core.Mathematics.Color4},System.Int32,System.Boolean,System.Boolean,Stride.Graphics.TextureFlags,Stride.Graphics.GraphicsResourceUsage,System.Threading.CancellationToken)">
+            <summary>
+            Renders a single page of a given PDF into a Stride Texture.
+            </summary>
+            <param name="device">A <see cref="T:Stride.Graphics.GraphicsDevice" /></param>
+            <param name="width">The width of the desired page. Use <see langword="null"/> if the original width should be used.</param>
+            <param name="height">The height of the desired page. Use <see langword="null"/> if the original height should be used.</param>
+            <param name="backgroundColor">Specifies the background color. Defaults to <see cref="F:Stride.Core.Mathematics.Color4.White"/>.</param>
+            <param name="page">The specific page to be converted.</param>
+            <param name="withAnnotations">Specifies whether annotations be rendered.</param>
+            <param name="withFormFill">Specifies whether form filling will be rendered.</param>
+            <param name="textureFlags"><see cref="T:Stride.Graphics.TextureFlags"/></param>
+            <param name="usage"><see cref="T:Stride.Graphics.GraphicsResourceUsage" /></param>
+            <returns>The rendered PDF page as a <see cref="T:Stride.Graphics.Texture"/>.</returns>
         </member>
         <member name="M:VL.PDFReader.PdfDocument.Render(System.Int32,System.Nullable{System.Single},System.Nullable{System.Single},System.Single,VL.PDFReader.PdfRotation,VL.PDFReader.Internals.NativeMethods.FPDF,System.Boolean,Stride.Core.Mathematics.Color4,System.Nullable{Stride.Core.Mathematics.RectangleF},System.Boolean,System.Boolean,System.Boolean,System.Threading.CancellationToken)">
             <summary>
