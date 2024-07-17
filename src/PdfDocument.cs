@@ -319,8 +319,8 @@ namespace VL.PDFReader
         /// Renders a single page of a given PDF into a Stride Texture.
         /// </summary>
         /// <param name="device">A <see cref="GraphicsDevice" /></param>
-        /// <param name="width">The width of the desired page. Use <see langword="null"/> if the original width should be used.</param>
-        /// <param name="height">The height of the desired page. Use <see langword="null"/> if the original height should be used.</param>
+        /// <param name="width">The desired width of the page. Use <see langword="null"/> if the original width should be used.</param>
+        /// <param name="height">The desired height of the page. Use <see langword="null"/> if the original height should be used.</param>
         /// <param name="backgroundColor">Specifies the background color. Defaults to <see cref="Color4.White"/>.</param>
         /// <param name="page">The specific page to be converted.</param>
         /// <param name="withAnnotations">Specifies whether annotations be rendered.</param>

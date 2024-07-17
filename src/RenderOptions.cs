@@ -7,8 +7,8 @@ namespace VL.PDFReader
     /// Contains all relevant information to render a PDF page into an image.
     /// </summary>
     /// <param name="Dpi">The DPI scaling to use for rasterization of the PDF.</param>
-    /// <param name="Width">The width of the desired page. Use <see langword="null"/> if the original width should be used.</param>
-    /// <param name="Height">The height of the desired page. Use <see langword="null"/> if the original height should be used.</param>
+    /// <param name="Width">The desired width of the page. Use <see langword="null"/> if the original width should be used.</param>
+    /// <param name="Height">The desired height of the page. Use <see langword="null"/> if the original height should be used.</param>
     /// <param name="WithAnnotations">Specifies whether annotations be rendered.</param>
     /// <param name="WithFormFill">Specifies whether form filling will be rendered.</param>
     /// <param name="WithAspectRatio">Specifies that <paramref name="Width"/> or <paramref name="Height"/> should be adjusted for aspect ratio (either one must be <see langword="null"/>).</param>
