@@ -2,13 +2,13 @@
 <Document xmlns:p="property" xmlns:r="reflection" Id="EWHWcwf3oBvPnhn254YyBa" LanguageVersion="2024.6.6" Version="0.128">
   <Patch Id="Rgz0iK0cdl5O6XLZAnSI2k">
     <Canvas Id="EtMz6eWyJpjMOVOROl6714" DefaultCategory="PDFReader" CanvasType="FullCategory">
-      <Canvas Id="ErnL4iAUkttNBNTbyRPj5S" Name="Stride" Position="700,127">
+      <Canvas Id="ErnL4iAUkttNBNTbyRPj5S" Name="Stride" Position="698,127">
         <!--
 
     ************************ PDFReader ************************
 
 -->
-        <Node Name="PDFReader" Bounds="147,154" Id="UUf2Bwj6DXMOu9TkqthJk3">
+        <Node Name="PDFReader" Bounds="116,129" Id="UUf2Bwj6DXMOu9TkqthJk3">
           <p:NodeReference>
             <Choice Kind="ContainerDefinition" />
           </p:NodeReference>
@@ -292,7 +292,7 @@
             <Link Id="AE2uc4FJABFNghbYv2fl5j" Ids="MeKpWunjvckPzJobx4jeTB,GFdm9KZboYgLTL2qfMDMNG" IsHidden="true" />
           </Patch>
         </Node>
-        <Canvas Id="CzdAjq7y0w5Nx89SsS3lFm" Name="Advanced" Position="317,156">
+        <Canvas Id="CzdAjq7y0w5Nx89SsS3lFm" Name="Advanced" Position="300,129">
           <!--
 
     ************************ PDFTexture (Async) ************************
@@ -666,7 +666,7 @@
             </Patch>
           </Node>
         </Canvas>
-        <Canvas Id="HrDopcQy4ubMPQijK6PBrm" Name="Experimental" Position="139,232">
+        <Canvas Id="HrDopcQy4ubMPQijK6PBrm" Name="Experimental" Position="99,229">
           <!--
 
     ************************ PDFReader (Faster) ************************
@@ -884,7 +884,7 @@
                 <Pin Id="TZ7a4TjWq3tNSaXREiNB6a" Name="Page" Kind="InputPin" />
                 <Pin Id="F4fvj2akxvdOh1HJBuVz1S" Name="Preload Pages" Kind="InputPin" DefaultValue="2" />
                 <Pin Id="JWQBfyQoGevMDZLAET4JvO" Name="Password" Kind="InputPin" />
-                <Pin Id="DMDVqYLldBSNmkVq1RXtmD" Name="Max Tile Size" Kind="InputPin" />
+                <Pin Id="DMDVqYLldBSNmkVq1RXtmD" Name="Max Tile Size" Kind="InputPin" Visibility="Optional" />
                 <Pin Id="FWaIJj114DjMZhAQ7K6Q9w" Name="PDF" Kind="OutputPin" />
                 <Pin Id="HjzY2rsBFy9M0FCqn5qLPl" Name="On PDF Loaded" Kind="OutputPin" Visibility="Optional" />
                 <Pin Id="M5ETSuTmZ8YLtaW32q43cf" Name="Width" Kind="InputPin" />
@@ -1140,11 +1140,11 @@
                               </p:NodeReference>
                               <Pin Id="UmnFU9xraJTM5rQqIzpYfl" Name="Input" Kind="StateInputPin" />
                               <Pin Id="Q5jUtPZ3wFUQTMxMQHsDsD" Name="Device" Kind="InputPin" />
-                              <Pin Id="AgWjhE1jDcCMVdX1iTutHv" Name="Requested Width" Kind="InputPin" />
-                              <Pin Id="Cn1RoJol4K8NvaUafnr8Y2" Name="Requested Height" Kind="InputPin" />
+                              <Pin Id="VsLcoHCfhKJLeqoEh6UWz1" Name="Width" Kind="InputPin" />
+                              <Pin Id="G6xKzDYiKuvLzuce0mqaRk" Name="Height" Kind="InputPin" />
                               <Pin Id="VBU6qmFPmQyP5SzZhzhBcx" Name="Background Color" Kind="InputPin" />
                               <Pin Id="Ns31kvBkLGTPdxpUaDyr2M" Name="Page" Kind="InputPin" />
-                              <Pin Id="CpSvCtxWBOYOOIw5fBYEbL" Name="Render Form Fill" Kind="InputPin" />
+                              <Pin Id="LQJJ47BqbUfMpgPyS9UAGf" Name="With Form Fill" Kind="InputPin" />
                               <Pin Id="SSMj9yuTfUyM8HTwNaVBC4" Name="With Annotations" Kind="InputPin" />
                               <Pin Id="SDrqy5aIooxNTfcheVc0Cr" Name="Texture Flags" Kind="InputPin" />
                               <Pin Id="CnkcEGLqbdwOjBboCkMpPF" Name="Usage" Kind="InputPin" />
@@ -1195,7 +1195,7 @@
                         <Pin Id="UtiKJ9iwl7rQWaBSAUTIZe" Name="Height" Kind="InputPin" />
                         <Pin Id="HltfJl9n64ZLYDqa5c3Ruc" Name="Background Color" Kind="InputPin" />
                         <Pin Id="Kwx4X7zzdcSPVT4XiMb1tq" Name="Page" Kind="InputPin" />
-                        <Pin Id="NFpoRR9i87qMYg0pEV9grP" Name="Render Form Fill" Kind="InputPin" />
+                        <Pin Id="NFpoRR9i87qMYg0pEV9grP" Name="With Form Fill" Kind="InputPin" />
                         <Pin Id="IjTHWYBdAlwPzgkQABcVVh" Name="With Annotations" Kind="InputPin" />
                       </Patch>
                       <Patch Id="SkxtWNbc7E0OsLq9GQ7yle" Name="TryGetTexture">
@@ -1215,18 +1215,18 @@
                       <Link Id="UlesRsSNyc9OEysaydhcdl" Ids="Kwx4X7zzdcSPVT4XiMb1tq,Vfva2Y3mgEWOTqgcYX6qmS" IsHidden="true" />
                       <Link Id="N4XLG2355e1OUbIWLiEvu0" Ids="DaCadDIcbedMvXvClPqFt8,UmnFU9xraJTM5rQqIzpYfl" />
                       <Link Id="JnJeh4nSwahMrHyVCN89bG" Ids="EBj0jK6I0KyPSHJErOagAm,Q5jUtPZ3wFUQTMxMQHsDsD" />
-                      <Link Id="L04Yx2IY9IfMvmJnyUqg6E" Ids="Pa3ggmYjcl8Mprtzbk2eho,AgWjhE1jDcCMVdX1iTutHv" />
                       <Link Id="HqLSNhffszlQYgxM0qeudW" Ids="Fh0Z61jGJoVPz3svBtRmRR,Pa3ggmYjcl8Mprtzbk2eho" IsHidden="true" />
-                      <Link Id="SeVCK1tfqoxOy1zOd4eDsC" Ids="PW1gxtFSYjNNIPg6M3NZMl,Cn1RoJol4K8NvaUafnr8Y2" />
                       <Link Id="Jb0nYxcvhhcMWppO2qSwaO" Ids="UtiKJ9iwl7rQWaBSAUTIZe,PW1gxtFSYjNNIPg6M3NZMl" IsHidden="true" />
                       <Link Id="NuoQj3C7XsaM5ptfucfWv6" Ids="Ga9t6kVdg9UNwAybePOkSu,VBU6qmFPmQyP5SzZhzhBcx" />
                       <Link Id="Iekmys9R6haOmUW7pcpvFb" Ids="HltfJl9n64ZLYDqa5c3Ruc,Ga9t6kVdg9UNwAybePOkSu" IsHidden="true" />
                       <Link Id="RrLNpeQLy9NNSx3o8KqVqW" Ids="Vfva2Y3mgEWOTqgcYX6qmS,Ns31kvBkLGTPdxpUaDyr2M" />
-                      <Link Id="Dxb2MOz4Q3KMOsQTjb1ruX" Ids="IArYDdtFmceNWHJ1vCAXIT,CpSvCtxWBOYOOIw5fBYEbL" />
                       <Link Id="UXl6GYPGM5OOIW9E3sjgdf" Ids="NFpoRR9i87qMYg0pEV9grP,IArYDdtFmceNWHJ1vCAXIT" IsHidden="true" />
                       <Link Id="H2RWFjCcUgUOBVJA5dMMtM" Ids="KCGwm78vgN0MoVOCmTd28a,SSMj9yuTfUyM8HTwNaVBC4" />
                       <Link Id="DNjtFGARsZOOUkEHEoyw2v" Ids="IjTHWYBdAlwPzgkQABcVVh,KCGwm78vgN0MoVOCmTd28a" IsHidden="true" />
                       <Link Id="KyChJN3tjCZMySt8PKNfyE" Ids="BEJZAhRPfHoQTeV6ZCyj5x,DxfIrDXC5v9K9s5LZmwU43" />
+                      <Link Id="NQET9V43XEIOxQryoNLFyS" Ids="Pa3ggmYjcl8Mprtzbk2eho,VsLcoHCfhKJLeqoEh6UWz1" />
+                      <Link Id="FBYcJQjU0bdNElHDmbXSHO" Ids="PW1gxtFSYjNNIPg6M3NZMl,G6xKzDYiKuvLzuce0mqaRk" />
+                      <Link Id="AKuytT35ihzPqYAVuyarLn" Ids="IArYDdtFmceNWHJ1vCAXIT,LQJJ47BqbUfMpgPyS9UAGf" />
                     </Patch>
                   </Node>
                   <Node Bounds="270,567,107,26" Id="QkmHKvqHKGpOB01Nsfh9os">
@@ -1301,7 +1301,7 @@
                             <Pin Id="HqWLbym20wvM8HSuoiCLfx" Name="Height" Kind="InputPin" />
                             <Pin Id="F7B8Edhua5RLNmdMDtpnL4" Name="Background Color" Kind="InputPin" />
                             <Pin Id="P4lu6iAhvmYNfwk5ILgQ1P" Name="Page" Kind="InputPin" />
-                            <Pin Id="TL11WQD5EgRLifDwBDvgxq" Name="Render Form Fill" Kind="InputPin" />
+                            <Pin Id="TL11WQD5EgRLifDwBDvgxq" Name="With Form Fill" Kind="InputPin" />
                             <Pin Id="NIKa6bfWW8GLgYsQJqbnmC" Name="With Annotations" Kind="InputPin" />
                             <Pin Id="UWGkNqY2fIPO5khOieKMf6" Name="Output" Kind="StateOutputPin" />
                           </Node>
@@ -1400,7 +1400,7 @@
           </Canvas>
         </Canvas>
       </Canvas>
-      <Canvas Id="EWDdm4UOqT6OySVSEP0EwH" Name="Internal" Position="298,129">
+      <Canvas Id="EWDdm4UOqT6OySVSEP0EwH" Name="Internal" Position="298,127">
         <!--
 
     ************************ GetIDs ************************
@@ -1586,7 +1586,7 @@
           </Patch>
         </Node>
       </Canvas>
-      <Canvas Id="Fpnbqod36yuMvkzeQ49sfu" Name="Skia" Position="499,129">
+      <Canvas Id="Fpnbqod36yuMvkzeQ49sfu" Name="Skia" Position="498,127">
         <Canvas Id="LChsFJXsbPOMFhJ8ySB4LC" Name="Advanced" Position="398,129">
           <!--
 
@@ -2277,7 +2277,7 @@
           </Patch>
         </Node>
       </Canvas>
-      <Canvas Id="GSUrla3exnZNrRynTLoL36" Name="Text" Position="899,127">
+      <Canvas Id="GSUrla3exnZNrRynTLoL36" Name="Text" Position="898,127">
         <Canvas Id="T6Djt4batpIPAilswwB2kb" Name="Internal" Position="395,126">
           <!--
 
@@ -3401,8 +3401,8 @@
           </Node>
         </Canvas>
       </Canvas>
-      <Canvas Id="Ozo4ArWOtdDLqmrjoVKkZT" Name="PDF" Position="98,130">
-        <Canvas Id="DW7AQfuF5fFNO1UP8ocvFI" Name="Advanced" Position="98,127">
+      <Canvas Id="Ozo4ArWOtdDLqmrjoVKkZT" Name="PDF" Position="98,127">
+        <Canvas Id="DW7AQfuF5fFNO1UP8ocvFI" Name="Advanced" Position="101,129">
           <!--
 
     ************************ PDF ************************
@@ -3955,7 +3955,7 @@
     ************************ AntiAliasing ************************
 
 -->
-        <Node Name="AntiAliasing" Bounds="411,124" Id="Lqu4Czz9cWWNVDrzCfwCSm">
+        <Node Name="AntiAliasing" Bounds="416,129" Id="Lqu4Czz9cWWNVDrzCfwCSm">
           <p:NodeReference>
             <Choice Kind="ForwardRecordDefinition" Name="Immutable Forward" />
             <CategoryReference Kind="Category" Name="Primitive" />
@@ -3998,7 +3998,7 @@
     ************************ Rotation ************************
 
 -->
-        <Node Name="Rotation" Bounds="414,224" Id="BoNoQLkGTR1QUhOTTL9HWB">
+        <Node Name="Rotation" Bounds="416,229" Id="BoNoQLkGTR1QUhOTTL9HWB">
           <p:NodeReference>
             <Choice Kind="ForwardRecordDefinition" Name="Immutable Forward" />
             <CategoryReference Kind="Category" Name="Primitive" />
@@ -4041,7 +4041,7 @@
     ************************ RenderOptions ************************
 
 -->
-        <Node Name="RenderOptions" Bounds="414,323" Id="QoYYz9HcUumPURNTWu2PAs">
+        <Node Name="RenderOptions" Bounds="415,329" Id="QoYYz9HcUumPURNTWu2PAs">
           <p:NodeReference>
             <Choice Kind="ForwardRecordDefinition" Name="Immutable Forward" />
             <CategoryReference Kind="Category" Name="Primitive" />
@@ -4364,7 +4364,7 @@
     ************************ Info ************************
 
 -->
-        <Node Name="Info" Bounds="115,329" Id="O7pASwZtwYPM673mm9cQow">
+        <Node Name="Info" Bounds="116,329" Id="O7pASwZtwYPM673mm9cQow">
           <p:NodeReference>
             <Choice Kind="ContainerDefinition" />
           </p:NodeReference>
@@ -4503,7 +4503,7 @@
     ************************ MetaData ************************
 
 -->
-        <Node Name="MetaData" Bounds="111,426" Id="Sgw50oLL3jfNpjoKqN2LKJ">
+        <Node Name="MetaData" Bounds="117,429" Id="Sgw50oLL3jfNpjoKqN2LKJ">
           <p:NodeReference>
             <Choice Kind="ForwardDefinition" Name="Forward" />
             <CategoryReference Kind="Category" Name="Primitive" />
@@ -4713,7 +4713,7 @@
     ************************ Loader (Async) ************************
 
 -->
-        <Node Name="Loader (Async)" Bounds="115,230" Id="TMIUDlqYB63NmUVAwTgncr">
+        <Node Name="Loader (Async)" Bounds="117,229" Id="TMIUDlqYB63NmUVAwTgncr">
           <p:NodeReference>
             <Choice Kind="ContainerDefinition" />
           </p:NodeReference>
