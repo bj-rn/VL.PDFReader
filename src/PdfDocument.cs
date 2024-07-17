@@ -51,8 +51,8 @@ namespace VL.PDFReader
         /// </summary>
         /// <param name="path">path the PDF document.</param>
         /// <param name="password">Password for the PDF document.</param>
-        /// <param name="maxTileSize"></param>
-        /// <param name="disposeStream">Decides if the stream  <paramref name="path"/> will closed on dispose as well.</param>
+        /// <param name="maxTileSize">Size used for tiling when <see cref="RenderOptions.UseTiling"/> is true</param>
+        /// <param name="disposeStream">Decides if the stream opened from <paramref name="path"/> will be closed on dispose.</param>
         public static PdfDocument Load(Path path, string? password, Int2? maxTileSize, bool disposeStream = true)
         {
             if (path == null)
@@ -68,8 +68,8 @@ namespace VL.PDFReader
         /// </summary>
         /// <param name="stream">Stream for the PDF document.</param>
         /// <param name="password">Password for the PDF document.</param>
-        /// <param name="maxTileSize"></param>
-        /// <param name="disposeStream">Decides if <paramref name="stream"/> will closed on dispose as well.</param>
+        /// <param name="maxTileSize">Size used for tiling when <see cref="RenderOptions.UseTiling"/> is true</param>
+        /// <param name="disposeStream">Decides if <paramref name="stream"/> will be closed on dispose.</param>
         public static PdfDocument Load(Stream stream, string? password, Int2? maxTileSize, bool disposeStream = true)
         {
             if (stream == null)
@@ -181,8 +181,8 @@ namespace VL.PDFReader
         /// Renders a single page of a given PDF into a SKImage.
         /// </summary>
         /// <param name="page">The specific page to be converted.</param>
-        /// <param name="options">Additional options for PDF rendering.</param>
-        /// <returns>The rendered PDF page as a SKImage.</returns>
+        /// <param name="options">Additional <see cref="RenderOptions" /> for PDF rendering.</param>
+        /// <returns>The rendered PDF page as <see cref="SKImage" />.</returns>
         public SKImage LoadImage(int page = 0, RenderOptions options = default)
         {
 
@@ -258,12 +258,12 @@ namespace VL.PDFReader
         /// <summary>
         /// Renders a single page of a given PDF into a Stride Texture.
         /// </summary>
-        /// <param name="device">A Stride.Graphics.Graphics.Device</param>
+        /// <param name="device">A <see cref="GraphicsDevice" /></param>
         /// <param name="page">The specific page to be converted.</param>
-        /// <param name="options">Additional options for PDF rendering.</param>
-        /// <param name="textureFlags">Stride.Graphics.TextureFlags</param>
-        /// <param name="usage">Stride.Graphics.GraphicsResourceUsage</param>
-        /// <returns>The rendered PDF page as a Stride Texture.</returns>
+        /// <param name="options">Additional <see cref="RenderOptions" /> for PDF rendering.</param>
+        /// <param name="textureFlags"><see cref="TextureFlags"/></param>
+        /// <param name="usage"><see cref="GraphicsResourceUsage" /></param>
+        /// <returns>The rendered PDF page as a <see cref="Texture"/>.</returns>
         public Texture LoadTexture(GraphicsDevice device,
                                    int page = 0,
                                    RenderOptions options = default,
@@ -315,12 +315,25 @@ namespace VL.PDFReader
         }
 
 
+        /// <summary>
+        /// Renders a single page of a given PDF into a Stride Texture.
+        /// </summary>
+        /// <param name="device">A <see cref="GraphicsDevice" /></param>
+        /// <param name="width">The width of the desired page. Use <see langword="null"/> if the original width should be used.</param>
+        /// <param name="height">The height of the desired page. Use <see langword="null"/> if the original height should be used.</param>
+        /// <param name="backgroundColor">Specifies the background color. Defaults to <see cref="Color4.White"/>.</param>
+        /// <param name="page">The specific page to be converted.</param>
+        /// <param name="withAnnotations">Specifies whether annotations be rendered.</param>
+        /// <param name="withFormFill">Specifies whether form filling will be rendered.</param>
+        /// <param name="textureFlags"><see cref="TextureFlags"/></param>
+        /// <param name="usage"><see cref="GraphicsResourceUsage" /></param>
+        /// <returns>The rendered PDF page as a <see cref="Texture"/>.</returns>
         public Texture LoadTextureFaster(GraphicsDevice device,
-                                         int? requestedWidth,
-                                         int? requestedHeight,
+                                         int? width,
+                                         int? height,
                                          Color4? backgroundColor,
                                          int page = 0,
-                                         bool renderFormFill = true,
+                                         bool withFormFill = true,
                                          bool withAnnotations = true,
                                          TextureFlags textureFlags = TextureFlags.ShaderResource,
                                          GraphicsResourceUsage usage = GraphicsResourceUsage.Immutable,
@@ -338,8 +351,8 @@ namespace VL.PDFReader
             var originalWidth = (int)pagesize.X;
             var originalHeight = (int)pagesize.Y;
 
-            int width = Math.Max(requestedWidth ?? originalWidth, 2);
-            int height = Math.Max(requestedHeight ?? originalHeight, 2);
+            int w = width.HasValue && width.Value > 0 ? width.Value : originalWidth;
+            int h = height.HasValue && height.Value > 0 ? height.Value : originalHeight; 
 
             NativeMethods.FPDF renderFlags = default;
 
@@ -351,8 +364,8 @@ namespace VL.PDFReader
             var description = new ImageDescription() with
             {
                 Dimension = TextureDimension.Texture2D,
-                Width = width,
-                Height = height,
+                Width = w,
+                Height = h,
                 Depth = 1,
                 ArraySize = 1,
                 MipLevels = 1,
@@ -372,10 +385,10 @@ namespace VL.PDFReader
             try
             {
                 cancellationToken.ThrowIfCancellationRequested();
-                handle = NativeMethods.FPDFBitmap_CreateEx(width, height, NativeMethods.FPDFBitmap.BGRA, image.GetPixelBuffer(0,0).DataPointer, width * 4);
+                handle = NativeMethods.FPDFBitmap_CreateEx(w, h, NativeMethods.FPDFBitmap.BGRA, image.GetPixelBuffer(0,0).DataPointer, w * 4);
 
                 cancellationToken.ThrowIfCancellationRequested();
-                NativeMethods.FPDFBitmap_FillRect(handle, 0, 0, width, height, (uint)bgcolor);
+                NativeMethods.FPDFBitmap_FillRect(handle, 0, 0, w, h, (uint)bgcolor);
 
                 cancellationToken.ThrowIfCancellationRequested();
                 bool success = _file.RenderPDFPageToBitmap(
@@ -383,11 +396,11 @@ namespace VL.PDFReader
                     handle,
                     0,
                     0,
-                    width,
-                    height,
+                    w,
+                    h,
                     0,
                     renderFlags,
-                    renderFormFill
+                    withFormFill
                 );
 
                 if (!success)
@@ -493,8 +506,14 @@ namespace VL.PDFReader
                 AdjustForAspectRatio(ref requestedWidth, ref requestedHeight, pagesize);
             }
 
-            float width = requestedWidth ?? originalWidth;
-            float height = requestedHeight ?? originalHeight;
+            // float width = requestedWidth ?? originalWidth;
+            // float height = requestedHeight ?? originalHeight;
+
+
+            float width = requestedWidth.HasValue && requestedWidth.Value > 0 ? requestedWidth.Value : originalWidth;
+            float height = requestedHeight.HasValue && requestedHeight.Value > 0 ? requestedHeight.Value : originalHeight;
+
+
 
             if (rotate == PdfRotation.Rotate90 || rotate == PdfRotation.Rotate270)
             {
@@ -807,7 +826,7 @@ namespace VL.PDFReader
             }
             else if (width != null && height == null)
             {
-                height = pageSize.Y / pageSize.Y * width.Value;
+                height = pageSize.Y / pageSize.X * width.Value;
             }
         }
 
