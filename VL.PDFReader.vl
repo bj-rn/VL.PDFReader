@@ -834,7 +834,7 @@
                 <ControlPoint Id="BNOdhzobU1gOdo9kkycqMh" Bounds="196,415" />
                 <ControlPoint Id="QfwxYmjvqEzMF01sVJEU8r" Bounds="237,415" />
                 <ControlPoint Id="R2RQiKXqqRlMFQmlP1JsDZ" Bounds="562,876" />
-                <Node Bounds="101,160,65,19" AutoConnect="true" Id="HYejkMGRgciOrHeNHHPF7Q">
+                <Node Bounds="101,160,65,19" Id="HYejkMGRgciOrHeNHHPF7Q">
                   <p:NodeReference LastCategoryFullName="PDFReader" LastDependency="VL.PDFReader.vl">
                     <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                     <Choice Kind="ProcessAppFlag" Name="Loader (Async)" />
@@ -851,7 +851,6 @@
                 <ControlPoint Id="QLg8kABhGAvMCtNt5AYbFD" Bounds="103,102" />
                 <ControlPoint Id="GlOqThdmBUoLkMBzCFOM0C" Bounds="123,118" />
                 <ControlPoint Id="PeHomk2rnG1MCUpQE82AZr" Bounds="143,134" />
-                <ControlPoint Id="EcCGGeHx3kMMcKGTkx1U9A" Bounds="163,151" />
                 <ControlPoint Id="R3syPPzzzhFNqvl7guDQEJ" Bounds="103,450" />
                 <Node Bounds="463,471,45,19" Id="EQBVGDrHOUeL4ZWWf77AJD">
                   <p:NodeReference LastCategoryFullName="Math.Ranges" LastDependency="VL.CoreLib.vl">
@@ -884,7 +883,6 @@
                 <Pin Id="TZ7a4TjWq3tNSaXREiNB6a" Name="Page" Kind="InputPin" />
                 <Pin Id="F4fvj2akxvdOh1HJBuVz1S" Name="Preload Pages" Kind="InputPin" DefaultValue="2" />
                 <Pin Id="JWQBfyQoGevMDZLAET4JvO" Name="Password" Kind="InputPin" />
-                <Pin Id="DMDVqYLldBSNmkVq1RXtmD" Name="Max Tile Size" Kind="InputPin" Visibility="Optional" />
                 <Pin Id="FWaIJj114DjMZhAQ7K6Q9w" Name="PDF" Kind="OutputPin" />
                 <Pin Id="HjzY2rsBFy9M0FCqn5qLPl" Name="On PDF Loaded" Kind="OutputPin" Visibility="Optional" />
                 <Pin Id="M5ETSuTmZ8YLtaW32q43cf" Name="Width" Kind="InputPin" />
@@ -933,8 +931,6 @@
               <Link Id="UvkBQKRNkX4O82VrGxyEvl" Ids="J9lpkwF0rq4LhzGLQyoFJp,GlOqThdmBUoLkMBzCFOM0C" IsHidden="true" />
               <Link Id="FfA7vqGqNIYM6V9HwkLZe0" Ids="PeHomk2rnG1MCUpQE82AZr,QT3J9KDWE6zOSwkoB8we4S" />
               <Link Id="N6CAMHhCcDBLkigP0IWHvs" Ids="JWQBfyQoGevMDZLAET4JvO,PeHomk2rnG1MCUpQE82AZr" IsHidden="true" />
-              <Link Id="UXLWpFuUXMeLYQ4dD7QqTA" Ids="EcCGGeHx3kMMcKGTkx1U9A,AtYTJKFTZfvP4WxgjvTQtA" />
-              <Link Id="Cd6eBmkQrJ1MmQaE2eI8pa" Ids="DMDVqYLldBSNmkVq1RXtmD,EcCGGeHx3kMMcKGTkx1U9A" IsHidden="true" />
               <Link Id="HBeaJab8Zt0PqbLRm7Cpv2" Ids="PhVFV3NHI4mLBZWBBIojJo,R3syPPzzzhFNqvl7guDQEJ" />
               <Link Id="DaasRMmmTUxNI1t6MGC0Z3" Ids="R3syPPzzzhFNqvl7guDQEJ,FWaIJj114DjMZhAQ7K6Q9w" IsHidden="true" />
               <Link Id="PIaeE30wBiuNdInoD8xsNd" Ids="SPbikSXwvDjLueVqjPxky0,BGXCZmZMCnjLNBhAFihj6L" />
@@ -4134,9 +4130,9 @@
                     <Pin Id="IlKzJ8xIpvxOBUt9rIs7Dj" Name="Anti Aliasing" Kind="InputPin" />
                     <Pin Id="FT1NEj2xV99PxHF1iI65f4" Name="Background Color" Kind="InputPin" />
                     <Pin Id="JopetZ7jKajPrK02lUo1Qy" Name="Bounds" Kind="InputPin" />
-                    <Pin Id="AAGljCc3c46NDJY7MD3jFN" Name="Use Tiling" Kind="InputPin" />
                     <Pin Id="J1gkTyUNYS7P1UCmXk4SYH" Name="Dpi Relative To Bounds" Kind="InputPin" />
                     <Pin Id="KUMdPYvtjgsNGO7EkLVFBa" Name="Output" Kind="StateOutputPin" />
+                    <Pin Id="AAGljCc3c46NDJY7MD3jFN" Name="Use Tiling" Kind="InputPin" />
                   </Node>
                   <Pin Id="BxneHRc97H5MIOgHwTFa7P" Name="DPI" Kind="InputPin" />
                   <Pin Id="JgeEHTuYfmYO3SIqlBg0Z5" Name="Width" Kind="InputPin" />
@@ -4148,7 +4144,6 @@
                   <Pin Id="Iq0gs96OYaNOwt2dJOvJMX" Name="Anti Aliasing" Kind="InputPin" />
                   <Pin Id="UG4G6TYOA6FP1vqK7yRyAq" Name="Background Color" Kind="InputPin" />
                   <Pin Id="JG9jFuJEDgMQXiVGk7HbKe" Name="Bounds" Kind="InputPin" />
-                  <Pin Id="LuQarGK5soUOMaW79lwzr4" Name="Use Tiling" Kind="InputPin" />
                   <Pin Id="GfQgRfzsAVJMUBZB45i2D5" Name="DPI Relative To Bounds" Kind="InputPin" />
                   <Pin Id="Lca0PpZll4UMCR6Cj9x9lL" Name="Output" Kind="OutputPin" />
                   <ControlPoint Id="J9AVJMtTyAPNrNVulKKAdW" Bounds="130,146" />
@@ -4157,6 +4152,7 @@
                   <ControlPoint Id="ONNkJcU2AMXOsPdQDUekGt" Bounds="351,148" />
                   <Link Id="THNeruGaHryP8BFYIb2Se2" Ids="ONNkJcU2AMXOsPdQDUekGt,J1gkTyUNYS7P1UCmXk4SYH" />
                   <Link Id="CEyiucGrekKPx8c79RnNJZ" Ids="GfQgRfzsAVJMUBZB45i2D5,ONNkJcU2AMXOsPdQDUekGt" IsHidden="true" />
+                  <Pin Id="LuQarGK5soUOMaW79lwzr4" Name="Use Tiling" Kind="InputPin" />
                 </Patch>
               </Node>
               <!--
