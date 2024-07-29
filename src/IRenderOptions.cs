@@ -59,12 +59,12 @@ namespace VL.PDFReader
         RectangleF? Bounds { get; init; }
 
         /// <summary>
-        /// Specifies that <see cref="Dpi"/> and <see cref="WithAspectRatio"/> will be calculated relative to <see cref="Bounds"/> instead of the original PDF.
+        /// Specifies wether <see cref="Dpi"/> and <see cref="WithAspectRatio"/> will be calculated relative to <see cref="Bounds"/> instead of the original PDF size (at 72 DPI).
         /// </summary>
         bool DpiRelativeToBounds { get; init; }
 
         /// <summary>
-        /// Specifies that the PDF should be rendered as several segments and merged into the final image. This can help in cases where the output image is too large, causing corrupted images (e.g. missing text) or crashes.
+        /// Specifies wether the PDF should be rendered as several segments and merged into the final image. This can help in cases where the output image is too large, causing corrupted images (e.g. missing text) or crashes.
         /// </summary>
         bool UseTiling { get; init; }
     }
