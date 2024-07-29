@@ -14,17 +14,17 @@ namespace VL.PDFReader
         int Dpi { get; init; }
 
         /// <summary>
-        /// The width of the desired page. Use <see langword="null"/> if the original width should be used.
+        /// The desired width of the page. Use <see langword="null"/> if the original width should be used.
         /// </summary>
         int? Width { get; init; }
 
         /// <summary>
-        /// The height of the desired page. Use <see langword="null"/> if the original height should be used.
+        /// The desired height of the page. Use <see langword="null"/> if the original height should be used.
         /// </summary>
         int? Height { get; init; }
 
         /// <summary>
-        /// Specifies whether annotations be rendered.
+        /// Specifies whether annotations will be rendered.
         /// </summary>
         bool WithAnnotations { get; init; }
 
@@ -39,12 +39,12 @@ namespace VL.PDFReader
         bool WithAspectRatio { get; init; }
 
         /// <summary>
-        /// Specifies the rotation at 90 degree intervals.
+        /// Specifies the rotation in 90 degree steps.
         /// </summary>
         PdfRotation Rotation { get; init; }
 
         /// <summary>
-        /// Specifies which parts of the PDF should be anti-aliasing for rendering.
+        /// Specifies which elements of the PDF should be anti-aliased for rendering
         /// </summary>
         PdfAntiAliasing AntiAliasing { get; init; }
 
@@ -54,18 +54,18 @@ namespace VL.PDFReader
         Color4? BackgroundColor { get; init; }
 
         /// <summary>
-        /// Specifies the bounds for the page relative toPageSizes. This can be used for clipping (bounds inside of page) or additional margins (bounds outside of page). The bound units are relative to the PDF size (at 72 DPI).
+        /// Can be used for clipping (bounds inside of page) or additional margins (bounds outside of page). The bounds are relative to the PDF size (at 72 DPI).
         /// </summary>
         RectangleF? Bounds { get; init; }
-
-        /// <summary>
-        /// Specifies that the PDF should be rendered as several segments and merged into the final image. This can help in cases where the output image is too large, causing corrupted images (e.g. missing text) or crashes.
-        /// </summary>
-        bool UseTiling { get; init; }
 
         /// <summary>
         /// Specifies that <see cref="Dpi"/> and <see cref="WithAspectRatio"/> will be calculated relative to <see cref="Bounds"/> instead of the original PDF.
         /// </summary>
         bool DpiRelativeToBounds { get; init; }
+
+        /// <summary>
+        /// Specifies that the PDF should be rendered as several segments and merged into the final image. This can help in cases where the output image is too large, causing corrupted images (e.g. missing text) or crashes.
+        /// </summary>
+        bool UseTiling { get; init; }
     }
 }
