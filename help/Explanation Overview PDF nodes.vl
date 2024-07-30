@@ -2099,6 +2099,33 @@
               <p:stringtype p:Assembly="VL.Core" p:Type="VL.Core.StringType">Comment</p:stringtype>
             </p:ValueBoxSettings>
           </Pad>
+          <Pad Id="I8vRuxuet85MbuFJYrquGm" Bounds="619,138,152,165" ShowValueBox="true" isIOBox="true" Value="Alternatives:&#xD;&#xA;&#xD;&#xA;*&#xD;&#xA;*&#xD;&#xA;">
+            <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
+              <Choice Kind="TypeFlag" Name="String" />
+            </p:TypeAnnotation>
+            <p:ValueBoxSettings>
+              <p:fontsize p:Type="Int32">12</p:fontsize>
+              <p:stringtype p:Assembly="VL.Core" p:Type="VL.Core.StringType">Comment</p:stringtype>
+            </p:ValueBoxSettings>
+          </Pad>
+          <Pad Id="T64lPwlIlBpMre10cP4tsV" Bounds="640,185,257,21" ShowValueBox="true" isIOBox="true" Value="https://www.nuget.org/packages/VL.CEF">
+            <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
+              <Choice Kind="TypeFlag" Name="String" />
+            </p:TypeAnnotation>
+            <p:ValueBoxSettings>
+              <p:fontsize p:Type="Int32">9</p:fontsize>
+              <p:stringtype p:Assembly="VL.Core" p:Type="VL.Core.StringType">Link</p:stringtype>
+            </p:ValueBoxSettings>
+          </Pad>
+          <Pad Id="IczKuFVi1icPIDQuFzIw9h" Bounds="640,210,291,19" ShowValueBox="true" isIOBox="true" Value="https://github.com/eqbic/VL.PDF">
+            <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
+              <Choice Kind="TypeFlag" Name="String" />
+            </p:TypeAnnotation>
+            <p:ValueBoxSettings>
+              <p:fontsize p:Type="Int32">9</p:fontsize>
+              <p:stringtype p:Assembly="VL.Core" p:Type="VL.Core.StringType">Link</p:stringtype>
+            </p:ValueBoxSettings>
+          </Pad>
         </Canvas>
         <Patch Id="QPtZ1Uh26gCP5RcWwNHv92" Name="Create" />
         <Patch Id="IwAHcP2uKrfMiZJDzpgYra" Name="Update" />
