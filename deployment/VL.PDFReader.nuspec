@@ -35,6 +35,7 @@
     <file src="..\lib\**\*.dll" target="lib\" exclude="" />
     <file src="..\*.vl" target="" exclude="" />
     <file src="..\help\**" target="help\" exclude="" />
+    <file src="..\resources\**" target="resources" exclude="" />
     <file src="..\README.md" target="docs\" />
   </files>
 </package>
