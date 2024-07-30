@@ -161,7 +161,6 @@
               <Choice Kind="TypeFlag" Name="Int2" />
             </p:TypeAnnotation>
           </Pad>
-          <Pad Id="Ah9T1coDHWxOzcMRE48ePV" Comment="Loaded Textures" Bounds="205,856,157,508" ShowValueBox="true" isIOBox="true" />
           <Pad Id="FyjqP1YxAyOPFS9ydM48zz" Comment="Active Index" Bounds="261,835,35,15" ShowValueBox="true" isIOBox="true" />
           <Pad Id="Fhqc2PdTMd8OWxIId9UyzQ" Comment="" Bounds="106,1035,89,117" ShowValueBox="true" isIOBox="true" />
           <Pad Id="LlHuvRyopRBPae6ClaXMcs" Comment="Active Page" Bounds="313,804,35,15" ShowValueBox="true" isIOBox="true" />
@@ -1587,7 +1586,7 @@
               <p:stepsize p:Type="Single">1</p:stepsize>
             </p:ValueBoxSettings>
           </Pad>
-          <Pad Id="SRo7JuygefmO22DmCeN2mx" Comment="FPS" Bounds="-481,291,35,15" ShowValueBox="true" isIOBox="true" Value="90">
+          <Pad Id="SRo7JuygefmO22DmCeN2mx" Comment="FPS" Bounds="-481,291,35,15" ShowValueBox="true" isIOBox="true" Value="80">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
               <Choice Kind="TypeFlag" Name="Float32" />
             </p:TypeAnnotation>
@@ -1670,7 +1669,7 @@
               <p:buttonmode p:Assembly="VL.UI.Forms" p:Type="VL.HDE.PatchEditor.Editors.ButtonModeEnum">Bang</p:buttonmode>
             </p:ValueBoxSettings>
           </Pad>
-          <Pad Id="BfcjVHIgczXQUJhA2EyKCA" Comment="Preload Pages" Bounds="-599,463,33,15" ShowValueBox="true" isIOBox="true" Value="12">
+          <Pad Id="BfcjVHIgczXQUJhA2EyKCA" Comment="Preload Pages" Bounds="-599,463,33,15" ShowValueBox="true" isIOBox="true" Value="16">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
               <Choice Kind="TypeFlag" Name="Integer32" />
             </p:TypeAnnotation>
@@ -1698,7 +1697,7 @@
           <Pad Id="RifyhBdfVtSOfNXHtqxnHW" Comment="Active Index" Bounds="-500,839,35,15" ShowValueBox="true" isIOBox="true" />
           <Pad Id="HxNjFoXcFxGNRHxzNQgUW3" Comment="" Bounds="-463,883,92,127" ShowValueBox="true" isIOBox="true" />
           <Pad Id="MbHTgH03TLiLsReASavfPH" Comment="Active Page" Bounds="-577,808,35,15" ShowValueBox="true" isIOBox="true" />
-          <Pad Id="T5uabgt91DXMZZCDpVswST" Comment="Loaded Pages" Bounds="-524,707,35,95" ShowValueBox="true" isIOBox="true" />
+          <Pad Id="T5uabgt91DXMZZCDpVswST" Comment="Loaded Pages" Bounds="-522,708,35,95" ShowValueBox="true" isIOBox="true" />
           <Pad Id="L8O4CuvPCQiOgCx7fWMebS" Comment="Page Count" Bounds="-467,683,35,15" ShowValueBox="true" isIOBox="true" />
           <Overlay Id="QnovQRyFLTqOs50gby04y5" Name="Stride Texture Experimental" Bounds="-791,203,730,1200">
             <p:ColorIndex p:Type="Int32">6</p:ColorIndex>
@@ -1719,7 +1718,7 @@
               <Choice Kind="TypeFlag" Name="RGBA" />
             </p:TypeAnnotation>
           </Pad>
-          <Pad Id="FVTxGapQmHrPbM7E52AM2Q" Bounds="-311,361,207,76" ShowValueBox="true" isIOBox="true" Value="Renders PDF into Stride.Graphics.Image (instead of SKImage). Offers less options. Should be faster.">
+          <Pad Id="FVTxGapQmHrPbM7E52AM2Q" Bounds="-311,361,207,76" ShowValueBox="true" isIOBox="true" Value="Renders PDF into Stride.Graphics.Image (instead of SKImage). Offers less options. &#xD;&#xA;Is a bit faster.">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
               <Choice Kind="TypeFlag" Name="String" />
             </p:TypeAnnotation>
@@ -1731,7 +1730,7 @@
           <Pad Id="JsmZ97jaMNsMHVzKRNrPP4" Comment="" Bounds="-738,764,96,114" ShowValueBox="true" isIOBox="true" />
           <ControlPoint Id="MVVk5Na4caHMVdsegrVtsC" Bounds="108,705" />
           <ControlPoint Id="Ha79uHCFi4SOv3TtdPjQlB" Bounds="1248,845" />
-          <Node Bounds="70,-203,340,186" Id="Uo8NUDG0nwlO5VfyNkM7VU">
+          <Node Bounds="84,-147,486,130" Id="Uo8NUDG0nwlO5VfyNkM7VU">
             <p:NodeReference LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
               <Choice Kind="StatefulRegion" Name="Region (Stateful)" Fixed="true" />
               <CategoryReference Kind="Category" Name="Primitive" />
@@ -1742,7 +1741,7 @@
             <Pin Id="IlozLoCxho8MIWdLJ1yvGs" Name="Lifespan" Kind="InputPin" />
             <Patch Id="UZo7VOth0j1M16OfrfN9BB" ManuallySortedPins="true">
               <Patch Id="It9wTxDzlzlOqrt4js0wPD" Name="Create" ManuallySortedPins="true" />
-              <Patch Id="HRo51RmHipKNM0sFKAGCpZ" Name="Update" ManuallySortedPins="true" />
+              <Patch Id="HRo51RmHipKNM0sFKAGCpZ" Name="Update" ParticipatingElements="TPC3NFeFg9jMbK8yb0doL5" ManuallySortedPins="true" />
               <Patch Id="UWEzdDfiI5cLpPM5je6nDK" Name="Dispose" ManuallySortedPins="true" />
               <Node Bounds="98,-89,61,19" Id="CMEJwzLnxYfLjcqTsGxSwv">
                 <p:NodeReference LastCategoryFullName="System.Application" LastDependency="VL.CoreLib.vl">
@@ -1795,7 +1794,13 @@
                 </p:NodeReference>
                 <Pin Id="Q8kASkPQCcONv4sgoiN5hV" Name="Node Context" Kind="InputPin" IsHidden="true" />
                 <Pin Id="STqgvL1mshZNGgJ9JIW9at" Name="Period" Kind="InputPin" DefaultValue="2" />
+                <Pin Id="DO8hXdw7DvYLLSatCjxWHu" Name="Present Interval" Kind="InputPin" />
               </Node>
+              <Pad Id="JMERzwoZPAbLxEICkibBo9" Comment="Present Interval" Bounds="395,-98,71,15" ShowValueBox="true" isIOBox="true" Value="Default">
+                <p:TypeAnnotation LastCategoryFullName="Stride.Graphics" LastDependency="VL.PDFReader.vl">
+                  <Choice Kind="TypeFlag" Name="PresentInterval" />
+                </p:TypeAnnotation>
+              </Pad>
             </Patch>
             <Pin Id="SYj9S1K3kvHLQCuof8kWkJ" Name="Reset" Kind="InputPin" IsHidden="true" />
           </Node>
@@ -1816,7 +1821,7 @@
                     <Choice Kind="ProcessAppFlag" Name="RenderWindow" />
                   </p:NodeReference>
                   <Pin Id="OpYFZD0HaByMGBwLhHUSkP" Name="Node Context" Kind="InputPin" IsHidden="true" />
-                  <Pin Id="FMxe7pKsfUONBwmDuHcYBK" Name="Bounds" Kind="InputPin" DefaultValue="1366, 102, 378, 239.33333" IsHidden="true" />
+                  <Pin Id="FMxe7pKsfUONBwmDuHcYBK" Name="Bounds" Kind="InputPin" DefaultValue="1382.6666, 103.333336, 427.33334, 256" IsHidden="true" />
                   <Pin Id="PgZL1Hf6TlFPInNvz6YuQm" Name="Bound to Document" Kind="InputPin" IsHidden="true" />
                   <Pin Id="Lq76Tfwq69IMqU3mdmQe3U" Name="Dialog If Document Changed" Kind="InputPin" IsHidden="true" />
                   <Pin Id="S6rMazA8friLZCOzoAMoya" Name="Save Bounds" Kind="InputPin" IsHidden="true" />
@@ -1958,16 +1963,13 @@
                   <Pin Id="ESPpCJe1fsHQDLa1Oj8VwM" Name="Output" Kind="StateOutputPin" />
                 </Node>
                 <ControlPoint Id="OyIU05GubUwMZUEEukFFXb" Bounds="298,108" />
+                <ControlPoint Id="AuosWCIzE6ALfqb0ZnZzAF" Bounds="346,464" />
               </Canvas>
               <Patch Id="SyprpRcM8qyNsXhoYNaQHa" Name="Create" />
               <Patch Id="Kj4OVCeBESCML5B0SD7xH6" Name="Update">
                 <Pin Id="BGJDkSypt3lOJGzHOiogoN" Name="Period" Kind="InputPin" />
+                <Pin Id="E5jl60Zp9GTOr0lew9B64Z" Name="Present Interval" Kind="InputPin" />
               </Patch>
-              <!--
-
-    ************************  ************************
-
--->
               <ProcessDefinition Id="RPcGnf9w2qPNchUSQ9n427">
                 <Fragment Id="QlWiRHeHc00MOB37YWjZmG" Patch="SyprpRcM8qyNsXhoYNaQHa" Enabled="true" />
                 <Fragment Id="MAnf4cfSRXZL70iTXaKkK5" Patch="Kj4OVCeBESCML5B0SD7xH6" Enabled="true" />
@@ -1985,9 +1987,11 @@
               <Link Id="JuZVNDYF0b8PeAkKt5EJZN" Ids="ESPpCJe1fsHQDLa1Oj8VwM,Dj9tCdLo6KeNy4Z9qikKbw" />
               <Link Id="VXMCU1KEq0gLSfGTg3sZd1" Ids="OyIU05GubUwMZUEEukFFXb,QSZrw0cvKokLV3SwCcws4R" />
               <Link Id="HE1RlM8Z9RBNYt8TYuudui" Ids="BGJDkSypt3lOJGzHOiogoN,OyIU05GubUwMZUEEukFFXb" IsHidden="true" />
+              <Link Id="Qe3QPGoS3i9LBraeN9ejQv" Ids="AuosWCIzE6ALfqb0ZnZzAF,T5hNGAtfgcgMIOy3lDqlMJ" />
+              <Link Id="PkZ9bjqK164LpOzxPwAX19" Ids="E5jl60Zp9GTOr0lew9B64Z,AuosWCIzE6ALfqb0ZnZzAF" IsHidden="true" />
             </Patch>
           </Node>
-          <Pad Id="MaBvU5E5VdVO4a9xCrPiWv" Comment="Enabled" Bounds="72,-259,35,35" ShowValueBox="true" isIOBox="true" Value="False">
+          <Pad Id="MaBvU5E5VdVO4a9xCrPiWv" Comment="Enabled" Bounds="86,-195,35,35" ShowValueBox="true" isIOBox="true" Value="False">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
               <Choice Kind="ImmutableTypeFlag" Name="Boolean" />
             </p:TypeAnnotation>
@@ -1995,7 +1999,7 @@
               <p:buttonmode p:Assembly="VL.UI.Forms" p:Type="VL.HDE.PatchEditor.Editors.ButtonModeEnum">Toggle</p:buttonmode>
             </p:ValueBoxSettings>
           </Pad>
-          <Pad Id="G4PrlpeMckHOBo0Wtg0qfO" Comment="" Bounds="407,-225,47,15" ShowValueBox="true" isIOBox="true" Value="Short">
+          <Pad Id="G4PrlpeMckHOBo0Wtg0qfO" Comment="" Bounds="567,-174,47,15" ShowValueBox="true" isIOBox="true" Value="Short">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
               <Choice Kind="TypeFlag" Name="ProcessLifespan" />
             </p:TypeAnnotation>
@@ -2004,6 +2008,16 @@
           <ControlPoint Id="O3rEa9DTrhlLGb7Z9RTiTZ" Bounds="1016,773" />
           <Pad Id="I0b7eiQi20sMcVssS3zHi5" Comment="" Bounds="1912,1016,78,106" ShowValueBox="true" isIOBox="true" />
           <ControlPoint Id="DDgjFwkzMj1PHMprjtixDs" Bounds="1910,757" />
+          <Pad Id="OCW9Kvq3Y5VNyu4fPIoAeX" Comment="Loaded Textures" Bounds="207,871,259,466" ShowValueBox="true" isIOBox="true" />
+          <Pad Id="I9UEcZ724zxLDkhUITwLMT" Bounds="474,898,207,87" ShowValueBox="true" isIOBox="true" Value="Displaying the textures in the IOBox like this can stall the GPU.&#xD;&#xA;&#xD;&#xA;Check the Log Window.&#xD;&#xA;&#xD;&#xA;">
+            <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
+              <Choice Kind="TypeFlag" Name="String" />
+            </p:TypeAnnotation>
+            <p:ValueBoxSettings>
+              <p:fontsize p:Type="Int32">9</p:fontsize>
+              <p:stringtype p:Assembly="VL.Core" p:Type="VL.Core.StringType">Comment</p:stringtype>
+            </p:ValueBoxSettings>
+          </Pad>
         </Canvas>
         <Patch Id="QPtZ1Uh26gCP5RcWwNHv92" Name="Create" />
         <Patch Id="IwAHcP2uKrfMiZJDzpgYra" Name="Update" />
@@ -2023,7 +2037,6 @@
         <Link Id="NG0pYjQKHzJNmKR5DabXcd" Ids="PGNDE3zM7gwPQ4gWLG553C,AIRZSrlL1DbMLnVbKXzL6E" />
         <Link Id="GcZ0r2ylCmTMMwCCwwR6M2" Ids="ROCPa3TduI1PDnbM35sA3S,HFFGjf3emqcOIsjWXcM0ZT" />
         <Link Id="SCR1vvnLKK3OyNpnSX7SN8" Ids="DgX8Ut1ORPePlPTsqXBTyW,CzwU1FIpAzRLafVvkv9956" />
-        <Link Id="AOxmsmoMkSCOhsrq5EFkvT" Ids="Jwbbz1XPvUYLe7GNAbr6Xj,Ah9T1coDHWxOzcMRE48ePV" />
         <Link Id="Nn0bLOhAL4DQdwn0mEWGv3" Ids="FoX9d5EsnVaQY87nn2fKf5,FyjqP1YxAyOPFS9ydM48zz" />
         <Link Id="Q806ds3rDvFMCIxZuX8md3" Ids="VjejfZo60joOsyguQaMivr,LlHuvRyopRBPae6ClaXMcs" />
         <Link Id="GaWjuZBIntYOb9PVzoHor4" Ids="HcE3TqHoYsUPonDuOlrDY7,DDoTjnYBd5xNkWLEqHe3Np" />
@@ -2197,6 +2210,8 @@
         <Link Id="TNd4htqzDOyQY9lBq3vDxs" Ids="G4PrlpeMckHOBo0Wtg0qfO,IlozLoCxho8MIWdLJ1yvGs" />
         <Link Id="EMj4gDdluBDNezjArWLvrA" Ids="VQ4eLEzQcxPNGxwq7WhlqQ,O3rEa9DTrhlLGb7Z9RTiTZ,AUXy0aGMm9mOGCLottfCvh" />
         <Link Id="VkUVrVqnPtiLwt9USNVtnT" Ids="L5T8i8mjbKgL7R1UL7xpXA,DDgjFwkzMj1PHMprjtixDs,I0b7eiQi20sMcVssS3zHi5" />
+        <Link Id="FbbIKHe8Uy7NhkXyqwp6V7" Ids="Jwbbz1XPvUYLe7GNAbr6Xj,OCW9Kvq3Y5VNyu4fPIoAeX" />
+        <Link Id="TPC3NFeFg9jMbK8yb0doL5" Ids="JMERzwoZPAbLxEICkibBo9,DO8hXdw7DvYLLSatCjxWHu" />
       </Patch>
     </Node>
   </Patch>
