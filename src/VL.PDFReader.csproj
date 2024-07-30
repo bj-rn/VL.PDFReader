@@ -68,9 +68,9 @@
   <!--  NuGet packages -->
   <ItemGroup>
     <PackageReference Include="SkiaSharp" Version="2.88.8" PrivateAssets="analyzers" />
-	<PackageReference Include="bblanchon.PDFium.Linux" Version="126.0.6476" PrivateAssets="analyzers" />
-	<PackageReference Include="bblanchon.PDFium.macOS" Version="126.0.6476" PrivateAssets="analyzers" />
-	<PackageReference Include="bblanchon.PDFium.Win32" Version="126.0.6476" PrivateAssets="analyzers" />
+	<PackageReference Include="bblanchon.PDFium.Linux" Version="128.0.6611" PrivateAssets="analyzers" />
+	<PackageReference Include="bblanchon.PDFium.macOS" Version="128.0.6611" PrivateAssets="analyzers" />
+	<PackageReference Include="bblanchon.PDFium.Win32" Version="128.0.6611" PrivateAssets="analyzers" />
 	<PackageReference Include="SkiaSharp.NativeAssets.Linux.NoDependencies" Version="2.88.8" PrivateAssets="analyzers" />
 	<PackageReference Include="SkiaSharp.NativeAssets.macOS" Version="2.88.8" PrivateAssets="analyzers" />
 	<PackageReference Include="SkiaSharp.NativeAssets.Win32" Version="2.88.8" PrivateAssets="analyzers" />

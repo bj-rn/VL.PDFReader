@@ -256,17 +256,17 @@
         </member>
         <member name="P:VL.PDFReader.IRenderOptions.Bounds">
             <summary>
-            Specifies the bounds for the page relative to PageSizes. This can be used for clipping (bounds inside of page) or additional margins (bounds outside of page). The bound units are relative to the PDF size (at 72 DPI).
+            Can be used for clipping (bounds inside of page) or additional margins (bounds outside of page). The bounds are relative to the PDF size (at 72 DPI).
             </summary>
         </member>
         <member name="P:VL.PDFReader.IRenderOptions.DpiRelativeToBounds">
             <summary>
-            Specifies that <see cref="P:VL.PDFReader.IRenderOptions.Dpi"/> and <see cref="P:VL.PDFReader.IRenderOptions.WithAspectRatio"/> will be calculated relative to <see cref="P:VL.PDFReader.IRenderOptions.Bounds"/> instead of the original PDF.
+            Specifies wether <see cref="P:VL.PDFReader.IRenderOptions.Dpi"/> and <see cref="P:VL.PDFReader.IRenderOptions.WithAspectRatio"/> will be calculated relative to <see cref="P:VL.PDFReader.IRenderOptions.Bounds"/> instead of the original PDF size (at 72 DPI).
             </summary>
         </member>
         <member name="P:VL.PDFReader.IRenderOptions.UseTiling">
             <summary>
-            Specifies that the PDF should be rendered as several segments and merged into the final image. This can help in cases where the output image is too large, causing corrupted images (e.g. missing text) or crashes.
+            Specifies wether the PDF should be rendered as several segments and merged into the final image. This can help in cases where the output image is too large, causing corrupted images (e.g. missing text) or crashes.
             </summary>
         </member>
         <member name="T:VL.PDFReader.PdfAntiAliasing">
@@ -479,12 +479,12 @@
             <param name="WithAnnotations">Specifies whether annotations will be rendered.</param>
             <param name="WithFormFill">Specifies whether form filling will be rendered.</param>
             <param name="WithAspectRatio">Specifies that <paramref name="Width"/> or <paramref name="Height"/> should be adjusted for aspect ratio (either one must be <see langword="null"/>).</param>
-            <param name="Rotation">Specifies the rotation in 90 degree steps.</param>
+            <param name="Rotation">Specifies the rotation in 90 degree increments.</param>
             <param name="AntiAliasing">Specifies which elements of the PDF should be anti-aliased for rendering.</param>
             <param name="BackgroundColor">Specifies the background color. Defaults to <see cref="F:Stride.Core.Mathematics.Color4.White"/>.</param>
-            <param name="Bounds">Specifies the bounds for the page relative to PageSizes. This can be used for clipping (bounds inside of page) or additional margins (bounds outside of page) The bound units are relative to the PDF size (at 72 DPI).</param>
-            <param name="DpiRelativeToBounds">Specifies that <see cref="P:VL.PDFReader.RenderOptions.Dpi"/> and <see cref="P:VL.PDFReader.RenderOptions.WithAspectRatio"/> will be calculated relative to <see cref="P:VL.PDFReader.RenderOptions.Bounds"/> instead of the original PDF.</param>
-            <param name="UseTiling">Specifies that the PDF should be rendered as several segments and merged into the final image. This can help in cases where the output image is too large, causing corrupted images (e.g. missing text) or crashes.</param>
+            <param name="Bounds">Can be used for clipping (bounds inside of page) or additional margins (bounds outside of page) The bounds are relative to the PDF size (at 72 DPI).</param>
+            <param name="DpiRelativeToBounds">Specifies wether <see cref="P:VL.PDFReader.RenderOptions.Dpi"/> and <see cref="P:VL.PDFReader.RenderOptions.WithAspectRatio"/> will be calculated relative to <see cref="P:VL.PDFReader.RenderOptions.Bounds"/> instead of the original PDF size (at 72 DPI).</param>
+            <param name="UseTiling">Specifies wether the PDF should be rendered as several segments and merged into the final image. This can help in cases where the output image is too large, causing corrupted images (e.g. missing text) or crashes.</param>
         </member>
         <member name="M:VL.PDFReader.RenderOptions.#ctor(System.Int32,System.Nullable{System.Int32},System.Nullable{System.Int32},System.Boolean,System.Boolean,System.Boolean,VL.PDFReader.PdfRotation,VL.PDFReader.PdfAntiAliasing,System.Nullable{Stride.Core.Mathematics.Color4},System.Nullable{Stride.Core.Mathematics.RectangleF},System.Boolean,System.Boolean)">
             <summary>
@@ -496,12 +496,12 @@
             <param name="WithAnnotations">Specifies whether annotations will be rendered.</param>
             <param name="WithFormFill">Specifies whether form filling will be rendered.</param>
             <param name="WithAspectRatio">Specifies that <paramref name="Width"/> or <paramref name="Height"/> should be adjusted for aspect ratio (either one must be <see langword="null"/>).</param>
-            <param name="Rotation">Specifies the rotation in 90 degree steps.</param>
+            <param name="Rotation">Specifies the rotation in 90 degree increments.</param>
             <param name="AntiAliasing">Specifies which elements of the PDF should be anti-aliased for rendering.</param>
             <param name="BackgroundColor">Specifies the background color. Defaults to <see cref="F:Stride.Core.Mathematics.Color4.White"/>.</param>
-            <param name="Bounds">Specifies the bounds for the page relative to PageSizes. This can be used for clipping (bounds inside of page) or additional margins (bounds outside of page) The bound units are relative to the PDF size (at 72 DPI).</param>
-            <param name="DpiRelativeToBounds">Specifies that <see cref="P:VL.PDFReader.RenderOptions.Dpi"/> and <see cref="P:VL.PDFReader.RenderOptions.WithAspectRatio"/> will be calculated relative to <see cref="P:VL.PDFReader.RenderOptions.Bounds"/> instead of the original PDF.</param>
-            <param name="UseTiling">Specifies that the PDF should be rendered as several segments and merged into the final image. This can help in cases where the output image is too large, causing corrupted images (e.g. missing text) or crashes.</param>
+            <param name="Bounds">Can be used for clipping (bounds inside of page) or additional margins (bounds outside of page) The bounds are relative to the PDF size (at 72 DPI).</param>
+            <param name="DpiRelativeToBounds">Specifies wether <see cref="P:VL.PDFReader.RenderOptions.Dpi"/> and <see cref="P:VL.PDFReader.RenderOptions.WithAspectRatio"/> will be calculated relative to <see cref="P:VL.PDFReader.RenderOptions.Bounds"/> instead of the original PDF size (at 72 DPI).</param>
+            <param name="UseTiling">Specifies wether the PDF should be rendered as several segments and merged into the final image. This can help in cases where the output image is too large, causing corrupted images (e.g. missing text) or crashes.</param>
         </member>
         <member name="P:VL.PDFReader.RenderOptions.Dpi">
             <summary>The DPI scaling to use for rasterization of the PDF.</summary>
@@ -522,7 +522,7 @@
             <summary>Specifies that <paramref name="Width"/> or <paramref name="Height"/> should be adjusted for aspect ratio (either one must be <see langword="null"/>).</summary>
         </member>
         <member name="P:VL.PDFReader.RenderOptions.Rotation">
-            <summary>Specifies the rotation in 90 degree steps.</summary>
+            <summary>Specifies the rotation in 90 degree increments.</summary>
         </member>
         <member name="P:VL.PDFReader.RenderOptions.AntiAliasing">
             <summary>Specifies which elements of the PDF should be anti-aliased for rendering.</summary>
@@ -531,13 +531,13 @@
             <summary>Specifies the background color. Defaults to <see cref="F:Stride.Core.Mathematics.Color4.White"/>.</summary>
         </member>
         <member name="P:VL.PDFReader.RenderOptions.Bounds">
-            <summary>Specifies the bounds for the page relative to PageSizes. This can be used for clipping (bounds inside of page) or additional margins (bounds outside of page) The bound units are relative to the PDF size (at 72 DPI).</summary>
+            <summary>Can be used for clipping (bounds inside of page) or additional margins (bounds outside of page) The bounds are relative to the PDF size (at 72 DPI).</summary>
         </member>
         <member name="P:VL.PDFReader.RenderOptions.DpiRelativeToBounds">
-            <summary>Specifies that <see cref="P:VL.PDFReader.RenderOptions.Dpi"/> and <see cref="P:VL.PDFReader.RenderOptions.WithAspectRatio"/> will be calculated relative to <see cref="P:VL.PDFReader.RenderOptions.Bounds"/> instead of the original PDF.</summary>
+            <summary>Specifies wether <see cref="P:VL.PDFReader.RenderOptions.Dpi"/> and <see cref="P:VL.PDFReader.RenderOptions.WithAspectRatio"/> will be calculated relative to <see cref="P:VL.PDFReader.RenderOptions.Bounds"/> instead of the original PDF size (at 72 DPI).</summary>
         </member>
         <member name="P:VL.PDFReader.RenderOptions.UseTiling">
-            <summary>Specifies that the PDF should be rendered as several segments and merged into the final image. This can help in cases where the output image is too large, causing corrupted images (e.g. missing text) or crashes.</summary>
+            <summary>Specifies wether the PDF should be rendered as several segments and merged into the final image. This can help in cases where the output image is too large, causing corrupted images (e.g. missing text) or crashes.</summary>
         </member>
         <member name="M:VL.PDFReader.RenderOptions.#ctor">
             <summary>
