@@ -15,6 +15,7 @@
     <authors>bj-rn</authors>
     <owners>bj-rn</owners>
     <projectUrl>https://github.com/bj-rn/VL.PDFReader</projectUrl>
+    <license type="expression">MIT</license>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
 
     <!-- Provide description and tags-->
@@ -23,8 +24,12 @@
     <copyright>Copyright © 2024</copyright>
     <tags>VL, vvvv, PDF, PDFium, Reader, Skia, Image, Stride, Texture</tags>
 
-    <license type="expression">MIT</license>
     <readme>docs\README.md</readme>
+
+    <dependencies>
+      <dependency id="bblanchon.PDFiumV8.Win32" version="128.0.6611" />
+    </dependencies>
+
   </metadata>
   <files>
     <file src="..\lib\**\*.dll" target="lib\" exclude="" />
