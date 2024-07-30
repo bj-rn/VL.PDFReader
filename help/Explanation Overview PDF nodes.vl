@@ -883,7 +883,7 @@
               <Choice Kind="TypeFlag" Name="Integer32" />
             </p:TypeAnnotation>
           </Pad>
-          <Pad Id="D07g2zgTBLKPPfVtvPKoxh" Bounds="2077,2094,242,201" ShowValueBox="true" isIOBox="true" Value="If both Start Page and End Page are Null the whole document will be searched.&#xD;&#xA;&#xD;&#xA;If only Start Page != NULL only the specified page will be searched.&#xD;&#xA;&#xD;&#xA;If only End Page != NULL the doument will be searched from the first page to End Page.">
+          <Pad Id="D07g2zgTBLKPPfVtvPKoxh" Bounds="2077,2094,242,201" ShowValueBox="true" isIOBox="true" Value="If both Start Page and End Page are Null the whole document will be searched.&#xD;&#xA;&#xD;&#xA;If only Start Page != NULL only the specified page will be searched.&#xD;&#xA;&#xD;&#xA;If only End Page != NULL the document will be searched from the first page to End Page.">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
               <Choice Kind="TypeFlag" Name="String" />
             </p:TypeAnnotation>
