@@ -2099,7 +2099,7 @@
               <p:stringtype p:Assembly="VL.Core" p:Type="VL.Core.StringType">Comment</p:stringtype>
             </p:ValueBoxSettings>
           </Pad>
-          <Pad Id="I8vRuxuet85MbuFJYrquGm" Bounds="619,138,152,165" ShowValueBox="true" isIOBox="true" Value="Alternatives:&#xD;&#xA;&#xD;&#xA;*&#xD;&#xA;*&#xD;&#xA;">
+          <Pad Id="I8vRuxuet85MbuFJYrquGm" Bounds="619,136,152,165" ShowValueBox="true" isIOBox="true" Value="Alternatives:&#xD;&#xA;&#xD;&#xA;*&#xD;&#xA;*&#xD;&#xA;">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
               <Choice Kind="TypeFlag" Name="String" />
             </p:TypeAnnotation>
@@ -2108,7 +2108,7 @@
               <p:stringtype p:Assembly="VL.Core" p:Type="VL.Core.StringType">Comment</p:stringtype>
             </p:ValueBoxSettings>
           </Pad>
-          <Pad Id="T64lPwlIlBpMre10cP4tsV" Bounds="640,185,257,21" ShowValueBox="true" isIOBox="true" Value="https://www.nuget.org/packages/VL.CEF">
+          <Pad Id="T64lPwlIlBpMre10cP4tsV" Bounds="640,184,257,21" ShowValueBox="true" isIOBox="true" Value="https://www.nuget.org/packages/VL.CEF">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
               <Choice Kind="TypeFlag" Name="String" />
             </p:TypeAnnotation>
@@ -2117,7 +2117,7 @@
               <p:stringtype p:Assembly="VL.Core" p:Type="VL.Core.StringType">Link</p:stringtype>
             </p:ValueBoxSettings>
           </Pad>
-          <Pad Id="IczKuFVi1icPIDQuFzIw9h" Bounds="640,210,291,19" ShowValueBox="true" isIOBox="true" Value="https://github.com/eqbic/VL.PDF">
+          <Pad Id="IczKuFVi1icPIDQuFzIw9h" Bounds="640,209,291,19" ShowValueBox="true" isIOBox="true" Value="https://github.com/eqbic/VL.PDF">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
               <Choice Kind="TypeFlag" Name="String" />
             </p:TypeAnnotation>
