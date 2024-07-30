@@ -2072,7 +2072,7 @@
               <p:stringtype p:Assembly="VL.Core" p:Type="VL.Core.StringType">Link</p:stringtype>
             </p:ValueBoxSettings>
           </Pad>
-          <Pad Id="BsV5fbl6UKzM0xzfgDs1rD" Bounds="403,184,139,19" ShowValueBox="true" isIOBox="true" Value="BSD-3">
+          <Pad Id="BsV5fbl6UKzM0xzfgDs1rD" Bounds="403,184,139,19" ShowValueBox="true" isIOBox="true" Value="Apache-2.0">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
               <Choice Kind="TypeFlag" Name="String" />
             </p:TypeAnnotation>
