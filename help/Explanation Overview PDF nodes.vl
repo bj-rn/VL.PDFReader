@@ -15,7 +15,7 @@
       </p:NodeReference>
       <Patch Id="Ai8957ROxztOVRJhRGMJue">
         <Canvas Id="IPjyZ1jyLLsOToIPHtDC4Y" CanvasType="Group">
-          <Node Bounds="386,305,25,19" Id="OGnbHH6WI9LOvSI6xphzXl">
+          <Node Bounds="393,641,25,19" Id="OGnbHH6WI9LOvSI6xphzXl">
             <p:NodeReference LastCategoryFullName="Math" LastDependency="VL.CoreLib.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <Choice Kind="OperationCallFlag" Name="/" />
@@ -24,7 +24,7 @@
             <Pin Id="UygdB6ngz36PVaUWWkh39K" Name="Input 2" Kind="InputPin" />
             <Pin Id="MRMBG3Ri4JbPfiApeJpoKo" Name="Output" Kind="OutputPin" />
           </Node>
-          <Pad Id="NGKuX58ldv7QJmKc0tjG6z" Comment="" Bounds="388,270,35,15" ShowValueBox="true" isIOBox="true" Value="1">
+          <Pad Id="NGKuX58ldv7QJmKc0tjG6z" Comment="" Bounds="395,606,35,15" ShowValueBox="true" isIOBox="true" Value="1">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
               <Choice Kind="ImmutableTypeFlag" Name="Float32" />
             </p:TypeAnnotation>
@@ -33,7 +33,7 @@
               <p:stepsize p:Type="Single">1</p:stepsize>
             </p:ValueBoxSettings>
           </Pad>
-          <Pad Id="RpXTL8ur9AQPnfpLSt2MYM" Comment="FPS" Bounds="408,286,35,15" ShowValueBox="true" isIOBox="true" Value="30">
+          <Pad Id="RpXTL8ur9AQPnfpLSt2MYM" Comment="FPS" Bounds="415,622,35,15" ShowValueBox="true" isIOBox="true" Value="30">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
               <Choice Kind="TypeFlag" Name="Float32" />
             </p:TypeAnnotation>
@@ -42,7 +42,7 @@
               <p:stepsize p:Type="Single">1</p:stepsize>
             </p:ValueBoxSettings>
           </Pad>
-          <Node Bounds="386,347,106,19" Id="DHWMe8yoJNjNEcH4p9ebLi">
+          <Node Bounds="393,683,106,19" Id="DHWMe8yoJNjNEcH4p9ebLi">
             <p:NodeReference LastCategoryFullName="Animation" LastDependency="VL.CoreLib.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <Choice Kind="ProcessAppFlag" Name="LFO" />
@@ -57,7 +57,7 @@
             <Pin Id="FtQ1Wvi8l7PN6BB3LaFdcJ" Name="On New Cycle" Kind="OutputPin" />
             <Pin Id="BzQsZ6Ql8e7PBkdQLWo5se" Name="Cycles" Kind="OutputPin" />
           </Node>
-          <Pad Id="NDL64nsAkYINpGVEX618ly" Bounds="84,70,325,52" ShowValueBox="true" isIOBox="true" Value="High Level Nodes">
+          <Pad Id="NDL64nsAkYINpGVEX618ly" Bounds="91,406,325,52" ShowValueBox="true" isIOBox="true" Value="High Level Nodes">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
               <Choice Kind="TypeFlag" Name="String" />
             </p:TypeAnnotation>
@@ -66,7 +66,7 @@
               <p:stringtype p:Assembly="VL.Core" p:Type="VL.Core.StringType">Comment</p:stringtype>
             </p:ValueBoxSettings>
           </Pad>
-          <Node Bounds="149,639,330,19" Id="Oj8uPMW7NBPPDE0TZjwtyt">
+          <Node Bounds="156,975,330,19" Id="Oj8uPMW7NBPPDE0TZjwtyt">
             <p:NodeReference LastCategoryFullName="PDFReader.Stride" LastDependency="VL.PDFReader.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <CategoryReference Kind="Category" Name="Stride" NeedsToBeDirectParent="true">
@@ -92,12 +92,12 @@
             <Pin Id="JzPcSN9m5s5LUZWPIudC4h" Name="PDF" Kind="OutputPin" />
             <Pin Id="U8v0KQBE5gxM8NqOEH3jGw" Name="On PDF Loaded" Kind="OutputPin" IsHidden="true" />
           </Node>
-          <Pad Id="TXl5v1r9whjQGxyArBSddY" Comment="Path" Bounds="152,256,140,15" ShowValueBox="true" isIOBox="true" Value="..\resources\Reference.pdf">
+          <Pad Id="TXl5v1r9whjQGxyArBSddY" Comment="Path" Bounds="159,592,140,15" ShowValueBox="true" isIOBox="true" Value="..\resources\Reference.pdf">
             <p:TypeAnnotation LastCategoryFullName="IO" LastDependency="VL.CoreLib.vl">
               <Choice Kind="TypeFlag" Name="Path" />
             </p:TypeAnnotation>
           </Pad>
-          <Pad Id="TPpq8p4yr04MhIIUJz1Uxl" Comment="Reload PDF" Bounds="206,286,35,35" ShowValueBox="true" isIOBox="true" Value="false">
+          <Pad Id="TPpq8p4yr04MhIIUJz1Uxl" Comment="Reload PDF" Bounds="213,622,35,35" ShowValueBox="true" isIOBox="true" Value="false">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
               <Choice Kind="ImmutableTypeFlag" Name="Boolean" />
             </p:TypeAnnotation>
@@ -105,7 +105,7 @@
               <p:buttonmode p:Assembly="VL.UI.Forms" p:Type="VL.HDE.PatchEditor.Editors.ButtonModeEnum">Bang</p:buttonmode>
             </p:ValueBoxSettings>
           </Pad>
-          <Pad Id="P7gfLdYNMBcLMHrcHEWPjM" Comment="Pause" Bounds="438,313,35,35" ShowValueBox="true" isIOBox="true" Value="True">
+          <Pad Id="P7gfLdYNMBcLMHrcHEWPjM" Comment="Pause" Bounds="445,649,35,35" ShowValueBox="true" isIOBox="true" Value="True">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
               <Choice Kind="ImmutableTypeFlag" Name="Boolean" />
             </p:TypeAnnotation>
@@ -113,8 +113,8 @@
               <p:buttonmode p:Assembly="VL.UI.Forms" p:Type="VL.HDE.PatchEditor.Editors.ButtonModeEnum">Toggle</p:buttonmode>
             </p:ValueBoxSettings>
           </Pad>
-          <Pad Id="NPzswQ0EEQ5MIJ9Dq6iMBb" Comment="Page" Bounds="489,398,35,15" ShowValueBox="true" isIOBox="true" />
-          <Pad Id="IK3pD9ti895ODT3A47K1hp" Comment="Reset" Bounds="526,315,35,35" ShowValueBox="true" isIOBox="true" Value="false">
+          <Pad Id="NPzswQ0EEQ5MIJ9Dq6iMBb" Comment="Page" Bounds="496,734,35,15" ShowValueBox="true" isIOBox="true" />
+          <Pad Id="IK3pD9ti895ODT3A47K1hp" Comment="Reset" Bounds="533,651,35,35" ShowValueBox="true" isIOBox="true" Value="false">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
               <Choice Kind="ImmutableTypeFlag" Name="Boolean" />
             </p:TypeAnnotation>
@@ -122,7 +122,7 @@
               <p:buttonmode p:Assembly="VL.UI.Forms" p:Type="VL.HDE.PatchEditor.Editors.ButtonModeEnum">Bang</p:buttonmode>
             </p:ValueBoxSettings>
           </Pad>
-          <Pad Id="PGNDE3zM7gwPQ4gWLG553C" Comment="Preload Pages" Bounds="313,480,33,15" ShowValueBox="true" isIOBox="true" Value="1">
+          <Pad Id="PGNDE3zM7gwPQ4gWLG553C" Comment="Preload Pages" Bounds="320,816,33,15" ShowValueBox="true" isIOBox="true" Value="1">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
               <Choice Kind="TypeFlag" Name="Integer32" />
             </p:TypeAnnotation>
@@ -130,7 +130,7 @@
               <p:fontsize p:Type="Int32">7</p:fontsize>
             </p:ValueBoxSettings>
           </Pad>
-          <Node Bounds="538,604,240,26" Id="Kbf6XOiqcUzLGPVX3IO736">
+          <Node Bounds="545,940,240,26" Id="Kbf6XOiqcUzLGPVX3IO736">
             <p:NodeReference LastCategoryFullName="PDFReader.PDF.RenderOptions" LastDependency="VL.PDFReader.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <CategoryReference Kind="4026531840" Name="RenderOptions" />
@@ -151,26 +151,26 @@
             <Pin Id="DgX8Ut1ORPePlPTsqXBTyW" Name="Output" Kind="StateOutputPin" />
             <Pin Id="ViVCnEQo0GFL0tDjBwHDbJ" Name="Use Tiling" Kind="InputPin" />
           </Node>
-          <Pad Id="ROCPa3TduI1PDnbM35sA3S" Comment="Password" Bounds="368,497,73,15" ShowValueBox="true" isIOBox="true" Value="">
+          <Pad Id="ROCPa3TduI1PDnbM35sA3S" Comment="Password" Bounds="375,833,73,15" ShowValueBox="true" isIOBox="true" Value="">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
               <Choice Kind="TypeFlag" Name="String" />
             </p:TypeAnnotation>
           </Pad>
-          <Pad Id="F7yT7d00NszMcyW60iQmBj" Comment="Max Tile Size" Bounds="422,523,35,28" ShowValueBox="true" isIOBox="true" Value="4000, 4000">
+          <Pad Id="F7yT7d00NszMcyW60iQmBj" Comment="Max Tile Size" Bounds="429,859,35,28" ShowValueBox="true" isIOBox="true" Value="4000, 4000">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
               <Choice Kind="TypeFlag" Name="Int2" />
             </p:TypeAnnotation>
           </Pad>
-          <Pad Id="FyjqP1YxAyOPFS9ydM48zz" Comment="Active Index" Bounds="261,835,35,15" ShowValueBox="true" isIOBox="true" />
-          <Pad Id="Fhqc2PdTMd8OWxIId9UyzQ" Comment="" Bounds="106,1035,89,117" ShowValueBox="true" isIOBox="true" />
-          <Pad Id="LlHuvRyopRBPae6ClaXMcs" Comment="Active Page" Bounds="313,804,35,15" ShowValueBox="true" isIOBox="true" />
-          <Pad Id="DDoTjnYBd5xNkWLEqHe3Np" Comment="Loaded Pages" Bounds="367,700,35,95" ShowValueBox="true" isIOBox="true" />
-          <Pad Id="CuTVt3V3CkVPicp2Jmnwjo" Comment="Page Count" Bounds="422,676,35,15" ShowValueBox="true" isIOBox="true" />
-          <ControlPoint Id="JJ0DEsyBTgdOHDyTrXd1sg" Bounds="259,462" />
-          <Overlay Id="LM5bPbP3X9HO48g7clb27v" Name="Stride Texture" Bounds="98,198,730,1200">
+          <Pad Id="FyjqP1YxAyOPFS9ydM48zz" Comment="Active Index" Bounds="268,1171,35,15" ShowValueBox="true" isIOBox="true" />
+          <Pad Id="Fhqc2PdTMd8OWxIId9UyzQ" Comment="" Bounds="113,1371,89,117" ShowValueBox="true" isIOBox="true" />
+          <Pad Id="LlHuvRyopRBPae6ClaXMcs" Comment="Active Page" Bounds="320,1140,35,15" ShowValueBox="true" isIOBox="true" />
+          <Pad Id="DDoTjnYBd5xNkWLEqHe3Np" Comment="Loaded Pages" Bounds="374,1036,35,95" ShowValueBox="true" isIOBox="true" />
+          <Pad Id="CuTVt3V3CkVPicp2Jmnwjo" Comment="Page Count" Bounds="429,1012,35,15" ShowValueBox="true" isIOBox="true" />
+          <ControlPoint Id="JJ0DEsyBTgdOHDyTrXd1sg" Bounds="266,798" />
+          <Overlay Id="LM5bPbP3X9HO48g7clb27v" Name="Stride Texture" Bounds="105,534,730,1200">
             <p:ColorIndex p:Type="Int32">11</p:ColorIndex>
           </Overlay>
-          <Node Bounds="1288,307,25,19" Id="FL58f1Z7iMBPvQg1NfimNE">
+          <Node Bounds="1295,643,25,19" Id="FL58f1Z7iMBPvQg1NfimNE">
             <p:NodeReference LastCategoryFullName="Math" LastDependency="VL.CoreLib.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <Choice Kind="OperationCallFlag" Name="/" />
@@ -179,7 +179,7 @@
             <Pin Id="DIttJ4WwF8TPKgqKLEerTF" Name="Input 2" Kind="InputPin" />
             <Pin Id="Ts5UDdWyXtcNp4qifmtYam" Name="Output" Kind="OutputPin" />
           </Node>
-          <Pad Id="MHKdzb20zDpL0jkiuOVkYM" Comment="" Bounds="1290,272,35,15" ShowValueBox="true" isIOBox="true" Value="1">
+          <Pad Id="MHKdzb20zDpL0jkiuOVkYM" Comment="" Bounds="1297,608,35,15" ShowValueBox="true" isIOBox="true" Value="1">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
               <Choice Kind="ImmutableTypeFlag" Name="Float32" />
             </p:TypeAnnotation>
@@ -188,7 +188,7 @@
               <p:stepsize p:Type="Single">1</p:stepsize>
             </p:ValueBoxSettings>
           </Pad>
-          <Pad Id="S9t77ZOHCalLbji40r9XZ9" Comment="FPS" Bounds="1310,288,35,15" ShowValueBox="true" isIOBox="true" Value="30">
+          <Pad Id="S9t77ZOHCalLbji40r9XZ9" Comment="FPS" Bounds="1317,624,35,15" ShowValueBox="true" isIOBox="true" Value="30">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
               <Choice Kind="TypeFlag" Name="Float32" />
             </p:TypeAnnotation>
@@ -197,7 +197,7 @@
               <p:stepsize p:Type="Single">1</p:stepsize>
             </p:ValueBoxSettings>
           </Pad>
-          <Node Bounds="1288,349,106,19" Id="GLiVA2k8HdJN4BxAHVFfW5">
+          <Node Bounds="1295,685,106,19" Id="GLiVA2k8HdJN4BxAHVFfW5">
             <p:NodeReference LastCategoryFullName="Animation" LastDependency="VL.CoreLib.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <Choice Kind="ProcessAppFlag" Name="LFO" />
@@ -212,7 +212,7 @@
             <Pin Id="BjiPyc7Of6ENGIa09tzV8S" Name="On New Cycle" Kind="OutputPin" />
             <Pin Id="GOgWcmQNGaKOfYuDOXixqu" Name="Cycles" Kind="OutputPin" />
           </Node>
-          <Node Bounds="1051,641,330,19" Id="JFg6wCfR3NXMPFR22ElMQP">
+          <Node Bounds="1058,977,330,19" Id="JFg6wCfR3NXMPFR22ElMQP">
             <p:NodeReference LastCategoryFullName="PDFReader.Skia" LastDependency="VL.PDFReader.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <CategoryReference Kind="Category" Name="Skia" NeedsToBeDirectParent="true" />
@@ -236,12 +236,12 @@
             <Pin Id="AkPWO04nQ85LpWJdgsd5YC" Name="PDF" Kind="OutputPin" />
             <Pin Id="VIpR8JbLS69M9oXlVDyqVV" Name="On PDF Loaded" Kind="OutputPin" IsHidden="true" />
           </Node>
-          <Pad Id="C0Ym8kbPGe7PNEENUDLWps" Comment="Path" Bounds="1054,258,140,15" ShowValueBox="true" isIOBox="true" Value="..\resources\Reference.pdf">
+          <Pad Id="C0Ym8kbPGe7PNEENUDLWps" Comment="Path" Bounds="1061,594,140,15" ShowValueBox="true" isIOBox="true" Value="..\resources\Reference.pdf">
             <p:TypeAnnotation LastCategoryFullName="IO" LastDependency="VL.CoreLib.vl">
               <Choice Kind="TypeFlag" Name="Path" />
             </p:TypeAnnotation>
           </Pad>
-          <Pad Id="R1bAepoNBwuLnEDN2WkwjG" Comment="Reload PDF" Bounds="1108,288,35,35" ShowValueBox="true" isIOBox="true" Value="false">
+          <Pad Id="R1bAepoNBwuLnEDN2WkwjG" Comment="Reload PDF" Bounds="1115,624,35,35" ShowValueBox="true" isIOBox="true" Value="false">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
               <Choice Kind="ImmutableTypeFlag" Name="Boolean" />
             </p:TypeAnnotation>
@@ -249,7 +249,7 @@
               <p:buttonmode p:Assembly="VL.UI.Forms" p:Type="VL.HDE.PatchEditor.Editors.ButtonModeEnum">Bang</p:buttonmode>
             </p:ValueBoxSettings>
           </Pad>
-          <Pad Id="GTSO1iZsMkxOljiLRSUDHx" Comment="Pause" Bounds="1340,315,35,35" ShowValueBox="true" isIOBox="true" Value="True">
+          <Pad Id="GTSO1iZsMkxOljiLRSUDHx" Comment="Pause" Bounds="1347,651,35,35" ShowValueBox="true" isIOBox="true" Value="True">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
               <Choice Kind="ImmutableTypeFlag" Name="Boolean" />
             </p:TypeAnnotation>
@@ -257,8 +257,8 @@
               <p:buttonmode p:Assembly="VL.UI.Forms" p:Type="VL.HDE.PatchEditor.Editors.ButtonModeEnum">Toggle</p:buttonmode>
             </p:ValueBoxSettings>
           </Pad>
-          <Pad Id="FUzYPedhtT3OKjIRzJvxyo" Comment="Page" Bounds="1391,400,35,15" ShowValueBox="true" isIOBox="true" />
-          <Pad Id="L1woeCuEpjnMJ8NB1RjQgC" Comment="Reset" Bounds="1428,317,35,35" ShowValueBox="true" isIOBox="true" Value="false">
+          <Pad Id="FUzYPedhtT3OKjIRzJvxyo" Comment="Page" Bounds="1398,736,35,15" ShowValueBox="true" isIOBox="true" />
+          <Pad Id="L1woeCuEpjnMJ8NB1RjQgC" Comment="Reset" Bounds="1435,653,35,35" ShowValueBox="true" isIOBox="true" Value="false">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
               <Choice Kind="ImmutableTypeFlag" Name="Boolean" />
             </p:TypeAnnotation>
@@ -266,7 +266,7 @@
               <p:buttonmode p:Assembly="VL.UI.Forms" p:Type="VL.HDE.PatchEditor.Editors.ButtonModeEnum">Bang</p:buttonmode>
             </p:ValueBoxSettings>
           </Pad>
-          <Pad Id="AGsmj9b1VDWNOSTnIzxRBm" Comment="Preload Pages" Bounds="1215,482,33,15" ShowValueBox="true" isIOBox="true" Value="1">
+          <Pad Id="AGsmj9b1VDWNOSTnIzxRBm" Comment="Preload Pages" Bounds="1222,818,33,15" ShowValueBox="true" isIOBox="true" Value="1">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
               <Choice Kind="TypeFlag" Name="Integer32" />
             </p:TypeAnnotation>
@@ -274,7 +274,7 @@
               <p:fontsize p:Type="Int32">7</p:fontsize>
             </p:ValueBoxSettings>
           </Pad>
-          <Node Bounds="1440,606,240,26" Id="DcBCgbMfLblQJwMIAoN9sU">
+          <Node Bounds="1447,942,240,26" Id="DcBCgbMfLblQJwMIAoN9sU">
             <p:NodeReference LastCategoryFullName="PDFReader.PDF.RenderOptions" LastDependency="VL.PDFReader.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <CategoryReference Kind="4026531840" Name="RenderOptions" />
@@ -295,18 +295,18 @@
             <Pin Id="QDeUQC9gk2SNwdDuf1awfn" Name="Output" Kind="StateOutputPin" />
             <Pin Id="BeCcaxHqwQoPenOQj1Kc9R" Name="Use Tiling" Kind="InputPin" />
           </Node>
-          <Pad Id="CEnKMSzIfdaLOfEA4861gV" Comment="Password" Bounds="1270,499,73,15" ShowValueBox="true" isIOBox="true" Value="">
+          <Pad Id="CEnKMSzIfdaLOfEA4861gV" Comment="Password" Bounds="1277,835,73,15" ShowValueBox="true" isIOBox="true" Value="">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
               <Choice Kind="TypeFlag" Name="String" />
             </p:TypeAnnotation>
           </Pad>
-          <Pad Id="KwZD0Ho9sirOtKA4yulLAr" Comment="Max Tile Size" Bounds="1324,525,35,28" ShowValueBox="true" isIOBox="true" Value="4000, 4000">
+          <Pad Id="KwZD0Ho9sirOtKA4yulLAr" Comment="Max Tile Size" Bounds="1331,861,35,28" ShowValueBox="true" isIOBox="true" Value="4000, 4000">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
               <Choice Kind="TypeFlag" Name="Int2" />
             </p:TypeAnnotation>
           </Pad>
-          <Pad Id="GZwVN8PZkywL5reIlod2yc" Comment="" Bounds="1108,841,88,437" ShowValueBox="true" isIOBox="true" />
-          <Node Bounds="1246,887,52,19" Id="KZaQPA5yhMaNkH5nvekZDX">
+          <Pad Id="GZwVN8PZkywL5reIlod2yc" Comment="" Bounds="1115,1177,88,437" ShowValueBox="true" isIOBox="true" />
+          <Node Bounds="1253,1223,52,19" Id="KZaQPA5yhMaNkH5nvekZDX">
             <p:NodeReference LastCategoryFullName="Collections.Interfaces.IReadOnlyList" LastDependency="VL.CoreLib.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <CategoryReference Kind="MutableInterfaceType" Name="IReadOnlyList" NeedsToBeDirectParent="true" />
@@ -317,16 +317,16 @@
             <Pin Id="ALJTIQHGdANNJiQC66NAOG" Name="Index" Kind="InputPin" />
             <Pin Id="Raj0gkDz3V9Pnlv4ixoK85" Name="Result" Kind="OutputPin" />
           </Node>
-          <Pad Id="S8UcuKUS2ayN95k0lREjv0" Comment="Active Index" Bounds="1295,864,35,15" ShowValueBox="true" isIOBox="true" />
-          <Pad Id="RPXA0gwL2sjOI7hLctQ07X" Comment="" Bounds="1249,995,90,126" ShowValueBox="true" isIOBox="true" />
-          <Pad Id="ExXIuoPjumHQQwais53VAk" Comment="Active Page" Bounds="1217,810,35,15" ShowValueBox="true" isIOBox="true" />
-          <Pad Id="Mvc0q5xb4YHO6riXl3sxXr" Comment="Loaded Pages" Bounds="1269,707,35,95" ShowValueBox="true" isIOBox="true" />
-          <Pad Id="QllgprptlLBO9gw4th0L2m" Comment="Page Count" Bounds="1324,686,35,15" ShowValueBox="true" isIOBox="true" />
-          <ControlPoint Id="PX6dYy8PmyMMsABMOaqBgH" Bounds="1161,464" />
-          <Overlay Id="LdJt90VgE0VP7gdIRn7R36" Name="Skia Image" Bounds="1000,200,730,1200">
+          <Pad Id="S8UcuKUS2ayN95k0lREjv0" Comment="Active Index" Bounds="1302,1200,35,15" ShowValueBox="true" isIOBox="true" />
+          <Pad Id="RPXA0gwL2sjOI7hLctQ07X" Comment="" Bounds="1256,1331,90,126" ShowValueBox="true" isIOBox="true" />
+          <Pad Id="ExXIuoPjumHQQwais53VAk" Comment="Active Page" Bounds="1224,1146,35,15" ShowValueBox="true" isIOBox="true" />
+          <Pad Id="Mvc0q5xb4YHO6riXl3sxXr" Comment="Loaded Pages" Bounds="1276,1043,35,95" ShowValueBox="true" isIOBox="true" />
+          <Pad Id="QllgprptlLBO9gw4th0L2m" Comment="Page Count" Bounds="1331,1022,35,15" ShowValueBox="true" isIOBox="true" />
+          <ControlPoint Id="PX6dYy8PmyMMsABMOaqBgH" Bounds="1168,800" />
+          <Overlay Id="LdJt90VgE0VP7gdIRn7R36" Name="Skia Image" Bounds="1007,536,730,1200">
             <p:ColorIndex p:Type="Int32">10</p:ColorIndex>
           </Overlay>
-          <Node Bounds="2189,307,25,19" Id="VldsVr0RAoEN7vANj5AEul">
+          <Node Bounds="2196,643,25,19" Id="VldsVr0RAoEN7vANj5AEul">
             <p:NodeReference LastCategoryFullName="Math" LastDependency="VL.CoreLib.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <Choice Kind="OperationCallFlag" Name="/" />
@@ -335,7 +335,7 @@
             <Pin Id="OD9gZlLxGF2NWRcnofgqA1" Name="Input 2" Kind="InputPin" />
             <Pin Id="IE2nPlc0ghJOP6THOxIQqj" Name="Output" Kind="OutputPin" />
           </Node>
-          <Pad Id="IgTCT6VOoqYM2VVyVdoNQR" Comment="" Bounds="2191,272,35,15" ShowValueBox="true" isIOBox="true" Value="1">
+          <Pad Id="IgTCT6VOoqYM2VVyVdoNQR" Comment="" Bounds="2198,608,35,15" ShowValueBox="true" isIOBox="true" Value="1">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
               <Choice Kind="ImmutableTypeFlag" Name="Float32" />
             </p:TypeAnnotation>
@@ -344,7 +344,7 @@
               <p:stepsize p:Type="Single">1</p:stepsize>
             </p:ValueBoxSettings>
           </Pad>
-          <Pad Id="Pb2vCoW0xb9O9ItuJ9kjBN" Comment="FPS" Bounds="2211,288,35,15" ShowValueBox="true" isIOBox="true" Value="60">
+          <Pad Id="Pb2vCoW0xb9O9ItuJ9kjBN" Comment="FPS" Bounds="2218,624,35,15" ShowValueBox="true" isIOBox="true" Value="60">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
               <Choice Kind="TypeFlag" Name="Float32" />
             </p:TypeAnnotation>
@@ -353,7 +353,7 @@
               <p:stepsize p:Type="Single">1</p:stepsize>
             </p:ValueBoxSettings>
           </Pad>
-          <Node Bounds="2189,349,106,19" Id="TDWUJwENzabNCbqa7ZAzYm">
+          <Node Bounds="2196,685,106,19" Id="TDWUJwENzabNCbqa7ZAzYm">
             <p:NodeReference LastCategoryFullName="Animation" LastDependency="VL.CoreLib.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <Choice Kind="ProcessAppFlag" Name="LFO" />
@@ -368,7 +368,7 @@
             <Pin Id="LvT7pjYNUGJMYNKzQH44wR" Name="On New Cycle" Kind="OutputPin" />
             <Pin Id="Hn674OP62vnLncIZOLgZfL" Name="Cycles" Kind="OutputPin" />
           </Node>
-          <Node Bounds="1952,641,330,19" Id="Q3QNzr1XYi0PuOoqSTwTds">
+          <Node Bounds="1959,977,330,19" Id="Q3QNzr1XYi0PuOoqSTwTds">
             <p:NodeReference LastCategoryFullName="PDFReader.Text" LastDependency="VL.PDFReader.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <CategoryReference Kind="Category" Name="Text" NeedsToBeDirectParent="true">
@@ -392,12 +392,12 @@
             <Pin Id="GS0X0oKLLV7QLo5NLCsEn6" Name="PDF" Kind="OutputPin" />
             <Pin Id="LsiqbqT61rlOa4VHNL7awB" Name="On PDF Loaded" Kind="OutputPin" IsHidden="true" />
           </Node>
-          <Pad Id="JyxVjEFmkLqPO6Ez5DWNcK" Comment="Path" Bounds="1955,258,140,15" ShowValueBox="true" isIOBox="true" Value="..\resources\Reference.pdf">
+          <Pad Id="JyxVjEFmkLqPO6Ez5DWNcK" Comment="Path" Bounds="1962,594,140,15" ShowValueBox="true" isIOBox="true" Value="..\resources\Reference.pdf">
             <p:TypeAnnotation LastCategoryFullName="IO" LastDependency="VL.CoreLib.vl">
               <Choice Kind="TypeFlag" Name="Path" />
             </p:TypeAnnotation>
           </Pad>
-          <Pad Id="Hr7OkA4EJb4NHNKK0L2NVa" Comment="Reload PDF" Bounds="2035,292,35,35" ShowValueBox="true" isIOBox="true" Value="false">
+          <Pad Id="Hr7OkA4EJb4NHNKK0L2NVa" Comment="Reload PDF" Bounds="2042,628,35,35" ShowValueBox="true" isIOBox="true" Value="false">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
               <Choice Kind="ImmutableTypeFlag" Name="Boolean" />
             </p:TypeAnnotation>
@@ -405,7 +405,7 @@
               <p:buttonmode p:Assembly="VL.UI.Forms" p:Type="VL.HDE.PatchEditor.Editors.ButtonModeEnum">Bang</p:buttonmode>
             </p:ValueBoxSettings>
           </Pad>
-          <Pad Id="BTP1shgF1h7NrVy81tpjgL" Comment="Pause" Bounds="2241,315,35,35" ShowValueBox="true" isIOBox="true" Value="True">
+          <Pad Id="BTP1shgF1h7NrVy81tpjgL" Comment="Pause" Bounds="2248,651,35,35" ShowValueBox="true" isIOBox="true" Value="True">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
               <Choice Kind="ImmutableTypeFlag" Name="Boolean" />
             </p:TypeAnnotation>
@@ -413,8 +413,8 @@
               <p:buttonmode p:Assembly="VL.UI.Forms" p:Type="VL.HDE.PatchEditor.Editors.ButtonModeEnum">Toggle</p:buttonmode>
             </p:ValueBoxSettings>
           </Pad>
-          <Pad Id="LCh1TCSOaNFOr6MLOjIjGs" Comment="Page" Bounds="2292,400,35,15" ShowValueBox="true" isIOBox="true" />
-          <Pad Id="Gwg3B9x3IG1Li5CzNYiERE" Comment="Reset" Bounds="2329,317,35,35" ShowValueBox="true" isIOBox="true" Value="false">
+          <Pad Id="LCh1TCSOaNFOr6MLOjIjGs" Comment="Page" Bounds="2299,736,35,15" ShowValueBox="true" isIOBox="true" />
+          <Pad Id="Gwg3B9x3IG1Li5CzNYiERE" Comment="Reset" Bounds="2336,653,35,35" ShowValueBox="true" isIOBox="true" Value="false">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
               <Choice Kind="ImmutableTypeFlag" Name="Boolean" />
             </p:TypeAnnotation>
@@ -422,7 +422,7 @@
               <p:buttonmode p:Assembly="VL.UI.Forms" p:Type="VL.HDE.PatchEditor.Editors.ButtonModeEnum">Bang</p:buttonmode>
             </p:ValueBoxSettings>
           </Pad>
-          <Pad Id="QH0J4myHGe8LntGv5JJUiY" Comment="Preload Pages" Bounds="2197,540,33,15" ShowValueBox="true" isIOBox="true" Value="1">
+          <Pad Id="QH0J4myHGe8LntGv5JJUiY" Comment="Preload Pages" Bounds="2204,876,33,15" ShowValueBox="true" isIOBox="true" Value="1">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
               <Choice Kind="TypeFlag" Name="Integer32" />
             </p:TypeAnnotation>
@@ -430,13 +430,13 @@
               <p:fontsize p:Type="Int32">7</p:fontsize>
             </p:ValueBoxSettings>
           </Pad>
-          <Pad Id="Ge0obBNnRsmMpwwCGCocpA" Comment="Password" Bounds="2279,564,73,15" ShowValueBox="true" isIOBox="true" Value="">
+          <Pad Id="Ge0obBNnRsmMpwwCGCocpA" Comment="Password" Bounds="2286,900,73,15" ShowValueBox="true" isIOBox="true" Value="">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
               <Choice Kind="TypeFlag" Name="String" />
             </p:TypeAnnotation>
           </Pad>
-          <Pad Id="IHdNgJgmeCqNg2lsMuOw0S" Comment="" Bounds="2007,878,103,369" ShowValueBox="true" isIOBox="true" />
-          <Node Bounds="2142,866,52,19" Id="FDqUWxkllmOOmgYYCNwF6K">
+          <Pad Id="IHdNgJgmeCqNg2lsMuOw0S" Comment="" Bounds="2014,1214,103,369" ShowValueBox="true" isIOBox="true" />
+          <Node Bounds="2149,1202,52,19" Id="FDqUWxkllmOOmgYYCNwF6K">
             <p:NodeReference LastCategoryFullName="Collections.Interfaces.IReadOnlyList" LastDependency="VL.CoreLib.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <CategoryReference Kind="MutableInterfaceType" Name="IReadOnlyList" NeedsToBeDirectParent="true" />
@@ -447,16 +447,16 @@
             <Pin Id="CZkj2bHS9YIOYgopClkuNl" Name="Index" Kind="InputPin" />
             <Pin Id="SRasI1ZqhhmMTETHxxcZLQ" Name="Result" Kind="OutputPin" />
           </Node>
-          <Pad Id="I3mPePaWo0HMp6MfvSpC1h" Comment="Active Index" Bounds="2191,856,35,15" ShowValueBox="true" isIOBox="true" />
-          <Pad Id="ULDi9IWaH7OOmfgfEhQin0" Comment="" Bounds="2144,1015,78,106" ShowValueBox="true" isIOBox="true" />
-          <Pad Id="PqpGIrdtgThMVkiUrVc9l9" Comment="Active Page" Bounds="2118,810,35,15" ShowValueBox="true" isIOBox="true" />
-          <Pad Id="ALrqaEGDFMEM0Qycte7kKL" Comment="Loaded Pages" Bounds="2170,703,35,95" ShowValueBox="true" isIOBox="true" />
-          <Pad Id="O9UUqAIDWUzNaondaonJkx" Comment="Page Count" Bounds="2225,683,35,15" ShowValueBox="true" isIOBox="true" />
-          <ControlPoint Id="GQfDtOReJEOOLq9ExNqfSL" Bounds="2118,467" />
-          <Overlay Id="AyvpYe1tVNhOryxz34pyKJ" Name="Text" Bounds="1901,200,730,1200">
+          <Pad Id="I3mPePaWo0HMp6MfvSpC1h" Comment="Active Index" Bounds="2198,1192,35,15" ShowValueBox="true" isIOBox="true" />
+          <Pad Id="ULDi9IWaH7OOmfgfEhQin0" Comment="" Bounds="2151,1351,78,106" ShowValueBox="true" isIOBox="true" />
+          <Pad Id="PqpGIrdtgThMVkiUrVc9l9" Comment="Active Page" Bounds="2125,1146,35,15" ShowValueBox="true" isIOBox="true" />
+          <Pad Id="ALrqaEGDFMEM0Qycte7kKL" Comment="Loaded Pages" Bounds="2177,1039,35,95" ShowValueBox="true" isIOBox="true" />
+          <Pad Id="O9UUqAIDWUzNaondaonJkx" Comment="Page Count" Bounds="2232,1019,35,15" ShowValueBox="true" isIOBox="true" />
+          <ControlPoint Id="GQfDtOReJEOOLq9ExNqfSL" Bounds="2125,803" />
+          <Overlay Id="AyvpYe1tVNhOryxz34pyKJ" Name="Text" Bounds="1908,536,730,1200">
             <p:ColorIndex p:Type="Int32">0</p:ColorIndex>
           </Overlay>
-          <Node Bounds="147,1718,240,26" Id="BN5jLSaSiG6PiQGr5cd4FZ">
+          <Node Bounds="154,2054,240,26" Id="BN5jLSaSiG6PiQGr5cd4FZ">
             <p:NodeReference LastCategoryFullName="PDFReader.PDF.RenderOptions" LastDependency="VL.PDFReader.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <CategoryReference Kind="4026531840" Name="RenderOptions" />
@@ -477,7 +477,7 @@
             <Pin Id="HoNU7LLMwHjO1hMUPtTi6W" Name="Output" Kind="StateOutputPin" />
             <Pin Id="TbPDfN8uGyePhqE5RQO5Nu" Name="Use Tiling" Kind="InputPin" />
           </Node>
-          <Pad Id="Hgrxt7x3hdMOgilhsM5d1V" Comment="DPI " Bounds="149,1670,35,33" ShowValueBox="true" isIOBox="true" Value="96">
+          <Pad Id="Hgrxt7x3hdMOgilhsM5d1V" Comment="DPI " Bounds="156,2006,35,33" ShowValueBox="true" isIOBox="true" Value="96">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
               <Choice Kind="TypeFlag" Name="Integer32" />
             </p:TypeAnnotation>
@@ -485,7 +485,7 @@
               <p:fontsize p:Type="Int32">16</p:fontsize>
             </p:ValueBoxSettings>
           </Pad>
-          <Pad Id="Jo4yHtIEYWMLnkCxpX7Jxq" Bounds="441,1659,476,181" ShowValueBox="true" isIOBox="true" Value="The DPI scaling to use for rasterization of the PDF. Internally the PDF document &quot;reports&quot; its size in inches &#xD;&#xA;and the standard DPI for rasterization is 72.&#xD;&#xA;To get the pixelsize the size in inches is multiplied by DPI.&#xD;&#xA;&#xD;&#xA;The test PDFs used here for example have a size in inches of: 8.5 x 11. &#xD;&#xA;Multiplying this with 72 DPI results in a pixelsize of  612 x 792.&#xD;&#xA;&#xD;&#xA;To increase the resolution you can either increase the DPI or ...&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;">
+          <Pad Id="Jo4yHtIEYWMLnkCxpX7Jxq" Bounds="448,1995,476,181" ShowValueBox="true" isIOBox="true" Value="The DPI scaling to use for rasterization of the PDF. Internally the PDF document &quot;reports&quot; its size in inches &#xD;&#xA;and the standard DPI for rasterization is 72.&#xD;&#xA;To get the pixelsize the size in inches is multiplied by DPI.&#xD;&#xA;&#xD;&#xA;The test PDFs used here for example have a size in inches of: 8.5 x 11. &#xD;&#xA;Multiplying this with 72 DPI results in a pixelsize of  612 x 792.&#xD;&#xA;&#xD;&#xA;To increase the resolution you can either increase the DPI or ...&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
               <Choice Kind="TypeFlag" Name="String" />
             </p:TypeAnnotation>
@@ -494,7 +494,7 @@
               <p:stringtype p:Assembly="VL.Core" p:Type="VL.Core.StringType">Comment</p:stringtype>
             </p:ValueBoxSettings>
           </Pad>
-          <Node Bounds="151,2057,240,26" Id="N06Bmdi0LufPpTTLJZkJTh">
+          <Node Bounds="158,2393,240,26" Id="N06Bmdi0LufPpTTLJZkJTh">
             <p:NodeReference LastCategoryFullName="PDFReader.PDF.RenderOptions" LastDependency="VL.PDFReader.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <CategoryReference Kind="4026531840" Name="RenderOptions" />
@@ -515,7 +515,7 @@
             <Pin Id="HiJEoyMplzoOWbshmtsLX0" Name="Output" Kind="StateOutputPin" />
             <Pin Id="Jkrjdp2NZiVPC9YksjhatQ" Name="Use Tiling" Kind="InputPin" />
           </Node>
-          <Pad Id="GgD73UL18S5PO5sq95mba9" Comment="Width" Bounds="173,1952,66,34" ShowValueBox="true" isIOBox="true" Value="4444">
+          <Pad Id="GgD73UL18S5PO5sq95mba9" Comment="Width" Bounds="180,2288,66,34" ShowValueBox="true" isIOBox="true" Value="4444">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
               <Choice Kind="TypeFlag" Name="Integer32" />
             </p:TypeAnnotation>
@@ -523,7 +523,7 @@
               <p:fontsize p:Type="Int32">16</p:fontsize>
             </p:ValueBoxSettings>
           </Pad>
-          <Pad Id="Sq2uoR444DSOISichNJuKY" Comment="Height" Bounds="195,1998,66,35" ShowValueBox="true" isIOBox="true" Value="4444">
+          <Pad Id="Sq2uoR444DSOISichNJuKY" Comment="Height" Bounds="202,2334,66,35" ShowValueBox="true" isIOBox="true" Value="4444">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
               <Choice Kind="TypeFlag" Name="Integer32" />
             </p:TypeAnnotation>
@@ -531,7 +531,7 @@
               <p:fontsize p:Type="Int32">16</p:fontsize>
             </p:ValueBoxSettings>
           </Pad>
-          <Pad Id="ShXJiSvajxCMxsqeSveJg0" Bounds="441,1956,462,154" ShowValueBox="true" isIOBox="true" Value="... &quot;manually&quot; adjust the Width / Height.&#xD;&#xA;&#xD;&#xA;If either one is not NULL (and &gt; 0) the DPI setting will be ignored and the standard DPI of 72 will be used for rasterizing the dimension that is NULL. &#xD;&#xA;&#xD;&#xA;One can also only define one dimension and set ...">
+          <Pad Id="ShXJiSvajxCMxsqeSveJg0" Bounds="448,2292,462,154" ShowValueBox="true" isIOBox="true" Value="... &quot;manually&quot; adjust the Width / Height.&#xD;&#xA;&#xD;&#xA;If either one is not NULL (and &gt; 0) the DPI setting will be ignored and the standard DPI of 72 will be used for rasterizing the dimension that is NULL. &#xD;&#xA;&#xD;&#xA;One can also only define one dimension and set ...">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
               <Choice Kind="TypeFlag" Name="String" />
             </p:TypeAnnotation>
@@ -540,7 +540,7 @@
               <p:stringtype p:Assembly="VL.Core" p:Type="VL.Core.StringType">Comment</p:stringtype>
             </p:ValueBoxSettings>
           </Pad>
-          <Node Bounds="148,2336,240,26" Id="HHDeoUEkzYMOf1QQoBThT5">
+          <Node Bounds="155,2672,240,26" Id="HHDeoUEkzYMOf1QQoBThT5">
             <p:NodeReference LastCategoryFullName="PDFReader.PDF.RenderOptions" LastDependency="VL.PDFReader.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <CategoryReference Kind="4026531840" Name="RenderOptions" />
@@ -561,7 +561,7 @@
             <Pin Id="LivtUPvX0PCM5VeZ4zoHkU" Name="Output" Kind="StateOutputPin" />
             <Pin Id="PflXDpTErKHQFIIgrwyKiZ" Name="Use Tiling" Kind="InputPin" />
           </Node>
-          <Pad Id="O7vNPdJ8SLGMRWkwj6VSjf" Comment="Width" Bounds="170,2231,66,34" ShowValueBox="true" isIOBox="true" Value="4444">
+          <Pad Id="O7vNPdJ8SLGMRWkwj6VSjf" Comment="Width" Bounds="177,2567,66,34" ShowValueBox="true" isIOBox="true" Value="4444">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
               <Choice Kind="TypeFlag" Name="Integer32" />
             </p:TypeAnnotation>
@@ -569,7 +569,7 @@
               <p:fontsize p:Type="Int32">16</p:fontsize>
             </p:ValueBoxSettings>
           </Pad>
-          <Pad Id="F2FTFVVRBilL4zmyOGRV1h" Comment="With Aspect Ratio" Bounds="257,2273,35,35" ShowValueBox="true" isIOBox="true" Value="True">
+          <Pad Id="F2FTFVVRBilL4zmyOGRV1h" Comment="With Aspect Ratio" Bounds="264,2609,35,35" ShowValueBox="true" isIOBox="true" Value="True">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
               <Choice Kind="ImmutableTypeFlag" Name="Boolean" />
             </p:TypeAnnotation>
@@ -577,7 +577,7 @@
               <p:buttonmode p:Assembly="VL.UI.Forms" p:Type="VL.HDE.PatchEditor.Editors.ButtonModeEnum">Toggle</p:buttonmode>
             </p:ValueBoxSettings>
           </Pad>
-          <Pad Id="LIMawieqUsAOWB1ga9C1FP" Bounds="458,2234,397,65" ShowValueBox="true" isIOBox="true" Value="... With Aspect Ratio to true to adjust the respective other dimension for aspect ratio.&#xD;&#xA;&#xD;&#xA;">
+          <Pad Id="LIMawieqUsAOWB1ga9C1FP" Bounds="465,2570,397,65" ShowValueBox="true" isIOBox="true" Value="... With Aspect Ratio to true to adjust the respective other dimension for aspect ratio.&#xD;&#xA;&#xD;&#xA;">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
               <Choice Kind="TypeFlag" Name="String" />
             </p:TypeAnnotation>
@@ -586,7 +586,7 @@
               <p:stringtype p:Assembly="VL.Core" p:Type="VL.Core.StringType">Comment</p:stringtype>
             </p:ValueBoxSettings>
           </Pad>
-          <Node Bounds="1024,2047,240,26" Id="DikKfOmjhKLLcyevJnEcmj">
+          <Node Bounds="1031,2383,240,26" Id="DikKfOmjhKLLcyevJnEcmj">
             <p:NodeReference LastCategoryFullName="PDFReader.PDF.RenderOptions" LastDependency="VL.PDFReader.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <CategoryReference Kind="4026531840" Name="RenderOptions" />
@@ -607,7 +607,7 @@
             <Pin Id="CApV9UVoMPhPyl324VnOKy" Name="Output" Kind="StateOutputPin" />
             <Pin Id="CeTiHWpBJGsMhuzo0eVVhV" Name="Use Tiling" Kind="InputPin" />
           </Node>
-          <Pad Id="NzKgseT7KzpN5RYK22ARmY" Comment="With Annotations" Bounds="1090,1657,35,35" ShowValueBox="true" isIOBox="true" Value="True">
+          <Pad Id="NzKgseT7KzpN5RYK22ARmY" Comment="With Annotations" Bounds="1097,1993,35,35" ShowValueBox="true" isIOBox="true" Value="True">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
               <Choice Kind="ImmutableTypeFlag" Name="Boolean" />
             </p:TypeAnnotation>
@@ -615,7 +615,7 @@
               <p:buttonmode p:Assembly="VL.UI.Forms" p:Type="VL.HDE.PatchEditor.Editors.ButtonModeEnum">Toggle</p:buttonmode>
             </p:ValueBoxSettings>
           </Pad>
-          <Pad Id="Mvg4zjtTt5qMQOTtjmFTwJ" Comment="With Form Fill" Bounds="1111,1713,35,35" ShowValueBox="true" isIOBox="true" Value="True">
+          <Pad Id="Mvg4zjtTt5qMQOTtjmFTwJ" Comment="With Form Fill" Bounds="1118,2049,35,35" ShowValueBox="true" isIOBox="true" Value="True">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
               <Choice Kind="ImmutableTypeFlag" Name="Boolean" />
             </p:TypeAnnotation>
@@ -623,7 +623,7 @@
               <p:buttonmode p:Assembly="VL.UI.Forms" p:Type="VL.HDE.PatchEditor.Editors.ButtonModeEnum">Toggle</p:buttonmode>
             </p:ValueBoxSettings>
           </Pad>
-          <Pad Id="U6kroHeCs6UOcoYOjrG00z" Bounds="1135,1671,302,19" ShowValueBox="true" isIOBox="true" Value="Specifies whether annotations will be rendered.">
+          <Pad Id="U6kroHeCs6UOcoYOjrG00z" Bounds="1142,2007,302,19" ShowValueBox="true" isIOBox="true" Value="Specifies whether annotations will be rendered.">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
               <Choice Kind="TypeFlag" Name="String" />
             </p:TypeAnnotation>
@@ -632,7 +632,7 @@
               <p:stringtype p:Assembly="VL.Core" p:Type="VL.Core.StringType">Comment</p:stringtype>
             </p:ValueBoxSettings>
           </Pad>
-          <Pad Id="AVSMrxx1p0DPlqxA3SIZ80" Bounds="1160,1728,284,19" ShowValueBox="true" isIOBox="true" Value="Specifies whether form filling will be rendered.">
+          <Pad Id="AVSMrxx1p0DPlqxA3SIZ80" Bounds="1167,2064,284,19" ShowValueBox="true" isIOBox="true" Value="Specifies whether form filling will be rendered.">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
               <Choice Kind="TypeFlag" Name="String" />
             </p:TypeAnnotation>
@@ -641,12 +641,12 @@
               <p:stringtype p:Assembly="VL.Core" p:Type="VL.Core.StringType">Comment</p:stringtype>
             </p:ValueBoxSettings>
           </Pad>
-          <Pad Id="PoikA07tW6hNT2h4VXmWNh" Comment="Rotation" Bounds="1154,1765,70,15" ShowValueBox="true" isIOBox="true" Value="Rotate0">
+          <Pad Id="PoikA07tW6hNT2h4VXmWNh" Comment="Rotation" Bounds="1161,2101,70,15" ShowValueBox="true" isIOBox="true" Value="Rotate0">
             <p:TypeAnnotation LastCategoryFullName="PDFReader.PDF" LastDependency="VL.PDFReader.vl">
               <Choice Kind="TypeFlag" Name="Rotation" />
             </p:TypeAnnotation>
           </Pad>
-          <Pad Id="TCxQukMkvxGOO2tWIv8VaK" Bounds="1164,1791,252,19" ShowValueBox="true" isIOBox="true" Value="Specifies the rotation in 90 degree steps.">
+          <Pad Id="TCxQukMkvxGOO2tWIv8VaK" Bounds="1171,2127,252,19" ShowValueBox="true" isIOBox="true" Value="Specifies the rotation in 90 degree steps.">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
               <Choice Kind="TypeFlag" Name="String" />
             </p:TypeAnnotation>
@@ -655,22 +655,22 @@
               <p:stringtype p:Assembly="VL.Core" p:Type="VL.Core.StringType">Comment</p:stringtype>
             </p:ValueBoxSettings>
           </Pad>
-          <Pad Id="OxoszHDTzINMHauADBKTlo" Comment="Anti Aliasing" Bounds="1176,1828,56,15" ShowValueBox="true" isIOBox="true" Value="All">
+          <Pad Id="OxoszHDTzINMHauADBKTlo" Comment="Anti Aliasing" Bounds="1183,2164,56,15" ShowValueBox="true" isIOBox="true" Value="All">
             <p:TypeAnnotation LastCategoryFullName="PDFReader.PDF" LastDependency="VL.PDFReader.vl">
               <Choice Kind="TypeFlag" Name="AntiAliasing" />
             </p:TypeAnnotation>
           </Pad>
-          <Pad Id="IO5i7Cslnz2LuFfSFavSte" Comment="Anti Aliasing" Bounds="1324,1827,56,15" ShowValueBox="true" isIOBox="true" Value="Text">
+          <Pad Id="IO5i7Cslnz2LuFfSFavSte" Comment="Anti Aliasing" Bounds="1331,2163,56,15" ShowValueBox="true" isIOBox="true" Value="Text">
             <p:TypeAnnotation LastCategoryFullName="PDFReader.PDF" LastDependency="VL.PDFReader.vl">
               <Choice Kind="TypeFlag" Name="AntiAliasing" />
             </p:TypeAnnotation>
           </Pad>
-          <Pad Id="C1he7CAGqV1QVKOycXEFDW" Comment="Anti Aliasing" Bounds="1471,1826,56,15" ShowValueBox="true" isIOBox="true" Value="Paths">
+          <Pad Id="C1he7CAGqV1QVKOycXEFDW" Comment="Anti Aliasing" Bounds="1478,2162,56,15" ShowValueBox="true" isIOBox="true" Value="Paths">
             <p:TypeAnnotation LastCategoryFullName="PDFReader.PDF" LastDependency="VL.PDFReader.vl">
               <Choice Kind="TypeFlag" Name="AntiAliasing" />
             </p:TypeAnnotation>
           </Pad>
-          <Node Bounds="1322,1848,152,19" Id="CUinacUyselLC9Kedu5o1k">
+          <Node Bounds="1329,2184,152,19" Id="CUinacUyselLC9Kedu5o1k">
             <p:NodeReference LastCategoryFullName="PDFReader.PDF.AntiAliasing" LastDependency="VL.PDFReader.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <CategoryReference Kind="EnumType" Name="AntiAliasing" />
@@ -680,7 +680,7 @@
             <Pin Id="FEivlYE3pmmQaqNlgBo5Nw" Name="Input 2" Kind="InputPin" />
             <Pin Id="GAUGrUYhhMdNBsIeAwqSFA" Name="Output" Kind="OutputPin" />
           </Node>
-          <Pad Id="ANnzh2KwgTIOZ54dC0r1hT" Bounds="1183,1882,441,19" ShowValueBox="true" isIOBox="true" Value="Specifies which elements of the PDF should be anti-aliased for rendering.">
+          <Pad Id="ANnzh2KwgTIOZ54dC0r1hT" Bounds="1190,2218,441,19" ShowValueBox="true" isIOBox="true" Value="Specifies which elements of the PDF should be anti-aliased for rendering.">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
               <Choice Kind="TypeFlag" Name="String" />
             </p:TypeAnnotation>
@@ -689,13 +689,13 @@
               <p:stringtype p:Assembly="VL.Core" p:Type="VL.Core.StringType">Comment</p:stringtype>
             </p:ValueBoxSettings>
           </Pad>
-          <Pad Id="PtOF7Pd5IbxPmzbhPLhuvn" Comment="Background Color" Bounds="1197,1930,136,15" ShowValueBox="true" isIOBox="true">
+          <Pad Id="PtOF7Pd5IbxPmzbhPLhuvn" Comment="Background Color" Bounds="1204,2266,136,15" ShowValueBox="true" isIOBox="true">
             <p:TypeAnnotation LastCategoryFullName="Color" LastDependency="VL.CoreLib.vl">
               <Choice Kind="TypeFlag" Name="RGBA" />
             </p:TypeAnnotation>
             <p:Value r:IsNull="true" />
           </Pad>
-          <Pad Id="GCepqhCFtTbMrpjZB0T9bf" Bounds="1201,1960,303,19" ShowValueBox="true" isIOBox="true" Value="Specifies the background color. Defaults to white.">
+          <Pad Id="GCepqhCFtTbMrpjZB0T9bf" Bounds="1208,2296,303,19" ShowValueBox="true" isIOBox="true" Value="Specifies the background color. Defaults to white.">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
               <Choice Kind="TypeFlag" Name="String" />
             </p:TypeAnnotation>
@@ -704,7 +704,7 @@
               <p:stringtype p:Assembly="VL.Core" p:Type="VL.Core.StringType">Comment</p:stringtype>
             </p:ValueBoxSettings>
           </Pad>
-          <Node Bounds="1026,2348,240,26" Id="GK7ioCYaoFFQXxSxuoG3kg">
+          <Node Bounds="1033,2684,240,26" Id="GK7ioCYaoFFQXxSxuoG3kg">
             <p:NodeReference LastCategoryFullName="PDFReader.PDF.RenderOptions" LastDependency="VL.PDFReader.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <CategoryReference Kind="4026531840" Name="RenderOptions" />
@@ -725,7 +725,7 @@
             <Pin Id="BC94ipzGGYBNCcPORL8PBe" Name="Output" Kind="StateOutputPin" />
             <Pin Id="Gf42srBVbgaL5RSi4eJmUY" Name="Use Tiling" Kind="InputPin" />
           </Node>
-          <Node Bounds="1218,2169,61,19" Id="P6Qzry3qEU9OUB00VMpxYK">
+          <Node Bounds="1225,2505,61,19" Id="P6Qzry3qEU9OUB00VMpxYK">
             <p:NodeReference LastCategoryFullName="2D.Rectangle" LastDependency="VL.CoreLib.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <Choice Kind="OperationCallFlag" Name="Rectangle (Join)" />
@@ -735,7 +735,7 @@
             <Pin Id="PEGCbsUtdbuNIJCvTeViG1" Name="Anchor" Kind="InputPin" />
             <Pin Id="IKH9uB9SsnCOt4y22Ii6YP" Name="Output" Kind="StateOutputPin" />
           </Node>
-          <Pad Id="L4M3vL1vMvENkfgyV7xUtU" Comment="Size" Bounds="1248,2118,39,28" ShowValueBox="true" isIOBox="true" Value="4444, 4444">
+          <Pad Id="L4M3vL1vMvENkfgyV7xUtU" Comment="Size" Bounds="1255,2454,39,28" ShowValueBox="true" isIOBox="true" Value="4444, 4444">
             <p:TypeAnnotation LastCategoryFullName="2D" LastDependency="VL.CoreLib.vl">
               <Choice Kind="TypeFlag" Name="Vector2" />
             </p:TypeAnnotation>
@@ -746,10 +746,10 @@
               <p:stepsize p:Type="Single">1</p:stepsize>
             </p:ValueBoxSettings>
           </Pad>
-          <Pad Id="LW83OoriBO6MQUNgp0EjRO" Comment="Bounds" SlotId="SJkCbFRCUosNobB3q108X5" Bounds="1220,2210">
+          <Pad Id="LW83OoriBO6MQUNgp0EjRO" Comment="Bounds" SlotId="SJkCbFRCUosNobB3q108X5" Bounds="1227,2546">
             <p:Value r:IsNull="true" />
           </Pad>
-          <Pad Id="BrkgEN9yhpwM1dKW0IBUve" Bounds="1239,2207,460,73" ShowValueBox="true" isIOBox="true" Value="Can be used for clipping (bounds inside of page) or additional margins (bounds outside of page) The bounds are relative to the PDF size (at 72 DPI).">
+          <Pad Id="BrkgEN9yhpwM1dKW0IBUve" Bounds="1246,2543,460,73" ShowValueBox="true" isIOBox="true" Value="Can be used for clipping (bounds inside of page) or additional margins (bounds outside of page) The bounds are relative to the PDF size (at 72 DPI).">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
               <Choice Kind="TypeFlag" Name="String" />
             </p:TypeAnnotation>
@@ -758,7 +758,7 @@
               <p:stringtype p:Assembly="VL.Core" p:Type="VL.Core.StringType">Comment</p:stringtype>
             </p:ValueBoxSettings>
           </Pad>
-          <Pad Id="P0gDIKLVXXZPouFRoLpt1m" Comment="DPI Relative To Bounds" Bounds="1242,2260,35,35" ShowValueBox="true" isIOBox="true" Value="False">
+          <Pad Id="P0gDIKLVXXZPouFRoLpt1m" Comment="DPI Relative To Bounds" Bounds="1249,2596,35,35" ShowValueBox="true" isIOBox="true" Value="False">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
               <Choice Kind="ImmutableTypeFlag" Name="Boolean" />
             </p:TypeAnnotation>
@@ -766,7 +766,7 @@
               <p:buttonmode p:Assembly="VL.UI.Forms" p:Type="VL.HDE.PatchEditor.Editors.ButtonModeEnum">Toggle</p:buttonmode>
             </p:ValueBoxSettings>
           </Pad>
-          <Pad Id="Rsglvax1wEnMDeHIRY1ItP" Bounds="1276,2316,421,45" ShowValueBox="true" isIOBox="true" Value="Specifies that DPI and With Aspect Ratio will be calculated relative to BOunds instead of the original PDF size (at 72 DPI).">
+          <Pad Id="Rsglvax1wEnMDeHIRY1ItP" Bounds="1283,2652,421,45" ShowValueBox="true" isIOBox="true" Value="Specifies that DPI and With Aspect Ratio will be calculated relative to BOunds instead of the original PDF size (at 72 DPI).">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
               <Choice Kind="TypeFlag" Name="String" />
             </p:TypeAnnotation>
@@ -775,7 +775,7 @@
               <p:stringtype p:Assembly="VL.Core" p:Type="VL.Core.StringType">Comment</p:stringtype>
             </p:ValueBoxSettings>
           </Pad>
-          <Node Bounds="1033,2574,240,26" Id="TjtpJY25MTfN70DFLIfdS4">
+          <Node Bounds="1040,2910,240,26" Id="TjtpJY25MTfN70DFLIfdS4">
             <p:NodeReference LastCategoryFullName="PDFReader.PDF.RenderOptions" LastDependency="VL.PDFReader.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <CategoryReference Kind="4026531840" Name="RenderOptions" />
@@ -796,7 +796,7 @@
             <Pin Id="TBUerJbtEeQNG8Td3Dh6Mn" Name="Output" Kind="StateOutputPin" />
             <Pin Id="IyBjGsBQ6NsPfwWLcVeWmc" Name="Use Tiling" Kind="InputPin" />
           </Node>
-          <Pad Id="EAoaruWncPJN9oxxpCHHNa" Comment="Use Tiling" Bounds="1271,2479,35,35" ShowValueBox="true" isIOBox="true" Value="False">
+          <Pad Id="EAoaruWncPJN9oxxpCHHNa" Comment="Use Tiling" Bounds="1278,2815,35,35" ShowValueBox="true" isIOBox="true" Value="False">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
               <Choice Kind="ImmutableTypeFlag" Name="Boolean" />
             </p:TypeAnnotation>
@@ -804,7 +804,7 @@
               <p:buttonmode p:Assembly="VL.UI.Forms" p:Type="VL.HDE.PatchEditor.Editors.ButtonModeEnum">Toggle</p:buttonmode>
             </p:ValueBoxSettings>
           </Pad>
-          <Pad Id="JhcFOG3y8RdLPYbGd0aYS3" Bounds="1279,2522,448,126" ShowValueBox="true" isIOBox="true" Value="Specifies wether the PDF should be rendered as several segments and merged into the final image. This can help in cases where the output image is too large, causing corrupted images (e.g. missing text) or crashes.&#xD;&#xA;&#xD;&#xA;The maximum size per tile is set when loading the PDF.">
+          <Pad Id="JhcFOG3y8RdLPYbGd0aYS3" Bounds="1286,2858,448,126" ShowValueBox="true" isIOBox="true" Value="Specifies wether the PDF should be rendered as several segments and merged into the final image. This can help in cases where the output image is too large, causing corrupted images (e.g. missing text) or crashes.&#xD;&#xA;&#xD;&#xA;The maximum size per tile is set when loading the PDF.">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
               <Choice Kind="TypeFlag" Name="String" />
             </p:TypeAnnotation>
@@ -813,7 +813,7 @@
               <p:stringtype p:Assembly="VL.Core" p:Type="VL.Core.StringType">Comment</p:stringtype>
             </p:ValueBoxSettings>
           </Pad>
-          <Pad Id="VR9bgL9h5awLEw3CKJziIW" Bounds="463,539,203,19" ShowValueBox="true" isIOBox="true" Value="See Use Tiling on RenderOptions">
+          <Pad Id="VR9bgL9h5awLEw3CKJziIW" Bounds="470,875,203,19" ShowValueBox="true" isIOBox="true" Value="See Use Tiling on RenderOptions">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
               <Choice Kind="TypeFlag" Name="String" />
             </p:TypeAnnotation>
@@ -822,7 +822,7 @@
               <p:stringtype p:Assembly="VL.Core" p:Type="VL.Core.StringType">Comment</p:stringtype>
             </p:ValueBoxSettings>
           </Pad>
-          <Pad Id="L2DHsgDzsnMOSLfpBpoeWo" Bounds="1361,542,203,19" ShowValueBox="true" isIOBox="true" Value="See Use Tiling on RenderOptions">
+          <Pad Id="L2DHsgDzsnMOSLfpBpoeWo" Bounds="1368,878,203,19" ShowValueBox="true" isIOBox="true" Value="See Use Tiling on RenderOptions">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
               <Choice Kind="TypeFlag" Name="String" />
             </p:TypeAnnotation>
@@ -831,8 +831,8 @@
               <p:stringtype p:Assembly="VL.Core" p:Type="VL.Core.StringType">Comment</p:stringtype>
             </p:ValueBoxSettings>
           </Pad>
-          <Overlay Id="OF87Ir89vbMPEVQrg9mYyD" Name="Render Options" Bounds="95,1497,1639,1175" />
-          <Node Bounds="1950,1856,105,19" Id="Ph2UtA55kPHNsPlDXRkrmz">
+          <Overlay Id="OF87Ir89vbMPEVQrg9mYyD" Name="Render Options" Bounds="102,1833,1639,1175" />
+          <Node Bounds="1957,2192,105,19" Id="Ph2UtA55kPHNsPlDXRkrmz">
             <p:NodeReference LastCategoryFullName="PDFReader.Text" LastDependency="VL.PDFReader.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <CategoryReference Kind="Category" Name="PDFReader" />
@@ -850,12 +850,12 @@
             <Pin Id="TO89aOG3TIrOwPQl4V1nxB" Name="Page" Kind="OutputPin" />
             <Pin Id="AOgYZYX1GEuN8KyuezYE25" Name="On Search Finished" Kind="OutputPin" />
           </Node>
-          <Pad Id="CfoirYEz3UnLZYw2cnvfnK" Comment="Text" Bounds="1972,1570,35,15" ShowValueBox="true" isIOBox="true" Value="vvvv">
+          <Pad Id="CfoirYEz3UnLZYw2cnvfnK" Comment="Text" Bounds="1979,1906,35,15" ShowValueBox="true" isIOBox="true" Value="vvvv">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
               <Choice Kind="TypeFlag" Name="String" />
             </p:TypeAnnotation>
           </Pad>
-          <Pad Id="NZL0C0upcFCNpgMwAZw8rz" Comment="Match Case" Bounds="1992,1597,35,35" ShowValueBox="true" isIOBox="true" Value="False">
+          <Pad Id="NZL0C0upcFCNpgMwAZw8rz" Comment="Match Case" Bounds="1999,1933,35,35" ShowValueBox="true" isIOBox="true" Value="False">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
               <Choice Kind="ImmutableTypeFlag" Name="Boolean" />
             </p:TypeAnnotation>
@@ -863,7 +863,7 @@
               <p:buttonmode p:Assembly="VL.UI.Forms" p:Type="VL.HDE.PatchEditor.Editors.ButtonModeEnum">Toggle</p:buttonmode>
             </p:ValueBoxSettings>
           </Pad>
-          <Pad Id="T4dnhABBZQ9MP4uNtgemhK" Comment="Whole Word" Bounds="2012,1648,35,35" ShowValueBox="true" isIOBox="true" Value="False">
+          <Pad Id="T4dnhABBZQ9MP4uNtgemhK" Comment="Whole Word" Bounds="2019,1984,35,35" ShowValueBox="true" isIOBox="true" Value="False">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
               <Choice Kind="ImmutableTypeFlag" Name="Boolean" />
             </p:TypeAnnotation>
@@ -871,19 +871,19 @@
               <p:buttonmode p:Assembly="VL.UI.Forms" p:Type="VL.HDE.PatchEditor.Editors.ButtonModeEnum">Toggle</p:buttonmode>
             </p:ValueBoxSettings>
           </Pad>
-          <Pad Id="F2OM5giSj1PLCYbuIC6uG9" Comment="Text" Bounds="1952,2012,44,95" ShowValueBox="true" isIOBox="true" />
-          <Pad Id="Sspafd6TPH4L3F5oLBSmQ3" Comment="Page" Bounds="2002,1902,37,96" ShowValueBox="true" isIOBox="true" />
-          <Pad Id="VMWnwBBm3I2LXkun53Oew3" Comment="Start Page" Bounds="2032,1697,35,15" ShowValueBox="true" isIOBox="true" Value="0">
+          <Pad Id="F2OM5giSj1PLCYbuIC6uG9" Comment="Text" Bounds="1959,2348,44,95" ShowValueBox="true" isIOBox="true" />
+          <Pad Id="Sspafd6TPH4L3F5oLBSmQ3" Comment="Page" Bounds="2009,2238,37,96" ShowValueBox="true" isIOBox="true" />
+          <Pad Id="VMWnwBBm3I2LXkun53Oew3" Comment="Start Page" Bounds="2039,2033,35,15" ShowValueBox="true" isIOBox="true" Value="0">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
               <Choice Kind="TypeFlag" Name="Integer32" />
             </p:TypeAnnotation>
           </Pad>
-          <Pad Id="SJU4cayvw6RN2RWtcQYqlA" Comment="End Page" Bounds="2051,1731,35,15" ShowValueBox="true" isIOBox="true" Value="4">
+          <Pad Id="SJU4cayvw6RN2RWtcQYqlA" Comment="End Page" Bounds="2058,2067,35,15" ShowValueBox="true" isIOBox="true" Value="4">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
               <Choice Kind="TypeFlag" Name="Integer32" />
             </p:TypeAnnotation>
           </Pad>
-          <Pad Id="D07g2zgTBLKPPfVtvPKoxh" Bounds="2070,1758,242,201" ShowValueBox="true" isIOBox="true" Value="If both Start Page and End Page are Null the whole document will be searched.&#xD;&#xA;&#xD;&#xA;If only Start Page != NULL only the specified page will be searched.&#xD;&#xA;&#xD;&#xA;If only End Page != NULL the doument will be searched from the first page to End Page.">
+          <Pad Id="D07g2zgTBLKPPfVtvPKoxh" Bounds="2077,2094,242,201" ShowValueBox="true" isIOBox="true" Value="If both Start Page and End Page are Null the whole document will be searched.&#xD;&#xA;&#xD;&#xA;If only Start Page != NULL only the specified page will be searched.&#xD;&#xA;&#xD;&#xA;If only End Page != NULL the doument will be searched from the first page to End Page.">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
               <Choice Kind="TypeFlag" Name="String" />
             </p:TypeAnnotation>
@@ -892,12 +892,12 @@
               <p:stringtype p:Assembly="VL.Core" p:Type="VL.Core.StringType">Comment</p:stringtype>
             </p:ValueBoxSettings>
           </Pad>
-          <ControlPoint Id="IC8R8J9to9YM7T9yqHL4ou" Bounds="2285,1524" />
-          <ControlPoint Id="MCvjiCUexKMPdNExWSsCDo" Bounds="1952,1549" />
-          <Overlay Id="BdyqFJJCbBDNVp2rwdwv1w" Name="Search Text" Bounds="1898,1497,471,653">
+          <ControlPoint Id="IC8R8J9to9YM7T9yqHL4ou" Bounds="2292,1860" />
+          <ControlPoint Id="MCvjiCUexKMPdNExWSsCDo" Bounds="1959,1885" />
+          <Overlay Id="BdyqFJJCbBDNVp2rwdwv1w" Name="Search Text" Bounds="1905,1833,471,653">
             <p:ColorIndex p:Type="Int32">5</p:ColorIndex>
           </Overlay>
-          <Pad Id="QrWDeyYSscYNzUwmFBDoiA" Bounds="92,2806,325,52" ShowValueBox="true" isIOBox="true" Value="Lower Level Nodes">
+          <Pad Id="QrWDeyYSscYNzUwmFBDoiA" Bounds="99,3142,325,52" ShowValueBox="true" isIOBox="true" Value="Lower Level Nodes">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
               <Choice Kind="TypeFlag" Name="String" />
             </p:TypeAnnotation>
@@ -906,7 +906,7 @@
               <p:stringtype p:Assembly="VL.Core" p:Type="VL.Core.StringType">Comment</p:stringtype>
             </p:ValueBoxSettings>
           </Pad>
-          <Node Bounds="152,3111,202,19" Id="AFoZOCFw3knLI3HIVltR2W">
+          <Node Bounds="159,3447,202,19" Id="AFoZOCFw3knLI3HIVltR2W">
             <p:NodeReference LastCategoryFullName="PDFReader.PDF" LastDependency="VL.PDFReader.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <CategoryReference Kind="Category" Name="PDFReader" />
@@ -921,7 +921,7 @@
             <Pin Id="HwSN5Ir2j5oNeM1j6bRCKa" Name="Output" Kind="OutputPin" />
             <Pin Id="Sn9bPfz2NZgOrQySzMOxSK" Name="On Loaded" Kind="OutputPin" />
           </Node>
-          <Pad Id="HgiRQvR0zq7NbmsRuzZ3ic" Comment="Reload PDF" Bounds="154,2953,35,35" ShowValueBox="true" isIOBox="true" Value="false">
+          <Pad Id="HgiRQvR0zq7NbmsRuzZ3ic" Comment="Reload PDF" Bounds="161,3289,35,35" ShowValueBox="true" isIOBox="true" Value="false">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
               <Choice Kind="ImmutableTypeFlag" Name="Boolean" />
             </p:TypeAnnotation>
@@ -929,22 +929,22 @@
               <p:buttonmode p:Assembly="VL.UI.Forms" p:Type="VL.HDE.PatchEditor.Editors.ButtonModeEnum">Bang</p:buttonmode>
             </p:ValueBoxSettings>
           </Pad>
-          <Pad Id="CbdD3Tr00KaPVYMR4QAeId" Comment="Path" Bounds="220,3001,140,15" ShowValueBox="true" isIOBox="true" Value="..\resources\Language.pdf">
+          <Pad Id="CbdD3Tr00KaPVYMR4QAeId" Comment="Path" Bounds="227,3337,140,15" ShowValueBox="true" isIOBox="true" Value="..\resources\Language.pdf">
             <p:TypeAnnotation LastCategoryFullName="IO" LastDependency="VL.CoreLib.vl">
               <Choice Kind="TypeFlag" Name="Path" />
             </p:TypeAnnotation>
           </Pad>
-          <Pad Id="BiG6YiEHzsFMyLqn06n6Vl" Comment="Password" Bounds="285,3034,35,15" ShowValueBox="true" isIOBox="true" Value="">
+          <Pad Id="BiG6YiEHzsFMyLqn06n6Vl" Comment="Password" Bounds="292,3370,35,15" ShowValueBox="true" isIOBox="true" Value="">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
               <Choice Kind="TypeFlag" Name="String" />
             </p:TypeAnnotation>
           </Pad>
-          <Pad Id="MgtHPV7dYWvMNWcurgOdRy" Comment="Max Tile Size" Bounds="350,3070,35,28" ShowValueBox="true" isIOBox="true" Value="4000, 4000">
+          <Pad Id="MgtHPV7dYWvMNWcurgOdRy" Comment="Max Tile Size" Bounds="357,3406,35,28" ShowValueBox="true" isIOBox="true" Value="4000, 4000">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
               <Choice Kind="TypeFlag" Name="Int2" />
             </p:TypeAnnotation>
           </Pad>
-          <Node Bounds="152,3170,65,19" Id="ImMIUwY99C4NLWHaNcrchJ">
+          <Node Bounds="159,3506,65,19" Id="ImMIUwY99C4NLWHaNcrchJ">
             <p:NodeReference LastCategoryFullName="PDFReader.PDF" LastDependency="VL.PDFReader.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <CategoryReference Kind="ClassType" Name="PDF" />
@@ -957,7 +957,7 @@
             <Pin Id="HKmPlmiuiEeQJ7NloI7OAh" Name="Page Rotations" Kind="OutputPin" />
             <Pin Id="GHqtJLOu8GVLIsShCX8U3c" Name="Meta Data" Kind="OutputPin" />
           </Node>
-          <Node Bounds="219,3556,145,19" Id="LmrqanOkPj0LGQJ9AYC66y">
+          <Node Bounds="226,3892,145,19" Id="LmrqanOkPj0LGQJ9AYC66y">
             <p:NodeReference LastCategoryFullName="PDFReader.PDF.MetaData" LastDependency="VL.PDFReader.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <CategoryReference Kind="ClassType" Name="MetaData" />
@@ -973,11 +973,11 @@
             <Pin Id="Ky8YP7ipVwjNIsZSZqy2zN" Name="Creation Date" Kind="OutputPin" />
             <Pin Id="AGnMphEBWGnNN0lembbOmH" Name="Modification Date" Kind="OutputPin" />
           </Node>
-          <Pad Id="PAiElfRqtrHMeXzRD41OA5" Comment="Page Count" Bounds="154,3204,35,15" ShowValueBox="true" isIOBox="true" />
-          <Pad Id="QBYsPO1nT1HP4l4Cd2b6Uj" Comment="Meta Data" Bounds="221,3518,118,27" ShowValueBox="true" isIOBox="true" />
-          <Pad Id="TO4oiDB4JXjOUWMzT6NuSs" Comment="Page Sizes" Bounds="173,3236,97,95" ShowValueBox="true" isIOBox="true" />
-          <Pad Id="I0sSM84ZHlAPnfFqH4ilB7" Comment="Page Rotations" Bounds="196,3392,83,95" ShowValueBox="true" isIOBox="true" />
-          <Pad Id="B3xg8P7xHDsQEZMoAq1ajk" Bounds="281,3252,431,120" ShowValueBox="true" isIOBox="true" Value="Internally the PDF document &quot;reports&quot; its size in inches &#xD;&#xA;and the standard DPI for rasterization is 72.&#xD;&#xA;To get the pixelsize the size in inches is multiplied by DPI.&#xD;&#xA;&#xD;&#xA;The test PDFs used here for example have a size in inches of: 8.5 x 11. &#xD;&#xA;Multiplying this with 72 DPI results in a pixelsize of  612 x 792.">
+          <Pad Id="PAiElfRqtrHMeXzRD41OA5" Comment="Page Count" Bounds="161,3540,35,15" ShowValueBox="true" isIOBox="true" />
+          <Pad Id="QBYsPO1nT1HP4l4Cd2b6Uj" Comment="Meta Data" Bounds="228,3854,118,27" ShowValueBox="true" isIOBox="true" />
+          <Pad Id="TO4oiDB4JXjOUWMzT6NuSs" Comment="Page Sizes" Bounds="180,3572,97,95" ShowValueBox="true" isIOBox="true" />
+          <Pad Id="I0sSM84ZHlAPnfFqH4ilB7" Comment="Page Rotations" Bounds="203,3728,83,95" ShowValueBox="true" isIOBox="true" />
+          <Pad Id="B3xg8P7xHDsQEZMoAq1ajk" Bounds="288,3588,431,120" ShowValueBox="true" isIOBox="true" Value="Internally the PDF document &quot;reports&quot; its size in inches &#xD;&#xA;and the standard DPI for rasterization is 72.&#xD;&#xA;To get the pixelsize the size in inches is multiplied by DPI.&#xD;&#xA;&#xD;&#xA;The test PDFs used here for example have a size in inches of: 8.5 x 11. &#xD;&#xA;Multiplying this with 72 DPI results in a pixelsize of  612 x 792.">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
               <Choice Kind="TypeFlag" Name="String" />
             </p:TypeAnnotation>
@@ -986,16 +986,16 @@
               <p:stringtype p:Assembly="VL.Core" p:Type="VL.Core.StringType">Comment</p:stringtype>
             </p:ValueBoxSettings>
           </Pad>
-          <Pad Id="Ln5NRC8wjxfNZ1xQFmetot" Comment="Creator" Bounds="222,3765,61,15" ShowValueBox="true" isIOBox="true" />
-          <Pad Id="A5imObYBKSyNov2PxLNKHE" Comment="Title" Bounds="242,3740,80,15" ShowValueBox="true" isIOBox="true" />
-          <Pad Id="EW5TpMxk4AyN2LPZcH7L0D" Comment="Author" Bounds="262,3715,43,15" ShowValueBox="true" isIOBox="true" />
-          <Pad Id="Dfgga31ekwXL6cZDwpJLsN" Comment="Subject" Bounds="281,3692,276,19" ShowValueBox="true" isIOBox="true" />
-          <Pad Id="SPY4r8pi2jvQC2mz36rQII" Comment="Keywords" Bounds="301,3674,190,15" ShowValueBox="true" isIOBox="true" />
-          <Pad Id="VhyJVfFdPX1LfLZkCdXH8p" Comment="Producer" Bounds="321,3654,89,15" ShowValueBox="true" isIOBox="true" />
-          <Pad Id="Ad5xL4dqnxKM0A6XxU28Kn" Comment="Creation Date" Bounds="341,3628,162,21" ShowValueBox="true" isIOBox="true" />
-          <Pad Id="L0ghCoHQzGTOhOfkiXSnui" Comment="Modification Date" Bounds="361,3600,184,22" ShowValueBox="true" isIOBox="true" />
-          <Pad Id="CqeRWL5jf8zOCwf0x1KNx0" Comment="On Loaded" Bounds="351,3170,35,35" ShowValueBox="true" isIOBox="true" />
-          <Node Bounds="783,3122,202,19" Id="KS0GZZCxqs6LwvUCdpSthj">
+          <Pad Id="Ln5NRC8wjxfNZ1xQFmetot" Comment="Creator" Bounds="229,4101,61,15" ShowValueBox="true" isIOBox="true" />
+          <Pad Id="A5imObYBKSyNov2PxLNKHE" Comment="Title" Bounds="249,4076,80,15" ShowValueBox="true" isIOBox="true" />
+          <Pad Id="EW5TpMxk4AyN2LPZcH7L0D" Comment="Author" Bounds="269,4051,43,15" ShowValueBox="true" isIOBox="true" />
+          <Pad Id="Dfgga31ekwXL6cZDwpJLsN" Comment="Subject" Bounds="288,4028,276,19" ShowValueBox="true" isIOBox="true" />
+          <Pad Id="SPY4r8pi2jvQC2mz36rQII" Comment="Keywords" Bounds="308,4010,190,15" ShowValueBox="true" isIOBox="true" />
+          <Pad Id="VhyJVfFdPX1LfLZkCdXH8p" Comment="Producer" Bounds="328,3990,89,15" ShowValueBox="true" isIOBox="true" />
+          <Pad Id="Ad5xL4dqnxKM0A6XxU28Kn" Comment="Creation Date" Bounds="348,3964,162,21" ShowValueBox="true" isIOBox="true" />
+          <Pad Id="L0ghCoHQzGTOhOfkiXSnui" Comment="Modification Date" Bounds="368,3936,184,22" ShowValueBox="true" isIOBox="true" />
+          <Pad Id="CqeRWL5jf8zOCwf0x1KNx0" Comment="On Loaded" Bounds="358,3506,35,35" ShowValueBox="true" isIOBox="true" />
+          <Node Bounds="790,3458,202,19" Id="KS0GZZCxqs6LwvUCdpSthj">
             <p:NodeReference LastCategoryFullName="PDFReader.PDF" LastDependency="VL.PDFReader.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <CategoryReference Kind="Category" Name="PDFReader" />
@@ -1010,7 +1010,7 @@
             <Pin Id="DvA1jquJldRO5BYWI9tJZY" Name="Output" Kind="OutputPin" />
             <Pin Id="A9LoUbjgY6TN7yFpgppYMC" Name="On Loaded" Kind="OutputPin" />
           </Node>
-          <Pad Id="O4rhiir6pMfNMeaPKgR8cy" Comment="Reload PDF" Bounds="785,2964,35,35" ShowValueBox="true" isIOBox="true" Value="false">
+          <Pad Id="O4rhiir6pMfNMeaPKgR8cy" Comment="Reload PDF" Bounds="792,3300,35,35" ShowValueBox="true" isIOBox="true" Value="false">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
               <Choice Kind="ImmutableTypeFlag" Name="Boolean" />
             </p:TypeAnnotation>
@@ -1018,17 +1018,17 @@
               <p:buttonmode p:Assembly="VL.UI.Forms" p:Type="VL.HDE.PatchEditor.Editors.ButtonModeEnum">Bang</p:buttonmode>
             </p:ValueBoxSettings>
           </Pad>
-          <Pad Id="HKO5BjrC0i7NBOEnyZcpQW" Comment="Path" Bounds="851,3012,140,15" ShowValueBox="true" isIOBox="true" Value="..\resources\Language.pdf">
+          <Pad Id="HKO5BjrC0i7NBOEnyZcpQW" Comment="Path" Bounds="858,3348,140,15" ShowValueBox="true" isIOBox="true" Value="..\resources\Language.pdf">
             <p:TypeAnnotation LastCategoryFullName="IO" LastDependency="VL.CoreLib.vl">
               <Choice Kind="TypeFlag" Name="Path" />
             </p:TypeAnnotation>
           </Pad>
-          <Pad Id="BzWPBKWyNX3MuUPbn1Mq9M" Comment="Password" Bounds="916,3045,35,15" ShowValueBox="true" isIOBox="true" Value="">
+          <Pad Id="BzWPBKWyNX3MuUPbn1Mq9M" Comment="Password" Bounds="923,3381,35,15" ShowValueBox="true" isIOBox="true" Value="">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
               <Choice Kind="TypeFlag" Name="String" />
             </p:TypeAnnotation>
           </Pad>
-          <Node Bounds="1273,3129,202,19" Id="C2skeiutFWtL2ZBrNZNkig">
+          <Node Bounds="1280,3465,202,19" Id="C2skeiutFWtL2ZBrNZNkig">
             <p:NodeReference LastCategoryFullName="PDFReader.PDF" LastDependency="VL.PDFReader.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <CategoryReference Kind="Category" Name="PDFReader" />
@@ -1043,7 +1043,7 @@
             <Pin Id="Es8pgKV0N2MM3EDX1jntlp" Name="Output" Kind="OutputPin" />
             <Pin Id="EBb2hHd9ru1MzOMepaZnlR" Name="On Loaded" Kind="OutputPin" />
           </Node>
-          <Pad Id="GAGudL4VIrMMZQIelQ6gQo" Comment="Reload PDF" Bounds="1275,2971,35,35" ShowValueBox="true" isIOBox="true" Value="false">
+          <Pad Id="GAGudL4VIrMMZQIelQ6gQo" Comment="Reload PDF" Bounds="1282,3307,35,35" ShowValueBox="true" isIOBox="true" Value="false">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
               <Choice Kind="ImmutableTypeFlag" Name="Boolean" />
             </p:TypeAnnotation>
@@ -1051,19 +1051,19 @@
               <p:buttonmode p:Assembly="VL.UI.Forms" p:Type="VL.HDE.PatchEditor.Editors.ButtonModeEnum">Bang</p:buttonmode>
             </p:ValueBoxSettings>
           </Pad>
-          <Pad Id="FrL8eztE7nYPlwndzdAU7P" Comment="Path" Bounds="1341,3019,140,15" ShowValueBox="true" isIOBox="true" Value="..\resources\Reference.pdf">
+          <Pad Id="FrL8eztE7nYPlwndzdAU7P" Comment="Path" Bounds="1348,3355,140,15" ShowValueBox="true" isIOBox="true" Value="..\resources\Reference.pdf">
             <p:TypeAnnotation LastCategoryFullName="IO" LastDependency="VL.CoreLib.vl">
               <Choice Kind="TypeFlag" Name="Path" />
             </p:TypeAnnotation>
           </Pad>
-          <Pad Id="T5bbE6fJeH7OBSOxflGvii" Comment="Password" Bounds="1406,3052,35,15" ShowValueBox="true" isIOBox="true" Value="">
+          <Pad Id="T5bbE6fJeH7OBSOxflGvii" Comment="Password" Bounds="1413,3388,35,15" ShowValueBox="true" isIOBox="true" Value="">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
               <Choice Kind="TypeFlag" Name="String" />
             </p:TypeAnnotation>
           </Pad>
-          <Pad Id="LIgYO9gsPvkL0tZZf2AXvG" Comment="~ MB" Bounds="1119,3198,44,15" ShowValueBox="true" isIOBox="true" />
-          <Pad Id="CL5t973Rnm3OMDZl9dhqfi" Comment="~ MB" Bounds="1604,3209,58,15" ShowValueBox="true" isIOBox="true" />
-          <Node Bounds="1062,3038,92,129" Id="EqANuyrMePkL7ZWvMENex4">
+          <Pad Id="LIgYO9gsPvkL0tZZf2AXvG" Comment="~ MB" Bounds="1126,3534,44,15" ShowValueBox="true" isIOBox="true" />
+          <Pad Id="CL5t973Rnm3OMDZl9dhqfi" Comment="~ MB" Bounds="1611,3545,58,15" ShowValueBox="true" isIOBox="true" />
+          <Node Bounds="1069,3374,92,129" Id="EqANuyrMePkL7ZWvMENex4">
             <p:NodeReference LastCategoryFullName="Primitive" LastDependency="Builtin">
               <Choice Kind="StatefulRegion" Name="Region (Stateful)" Fixed="true" />
               <CategoryReference Kind="Category" Name="Primitive" />
@@ -1075,7 +1075,7 @@
             <Patch Id="A9lXGeklOsSPZ7jbEQj2JA" ManuallySortedPins="true">
               <Patch Id="VPVGb02gqIKPXVUdj4Xsf9" Name="Create" ManuallySortedPins="true" />
               <Patch Id="FOEokTjt7IFNvQ4RiU9btm" Name="Then" ManuallySortedPins="true" />
-              <Node Bounds="1074,3061,65,19" Id="BcEpdX76MqwOmhNRP2kRcf">
+              <Node Bounds="1081,3397,65,19" Id="BcEpdX76MqwOmhNRP2kRcf">
                 <p:NodeReference LastCategoryFullName="IO" LastDependency="VL.CoreLib.vl">
                   <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                   <Choice Kind="ProcessAppFlag" Name="File" />
@@ -1087,7 +1087,7 @@
                 <Pin Id="RbTRJBkwsh1MR1Il1kAdri" Name="File Share" Kind="InputPin" />
                 <Pin Id="RvFIWBL7w7ENdKdW4OFC7n" Name="Result" Kind="OutputPin" />
               </Node>
-              <Node Bounds="1074,3096,48,19" Id="O6jQjgy0Eg0LP3grmxlifb">
+              <Node Bounds="1081,3432,48,19" Id="O6jQjgy0Eg0LP3grmxlifb">
                 <p:NodeReference LastCategoryFullName="IO.Stream" LastDependency="VL.CoreLib.vl">
                   <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                   <CategoryReference Kind="ClassType" Name="Stream" />
@@ -1097,7 +1097,7 @@
                 <Pin Id="PYTgzoDT85yOlmMSaisnLk" Name="Output" Kind="StateOutputPin" />
                 <Pin Id="JYNw6kiAewILaW6QqFA4k9" Name="Length" Kind="OutputPin" />
               </Node>
-              <Node Bounds="1117,3128,25,19" Id="BtiurrE5hkxOdB6zTQxYVw">
+              <Node Bounds="1124,3464,25,19" Id="BtiurrE5hkxOdB6zTQxYVw">
                 <p:NodeReference LastCategoryFullName="Primitive.Float64" LastDependency="VL.CoreLib.vl">
                   <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                   <Choice Kind="OperationCallFlag" Name="/ (Integer64)" />
@@ -1107,10 +1107,10 @@
                 <Pin Id="FI0zi2KT5IkNg4G75we0FH" Name="Output" Kind="StateOutputPin" />
               </Node>
             </Patch>
-            <ControlPoint Id="A5WuG7zPjxNPzD5MggBp3a" Bounds="1119,3161" Alignment="Bottom" />
-            <ControlPoint Id="EEUwR8pn6JgLtKhtAOl6Mf" Bounds="1076,3044" Alignment="Top" />
+            <ControlPoint Id="A5WuG7zPjxNPzD5MggBp3a" Bounds="1126,3497" Alignment="Bottom" />
+            <ControlPoint Id="EEUwR8pn6JgLtKhtAOl6Mf" Bounds="1083,3380" Alignment="Top" />
           </Node>
-          <Node Bounds="1547,3044,92,142" Id="NVKFAn5mOU6LDp9KQJvdfO">
+          <Node Bounds="1554,3380,92,142" Id="NVKFAn5mOU6LDp9KQJvdfO">
             <p:NodeReference LastCategoryFullName="Primitive" LastDependency="Builtin">
               <Choice Kind="StatefulRegion" Name="Region (Stateful)" Fixed="true" />
               <CategoryReference Kind="Category" Name="Primitive" />
@@ -1122,7 +1122,7 @@
             <Patch Id="HIkxSPVh1Y1N5moaQ5Kmj3" ManuallySortedPins="true">
               <Patch Id="Lyke9SVI0J1Oq5ed7b3q8h" Name="Create" ManuallySortedPins="true" />
               <Patch Id="GL638nGh5q8LLsYkSg6T9Z" Name="Then" ManuallySortedPins="true" />
-              <Node Bounds="1559,3067,65,19" Id="BTNKvcBhzyTMBVaRSBBHpt">
+              <Node Bounds="1566,3403,65,19" Id="BTNKvcBhzyTMBVaRSBBHpt">
                 <p:NodeReference LastCategoryFullName="IO" LastDependency="VL.CoreLib.vl">
                   <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                   <Choice Kind="ProcessAppFlag" Name="File" />
@@ -1134,7 +1134,7 @@
                 <Pin Id="DbrQQzE1g8FM8q3rL0COE9" Name="File Share" Kind="InputPin" />
                 <Pin Id="EtjG7WcFEKxPqoGfaH9Jn7" Name="Result" Kind="OutputPin" />
               </Node>
-              <Node Bounds="1559,3114,48,19" Id="HjYBYeV5BMaQdAHOki3Ieh">
+              <Node Bounds="1566,3450,48,19" Id="HjYBYeV5BMaQdAHOki3Ieh">
                 <p:NodeReference LastCategoryFullName="IO.Stream" LastDependency="VL.CoreLib.vl">
                   <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                   <CategoryReference Kind="ClassType" Name="Stream" />
@@ -1144,7 +1144,7 @@
                 <Pin Id="IvU2X9bnJnVLjEhcYshzgF" Name="Output" Kind="StateOutputPin" />
                 <Pin Id="V8B8K1V4KLNLMeVlAIWCI5" Name="Length" Kind="OutputPin" />
               </Node>
-              <Node Bounds="1602,3147,25,19" Id="UuHvFhilkIwPx3Fs53sqKt">
+              <Node Bounds="1609,3483,25,19" Id="UuHvFhilkIwPx3Fs53sqKt">
                 <p:NodeReference LastCategoryFullName="Primitive.Float64" LastDependency="VL.CoreLib.vl">
                   <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                   <Choice Kind="OperationCallFlag" Name="/ (Integer64)" />
@@ -1154,10 +1154,10 @@
                 <Pin Id="Rlv8wg23o52Op9nudv1F8j" Name="Output" Kind="StateOutputPin" />
               </Node>
             </Patch>
-            <ControlPoint Id="MSY0ANbsTFWNh29PqLKqRM" Bounds="1604,3180" Alignment="Bottom" />
-            <ControlPoint Id="AOpJ7BhXdmjP1QUxkn6YJe" Bounds="1561,3050" Alignment="Top" />
+            <ControlPoint Id="MSY0ANbsTFWNh29PqLKqRM" Bounds="1611,3516" Alignment="Bottom" />
+            <ControlPoint Id="AOpJ7BhXdmjP1QUxkn6YJe" Bounds="1568,3386" Alignment="Top" />
           </Node>
-          <Node Bounds="783,3236,63,19" Id="LxavTOItBnyMijApJBsCl2">
+          <Node Bounds="790,3572,63,19" Id="LxavTOItBnyMijApJBsCl2">
             <p:NodeReference LastCategoryFullName="Animation" LastDependency="VL.CoreLib.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <Choice Kind="ProcessAppFlag" Name="Stopwatch" />
@@ -1171,7 +1171,7 @@
             <Pin Id="NIu3VaVJlI2Ol0WvSD0STU" Name="Reset" Kind="InputPin" />
             <Pin Id="JYeMXbfcyphNcmOvgOYKd7" Name="Time" Kind="OutputPin" />
           </Node>
-          <Node Bounds="783,3194,52,19" Id="H4GCWJcAdPLNf6Nye1wJki">
+          <Node Bounds="790,3530,52,19" Id="H4GCWJcAdPLNf6Nye1wJki">
             <p:NodeReference LastCategoryFullName="Control" LastDependency="VL.CoreLib.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <Choice Kind="ProcessAppFlag" Name="FlipFlop" />
@@ -1181,8 +1181,8 @@
             <Pin Id="LFCueCZeVpkOUSuOOlD00b" Name="Reset" Kind="ApplyPin" />
             <Pin Id="S9QEM6kt1krQPNzRPDiVpJ" Name="State" Kind="OutputPin" />
           </Node>
-          <ControlPoint Id="MDIwjaNV6sOMvIdd6vSjcu" Bounds="844,3165" />
-          <Node Bounds="1274,3236,63,19" Id="ClruGVoUnMKN3cBZNRlG1c">
+          <ControlPoint Id="MDIwjaNV6sOMvIdd6vSjcu" Bounds="851,3501" />
+          <Node Bounds="1281,3572,63,19" Id="ClruGVoUnMKN3cBZNRlG1c">
             <p:NodeReference LastCategoryFullName="Animation" LastDependency="VL.CoreLib.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <Choice Kind="ProcessAppFlag" Name="Stopwatch" />
@@ -1196,7 +1196,7 @@
             <Pin Id="OhID7usP5nmPR50Ejt4D82" Name="Reset" Kind="InputPin" />
             <Pin Id="DdiTZarHIJINVwCAUYG68j" Name="Time" Kind="OutputPin" />
           </Node>
-          <Node Bounds="1274,3194,52,19" Id="SdCpbq3jgWVN3Eux5pitwA">
+          <Node Bounds="1281,3530,52,19" Id="SdCpbq3jgWVN3Eux5pitwA">
             <p:NodeReference LastCategoryFullName="Control" LastDependency="VL.CoreLib.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <Choice Kind="ProcessAppFlag" Name="FlipFlop" />
@@ -1206,8 +1206,8 @@
             <Pin Id="D5GnfmSNnzeNw0aKS9Uz8O" Name="Reset" Kind="ApplyPin" />
             <Pin Id="NFhafTMbIooQHNOHfHXhCM" Name="State" Kind="OutputPin" />
           </Node>
-          <ControlPoint Id="BX26gOy78wrNoX8XPpjGVL" Bounds="1335,3168" />
-          <Pad Id="AlYJptnWMVoOptq8WACsRE" Bounds="360,3118,234,19" ShowValueBox="true" isIOBox="true" Value="&lt;-- Used inside the PDFReader nodes">
+          <ControlPoint Id="BX26gOy78wrNoX8XPpjGVL" Bounds="1342,3504" />
+          <Pad Id="AlYJptnWMVoOptq8WACsRE" Bounds="367,3454,234,19" ShowValueBox="true" isIOBox="true" Value="&lt;-- Used inside the PDFReader nodes">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
               <Choice Kind="TypeFlag" Name="String" />
             </p:TypeAnnotation>
@@ -1216,9 +1216,9 @@
               <p:stringtype p:Assembly="VL.Core" p:Type="VL.Core.StringType">Comment</p:stringtype>
             </p:ValueBoxSettings>
           </Pad>
-          <Pad Id="PqvlTySUJfeQP5V1EaVRPA" Comment="Time" Bounds="785,3306,35,15" ShowValueBox="true" isIOBox="true" />
-          <Pad Id="CMCTRKO6CsDOZoClpPuocA" Comment="Time" Bounds="1276,3301,35,15" ShowValueBox="true" isIOBox="true" />
-          <Pad Id="JTcM8aOsvVuOqsRqWiSpxx" Bounds="922,3300,321,19" ShowValueBox="true" isIOBox="true" Value="The bigger the PDF file the longer it will take to load.">
+          <Pad Id="PqvlTySUJfeQP5V1EaVRPA" Comment="Time" Bounds="792,3642,35,15" ShowValueBox="true" isIOBox="true" />
+          <Pad Id="CMCTRKO6CsDOZoClpPuocA" Comment="Time" Bounds="1283,3637,35,15" ShowValueBox="true" isIOBox="true" />
+          <Pad Id="JTcM8aOsvVuOqsRqWiSpxx" Bounds="929,3636,321,19" ShowValueBox="true" isIOBox="true" Value="The bigger the PDF file the longer it will take to load.">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
               <Choice Kind="TypeFlag" Name="String" />
             </p:TypeAnnotation>
@@ -1227,17 +1227,17 @@
               <p:stringtype p:Assembly="VL.Core" p:Type="VL.Core.StringType">Comment</p:stringtype>
             </p:ValueBoxSettings>
           </Pad>
-          <Pad Id="HnLMvhQz3WQLHg1UVi4oeU" Comment="Width" Bounds="562,484,35,15" ShowValueBox="true" isIOBox="true" Value="1080">
+          <Pad Id="HnLMvhQz3WQLHg1UVi4oeU" Comment="Width" Bounds="569,820,35,15" ShowValueBox="true" isIOBox="true" Value="1080">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
               <Choice Kind="TypeFlag" Name="Integer32" />
             </p:TypeAnnotation>
           </Pad>
-          <Pad Id="GapZy7l7NYoOdSKZPtfFLz" Comment="Height" Bounds="583,503,35,15" ShowValueBox="true" isIOBox="true" Value="1920">
+          <Pad Id="GapZy7l7NYoOdSKZPtfFLz" Comment="Height" Bounds="590,839,35,15" ShowValueBox="true" isIOBox="true" Value="1920">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
               <Choice Kind="TypeFlag" Name="Integer32" />
             </p:TypeAnnotation>
           </Pad>
-          <Pad Id="AWxa4NDqP9GQBFyANypM2x" Bounds="607,317,188,135" ShowValueBox="true" isIOBox="true" Value="&quot;Playback&quot; speed depends on the page size (Width / Height) and Preload Frames.&#xD;&#xA;&#xD;&#xA;On a PC with AMD Ryzen 9 7950X3D the PDF could be &quot;played back&quot;  reliably at a speed of 60 FPS with a page size of 1080 x 1920 and Preload Pages set to 12.">
+          <Pad Id="AWxa4NDqP9GQBFyANypM2x" Bounds="614,653,188,135" ShowValueBox="true" isIOBox="true" Value="&quot;Playback&quot; speed depends on the page size (Width / Height) and Preload Frames.&#xD;&#xA;&#xD;&#xA;On a PC with AMD Ryzen 9 7950X3D the PDF could be &quot;played back&quot;  reliably at a speed of 60 FPS with a page size of 1080 x 1920 and Preload Pages set to 12.">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
               <Choice Kind="TypeFlag" Name="String" />
             </p:TypeAnnotation>
@@ -1246,10 +1246,10 @@
               <p:stringtype p:Assembly="VL.Core" p:Type="VL.Core.StringType">Comment</p:stringtype>
             </p:ValueBoxSettings>
           </Pad>
-          <Overlay Id="E0fPtA1nN62PxCayiV6xMh" Bounds="100,2895,1638,928">
+          <Overlay Id="E0fPtA1nN62PxCayiV6xMh" Bounds="107,3231,1638,928">
             <p:ColorIndex p:Type="Int32">4</p:ColorIndex>
           </Overlay>
-          <Pad Id="GdZjp6d4ZaLPtBmrZ30GQ5" Bounds="98,3950,325,52" ShowValueBox="true" isIOBox="true" Value="Low Level Nodes">
+          <Pad Id="GdZjp6d4ZaLPtBmrZ30GQ5" Bounds="105,4286,325,52" ShowValueBox="true" isIOBox="true" Value="Low Level Nodes">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
               <Choice Kind="TypeFlag" Name="String" />
             </p:TypeAnnotation>
@@ -1258,10 +1258,10 @@
               <p:stringtype p:Assembly="VL.Core" p:Type="VL.Core.StringType">Comment</p:stringtype>
             </p:ValueBoxSettings>
           </Pad>
-          <Overlay Id="Je7mlXbqmIDOCn7VdwcEPU" Bounds="107,4020,1638,1225">
+          <Overlay Id="Je7mlXbqmIDOCn7VdwcEPU" Bounds="114,4356,1638,1225">
             <p:ColorIndex p:Type="Int32">2</p:ColorIndex>
           </Overlay>
-          <Node Bounds="270,4154,70,84" Id="RWXVdGmxhxKPycNcvHNKAH">
+          <Node Bounds="277,4490,70,84" Id="RWXVdGmxhxKPycNcvHNKAH">
             <p:NodeReference LastCategoryFullName="Primitive" LastDependency="Builtin">
               <Choice Kind="StatefulRegion" Name="Region (Stateful)" Fixed="true" />
               <CategoryReference Kind="Category" Name="Primitive" />
@@ -1273,7 +1273,7 @@
             <Patch Id="Tw7YCiBMDqiM3hE7sFkH3n" ManuallySortedPins="true">
               <Patch Id="JkIojRb7BwoOyuXHjajdSJ" Name="Create" ManuallySortedPins="true" />
               <Patch Id="DKTPeLFnfpqPBgKpYGRiRv" Name="Then" ManuallySortedPins="true" />
-              <Node Bounds="282,4188,46,26" Id="Sxm3XJiTg2NO0vTK46Hv25">
+              <Node Bounds="289,4524,46,26" Id="Sxm3XJiTg2NO0vTK46Hv25">
                 <p:NodeReference LastCategoryFullName="PDFReader.PDF.PDF" LastDependency="VL.PDFReader.vl">
                   <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                   <CategoryReference Kind="Category" Name="PDF" />
@@ -1289,15 +1289,15 @@
                 <Pin Id="CRij3IzmhStNUOme8LW5mf" Name="Output" Kind="StateOutputPin" />
               </Node>
             </Patch>
-            <ControlPoint Id="Nv9veEDM1hrLJyb8tnVxAn" Bounds="284,4160" Alignment="Top" />
-            <ControlPoint Id="KvYbw532NUaMczKjjCv4LR" Bounds="284,4232" Alignment="Bottom" />
+            <ControlPoint Id="Nv9veEDM1hrLJyb8tnVxAn" Bounds="291,4496" Alignment="Top" />
+            <ControlPoint Id="KvYbw532NUaMczKjjCv4LR" Bounds="291,4568" Alignment="Bottom" />
           </Node>
-          <Pad Id="DRyTnZb3QUYO9K4HZ6732v" Comment="" Bounds="285,4102,140,15" ShowValueBox="true" isIOBox="true" Value="..\resources\Language.pdf">
+          <Pad Id="DRyTnZb3QUYO9K4HZ6732v" Comment="" Bounds="292,4438,140,15" ShowValueBox="true" isIOBox="true" Value="..\resources\Language.pdf">
             <p:TypeAnnotation LastCategoryFullName="IO" LastDependency="VL.CoreLib.vl">
               <Choice Kind="TypeFlag" Name="Path" />
             </p:TypeAnnotation>
           </Pad>
-          <Node Bounds="282,4289,78,26" Id="OiBpHPFqbKOOpioqJKZXq0">
+          <Node Bounds="289,4625,78,26" Id="OiBpHPFqbKOOpioqJKZXq0">
             <p:NodeReference LastCategoryFullName="PDFReader.PDF.PDF" LastDependency="VL.PDFReader.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <Choice Kind="OperationCallFlag" Name="GetDocument" />
@@ -1306,7 +1306,7 @@
             <Pin Id="IyEc6wDp4lGMfB9PEWeA3S" Name="Output" Kind="StateOutputPin" />
             <Pin Id="J9zbCQAvrx8MgoeJwKoXmX" Name="Document" Kind="OutputPin" />
           </Node>
-          <Node Bounds="343,4336,65,19" Id="SR8ZAuavQhmLXNXspi6VDz">
+          <Node Bounds="350,4672,65,19" Id="SR8ZAuavQhmLXNXspi6VDz">
             <p:NodeReference LastCategoryFullName="Primitive.Object" LastDependency="VL.CoreLib.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <Choice Kind="OperationCallFlag" Name="IsAssigned" />
@@ -1315,7 +1315,7 @@
             <Pin Id="QwlxtQKpbcCLQHbBKluEgh" Name="Result" Kind="OutputPin" />
             <Pin Id="CtIwBPbUQGhQLvFVU3Y5jw" Name="Not Assigned" Kind="OutputPin" />
           </Node>
-          <Pad Id="SlWSTZH9p3lQHu4W98hAK6" Comment="Dispose Cached Outputs" Bounds="337,4128,35,35" ShowValueBox="true" isIOBox="true" Value="True">
+          <Pad Id="SlWSTZH9p3lQHu4W98hAK6" Comment="Dispose Cached Outputs" Bounds="344,4464,35,35" ShowValueBox="true" isIOBox="true" Value="True">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
               <Choice Kind="ImmutableTypeFlag" Name="Boolean" />
             </p:TypeAnnotation>
@@ -1323,7 +1323,7 @@
               <p:buttonmode p:Assembly="VL.UI.Forms" p:Type="VL.HDE.PatchEditor.Editors.ButtonModeEnum">Toggle</p:buttonmode>
             </p:ValueBoxSettings>
           </Pad>
-          <Pad Id="CMOBC2sGGeZLNZDn98FBhu" Comment="Force" Bounds="173,4112,35,35" ShowValueBox="true" isIOBox="true" Value="false">
+          <Pad Id="CMOBC2sGGeZLNZDn98FBhu" Comment="Force" Bounds="180,4448,35,35" ShowValueBox="true" isIOBox="true" Value="false">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
               <Choice Kind="ImmutableTypeFlag" Name="Boolean" />
             </p:TypeAnnotation>
@@ -1331,7 +1331,7 @@
               <p:buttonmode p:Assembly="VL.UI.Forms" p:Type="VL.HDE.PatchEditor.Editors.ButtonModeEnum">Bang</p:buttonmode>
             </p:ValueBoxSettings>
           </Pad>
-          <Node Bounds="343,4377,857,844" Id="UPDZviSIDqsMk04ukoUNcZ">
+          <Node Bounds="350,4713,857,844" Id="UPDZviSIDqsMk04ukoUNcZ">
             <p:NodeReference LastCategoryFullName="Primitive" LastDependency="Builtin">
               <Choice Kind="StatefulRegion" Name="Region (Stateful)" Fixed="true" />
               <CategoryReference Kind="Category" Name="Primitive" />
@@ -1341,7 +1341,7 @@
             <Patch Id="Hwbu8OYfPykMfWnBVUI4Jk" ManuallySortedPins="true">
               <Patch Id="QfDlfVOer18OrC8YGcHzIS" Name="Create" ManuallySortedPins="true" />
               <Patch Id="FDEjrHB5hpuNC5RUd6Opsx" Name="Then" ManuallySortedPins="true" />
-              <Node Bounds="355,4455,65,26" Id="Gdz4RatjmYhPQDnCWH8puW">
+              <Node Bounds="362,4791,65,26" Id="Gdz4RatjmYhPQDnCWH8puW">
                 <p:NodeReference LastCategoryFullName="PDFReader.PDF.Document" LastDependency="VL.PDFReader.vl">
                   <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                   <CategoryReference Kind="ClassType" Name="Document" />
@@ -1351,7 +1351,7 @@
                 <Pin Id="Pp4FWs2Rx2WOUejGMGwnif" Name="Output" Kind="StateOutputPin" />
                 <Pin Id="QRmiH27AitxOIWJqVz3gbl" Name="Page Count" Kind="OutputPin" />
               </Node>
-              <Node Bounds="460,4534,728,254" Id="VDdnG0QrCIjPBuAYBXhCB3">
+              <Node Bounds="467,4870,728,254" Id="VDdnG0QrCIjPBuAYBXhCB3">
                 <p:NodeReference LastCategoryFullName="Reactive" LastDependency="VL.CoreLib.vl">
                   <Choice Kind="StatefulRegion" Name="Region (Stateful)" Fixed="true" />
                   <Choice Kind="ProcessAppFlag" Name="AsyncTask" />
@@ -1367,9 +1367,9 @@
                     <Pin Id="E6998ybF7GmORjKoJ4vlFF" Name="Input 1" Kind="InputPin" />
                     <Pin Id="VGRWFd8B4AMNKgiJvniTi0" Name="Output" Kind="OutputPin" />
                   </Patch>
-                  <ControlPoint Id="Fe4ez4XOIzGPufEaPGAoni" Bounds="1132,4555" />
-                  <ControlPoint Id="BKzS1t31n68OoWXgrblu3A" Bounds="621,4772" />
-                  <Node Bounds="507,4563,131,154" Id="S0YgjVuHWEwPt0jZ1WRb2Q">
+                  <ControlPoint Id="Fe4ez4XOIzGPufEaPGAoni" Bounds="1139,4891" />
+                  <ControlPoint Id="BKzS1t31n68OoWXgrblu3A" Bounds="628,5108" />
+                  <Node Bounds="514,4899,131,154" Id="S0YgjVuHWEwPt0jZ1WRb2Q">
                     <p:NodeReference LastCategoryFullName="Primitive" LastDependency="Builtin">
                       <Choice Kind="StatefulRegion" Name="Region (Stateful)" Fixed="true" />
                       <CategoryReference Kind="Category" Name="Primitive" />
@@ -1382,7 +1382,7 @@
                         <Pin Id="IArixWt4T3ZL6gAKa1ARk1" Name="Index" Kind="InputPin" />
                       </Patch>
                       <Patch Id="N4TI2V77KSTNOoM4YZNmFW" Name="Dispose" ManuallySortedPins="true" />
-                      <Node Bounds="519,4638,105,26" Id="LhOpNnhypJRNoGphA796Gc">
+                      <Node Bounds="526,4974,105,26" Id="LhOpNnhypJRNoGphA796Gc">
                         <p:NodeReference LastCategoryFullName="PDFReader.PDF.Document" LastDependency="VL.PDFReader.vl">
                           <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                           <CategoryReference Kind="Category" Name="PDF" />
@@ -1398,12 +1398,12 @@
                         <Pin Id="HxkvXZc6WUKM6l2hmTt0B5" Name="Output" Kind="StateOutputPin" />
                         <Pin Id="OUwnHuGkBOiO6IhxgPXmTJ" Name="Result" Kind="OutputPin" />
                       </Node>
-                      <ControlPoint Id="Vb2iooLvmShOw8mqs67pph" Bounds="561,4581" />
+                      <ControlPoint Id="Vb2iooLvmShOw8mqs67pph" Bounds="568,4917" />
                     </Patch>
-                    <ControlPoint Id="DaV86zWpbCkMWOhpifaEyT" Bounds="621,4711" Alignment="Bottom" />
+                    <ControlPoint Id="DaV86zWpbCkMWOhpifaEyT" Bounds="628,5047" Alignment="Bottom" />
                     <Pin Id="KgGpquCEsBbOHy6ecjeVJH" Name="Iteration Count" Kind="InputPin" />
                   </Node>
-                  <Node Bounds="925,4554,117,214" Id="CDqxdkpfTluONgsFfRzERn">
+                  <Node Bounds="932,4890,117,214" Id="CDqxdkpfTluONgsFfRzERn">
                     <p:NodeReference LastCategoryFullName="Primitive" LastDependency="Builtin">
                       <Choice Kind="StatefulRegion" Name="Region (Stateful)" Fixed="true" />
                       <CategoryReference Kind="Category" Name="Primitive" />
@@ -1414,7 +1414,7 @@
                       <Patch Id="EZsURIgJ1WkOvIBV0dYFxY" Name="Create" ManuallySortedPins="true" />
                       <Patch Id="Vbf6JHeeQbmNE3xfbvPdoz" Name="Update" ManuallySortedPins="true" />
                       <Patch Id="QsQO0xYZBTOO0IimcDyHqK" Name="Dispose" ManuallySortedPins="true" />
-                      <Node Bounds="948,4612,65,19" Id="PD1xL53Dh7GN4yHagGrx3p">
+                      <Node Bounds="955,4948,65,19" Id="PD1xL53Dh7GN4yHagGrx3p">
                         <p:NodeReference LastCategoryFullName="Primitive.Object" LastDependency="VL.CoreLib.vl">
                           <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                           <Choice Kind="OperationCallFlag" Name="IsAssigned" />
@@ -1423,7 +1423,7 @@
                         <Pin Id="VhTy16SyWJ3MrTGlNwa78m" Name="Result" Kind="OutputPin" />
                         <Pin Id="G3V3cbmzgYUNwV2QKBMgia" Name="Not Assigned" Kind="OutputPin" />
                       </Node>
-                      <Node Bounds="948,4668,82,80" Id="NuKN1LY4qCIPVncmzpPgFx">
+                      <Node Bounds="955,5003,82,80" Id="NuKN1LY4qCIPVncmzpPgFx">
                         <p:NodeReference LastCategoryFullName="Primitive" LastDependency="Builtin">
                           <Choice Kind="StatefulRegion" Name="Region (Stateful)" Fixed="true" />
                           <CategoryReference Kind="Category" Name="Primitive" />
@@ -1433,7 +1433,7 @@
                         <Patch Id="EptdLZt0eveMTTaBCpk0Pn" ManuallySortedPins="true">
                           <Patch Id="JxoPijmVjenOZbZKoUaZ83" Name="Create" ManuallySortedPins="true" />
                           <Patch Id="V2BpoY7lNEZNJAYgN8gSK9" Name="Then" ManuallySortedPins="true" />
-                          <Node Bounds="960,4696,58,26" Id="PPbW9HO1emGLQBa8yIAmFV">
+                          <Node Bounds="967,5032,58,26" Id="PPbW9HO1emGLQBa8yIAmFV">
                             <p:NodeReference LastCategoryFullName="Primitive.IDisposable" LastDependency="VL.CoreLib.vl">
                               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                               <CategoryReference Kind="MutableInterfaceType" Name="IDisposable" NeedsToBeDirectParent="true" />
@@ -1445,9 +1445,9 @@
                         </Patch>
                       </Node>
                     </Patch>
-                    <ControlPoint Id="QQrfFm63HymPFj3JuSZknM" Bounds="960,4560" Alignment="Top" />
+                    <ControlPoint Id="QQrfFm63HymPFj3JuSZknM" Bounds="967,4896" Alignment="Top" />
                   </Node>
-                  <Node Bounds="691,4592,144,162" Id="HweZ6XiEvBpQGa2ouNIl3T">
+                  <Node Bounds="698,4927,144,162" Id="HweZ6XiEvBpQGa2ouNIl3T">
                     <p:NodeReference LastCategoryFullName="Control" LastDependency="VL.CoreLib.vl">
                       <Choice Kind="StatefulRegion" Name="Region (Stateful)" Fixed="true" />
                       <Choice Kind="ProcessAppFlag" Name="Comment" />
@@ -1456,7 +1456,7 @@
                       <Patch Id="IMIVrqC32YyPw1Kh0rHwfI" Name="Create" ManuallySortedPins="true" />
                       <Patch Id="VuIwGiJum7EPqz0IuD2Gbw" Name="Update" ManuallySortedPins="true" />
                       <Patch Id="Twh2pVEhWEbPWY3CXcUaKT" Name="Dispose" ManuallySortedPins="true" />
-                      <Node Bounds="721,4637,69,19" Id="KEmrK4YvWMDPxs5NNJtuj2">
+                      <Node Bounds="728,4973,69,19" Id="KEmrK4YvWMDPxs5NNJtuj2">
                         <p:NodeReference LastCategoryFullName="PDFReader.Stride" LastDependency="VL.PDFReader.vl">
                           <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                           <Choice Kind="ProcessAppFlag" Name="PDFTexture (Async)" />
@@ -1469,7 +1469,7 @@
                         <Pin Id="T3TcUsr9yA6OIoDhTpTALw" Name="State Output" Kind="StateOutputPin" />
                         <Pin Id="MTXzkSBtyXFMgqDRUUzMUw" Name="Output" Kind="OutputPin" />
                       </Node>
-                      <Pad Id="U71ROFJM1s6LPkvpelq4uA" Bounds="707,4619,79,19" ShowValueBox="true" isIOBox="true" Value="Check also:">
+                      <Pad Id="U71ROFJM1s6LPkvpelq4uA" Bounds="714,4955,79,19" ShowValueBox="true" isIOBox="true" Value="Check also:">
                         <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
                           <Choice Kind="TypeFlag" Name="String" />
                         </p:TypeAnnotation>
@@ -1478,7 +1478,7 @@
                           <p:stringtype p:Assembly="VL.Core" p:Type="VL.Core.StringType">Comment</p:stringtype>
                         </p:ValueBoxSettings>
                       </Pad>
-                      <Pad Id="Ha12DcEUkwxP3Aezhq0trl" Bounds="707,4680,109,61" ShowValueBox="true" isIOBox="true" Value="Which is used inside the Stride PDF reader node.">
+                      <Pad Id="Ha12DcEUkwxP3Aezhq0trl" Bounds="714,5016,109,61" ShowValueBox="true" isIOBox="true" Value="Which is used inside the Stride PDF reader node.">
                         <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
                           <Choice Kind="TypeFlag" Name="String" />
                         </p:TypeAnnotation>
@@ -1492,7 +1492,7 @@
                   </Node>
                 </Patch>
               </Node>
-              <Node Bounds="538,4495,86,19" Id="QrMYFwFuKMTOtrNjis7sBJ">
+              <Node Bounds="545,4831,86,19" Id="QrMYFwFuKMTOtrNjis7sBJ">
                 <p:NodeReference LastCategoryFullName="Stride.Utils" LastDependency="VL.Stride.vl">
                   <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                   <CategoryReference Kind="Category" Name="Utils" NeedsToBeDirectParent="true">
@@ -1503,7 +1503,7 @@
                 <Pin Id="SbcmxfPbqRQNxtMNtQC7Be" Name="Output" Kind="OutputPin" />
                 <Pin Id="Gx4A9Ljj0CAMGhahRDaZve" Name="Node Context" Kind="InputPin" IsHidden="true" />
               </Node>
-              <Node Bounds="577,4443,225,26" Id="Nk1XDraubHdPpHnyu4RFUF">
+              <Node Bounds="584,4779,225,26" Id="Nk1XDraubHdPpHnyu4RFUF">
                 <p:NodeReference LastCategoryFullName="PDFReader.PDF.RenderOptions" LastDependency="VL.PDFReader.vl">
                   <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                   <CategoryReference Kind="4026531840" Name="RenderOptions" />
@@ -1524,12 +1524,12 @@
                 <Pin Id="HJXAdXhV1CqNzUxHe0p72w" Name="Use Tiling" Kind="InputPin" />
                 <Pin Id="D9jMj7JrjyINM7CexYVFBO" Name="Output" Kind="StateOutputPin" />
               </Node>
-              <Pad Id="JmwpPIYaGRkO08PlBxEzbY" Comment="DPI" Bounds="579,4405,41,15" ShowValueBox="true" isIOBox="true" Value="12">
+              <Pad Id="JmwpPIYaGRkO08PlBxEzbY" Comment="DPI" Bounds="586,4741,41,15" ShowValueBox="true" isIOBox="true" Value="12">
                 <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
                   <Choice Kind="TypeFlag" Name="Integer32" />
                 </p:TypeAnnotation>
               </Pad>
-              <Node Bounds="460,4804,65,19" Id="QxDP2SSBRE7NM9aDGcv2m9">
+              <Node Bounds="467,5140,65,19" Id="QxDP2SSBRE7NM9aDGcv2m9">
                 <p:NodeReference LastCategoryFullName="Reactive" LastDependency="VL.CoreLib.vl">
                   <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                   <Choice Kind="ProcessAppFlag" Name="HoldLatest" />
@@ -1541,15 +1541,15 @@
                 <Pin Id="AXSVQG4EaLVLJtK6PVLXff" Name="Value" Kind="OutputPin" />
                 <Pin Id="FOWvaJ6R83UOK2tx2aukWI" Name="On Data" Kind="OutputPin" />
               </Node>
-              <Pad Id="TR42mehgWZTMlQhpQ5F4lq" SlotId="Ig6Z9qYMZmJMrMiG3tIFss" Bounds="462,4849">
+              <Pad Id="TR42mehgWZTMlQhpQ5F4lq" SlotId="Ig6Z9qYMZmJMrMiG3tIFss" Bounds="469,5185">
                 <p:Value />
               </Pad>
               <Slot Id="Ig6Z9qYMZmJMrMiG3tIFss" Name="Tex" />
-              <Pad Id="MiJjwcCf72cNlxRM3gqLc0" SlotId="Ig6Z9qYMZmJMrMiG3tIFss" Bounds="960,4520">
+              <Pad Id="MiJjwcCf72cNlxRM3gqLc0" SlotId="Ig6Z9qYMZmJMrMiG3tIFss" Bounds="967,4856">
                 <p:Value />
               </Pad>
-              <Pad Id="UNb6aMlNur5NrlN7TSMNlR" Comment="Tex" Bounds="462,4877,95,332" ShowValueBox="true" isIOBox="true" />
-              <Pad Id="B9upLE314s1PHEKcDa7T41" Bounds="601,4870,209,70" ShowValueBox="true" isIOBox="true" Value="Load all pages of a PDF as textures at a small size to be used as previews for example.">
+              <Pad Id="UNb6aMlNur5NrlN7TSMNlR" Comment="Tex" Bounds="469,5213,95,332" ShowValueBox="true" isIOBox="true" />
+              <Pad Id="B9upLE314s1PHEKcDa7T41" Bounds="608,5206,209,70" ShowValueBox="true" isIOBox="true" Value="Load all pages of a PDF as textures at a small size to be used as previews for example.">
                 <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
                   <Choice Kind="TypeFlag" Name="String" />
                 </p:TypeAnnotation>
@@ -1560,7 +1560,7 @@
               </Pad>
             </Patch>
           </Node>
-          <Pad Id="TEm6ctDL9dcQc6sMYmBNOr" Comment="Load" Bounds="463,4406,35,35" ShowValueBox="true" isIOBox="true" Value="false">
+          <Pad Id="TEm6ctDL9dcQc6sMYmBNOr" Comment="Load" Bounds="470,4742,35,35" ShowValueBox="true" isIOBox="true" Value="false">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
               <Choice Kind="ImmutableTypeFlag" Name="Boolean" />
             </p:TypeAnnotation>
@@ -1568,7 +1568,7 @@
               <p:buttonmode p:Assembly="VL.UI.Forms" p:Type="VL.HDE.PatchEditor.Editors.ButtonModeEnum">Bang</p:buttonmode>
             </p:ValueBoxSettings>
           </Pad>
-          <Node Bounds="-503,310,25,19" Id="H6nIF1U9fcLLfr93w8qP2c">
+          <Node Bounds="-496,646,25,19" Id="H6nIF1U9fcLLfr93w8qP2c">
             <p:NodeReference LastCategoryFullName="Math" LastDependency="VL.CoreLib.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <Choice Kind="OperationCallFlag" Name="/" />
@@ -1577,7 +1577,7 @@
             <Pin Id="HfSsRP6sHbCOEhpCcXQOio" Name="Input 2" Kind="InputPin" />
             <Pin Id="P2W1i23HhBNP2RW6ZiXEHI" Name="Output" Kind="OutputPin" />
           </Node>
-          <Pad Id="AaKBK18ME7tOZvcDNhwtaU" Comment="" Bounds="-501,275,35,15" ShowValueBox="true" isIOBox="true" Value="1">
+          <Pad Id="AaKBK18ME7tOZvcDNhwtaU" Comment="" Bounds="-494,611,35,15" ShowValueBox="true" isIOBox="true" Value="1">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
               <Choice Kind="ImmutableTypeFlag" Name="Float32" />
             </p:TypeAnnotation>
@@ -1586,7 +1586,7 @@
               <p:stepsize p:Type="Single">1</p:stepsize>
             </p:ValueBoxSettings>
           </Pad>
-          <Pad Id="SRo7JuygefmO22DmCeN2mx" Comment="FPS" Bounds="-481,291,35,15" ShowValueBox="true" isIOBox="true" Value="80">
+          <Pad Id="SRo7JuygefmO22DmCeN2mx" Comment="FPS" Bounds="-474,627,35,15" ShowValueBox="true" isIOBox="true" Value="80">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
               <Choice Kind="TypeFlag" Name="Float32" />
             </p:TypeAnnotation>
@@ -1595,7 +1595,7 @@
               <p:stepsize p:Type="Single">1</p:stepsize>
             </p:ValueBoxSettings>
           </Pad>
-          <Node Bounds="-503,352,106,19" Id="SUxhGsFvKb6Onw4Gs0VHP7">
+          <Node Bounds="-496,688,106,19" Id="SUxhGsFvKb6Onw4Gs0VHP7">
             <p:NodeReference LastCategoryFullName="Animation" LastDependency="VL.CoreLib.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <Choice Kind="ProcessAppFlag" Name="LFO" />
@@ -1610,7 +1610,7 @@
             <Pin Id="PqMIXJRpNLCNduyIdf4wMv" Name="On New Cycle" Kind="OutputPin" />
             <Pin Id="UQf65edNwnuP9skFm7ydMx" Name="Cycles" Kind="OutputPin" />
           </Node>
-          <Node Bounds="-740,644,330,19" Id="LQfm2kN2QkzQYPYv1eGjvU">
+          <Node Bounds="-733,980,330,19" Id="LQfm2kN2QkzQYPYv1eGjvU">
             <p:NodeReference LastCategoryFullName="PDFReader.Stride" LastDependency="VL.PDFReader.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <CategoryReference Kind="Category" Name="Stride" NeedsToBeDirectParent="true">
@@ -1639,12 +1639,12 @@
             <Pin Id="TppwH1Txo5WMyAyTzYcx5F" Name="PDF" Kind="OutputPin" />
             <Pin Id="JvW0Nc3wts7P6tooghEZCC" Name="On PDF Loaded" Kind="OutputPin" IsHidden="true" />
           </Node>
-          <Pad Id="HHV0LyeIfwLOQEv5cLLjLk" Comment="Path" Bounds="-737,261,140,15" ShowValueBox="true" isIOBox="true" Value="..\resources\Reference.pdf">
+          <Pad Id="HHV0LyeIfwLOQEv5cLLjLk" Comment="Path" Bounds="-730,597,140,15" ShowValueBox="true" isIOBox="true" Value="..\resources\Reference.pdf">
             <p:TypeAnnotation LastCategoryFullName="IO" LastDependency="VL.CoreLib.vl">
               <Choice Kind="TypeFlag" Name="Path" />
             </p:TypeAnnotation>
           </Pad>
-          <Pad Id="AJ1IGeIlz7VLf1XVZnrl86" Comment="Reload PDF" Bounds="-691,291,35,35" ShowValueBox="true" isIOBox="true" Value="false">
+          <Pad Id="AJ1IGeIlz7VLf1XVZnrl86" Comment="Reload PDF" Bounds="-684,627,35,35" ShowValueBox="true" isIOBox="true" Value="false">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
               <Choice Kind="ImmutableTypeFlag" Name="Boolean" />
             </p:TypeAnnotation>
@@ -1652,7 +1652,7 @@
               <p:buttonmode p:Assembly="VL.UI.Forms" p:Type="VL.HDE.PatchEditor.Editors.ButtonModeEnum">Bang</p:buttonmode>
             </p:ValueBoxSettings>
           </Pad>
-          <Pad Id="ObQ9T9kwz2CMoU240ctZGp" Comment="Pause" Bounds="-451,318,35,35" ShowValueBox="true" isIOBox="true" Value="True">
+          <Pad Id="ObQ9T9kwz2CMoU240ctZGp" Comment="Pause" Bounds="-444,654,35,35" ShowValueBox="true" isIOBox="true" Value="True">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
               <Choice Kind="ImmutableTypeFlag" Name="Boolean" />
             </p:TypeAnnotation>
@@ -1660,8 +1660,8 @@
               <p:buttonmode p:Assembly="VL.UI.Forms" p:Type="VL.HDE.PatchEditor.Editors.ButtonModeEnum">Toggle</p:buttonmode>
             </p:ValueBoxSettings>
           </Pad>
-          <Pad Id="NXiJle4tWYCPrKUtdkCpqZ" Comment="Page" Bounds="-400,403,35,15" ShowValueBox="true" isIOBox="true" />
-          <Pad Id="TKjtkY8ZIXWOZq8nk1KVXQ" Comment="Reset" Bounds="-363,320,35,35" ShowValueBox="true" isIOBox="true" Value="false">
+          <Pad Id="NXiJle4tWYCPrKUtdkCpqZ" Comment="Page" Bounds="-393,739,35,15" ShowValueBox="true" isIOBox="true" />
+          <Pad Id="TKjtkY8ZIXWOZq8nk1KVXQ" Comment="Reset" Bounds="-356,656,35,35" ShowValueBox="true" isIOBox="true" Value="false">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
               <Choice Kind="ImmutableTypeFlag" Name="Boolean" />
             </p:TypeAnnotation>
@@ -1669,7 +1669,7 @@
               <p:buttonmode p:Assembly="VL.UI.Forms" p:Type="VL.HDE.PatchEditor.Editors.ButtonModeEnum">Bang</p:buttonmode>
             </p:ValueBoxSettings>
           </Pad>
-          <Pad Id="BfcjVHIgczXQUJhA2EyKCA" Comment="Preload Pages" Bounds="-599,463,33,15" ShowValueBox="true" isIOBox="true" Value="16">
+          <Pad Id="BfcjVHIgczXQUJhA2EyKCA" Comment="Preload Pages" Bounds="-592,799,33,15" ShowValueBox="true" isIOBox="true" Value="16">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
               <Choice Kind="TypeFlag" Name="Integer32" />
             </p:TypeAnnotation>
@@ -1677,13 +1677,13 @@
               <p:fontsize p:Type="Int32">7</p:fontsize>
             </p:ValueBoxSettings>
           </Pad>
-          <Pad Id="QFzkh0wmjAwL91OtUyVkuo" Comment="Password" Bounds="-552,501,73,15" ShowValueBox="true" isIOBox="true" Value="">
+          <Pad Id="QFzkh0wmjAwL91OtUyVkuo" Comment="Password" Bounds="-545,837,73,15" ShowValueBox="true" isIOBox="true" Value="">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
               <Choice Kind="TypeFlag" Name="String" />
             </p:TypeAnnotation>
           </Pad>
-          <Pad Id="ITs3LcFcaXlLP4wzeAQ7K1" Comment="" Bounds="-687,900,169,490" ShowValueBox="true" isIOBox="true" />
-          <Node Bounds="-549,849,52,19" Id="R6K0AovCYhOOlvgiGMYg1g">
+          <Pad Id="ITs3LcFcaXlLP4wzeAQ7K1" Comment="" Bounds="-680,1236,169,490" ShowValueBox="true" isIOBox="true" />
+          <Node Bounds="-542,1185,52,19" Id="R6K0AovCYhOOlvgiGMYg1g">
             <p:NodeReference LastCategoryFullName="Collections.Interfaces.IReadOnlyList" LastDependency="VL.CoreLib.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <CategoryReference Kind="MutableInterfaceType" Name="IReadOnlyList" NeedsToBeDirectParent="true" />
@@ -1694,31 +1694,31 @@
             <Pin Id="KzLfRprO0O3OWauAVieqpY" Name="Index" Kind="InputPin" />
             <Pin Id="Ey9jJjJJU21PHtmeRiDnmy" Name="Result" Kind="OutputPin" />
           </Node>
-          <Pad Id="RifyhBdfVtSOfNXHtqxnHW" Comment="Active Index" Bounds="-500,839,35,15" ShowValueBox="true" isIOBox="true" />
-          <Pad Id="HxNjFoXcFxGNRHxzNQgUW3" Comment="" Bounds="-463,883,92,127" ShowValueBox="true" isIOBox="true" />
-          <Pad Id="MbHTgH03TLiLsReASavfPH" Comment="Active Page" Bounds="-577,808,35,15" ShowValueBox="true" isIOBox="true" />
-          <Pad Id="T5uabgt91DXMZZCDpVswST" Comment="Loaded Pages" Bounds="-522,708,35,95" ShowValueBox="true" isIOBox="true" />
-          <Pad Id="L8O4CuvPCQiOgCx7fWMebS" Comment="Page Count" Bounds="-467,683,35,15" ShowValueBox="true" isIOBox="true" />
-          <Overlay Id="QnovQRyFLTqOs50gby04y5" Name="Stride Texture Experimental" Bounds="-791,203,730,1200">
+          <Pad Id="RifyhBdfVtSOfNXHtqxnHW" Comment="Active Index" Bounds="-493,1175,35,15" ShowValueBox="true" isIOBox="true" />
+          <Pad Id="HxNjFoXcFxGNRHxzNQgUW3" Comment="" Bounds="-456,1219,92,127" ShowValueBox="true" isIOBox="true" />
+          <Pad Id="MbHTgH03TLiLsReASavfPH" Comment="Active Page" Bounds="-570,1144,35,15" ShowValueBox="true" isIOBox="true" />
+          <Pad Id="T5uabgt91DXMZZCDpVswST" Comment="Loaded Pages" Bounds="-515,1044,35,95" ShowValueBox="true" isIOBox="true" />
+          <Pad Id="L8O4CuvPCQiOgCx7fWMebS" Comment="Page Count" Bounds="-460,1019,35,15" ShowValueBox="true" isIOBox="true" />
+          <Overlay Id="QnovQRyFLTqOs50gby04y5" Name="Stride Texture Experimental" Bounds="-784,539,730,1200">
             <p:ColorIndex p:Type="Int32">6</p:ColorIndex>
           </Overlay>
-          <Pad Id="DVd12a6cDf2PbRDLDkYH9R" Comment="Width" Bounds="-506,540,35,15" ShowValueBox="true" isIOBox="true" Value="1080">
+          <Pad Id="DVd12a6cDf2PbRDLDkYH9R" Comment="Width" Bounds="-499,876,35,15" ShowValueBox="true" isIOBox="true" Value="1080">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
               <Choice Kind="TypeFlag" Name="Integer32" />
             </p:TypeAnnotation>
           </Pad>
-          <Pad Id="GXiVIXFnogvP7MghfHQjSU" Comment="Height" Bounds="-461,573,35,15" ShowValueBox="true" isIOBox="true" Value="1920">
+          <Pad Id="GXiVIXFnogvP7MghfHQjSU" Comment="Height" Bounds="-454,909,35,15" ShowValueBox="true" isIOBox="true" Value="1920">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
               <Choice Kind="TypeFlag" Name="Integer32" />
             </p:TypeAnnotation>
           </Pad>
-          <ControlPoint Id="LJrKuAwVuj4NYqPX8myFGB" Bounds="-645,442" />
-          <Pad Id="PWILDaVk5VaQTbeE1x077d" Comment="Background Color" Bounds="-413,617,136,15" ShowValueBox="true" isIOBox="true" Value="1, 1, 1, 0">
+          <ControlPoint Id="LJrKuAwVuj4NYqPX8myFGB" Bounds="-638,778" />
+          <Pad Id="PWILDaVk5VaQTbeE1x077d" Comment="Background Color" Bounds="-406,953,136,15" ShowValueBox="true" isIOBox="true" Value="1, 1, 1, 0">
             <p:TypeAnnotation LastCategoryFullName="Color" LastDependency="VL.CoreLib.vl">
               <Choice Kind="TypeFlag" Name="RGBA" />
             </p:TypeAnnotation>
           </Pad>
-          <Pad Id="FVTxGapQmHrPbM7E52AM2Q" Bounds="-311,361,207,76" ShowValueBox="true" isIOBox="true" Value="Renders PDF into Stride.Graphics.Image (instead of SKImage). Offers less options. &#xD;&#xA;Is a bit faster.">
+          <Pad Id="FVTxGapQmHrPbM7E52AM2Q" Bounds="-304,697,207,76" ShowValueBox="true" isIOBox="true" Value="Renders PDF into Stride.Graphics.Image (instead of SKImage). Offers less options. &#xD;&#xA;Is a bit faster.">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
               <Choice Kind="TypeFlag" Name="String" />
             </p:TypeAnnotation>
@@ -1727,10 +1727,10 @@
               <p:stringtype p:Assembly="VL.Core" p:Type="VL.Core.StringType">Comment</p:stringtype>
             </p:ValueBoxSettings>
           </Pad>
-          <Pad Id="JsmZ97jaMNsMHVzKRNrPP4" Comment="" Bounds="-738,764,96,114" ShowValueBox="true" isIOBox="true" />
-          <ControlPoint Id="MVVk5Na4caHMVdsegrVtsC" Bounds="108,705" />
-          <ControlPoint Id="Ha79uHCFi4SOv3TtdPjQlB" Bounds="1248,845" />
-          <Node Bounds="84,-147,486,130" Id="Uo8NUDG0nwlO5VfyNkM7VU">
+          <Pad Id="JsmZ97jaMNsMHVzKRNrPP4" Comment="" Bounds="-731,1100,96,114" ShowValueBox="true" isIOBox="true" />
+          <ControlPoint Id="MVVk5Na4caHMVdsegrVtsC" Bounds="115,1041" />
+          <ControlPoint Id="Ha79uHCFi4SOv3TtdPjQlB" Bounds="1255,1181" />
+          <Node Bounds="84,-135,486,130" Id="Uo8NUDG0nwlO5VfyNkM7VU">
             <p:NodeReference LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
               <Choice Kind="StatefulRegion" Name="Region (Stateful)" Fixed="true" />
               <CategoryReference Kind="Category" Name="Primitive" />
@@ -1743,7 +1743,7 @@
               <Patch Id="It9wTxDzlzlOqrt4js0wPD" Name="Create" ManuallySortedPins="true" />
               <Patch Id="HRo51RmHipKNM0sFKAGCpZ" Name="Update" ParticipatingElements="TPC3NFeFg9jMbK8yb0doL5" ManuallySortedPins="true" />
               <Patch Id="UWEzdDfiI5cLpPM5je6nDK" Name="Dispose" ManuallySortedPins="true" />
-              <Node Bounds="98,-89,61,19" Id="CMEJwzLnxYfLjcqTsGxSwv">
+              <Node Bounds="98,-77,61,19" Id="CMEJwzLnxYfLjcqTsGxSwv">
                 <p:NodeReference LastCategoryFullName="System.Application" LastDependency="VL.CoreLib.vl">
                   <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                   <Choice Kind="ProcessAppFlag" Name="MainLoop" />
@@ -1759,12 +1759,12 @@
                 <Pin Id="NqpgC6CTQd2OPKCqa7GnOE" Name="Wait Accuracy" Kind="InputPin" IsHidden="true" />
                 <Pin Id="B3Dpvs87PFsN9CfbzvABjW" Name="Wait Accuracy" Kind="OutputPin" IsHidden="true" />
               </Node>
-              <Pad Id="Irr4JapF5c4LceU7mWHnRU" Comment="Max FPS" Bounds="100,-118,35,15" ShowValueBox="true" isIOBox="true" Value="120">
+              <Pad Id="Irr4JapF5c4LceU7mWHnRU" Comment="Max FPS" Bounds="100,-106,35,15" ShowValueBox="true" isIOBox="true" Value="120">
                 <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
                   <Choice Kind="TypeFlag" Name="Float32" />
                 </p:TypeAnnotation>
               </Pad>
-              <Node Bounds="244,-124,86,19" Id="HIOtxY8Y1fxMILFOtbi4sI">
+              <Node Bounds="244,-112,86,19" Id="HIOtxY8Y1fxMILFOtbi4sI">
                 <p:NodeReference LastCategoryFullName="Animation.IFrameClock" LastDependency="VL.CoreLib.vl">
                   <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                   <Choice Kind="OperationCallFlag" Name="TimeDifference (Float32)" />
@@ -1772,7 +1772,7 @@
                 <Pin Id="Q3oN6n3qXn1NPKL4IB292O" Name="Clock" Kind="InputPin" />
                 <Pin Id="F1Ir77naVOVNUQJ2awJs29" Name="Result" Kind="OutputPin" />
               </Node>
-              <Node Bounds="224,-84,25,19" Id="TbtYy1M9fdNLTIhQpwHQKi">
+              <Node Bounds="224,-72,25,19" Id="TbtYy1M9fdNLTIhQpwHQKi">
                 <p:NodeReference LastCategoryFullName="Math" LastDependency="VL.CoreLib.vl">
                   <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                   <Choice Kind="OperationCallFlag" Name="/" />
@@ -1785,8 +1785,8 @@
                 <Pin Id="GrNUmTMxZzsN72dnVUqjXO" Name="Input 2" Kind="InputPin" />
                 <Pin Id="MeCmWxklqhtQY83QPyLgkc" Name="Output" Kind="OutputPin" />
               </Node>
-              <Pad Id="U4v4ccxFUvnMDSg3aGUImu" Comment="" Bounds="226,-45,41,15" ShowValueBox="true" isIOBox="true" />
-              <Node Bounds="352,-73,46,19" Id="BLuDrJ3sev9MRsVXOnKlUt">
+              <Pad Id="U4v4ccxFUvnMDSg3aGUImu" Comment="" Bounds="226,-33,41,15" ShowValueBox="true" isIOBox="true" />
+              <Node Bounds="352,-61,46,19" Id="BLuDrJ3sev9MRsVXOnKlUt">
                 <p:NodeReference LastCategoryFullName="Main" LastDependency="Explanation Overview PDF nodes.vl">
                   <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                   <CategoryReference Kind="Category" Name="Main" NeedsToBeDirectParent="true" />
@@ -1796,7 +1796,7 @@
                 <Pin Id="STqgvL1mshZNGgJ9JIW9at" Name="Period" Kind="InputPin" DefaultValue="2" />
                 <Pin Id="DO8hXdw7DvYLLSatCjxWHu" Name="Present Interval" Kind="InputPin" />
               </Node>
-              <Pad Id="JMERzwoZPAbLxEICkibBo9" Comment="Present Interval" Bounds="395,-98,71,15" ShowValueBox="true" isIOBox="true" Value="Default">
+              <Pad Id="JMERzwoZPAbLxEICkibBo9" Comment="Present Interval" Bounds="395,-86,71,15" ShowValueBox="true" isIOBox="true" Value="Default">
                 <p:TypeAnnotation LastCategoryFullName="Stride.Graphics" LastDependency="VL.PDFReader.vl">
                   <Choice Kind="TypeFlag" Name="PresentInterval" />
                 </p:TypeAnnotation>
@@ -1809,7 +1809,7 @@
     ************************ Debug ************************
 
 -->
-          <Node Name="Debug" Bounds="445,-39" Id="PIyeNzhxc7iLQD6Ohci9oW">
+          <Node Name="Debug" Bounds="445,-27" Id="PIyeNzhxc7iLQD6Ohci9oW">
             <p:NodeReference>
               <Choice Kind="ContainerDefinition" />
             </p:NodeReference>
@@ -1991,7 +1991,7 @@
               <Link Id="PkZ9bjqK164LpOzxPwAX19" Ids="E5jl60Zp9GTOr0lew9B64Z,AuosWCIzE6ALfqb0ZnZzAF" IsHidden="true" />
             </Patch>
           </Node>
-          <Pad Id="MaBvU5E5VdVO4a9xCrPiWv" Comment="Enabled" Bounds="86,-195,35,35" ShowValueBox="true" isIOBox="true" Value="False">
+          <Pad Id="MaBvU5E5VdVO4a9xCrPiWv" Comment="Enabled" Bounds="86,-183,35,35" ShowValueBox="true" isIOBox="true" Value="False">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
               <Choice Kind="ImmutableTypeFlag" Name="Boolean" />
             </p:TypeAnnotation>
@@ -1999,17 +1999,98 @@
               <p:buttonmode p:Assembly="VL.UI.Forms" p:Type="VL.HDE.PatchEditor.Editors.ButtonModeEnum">Toggle</p:buttonmode>
             </p:ValueBoxSettings>
           </Pad>
-          <Pad Id="G4PrlpeMckHOBo0Wtg0qfO" Comment="" Bounds="567,-174,47,15" ShowValueBox="true" isIOBox="true" Value="Short">
+          <Pad Id="G4PrlpeMckHOBo0Wtg0qfO" Comment="" Bounds="567,-162,47,15" ShowValueBox="true" isIOBox="true" Value="Short">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
               <Choice Kind="TypeFlag" Name="ProcessLifespan" />
             </p:TypeAnnotation>
           </Pad>
-          <Pad Id="AUXy0aGMm9mOGCLottfCvh" Comment="" Bounds="1016,997,81,115" ShowValueBox="true" isIOBox="true" />
-          <ControlPoint Id="O3rEa9DTrhlLGb7Z9RTiTZ" Bounds="1016,773" />
-          <Pad Id="I0b7eiQi20sMcVssS3zHi5" Comment="" Bounds="1912,1016,78,106" ShowValueBox="true" isIOBox="true" />
-          <ControlPoint Id="DDgjFwkzMj1PHMprjtixDs" Bounds="1910,757" />
-          <Pad Id="OCW9Kvq3Y5VNyu4fPIoAeX" Comment="Loaded Textures" Bounds="207,871,259,466" ShowValueBox="true" isIOBox="true" />
-          <Pad Id="I9UEcZ724zxLDkhUITwLMT" Bounds="474,898,207,87" ShowValueBox="true" isIOBox="true" Value="Displaying the textures in the IOBox like this can stall the GPU.&#xD;&#xA;&#xD;&#xA;Check the Log Window.&#xD;&#xA;&#xD;&#xA;">
+          <Pad Id="AUXy0aGMm9mOGCLottfCvh" Comment="" Bounds="1023,1333,81,115" ShowValueBox="true" isIOBox="true" />
+          <ControlPoint Id="O3rEa9DTrhlLGb7Z9RTiTZ" Bounds="1023,1109" />
+          <Pad Id="I0b7eiQi20sMcVssS3zHi5" Comment="" Bounds="1919,1352,78,106" ShowValueBox="true" isIOBox="true" />
+          <ControlPoint Id="DDgjFwkzMj1PHMprjtixDs" Bounds="1917,1093" />
+          <Pad Id="OCW9Kvq3Y5VNyu4fPIoAeX" Comment="Loaded Textures" Bounds="214,1207,259,466" ShowValueBox="true" isIOBox="true" />
+          <Pad Id="I9UEcZ724zxLDkhUITwLMT" Bounds="481,1234,207,87" ShowValueBox="true" isIOBox="true" Value="Displaying the textures in the IOBox like this can stall the GPU.&#xD;&#xA;&#xD;&#xA;Check the Log Window.&#xD;&#xA;&#xD;&#xA;">
+            <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
+              <Choice Kind="TypeFlag" Name="String" />
+            </p:TypeAnnotation>
+            <p:ValueBoxSettings>
+              <p:fontsize p:Type="Int32">9</p:fontsize>
+              <p:stringtype p:Assembly="VL.Core" p:Type="VL.Core.StringType">Comment</p:stringtype>
+            </p:ValueBoxSettings>
+          </Pad>
+          <Pad Id="NG92LN6hrxHQFrf0ts636B" Bounds="76,60,332,66" ShowValueBox="true" isIOBox="true" Value="VL.PDFReader">
+            <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
+              <Choice Kind="TypeFlag" Name="String" />
+            </p:TypeAnnotation>
+            <p:ValueBoxSettings>
+              <p:fontsize p:Type="Int32">32</p:fontsize>
+              <p:stringtype p:Assembly="VL.Core" p:Type="VL.Core.StringType">Comment</p:stringtype>
+            </p:ValueBoxSettings>
+          </Pad>
+          <Pad Id="T28ys0nMgNNNSA75p7wEVq" Bounds="89,136,152,165" ShowValueBox="true" isIOBox="true" Value="Based on:&#xD;&#xA;&#xD;&#xA;*&#xD;&#xA;*&#xD;&#xA;*&#xD;&#xA;*">
+            <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
+              <Choice Kind="TypeFlag" Name="String" />
+            </p:TypeAnnotation>
+            <p:ValueBoxSettings>
+              <p:fontsize p:Type="Int32">12</p:fontsize>
+              <p:stringtype p:Assembly="VL.Core" p:Type="VL.Core.StringType">Comment</p:stringtype>
+            </p:ValueBoxSettings>
+          </Pad>
+          <Pad Id="J7jVFb7bOYJN9VlMRBBfPo" Bounds="110,183,257,21" ShowValueBox="true" isIOBox="true" Value="https://pdfium.googlesource.com/pdfium">
+            <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
+              <Choice Kind="TypeFlag" Name="String" />
+            </p:TypeAnnotation>
+            <p:ValueBoxSettings>
+              <p:fontsize p:Type="Int32">9</p:fontsize>
+              <p:stringtype p:Assembly="VL.Core" p:Type="VL.Core.StringType">Link</p:stringtype>
+            </p:ValueBoxSettings>
+          </Pad>
+          <Pad Id="QiBCqpmPlahPq4Ca82iqy9" Bounds="110,208,291,19" ShowValueBox="true" isIOBox="true" Value="https://github.com/bblanchon/pdfium-binaries">
+            <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
+              <Choice Kind="TypeFlag" Name="String" />
+            </p:TypeAnnotation>
+            <p:ValueBoxSettings>
+              <p:fontsize p:Type="Int32">9</p:fontsize>
+              <p:stringtype p:Assembly="VL.Core" p:Type="VL.Core.StringType">Link</p:stringtype>
+            </p:ValueBoxSettings>
+          </Pad>
+          <Pad Id="K7UmIH5fEzhQLRNcAzSk55" Bounds="110,233,277,20" ShowValueBox="true" isIOBox="true" Value="https://github.com/Bluegrams/PdfiumViewer">
+            <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
+              <Choice Kind="TypeFlag" Name="String" />
+            </p:TypeAnnotation>
+            <p:ValueBoxSettings>
+              <p:fontsize p:Type="Int32">9</p:fontsize>
+              <p:stringtype p:Assembly="VL.Core" p:Type="VL.Core.StringType">Link</p:stringtype>
+            </p:ValueBoxSettings>
+          </Pad>
+          <Pad Id="JV9mHQSiglGNwUBv0yHvYP" Bounds="110,258,262,19" ShowValueBox="true" isIOBox="true" Value="https://github.com/sungaila/PDFtoImage">
+            <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
+              <Choice Kind="TypeFlag" Name="String" />
+            </p:TypeAnnotation>
+            <p:ValueBoxSettings>
+              <p:fontsize p:Type="Int32">9</p:fontsize>
+              <p:stringtype p:Assembly="VL.Core" p:Type="VL.Core.StringType">Link</p:stringtype>
+            </p:ValueBoxSettings>
+          </Pad>
+          <Pad Id="BsV5fbl6UKzM0xzfgDs1rD" Bounds="403,184,139,19" ShowValueBox="true" isIOBox="true" Value="BSD-3">
+            <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
+              <Choice Kind="TypeFlag" Name="String" />
+            </p:TypeAnnotation>
+            <p:ValueBoxSettings>
+              <p:fontsize p:Type="Int32">9</p:fontsize>
+              <p:stringtype p:Assembly="VL.Core" p:Type="VL.Core.StringType">Comment</p:stringtype>
+            </p:ValueBoxSettings>
+          </Pad>
+          <Pad Id="Ao9t7fG0bTlMh8i8cBc3bd" Bounds="403,233,125,19" ShowValueBox="true" isIOBox="true" Value="Apache-2.0">
+            <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
+              <Choice Kind="TypeFlag" Name="String" />
+            </p:TypeAnnotation>
+            <p:ValueBoxSettings>
+              <p:fontsize p:Type="Int32">9</p:fontsize>
+              <p:stringtype p:Assembly="VL.Core" p:Type="VL.Core.StringType">Comment</p:stringtype>
+            </p:ValueBoxSettings>
+          </Pad>
+          <Pad Id="H47y2Y8BFMSMPm6BOnxD0U" Bounds="403,259,77,19" ShowValueBox="true" isIOBox="true" Value="MIT">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
               <Choice Kind="TypeFlag" Name="String" />
             </p:TypeAnnotation>
