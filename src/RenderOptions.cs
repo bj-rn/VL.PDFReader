@@ -1,5 +1,4 @@
-﻿using SkiaSharp;
-using Stride.Core.Mathematics;
+﻿using Stride.Core.Mathematics;
 
 namespace VL.PDFReader
 {
@@ -12,7 +11,7 @@ namespace VL.PDFReader
     /// <param name="WithAnnotations">Specifies whether annotations will be rendered.</param>
     /// <param name="WithFormFill">Specifies whether form filling will be rendered.</param>
     /// <param name="WithAspectRatio">Specifies that <paramref name="Width"/> or <paramref name="Height"/> should be adjusted for aspect ratio (either one must be <see langword="null"/>).</param>
-    /// <param name="Rotation">Specifies the rotation in 90 degree steps.</param>
+    /// <param name="Rotation">Specifies the rotation in 90 degree increments.</param>
     /// <param name="AntiAliasing">Specifies which elements of the PDF should be anti-aliased for rendering.</param>
     /// <param name="BackgroundColor">Specifies the background color. Defaults to <see cref="Color4.White"/>.</param>
     /// <param name="Bounds">Can be used for clipping (bounds inside of page) or additional margins (bounds outside of page) The bounds are relative to the PDF size (at 72 DPI).</param>
