@@ -1237,7 +1237,7 @@
               <Choice Kind="TypeFlag" Name="Integer32" />
             </p:TypeAnnotation>
           </Pad>
-          <Pad Id="AWxa4NDqP9GQBFyANypM2x" Bounds="614,653,188,135" ShowValueBox="true" isIOBox="true" Value="&quot;Playback&quot; speed depends on the page size (Width / Height) and Preload Frames.&#xD;&#xA;&#xD;&#xA;On a PC with AMD Ryzen 9 7950X3D the PDF could be &quot;played back&quot;  reliably at a speed of 60 FPS with a page size of 1080 x 1920 and Preload Pages set to 12.">
+          <Pad Id="AWxa4NDqP9GQBFyANypM2x" Bounds="614,653,186,64" ShowValueBox="true" isIOBox="true" Value="&quot;Playback&quot; speed depends on the page size (Width / Height) and Preload Frames.&#xD;&#xA;&#xD;&#xA;">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
               <Choice Kind="TypeFlag" Name="String" />
             </p:TypeAnnotation>
@@ -1586,7 +1586,7 @@
               <p:stepsize p:Type="Single">1</p:stepsize>
             </p:ValueBoxSettings>
           </Pad>
-          <Pad Id="SRo7JuygefmO22DmCeN2mx" Comment="FPS" Bounds="-474,627,35,15" ShowValueBox="true" isIOBox="true" Value="80">
+          <Pad Id="SRo7JuygefmO22DmCeN2mx" Comment="FPS" Bounds="-474,627,35,15" ShowValueBox="true" isIOBox="true" Value="60">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
               <Choice Kind="TypeFlag" Name="Float32" />
             </p:TypeAnnotation>
@@ -1669,7 +1669,7 @@
               <p:buttonmode p:Assembly="VL.UI.Forms" p:Type="VL.HDE.PatchEditor.Editors.ButtonModeEnum">Bang</p:buttonmode>
             </p:ValueBoxSettings>
           </Pad>
-          <Pad Id="BfcjVHIgczXQUJhA2EyKCA" Comment="Preload Pages" Bounds="-592,799,33,15" ShowValueBox="true" isIOBox="true" Value="16">
+          <Pad Id="BfcjVHIgczXQUJhA2EyKCA" Comment="Preload Pages" Bounds="-592,799,33,15" ShowValueBox="true" isIOBox="true" Value="4">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
               <Choice Kind="TypeFlag" Name="Integer32" />
             </p:TypeAnnotation>
@@ -1718,7 +1718,7 @@
               <Choice Kind="TypeFlag" Name="RGBA" />
             </p:TypeAnnotation>
           </Pad>
-          <Pad Id="FVTxGapQmHrPbM7E52AM2Q" Bounds="-304,697,207,76" ShowValueBox="true" isIOBox="true" Value="Renders PDF into Stride.Graphics.Image (instead of SKImage). Offers less options. &#xD;&#xA;Is a bit faster.">
+          <Pad Id="FVTxGapQmHrPbM7E52AM2Q" Bounds="-304,697,207,76" ShowValueBox="true" isIOBox="true" Value="Renders PDF into Stride.Graphics.Image (instead of SKImage). Offers less options. &#xD;&#xA;Is a bit faster?">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
               <Choice Kind="TypeFlag" Name="String" />
             </p:TypeAnnotation>
