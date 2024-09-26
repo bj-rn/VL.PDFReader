@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Document xmlns:p="property" xmlns:r="reflection" Id="Rv5CX7A8iiEOmFDT5JwvAh" LanguageVersion="2024.6.7-0148-g892efc0a20" Version="0.128">
+  <NugetDependency Id="FH5zZVHXKBNOk8bPxUH5Fb" Location="VL.CoreLib" Version="2024.6.7-0148-g892efc0a20" />
+  <Patch Id="VaKnBwPGdNmMg2ct3CkK8Z">
+    <Canvas Id="NCRVKIgKsMFNgBwHodhQBk" DefaultCategory="Main" BordersChecked="false" CanvasType="FullCategory" />
+    <!--
+
+    ************************ Application ************************
+
+-->
+    <Node Name="Application" Bounds="100,100" Id="TiZoG07ENfHLykCqdfo3Zp">
+      <p:NodeReference>
+        <Choice Kind="ContainerDefinition" Name="Process" />
+        <CategoryReference Kind="Category" Name="Primitive" />
+      </p:NodeReference>
+      <Patch Id="D96rcCgJMAdPEjg6syMg5l">
+        <Canvas Id="HR6PIn7zE78QH7VTdIdsVz" CanvasType="Group">
+          <Node Bounds="419,261,165,19" Id="F7bdpe2sgXwMUXKfkEb1E7">
+            <p:NodeReference LastCategoryFullName="PDFReader.Text" LastDependency="VL.PDFReader.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <CategoryReference Kind="Category" Name="Text" NeedsToBeDirectParent="true">
+                <p:OuterCategoryReference Kind="Category" Name="PDFReader" NeedsToBeDirectParent="true" />
+              </CategoryReference>
+              <Choice Kind="ProcessAppFlag" Name="PDFReader" />
+            </p:NodeReference>
+            <Pin Id="JgIYFIGk2xRP9mXvAlvKwM" Name="Node Context" Kind="InputPin" IsHidden="true" />
+            <Pin Id="CDu5fbf6lsSP6LDb3grVm3" Name="Path" Kind="InputPin" />
+            <Pin Id="NFs4pkSh7jFObL4JOrYXMd" Name="Reload PDF" Kind="InputPin" />
+            <Pin Id="KCFOR1PHQwSQG793r4CtFb" Name="Page" Kind="InputPin" />
+            <Pin Id="Sju27JDeWQpLJUNOr133p1" Name="Preload Pages" Kind="InputPin" />
+            <Pin Id="LBiv3MJFNkxNueuziVWyu4" Name="Password" Kind="InputPin" />
+            <Pin Id="KbNfY2kzhWKMcgEBU6OOsE" Name="Output" Kind="OutputPin" />
+            <Pin Id="N50PP5QFUpUQMJ9OiJh6xy" Name="Loaded Texts" Kind="OutputPin" />
+            <Pin Id="HhRvYRsZMHHMUjnA5eMygl" Name="Active Index" Kind="OutputPin" />
+            <Pin Id="ODTa10GsiIUNnEMYAopoFd" Name="Active Page" Kind="OutputPin" />
+            <Pin Id="IeCSJYo2UkzLstFIsw63hH" Name="Loaded Pages" Kind="OutputPin" />
+            <Pin Id="FOIztUdrF3tPr5c8DZBr02" Name="Page Sizes" Kind="OutputPin" />
+            <Pin Id="NIWaRSEIMQzPiEt6N0xIy1" Name="Page Count" Kind="OutputPin" />
+            <Pin Id="H00J34slZtrPkMp4J3Zk5G" Name="PDF" Kind="OutputPin" />
+            <Pin Id="QPNuQg9o0kqNOrWtB24Qdr" Name="On PDF Loaded" Kind="OutputPin" />
+          </Node>
+          <Pad Id="ALvth9ToiwSOA0kPbi2VWO" Comment="Path" Bounds="422,216,140,15" ShowValueBox="true" isIOBox="true" Value="..\..\..\..\Desktop\Angebot_AN-056_DG_Nexolution_eG_2024-09-26.pdf">
+            <p:TypeAnnotation LastCategoryFullName="IO" LastDependency="VL.CoreLib.vl">
+              <Choice Kind="TypeFlag" Name="Path" />
+            </p:TypeAnnotation>
+          </Pad>
+          <Pad Id="VM6i2P2soAAPjnEvaq878F" Comment="" Bounds="427,381,671,671" ShowValueBox="true" isIOBox="true" />
+        </Canvas>
+        <Patch Id="TrK3vxeqaFBP8HuoOj8QfC" Name="Create" />
+        <Patch Id="BzAak6juG0bNMHEOdCr0bY" Name="Update" />
+        <ProcessDefinition Id="N2bjaomIrnHMObMzZZV03U">
+          <Fragment Id="MAFl7Pwky6tNHEHldvILyq" Patch="TrK3vxeqaFBP8HuoOj8QfC" Enabled="true" />
+          <Fragment Id="TgVrqkwPXtDLV9tevXpjvT" Patch="BzAak6juG0bNMHEOdCr0bY" Enabled="true" />
+        </ProcessDefinition>
+        <Link Id="Gj77s8ngPbWMgrErkPKNsC" Ids="ALvth9ToiwSOA0kPbi2VWO,CDu5fbf6lsSP6LDb3grVm3" />
+        <Link Id="Mz3QEqDUSsJPuhkD8hLoi8" Ids="KbNfY2kzhWKMcgEBU6OOsE,VM6i2P2soAAPjnEvaq878F" />
+      </Patch>
+    </Node>
+  </Patch>
+  <NugetDependency Id="VwC5KfYgZNcObCkukiaXNA" Location="bblanchon.PDFiumV8.Win32" Version="130.0.6721" />
+  <NugetDependency Id="Pzj5jnIgxCtNBxeKdTHsjX" Location="VL.PDFReader" Version="0.0.0" />
+</Document>
