@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Silk.NET.OpenGL;
+using Stride.Rendering.Lights;
+using System;
 using System.IO;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
@@ -321,6 +323,14 @@ namespace VL.PDFReader.Internals
             }
         }
 
+        public static int FPDFText_GetBoundedText(IntPtr page, double left, double top, double right, double bottom, byte[]? buffer, int bufferSize)
+        {
+            lock (LockString)
+            {
+                return Imports.FPDFText_GetBoundedText(page, left, top, right, bottom, buffer, bufferSize);
+            }
+        }
+
 
         [UnmanagedCallersOnly(CallConvs = [typeof(CallConvCdecl)])]
         private static int FPDF_GetBlock(IntPtr param, uint position, IntPtr buffer, uint size)
@@ -488,6 +498,8 @@ namespace VL.PDFReader.Internals
             [DllImport("pdfium.dll", CallingConvention = CallingConvention.Cdecl)]
             public static extern uint FPDF_GetMetaText(IntPtr document, string tag, byte[]? buffer, uint buflen);
 
+            [DllImport("pdfium.dll", CallingConvention = CallingConvention.Cdecl)]
+            public static extern int FPDFText_GetBoundedText(IntPtr page, double left, double top, double right, double bottom, byte[]? buffer, int buflen);
         }
 
 

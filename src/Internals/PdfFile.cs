@@ -6,6 +6,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using Stride.Core.Mathematics;
 using System.Text.RegularExpressions;
+using VL.Skia;
 
 namespace VL.PDFReader.Internals
 {
@@ -223,6 +224,26 @@ namespace VL.PDFReader.Internals
             return FPDFEncoding.GetString(result, 0, (count - 1) * 2);
         }
 
+        public string GetBoundedText(int page, SkiaSharp.SKRect rectangle)
+        {
+            using (PageData pageData = GetPageData(page))
+            {
+                return GetBoundedText(pageData, rectangle);
+            }
+        }
+
+        private string GetBoundedText(PageData pageData, SkiaSharp.SKRect rectangle)
+        {
+            int length = NativeMethods.FPDFText_GetBoundedText(pageData.TextPage, rectangle.Left, rectangle.Top, rectangle.Right, rectangle.Bottom, null, 0);
+            if (length <= 0)
+                return string.Empty;
+
+            length = (length + 1) * 2;
+            byte[] buffer = new byte[length];
+            NativeMethods.FPDFText_GetBoundedText(pageData.TextPage, rectangle.Left, rectangle.Top, rectangle.Right, rectangle.Bottom, buffer, length);
+
+            return Encoding.Unicode.GetString(buffer, 0, length);
+        }
 
         public PdfMatches Search(string text, bool matchCase, bool wholeWord, int startPage, int endPage)
         {

@@ -164,7 +164,10 @@ namespace VL.PDFReader
             return _file.GetPdfText(textSpan);
         }
 
-
+        public string GetBoundedText(int page, SkiaSharp.SKRect rectangle)
+        {
+            return _file.GetBoundedText(page, rectangle);
+        }
 
         /// <summary>
         /// Get the current rotation of the page.
