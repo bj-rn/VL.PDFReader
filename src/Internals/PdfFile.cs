@@ -242,7 +242,7 @@ namespace VL.PDFReader.Internals
             byte[] buffer = new byte[length];
             NativeMethods.FPDFText_GetBoundedText(pageData.TextPage, rectangle.Left, rectangle.Top, rectangle.Right, rectangle.Bottom, buffer, length);
 
-            return Encoding.Unicode.GetString(buffer, 0, length);
+            return Encoding.Unicode.GetString(buffer, 0, length - 2);
         }
 
         public PdfMatches Search(string text, bool matchCase, bool wholeWord, int startPage, int endPage)
