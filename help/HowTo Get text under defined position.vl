@@ -1863,11 +1863,9 @@
       </Patch>
     </Node>
   </Patch>
-  <NugetDependency Id="VwC5KfYgZNcObCkukiaXNA" Location="bblanchon.PDFiumV8.Win32" Version="128.0.6611" />
   <NugetDependency Id="Pzj5jnIgxCtNBxeKdTHsjX" Location="VL.PDFReader" Version="0.0.0" />
   <NugetDependency Id="HzX32Tcz9GZOPHwkzIMKNR" Location="VL.Skia" Version="2024.6.7-0181-gdf16f593e1" />
   <NugetDependency Id="Fx0RyG5Vtq5QXdEFg7JmlK" Location="VL.Stride" Version="2024.6.7-0181-gdf16f593e1" />
   <NugetDependency Id="OlpM4un8k9gMshT6to3ZuB" Location="VL.Stride.Runtime" Version="2024.6.7-0181-gdf16f593e1" />
-  <PlatformDependency Id="L5f2C0PRL4rOGbepn69dfG" Location="System.Drawing" />
-  <PlatformDependency Id="RJMgNmEGguZN6bNNgWoqqm" Location="System.Windows.Forms" />
+  <DocumentDependency Id="LMewsHnCeBKNvXzBVjQYHc" Location="../VL.PDFReader.vl" />
 </Document>
