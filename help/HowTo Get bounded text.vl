@@ -1563,7 +1563,9 @@
           <Node Bounds="21,150,167,19" Id="QAjMSvGYUwQPZMTS1I7qXa">
             <p:NodeReference LastCategoryFullName="PDFReader.Skia" LastDependency="VL.PDFReader.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-              <CategoryReference Kind="Category" Name="Skia" NeedsToBeDirectParent="true" />
+              <CategoryReference Kind="Category" Name="Skia" NeedsToBeDirectParent="true">
+                <p:OuterCategoryReference Kind="Category" Name="PDFReader" NeedsToBeDirectParent="true" />
+              </CategoryReference>
               <Choice Kind="ProcessAppFlag" Name="PDFReader" />
             </p:NodeReference>
             <Pin Id="TiQUV529UaZNSq5De4uhkf" Name="Node Context" Kind="InputPin" IsHidden="true" />
@@ -1863,9 +1865,6 @@
       </Patch>
     </Node>
   </Patch>
-  <NugetDependency Id="Pzj5jnIgxCtNBxeKdTHsjX" Location="VL.PDFReader" Version="0.0.0" />
   <NugetDependency Id="HzX32Tcz9GZOPHwkzIMKNR" Location="VL.Skia" Version="2024.6.7-0181-gdf16f593e1" />
-  <NugetDependency Id="Fx0RyG5Vtq5QXdEFg7JmlK" Location="VL.Stride" Version="2024.6.7-0181-gdf16f593e1" />
-  <NugetDependency Id="OlpM4un8k9gMshT6to3ZuB" Location="VL.Stride.Runtime" Version="2024.6.7-0181-gdf16f593e1" />
-  <DocumentDependency Id="LMewsHnCeBKNvXzBVjQYHc" Location="../VL.PDFReader.vl" />
+  <DocumentDependency Id="LoT9p5SXBJUNGAKQKe1sAS" Location="../VL.PDFReader.vl" />
 </Document>
