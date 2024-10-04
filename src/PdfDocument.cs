@@ -164,6 +164,12 @@ namespace VL.PDFReader
             return _file.GetPdfText(textSpan);
         }
 
+        /// <summary>
+        /// Get text under a rectangle from a specific position in a page.
+        /// </summary>
+        /// <param name="page">The id of the page</param>
+        /// <param name="rectangle">Bounds of the rectangel to search for text</param>
+        /// <returns>The text under the rectangle</returns>
         public string GetBoundedText(int page, SkiaSharp.SKRect rectangle)
         {
             return _file.GetBoundedText(page, rectangle);
