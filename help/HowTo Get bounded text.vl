@@ -1602,7 +1602,7 @@
             <Pin Id="R8P5XxzdBYJQZlv7vfB75j" Name="Output" Kind="OutputPin" />
             <Pin Id="S8MBW8Bc9CsMcp6wTpuBVy" Name="Actual Bounds" Kind="OutputPin" />
           </Node>
-          <Pad Id="UrMKRFGCwv3Lv4NsH6dZUi" Comment="Path" Bounds="23,111,350,17" ShowValueBox="true" isIOBox="true" Value="..\resources\Language.pdf">
+          <Pad Id="UrMKRFGCwv3Lv4NsH6dZUi" Comment="Path" Bounds="23,111,350,17" ShowValueBox="true" isIOBox="true" Value="..\resources\Reference.pdf">
             <p:TypeAnnotation LastCategoryFullName="IO" LastDependency="VL.CoreLib.vl">
               <Choice Kind="TypeFlag" Name="Path" />
             </p:TypeAnnotation>
@@ -1682,10 +1682,10 @@
               <Choice Kind="TypeFlag" Name="Vector2" />
             </p:TypeAnnotation>
           </Pad>
-          <Node Bounds="301,551,94,19" Id="McHH5WUQ6GnLx8ihNE4VBZ">
+          <Node Bounds="301,556,94,19" Id="McHH5WUQ6GnLx8ihNE4VBZ">
             <p:NodeReference LastCategoryFullName="PDFReader.PDF" LastDependency="VL.PDFReader.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-              <Choice Kind="ProcessAppFlag" Name="GetBoundedText" />
+              <Choice Kind="ProcessAppFlag" Name="GetBoundedText (Async)" />
             </p:NodeReference>
             <Pin Id="OVtsx7eZQAIPaf9tMlKsA7" Name="Node Context" Kind="InputPin" IsHidden="true" />
             <Pin Id="INzaiBCPTcrOE0vPqspqfD" Name="PDF" Kind="InputPin" />
@@ -1693,7 +1693,7 @@
             <Pin Id="EisNhnHZhBDMP6G5LTP1jS" Name="Output" Kind="OutputPin" />
             <Pin Id="Sdov5J8uIdzOzCNTdXKdR6" Name="Rectangle" Kind="InputPin" />
           </Node>
-          <Pad Id="AmpGMTjlIe5N7La7HzTMGV" Comment="" Bounds="303,604,225,47" ShowValueBox="true" isIOBox="true">
+          <Pad Id="AmpGMTjlIe5N7La7HzTMGV" Comment="" Bounds="302,658,225,47" ShowValueBox="true" isIOBox="true">
             <p:ValueBoxSettings>
               <p:fontsize p:Type="Int32">13</p:fontsize>
             </p:ValueBoxSettings>
@@ -1701,7 +1701,7 @@
           <Pad Id="GFjaXMB1ISkMwm3SfefwZ1" SlotId="Usaob3N2BZvQQkihPui38T" Bounds="106,629" />
           <Pad Id="Fxm90Y3G5CnNgZ637VigEa" SlotId="Usaob3N2BZvQQkihPui38T" Bounds="433,476" />
           <Pad Id="F5UiQf3co5uLeyR3zaylrl" SlotId="MKWEUlC9qY5OZB8r5zrNm1" Bounds="66,617" />
-          <Pad Id="Jh2K53REHHvP84xk4AyGt5" SlotId="MKWEUlC9qY5OZB8r5zrNm1" Bounds="393,492" />
+          <Pad Id="Jh2K53REHHvP84xk4AyGt5" SlotId="MKWEUlC9qY5OZB8r5zrNm1" Bounds="392,496" />
           <Node Bounds="27,750,127,19" Id="FxNGpBcsNrmNTEHbMnWvp3">
             <p:NodeReference LastCategoryFullName="Graphics.Skia" LastDependency="VL.Skia.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
@@ -1745,7 +1745,7 @@
             <Pin Id="DlukWFQ4j0FMP684dkAsUr" Name="Debug" Kind="InputPin" DefaultValue="False" />
             <Pin Id="BhKAC1g0ED8L2jkmKbHuUj" Name="Selection Size" Kind="InputPin" />
           </Node>
-          <Pad Id="F4cNUTEhKwhOV5y4TzTl0C" Comment="Selection Size" Bounds="473,467,37,30" ShowValueBox="true" isIOBox="true" Value="0.5, 0.2">
+          <Pad Id="F4cNUTEhKwhOV5y4TzTl0C" Comment="Selection Size" Bounds="494,468,37,30" ShowValueBox="true" isIOBox="true" Value="1.24, 1.05">
             <p:TypeAnnotation LastCategoryFullName="2D" LastDependency="VL.CoreLib.vl">
               <Choice Kind="TypeFlag" Name="Vector2" />
             </p:TypeAnnotation>
@@ -1785,11 +1785,6 @@
               <Choice Kind="TypeFlag" Name="SizeMode" />
             </p:TypeAnnotation>
           </Pad>
-          <Pad Id="BWcS7jF6g5gNyFZqR25fh6" Comment="Space" Bounds="89,732,82,17" ShowValueBox="true" isIOBox="true" Value="DIP">
-            <p:TypeAnnotation LastCategoryFullName="VL.Skia" LastDependency="VL.PDFReader.vl">
-              <Choice Kind="TypeFlag" Name="CommonSpace" />
-            </p:TypeAnnotation>
-          </Pad>
           <Pad Id="DJ2hm8PSuLGMcDTc9wegmf" Bounds="-276,562,259,97" ShowValueBox="true" isIOBox="true" Value="The camera node is copied from skia because the orignal one has no view output pin and there is an issue with the FlatCameraControls inside the Camerea node. ">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
               <Choice Kind="TypeFlag" Name="String" />
@@ -1808,7 +1803,7 @@
               <p:stringtype p:Assembly="VL.Core" p:Type="VL.Core.StringType">Comment</p:stringtype>
             </p:ValueBoxSettings>
           </Pad>
-          <Pad Id="EXTEy3rRw9AM1fdlUxSqct" Bounds="397,559,212,38" ShowValueBox="true" isIOBox="true" Value="Get the text based on the position of a rectangle">
+          <Pad Id="EXTEy3rRw9AM1fdlUxSqct" Bounds="397,565,212,38" ShowValueBox="true" isIOBox="true" Value="Get the text based on the position of a rectangle">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
               <Choice Kind="TypeFlag" Name="String" />
             </p:TypeAnnotation>
@@ -1826,6 +1821,24 @@
               <p:stringtype p:Assembly="VL.Core" p:Type="VL.Core.StringType">Comment</p:stringtype>
             </p:ValueBoxSettings>
           </Pad>
+          <Node Bounds="301,595,65,19" Id="FX5GMHSjIECPc4VVfswBVx">
+            <p:NodeReference LastCategoryFullName="Reactive" LastDependency="VL.CoreLib.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <FullNameCategoryReference ID="Reactive" />
+              <Choice Kind="ProcessAppFlag" Name="HoldLatest" />
+            </p:NodeReference>
+            <Pin Id="QhdDiaIT6XnQUyQNSFn3IH" Name="Node Context" Kind="InputPin" IsHidden="true" />
+            <Pin Id="OKKZW4KfBfdNOFS6sY3AR7" Name="Initial Result" Kind="InputPin" IsHidden="true" />
+            <Pin Id="PcoZ2BZfqAqLQMADjQ0LES" Name="Async Notifications" Kind="InputPin" />
+            <Pin Id="IQCsQoP8PYxNkxhyL6EsWQ" Name="Reset" Kind="InputPin" />
+            <Pin Id="KAjxiJ5tX9dOWJ3ges19zN" Name="Value" Kind="OutputPin" />
+            <Pin Id="QbCGwlQDXPAMZITiwuBpPr" Name="On Data" Kind="OutputPin" />
+          </Node>
+          <Pad Id="DjSoCA8S8ftNKxhF0jryN9" Comment="Space" Bounds="90,734,80,15" ShowValueBox="true" isIOBox="true" Value="DIP">
+            <p:TypeAnnotation LastCategoryFullName="VL.Skia" LastDependency="VL.Skia.vl">
+              <Choice Kind="TypeFlag" Name="CommonSpace" />
+            </p:TypeAnnotation>
+          </Pad>
         </Canvas>
         <Patch Id="TrK3vxeqaFBP8HuoOj8QfC" Name="Create" />
         <Patch Id="BzAak6juG0bNMHEOdCr0bY" Name="Update" />
@@ -1840,7 +1853,7 @@
         <Link Id="VfJv21XqMz3OshZfSGarx1" Ids="Bnl4JESChD5Owh8hujDxNe,AIfW5IkN7iOLmqz9nVw8qN" />
         <Link Id="N1S6vjuFQYaNuQzvu95GPs" Ids="Cpn8UUfwpLEL1GiCGb8E2Y,J5tlI0lvtsUL7d2Qi861Ok" />
         <Link Id="Csf4FiETBS4NqEEXI276Ix" Ids="SRn4h1nxm6aPxxSzeWXydh,A5TitXWu753K9kO3QHrd3Y" />
-        <Link Id="SpivjOtJBd5Mv1WmWKA4BK" Ids="EisNhnHZhBDMP6G5LTP1jS,AmpGMTjlIe5N7La7HzTMGV" />
+        <Link Id="SpivjOtJBd5Mv1WmWKA4BK" Ids="EisNhnHZhBDMP6G5LTP1jS,PcoZ2BZfqAqLQMADjQ0LES" />
         <Slot Id="Usaob3N2BZvQQkihPui38T" Name="Zoom" />
         <Link Id="A3sL106yfSmPCCwOMwju7p" Ids="OeT0Fl6PWhtQE2E6Tob6qk,GFjaXMB1ISkMwm3SfefwZ1" />
         <Link Id="DMQakPAHs4fLJiorMQMDfM" Ids="R8P5XxzdBYJQZlv7vfB75j,B5BUCR2eTI4OnIEnKFI4GS" />
@@ -1856,12 +1869,13 @@
         <Link Id="BUYs9D1PgQwMJJV3qhJ6cj" Ids="F4cNUTEhKwhOV5y4TzTl0C,BhKAC1g0ED8L2jkmKbHuUj" />
         <Link Id="GqnhQwuhWS2NQr13z6YR7O" Ids="BrKQdjZFE1aPWXt1o31X7T,INzaiBCPTcrOE0vPqspqfD" />
         <Link Id="Vuu6tcd6eY4OVSMnAWcg9E" Ids="A0MM4gMGNreN8H8eRPDwO0,SG5FlZnlfs8OlTcF20GHsz" />
-        <Link Id="HXJ97xCwC3nMqquKXqvI8d" Ids="KBrTlsrP01pOqww4kLowTJ,UNdLPqMunWPO6PUNbPac1w" />
         <Link Id="R82kKmlYx2fPRLRp0UfeXp" Ids="G48zyfjdNTUOND1jlw7wN1,E5W9ROSh8A5MBTpDvwy4zv" />
         <Link Id="QZ0u6njtdWaQJD9zYbdDfh" Ids="Lo2kBR8wqRmOBoARMNJdXf,Sd0McDrQAWgMn6pHDh4JHb" />
         <Link Id="MiqW1eOBGP9L0MJXn72klA" Ids="DSAXwenzxxPLQ9JfJCCGyE,FFG1UgQo4NCN2IchMWWfWx" />
         <Link Id="IrwsErqAjKWO0EidvXEUpO" Ids="Qxj6n2KaIR1OlLkIQuOCbb,FpMPCNcwNi2O6lTWIUUSOY" />
-        <Link Id="GIBEfaTRTHiMamSFTbakrm" Ids="BWcS7jF6g5gNyFZqR25fh6,Koo9afj6R73OM6AaxGlWZL" />
+        <Link Id="K4pXQKLaWocPWtJDc0ozka" Ids="KAjxiJ5tX9dOWJ3ges19zN,AmpGMTjlIe5N7La7HzTMGV" />
+        <Link Id="APlhjK9yToIOeuVnXRDRgY" Ids="KBrTlsrP01pOqww4kLowTJ,UNdLPqMunWPO6PUNbPac1w" />
+        <Link Id="Mn21TTnXPzaOvte9dD92R6" Ids="DjSoCA8S8ftNKxhF0jryN9,Koo9afj6R73OM6AaxGlWZL" />
       </Patch>
     </Node>
   </Patch>
