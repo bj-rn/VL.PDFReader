@@ -382,6 +382,14 @@
             <param name="textSpan">The span to get the text for.</param>
             <returns>The text matching the span.</returns>
         </member>
+        <member name="M:VL.PDFReader.PdfDocument.GetBoundedText(System.Int32,Stride.Core.Mathematics.RectangleF)">
+            <summary>
+            Get text under a rectangle from a specific position in a page.
+            </summary>
+            <param name="page">The id of the page</param>
+            <param name="rectangle">Bounds of the rectangel to search for text</param>
+            <returns>The text under the rectangle</returns>
+        </member>
         <member name="M:VL.PDFReader.PdfDocument.GetPageRotation(System.Int32)">
             <summary>
             Get the current rotation of the page.

@@ -6,7 +6,6 @@ using System.Runtime.InteropServices;
 using System.Text;
 using Stride.Core.Mathematics;
 using System.Text.RegularExpressions;
-using VL.Skia;
 
 namespace VL.PDFReader.Internals
 {
@@ -224,7 +223,7 @@ namespace VL.PDFReader.Internals
             return FPDFEncoding.GetString(result, 0, (count - 1) * 2);
         }
 
-        public string GetBoundedText(int page, SkiaSharp.SKRect rectangle)
+        public string GetBoundedText(int page, RectangleF rectangle)
         {
             using (PageData pageData = GetPageData(page))
             {
@@ -232,7 +231,7 @@ namespace VL.PDFReader.Internals
             }
         }
 
-        private string GetBoundedText(PageData pageData, SkiaSharp.SKRect rectangle)
+        private string GetBoundedText(PageData pageData, RectangleF rectangle)
         {
             int length = NativeMethods.FPDFText_GetBoundedText(pageData.TextPage, rectangle.Left, rectangle.Top, rectangle.Right, rectangle.Bottom, null, 0);
             if (length <= 0)

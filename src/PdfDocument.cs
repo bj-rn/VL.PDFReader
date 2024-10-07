@@ -170,7 +170,7 @@ namespace VL.PDFReader
         /// <param name="page">The id of the page</param>
         /// <param name="rectangle">Bounds of the rectangel to search for text</param>
         /// <returns>The text under the rectangle</returns>
-        public string GetBoundedText(int page, SkiaSharp.SKRect rectangle)
+        public string GetBoundedText(int page, RectangleF rectangle)
         {
             return _file.GetBoundedText(page, rectangle);
         }
