@@ -1,6 +1,4 @@
-﻿using Silk.NET.OpenGL;
-using Stride.Rendering.Lights;
-using System;
+﻿using System;
 using System.IO;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
