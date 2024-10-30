@@ -429,6 +429,7 @@
             <param name="withFormFill">Specifies whether form filling will be rendered.</param>
             <param name="textureFlags"><see cref="T:Stride.Graphics.TextureFlags"/></param>
             <param name="usage"><see cref="T:Stride.Graphics.GraphicsResourceUsage" /></param>
+            <param name="cancellationToken">The cancellation token to cancel the conversion.</param>
             <returns>The rendered PDF page as a <see cref="T:Stride.Graphics.Texture"/>.</returns>
         </member>
         <member name="M:VL.PDFReader.PdfDocument.Render(System.Int32,System.Nullable{System.Single},System.Nullable{System.Single},System.Single,VL.PDFReader.PdfRotation,VL.PDFReader.Internals.NativeMethods.FPDF,System.Boolean,Stride.Core.Mathematics.Color4,System.Nullable{Stride.Core.Mathematics.RectangleF},System.Boolean,System.Boolean,System.Boolean,System.Threading.CancellationToken)">
