@@ -8,7 +8,7 @@
   <metadata>
     <id>VL.PDFReader</id>
     <!-- For more about versions see: https://thegraybook.vvvv.org/reference/extending/publishing.html#version -->
-    <version>1.1.0</version>
+    <version>1.1.1</version>
     <title>VL.PDFReader</title>
    
     <!-- Provide authors and projectUrl --> 
@@ -28,7 +28,7 @@
     <readme>docs\README.md</readme>
 
     <dependencies>
-      <dependency id="bblanchon.PDFiumV8.Win32" version="128.0.6611" />
+      <dependency id="bblanchon.PDFiumV8.Win32" version="130.0.6721" />
     </dependencies>
 
   </metadata>
