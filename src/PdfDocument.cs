@@ -336,6 +336,7 @@ namespace VL.PDFReader
         /// <param name="withFormFill">Specifies whether form filling will be rendered.</param>
         /// <param name="textureFlags"><see cref="TextureFlags"/></param>
         /// <param name="usage"><see cref="GraphicsResourceUsage" /></param>
+        /// <param name="cancellationToken">The cancellation token to cancel the conversion.</param>
         /// <returns>The rendered PDF page as a <see cref="Texture"/>.</returns>
         public Texture LoadTextureFaster(GraphicsDevice device,
                                          int? width,
