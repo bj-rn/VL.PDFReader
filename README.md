@@ -24,5 +24,5 @@ Usage examples and more information are included in the pack and can be found vi
 * [VL.CEF](https://www.nuget.org/packages/VL.CEF)
 * [VL.PDF](https://github.com/eqbic/VL.PDF)
 
-  ---
-  [Support me on Ko-fi](https://ko-fi.com/Q5Q61EQB8X)
+---
+[Support me on Ko-fi](https://ko-fi.com/Q5Q61EQB8X)
