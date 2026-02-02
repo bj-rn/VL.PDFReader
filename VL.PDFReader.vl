@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Document xmlns:p="property" xmlns:r="reflection" Id="EWHWcwf3oBvPnhn254YyBa" LanguageVersion="2024.6.7-0171-g5da2a8cd29" Version="0.128">
+<Document xmlns:p="property" xmlns:r="reflection" Id="EWHWcwf3oBvPnhn254YyBa" LanguageVersion="2025.7.0" Version="0.128">
   <Patch Id="Rgz0iK0cdl5O6XLZAnSI2k">
     <Canvas Id="EtMz6eWyJpjMOVOROl6714" DefaultCategory="PDFReader" CanvasType="FullCategory">
       <Canvas Id="ErnL4iAUkttNBNTbyRPj5S" Name="Stride" Position="698,127">
@@ -146,6 +146,7 @@
                         </Patch>
                         <ControlPoint Id="C5TosR9n71ILMSoSgB3ZpO" Bounds="173,753" Alignment="Bottom" />
                         <ControlPoint Id="Q4pChcwLCHnPPyWISOzL6Q" Bounds="237,753" Alignment="Bottom" />
+                        <Pin Id="K9xEFsGmhgNMVQU4f9cEtk" Name="Warn" Kind="InputPin" />
                       </Node>
                     </Patch>
                     <ControlPoint Id="SzjV2DtoFYvP6dqpv3BnJg" Bounds="195,600" Alignment="Top" />
@@ -198,6 +199,7 @@
                       </Node>
                     </Patch>
                     <ControlPoint Id="GtELgbj1XZxPj7HY4HbgXE" Bounds="203,973" Alignment="Bottom" />
+                    <Pin Id="Dm8TW9tKgk0N1PlNe1uXGl" Name="Warn" Kind="InputPin" />
                   </Node>
                 </Patch>
                 <ControlPoint Id="HqjcHGDllwJOcTpSrWXwsL" Bounds="237,998" Name="Tex" Alignment="Bottom" />
@@ -908,6 +910,7 @@
                           </Patch>
                           <ControlPoint Id="DkEEBeWo7wjN91mdKOoURd" Bounds="175,779" Alignment="Bottom" />
                           <ControlPoint Id="GuxHV0vXD9AOE6LtAHMwL4" Bounds="315,779" Alignment="Bottom" />
+                          <Pin Id="LSVlb6O7aDbMLqk1q7ETXN" Name="Warn" Kind="InputPin" />
                         </Node>
                       </Patch>
                       <ControlPoint Id="EQwd5MpTGIBPIGS9C1oKR0" Bounds="196,602" Alignment="Top" />
@@ -960,6 +963,7 @@
                         </Node>
                       </Patch>
                       <ControlPoint Id="Ect60mjEPHIL3CguEV4CGn" Bounds="218,968" Alignment="Bottom" />
+                      <Pin Id="OKCKQ9exDWvPANHdQyHRpg" Name="Warn" Kind="InputPin" />
                     </Node>
                   </Patch>
                   <ControlPoint Id="KrVFnM6oS1NNmb2xWJNq2d" Bounds="314,991" Name="Tex" Alignment="Bottom" />
@@ -2507,6 +2511,7 @@
                         </Patch>
                         <ControlPoint Id="QVn98gNjDQmMwY53KosxJG" Bounds="170,730" Alignment="Bottom" />
                         <ControlPoint Id="DlUNYTHAvc7Lq7kiiPauNh" Bounds="234,730" Alignment="Bottom" />
+                        <Pin Id="KwP2diJdVFdMV3V1zxoHmz" Name="Warn" Kind="InputPin" />
                       </Node>
                     </Patch>
                     <ControlPoint Id="BmKJs3EV0FFLhMOcOUHSBe" Bounds="191,600" Alignment="Top" />
@@ -2559,6 +2564,7 @@
                       </Node>
                     </Patch>
                     <ControlPoint Id="Hr9pI4uX8ftLS32MooOyjp" Bounds="193,945" Alignment="Bottom" />
+                    <Pin Id="OnbMnQFkBquL51fUeD6ywN" Name="Warn" Kind="InputPin" />
                   </Node>
                 </Patch>
                 <ControlPoint Id="LIMsb16iwLqPjTFK5ZykVP" Bounds="233,994" Name="Img" Alignment="Bottom" />
@@ -3186,6 +3192,7 @@
                         </Patch>
                         <ControlPoint Id="QHBvyp4xQJFPcNYQFS81Ac" Bounds="221,733" Alignment="Bottom" />
                         <ControlPoint Id="PTqpH4SZ740Nu82SLTLba2" Bounds="173,733" Alignment="Bottom" />
+                        <Pin Id="RGlNMwrxN7pPdhb1xwncsp" Name="Warn" Kind="InputPin" />
                       </Node>
                     </Patch>
                     <ControlPoint Id="FLwao81lOKANXhof9mkvlX" Bounds="198,603" Alignment="Top" />
@@ -3238,6 +3245,7 @@
                       </Node>
                     </Patch>
                     <ControlPoint Id="OrfHgUTxfVVOMCPvIFZ6Ih" Bounds="196,927" Alignment="Bottom" />
+                    <Pin Id="QKmJy0MfaOyOWoHQ1zVPgL" Name="Warn" Kind="InputPin" />
                   </Node>
                 </Patch>
                 <ControlPoint Id="AbyeZlrXXqiPqxR7FcLky1" Bounds="262,996" Name="Txt" Alignment="Bottom" />
@@ -3442,6 +3450,7 @@
                 <Pin Id="LphTyRnLbxJOghUtj5trXs" Name="Node Context" Kind="InputPin" IsHidden="true" />
                 <Pin Id="Phvbf8lNYBCNipm8bOiqO6" Name="Trigger" Kind="InputPin" />
                 <Pin Id="AACysipa5xCLOJqTAdZK18" Name="Abort" Kind="InputPin" />
+                <Pin Id="MZ1ATghx2ZbOd5ODqvaGW4" Name="Output" Kind="OutputPin" IsHidden="true" />
                 <Pin Id="JskNCWQKj0wPbP1kXikNxt" Name="Result" Kind="OutputPin" />
                 <Pin Id="SYvtUQ90y9HNywdZ44IrD4" Name="In Progress" Kind="OutputPin" />
                 <Patch Id="Bo5GBr1rOZrQBI1Vm7Jqif" ManuallySortedPins="true">
@@ -3714,6 +3723,7 @@
                 <Pin Id="JUPepo7iN6uLjfcLijFwIh" Name="Initial Result" Kind="InputPin" IsHidden="true" />
                 <Pin Id="HKa0SpXzffPMJeCcSK9qvd" Name="Async Notifications" Kind="InputPin" />
                 <Pin Id="JvcnW79vFRjQL2xPkdMaDT" Name="Reset" Kind="InputPin" />
+                <Pin Id="ILkZKuOKDafP1oTg3dkMTZ" Name="Output" Kind="OutputPin" IsHidden="true" />
                 <Pin Id="PH1zFCZ9yBULb8hf33HlQB" Name="Value" Kind="OutputPin" />
                 <Pin Id="S5g3GzynrZDNH7PBvijmdz" Name="On Data" Kind="OutputPin" />
               </Node>
@@ -4043,6 +4053,7 @@
                             <Pin Id="EnXYyS5m4cENxqfdPIMmpt" Name="Node Context" Kind="InputPin" IsHidden="true" />
                             <Pin Id="PWhG8YZwWs9P9Cck2vvf6F" Name="Trigger" Kind="InputPin" DefaultValue="True" />
                             <Pin Id="Rv9h373e3tkQHgHKcawkDj" Name="Abort" Kind="InputPin" />
+                            <Pin Id="IerZwcZrbO6LHg8CmjdZD2" Name="Output" Kind="OutputPin" IsHidden="true" />
                             <Pin Id="PtiqnwLtUD8L9hLYwPc8fv" Name="Result" Kind="OutputPin" />
                             <Pin Id="SdfxKc06Nt8PBhMRh9C5zR" Name="In Progress" Kind="OutputPin" />
                             <Patch Id="Htb0MtcLaZOLN93hwUMDKF" ManuallySortedPins="true">
@@ -4471,6 +4482,7 @@
                           <Pin Id="BqFHiERel6EOYEy2HbxkPe" Name="Output" Kind="StateOutputPin" />
                         </Node>
                       </Patch>
+                      <Pin Id="K5ZZZwfNxRbNgddVpMl8yY" Name="Warn" Kind="InputPin" />
                     </Node>
                   </Patch>
                 </Node>
@@ -5598,6 +5610,7 @@
                 <Pin Id="PayJISqBbEKNOi9Ouw2CFQ" Name="Initial Result" Kind="InputPin" IsHidden="true" />
                 <Pin Id="Gy8omZbiCRpNS6Iv6cwUvD" Name="Async Notifications" Kind="InputPin" />
                 <Pin Id="FwDHaHSk2qkMLv9hoAaMat" Name="Reset" Kind="InputPin" />
+                <Pin Id="UGsswuJobZ7Nagz2VrZhup" Name="Output" Kind="OutputPin" IsHidden="true" />
                 <Pin Id="Sq5elnuS84ZNKwNhSYd8EC" Name="Value" Kind="OutputPin" />
                 <Pin Id="GCbPQagpGyaPKtcg9Dgxjf" Name="On Data" Kind="OutputPin" />
               </Node>
@@ -5730,6 +5743,7 @@
                           </Node>
                         </Patch>
                         <ControlPoint Id="HwWFWWy8K8bM9D0YDb2cnW" Bounds="599,296" Alignment="Top" />
+                        <Pin Id="I5cHFvEXoujLhM97N7jQdF" Name="Warn" Kind="InputPin" />
                       </Node>
                       <Pad Id="RGLRwA0M4MgLvJKVMcVCXS" Comment="Success" Bounds="587,398,35,35" ShowValueBox="true" isIOBox="true" />
                     </Patch>
@@ -5791,6 +5805,7 @@
                         <Pin Id="Po2lepIED1lLGE4JvEiuot" Name="Output" Kind="StateOutputPin" />
                       </Node>
                     </Patch>
+                    <Pin Id="H2gr6WKwWrpMkd8UiKmsoV" Name="Warn" Kind="InputPin" />
                   </Node>
                 </Patch>
               </Node>
@@ -5949,9 +5964,9 @@
       </Patch>
     </Node>
   </Patch>
-  <NugetDependency Id="Ko9OqCOVyY7Pz8mbJrOqb0" Location="VL.CoreLib" Version="2024.6.7-0171-g5da2a8cd29" />
-  <NugetDependency Id="GfILeWsAoPNO0iB3CQL4dE" Location="VL.Stride" Version="2024.6.7-0171-g5da2a8cd29" />
-  <NugetDependency Id="SJtn3qA3zNVPdi9MyNW2mi" Location="VL.Skia" Version="2024.6.7-0171-g5da2a8cd29" />
+  <NugetDependency Id="Ko9OqCOVyY7Pz8mbJrOqb0" Location="VL.CoreLib" Version="2025.7.0" />
+  <NugetDependency Id="GfILeWsAoPNO0iB3CQL4dE" Location="VL.Stride" Version="2025.7.0" />
+  <NugetDependency Id="SJtn3qA3zNVPdi9MyNW2mi" Location="VL.Skia" Version="2025.7.0" />
   <PlatformDependency Id="RtoyxKP7OgwO3Qfg3NOKk2" Location="./lib/net8.0/VL.PDFReader.dll" />
   <PlatformDependency Id="Ew7Q9Ag2HCdPDqbXazRJ9S" Location="Stride.dll" />
   <PlatformDependency Id="DXlCVWOkj7wOXqS6PDuHyR" Location="SkiaSharp.dll" />
