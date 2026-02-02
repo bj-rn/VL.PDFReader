@@ -68,10 +68,10 @@
   <!--  NuGet packages -->
   <ItemGroup>
     <PackageReference Include="SkiaSharp" Version="2.88.8" PrivateAssets="analyzers" />
-	<PackageReference Include="Stride.Core.Mathematics" Version="4.2.0.2232" />
-	<PackageReference Include="Stride.Graphics" Version="4.2.0.2232" />
-	<PackageReference Include="Stride.Rendering" Version="4.2.0.2232" />
-	<PackageReference Include="VL.Core.Skia" Version="2024.6.6" />
+	<PackageReference Include="Stride.Core.Mathematics" Version="4.2.0.2293" />
+	<PackageReference Include="Stride.Graphics" Version="4.2.0.2293" />
+	<PackageReference Include="Stride.Rendering" Version="4.2.0.2293" />
+	<PackageReference Include="VL.Core.Skia" Version="2025.7.0" />
   </ItemGroup>
 	
 </Project>
